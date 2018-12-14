@@ -1,0 +1,116 @@
+{
+	"fileTypes": [],
+	"injectionSelector": "L:markup.fenced_code.block.markdown",
+	"patterns": [
+		{
+			"include": "#mermaid-code-block"
+		}
+	],
+	"repository": {
+		"mermaid-code-block": {
+			"begin": "(?<=[`~])mermaid(\\s+[^`~]*)?$",
+			"end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)",
+			"patterns": [
+				{
+                    "match": "\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b",
+                    "name": "constant.numeric.mermaid"
+                },
+                {
+                    "match": "\\b(subgraph)\\s+([A-Za-z\\ 0-9]+)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.mermaid"
+                        },
+                        "2": {
+                            "name": "entity.name.function.mermaid"
+                        }
+                    },
+                    "name": "meta.function.mermaid"
+                },
+                {
+                    "match": "\\b(graph)\\s+([A-Za-z\\ 0-9]+)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.mermaid"
+                        },
+                        "2": {
+                            "name": "entity.name.function.mermaid"
+                        }
+                    },
+                    "name": "meta.function.mermaid"
+                },
+                {
+                    "match": "\\b(end|RB|BT|RL|TD|LR)\\b",
+                    "name": "keyword.control.mermaid"
+                },
+                {
+                    "match": "\\b([A-Z0-9a-z\\_]+)[\\[\\(]{1,2}(.+)[\\]\\)]{1,2}",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.tag.mermaid"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.variable.mermaid"
+                        }
+                    },
+                    "name": "meta.variable.mermaid"
+                },
+                {
+                    "match": "\\b([A-Z0-9a-z\\_]+)[\\{]{1,2}(.+)[\\}]{1,2}",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.tag.mermaid"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.parameters.mermaid"
+                        }
+                    },
+                    "name": "meta.variable.mermaid"
+                },
+                {
+                    "match": "\\b([A-Z0-9a-z\\_]+)\\s+?([\\-\\.\\>\\<]{2,5})\\s+?([A-Z0-9a-z\\_]+)",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.string.mermaid"
+                        },
+                        "2": {
+                            "name": "keyword.other.special-method.mermaid"
+                        },
+                        "3": {
+                            "name": "punctuation.definition.string.mermaid"
+                        }
+                    },
+                    "name": "meta.variable.mermaid"
+                },
+                {
+                    "match": "\\b([A-Z0-9a-z\\_]+)\\s?+([\\-\\.\\>\\<]{2,4})\\s?+([\\|])([A-Za-z\\ 0-9\\_]+)([\\|])\\s?+([a-zA-Z0-9\\ \\_]+)",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.string.mermaid"
+                        },
+                        "2": {
+                            "name": "keyword.other.special-method.mermaid"
+                        },
+                        "4": {
+                            "name": "keyword.control.import.mermaid"
+                        },
+                        "6": {
+                            "name": "keyword.control.exception.mermaid"
+                        }
+                    },
+                    "name": "meta.variable.mermaid"
+                },
+                {
+                    "match": "\\b([\\%]{2}\\s?.+)\\b",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.comment.mermaid"
+                        }
+                    },
+                    "name": "punctuation.definition.comment.mermaid"
+                }
+			]
+		}
+	},
+	"scopeName": "markdown.mermaid.codeblock"
+}

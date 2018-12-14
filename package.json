@@ -1,0 +1,35 @@
+{
+  "name": "mermaid-markdown-syntax-highlighting",
+  "displayName": "Mermaid Markdown Syntax Highlighting",
+  "description": "Markdown syntax support for the Mermaid charting language",
+  "version": "0.0.1",
+  "publisher": "bpruitt-goddard",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/issues"
+  },
+  "engines": {
+    "vscode": "^1.19.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "scopeName": "markdown.mermaid.codeblock",
+        "path": "./syntaxes/codeblock.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.mermaid": "mermaid"
+        }
+      }
+    ]
+  },
+  "dependencies": {  }
+}
