@@ -50,7 +50,7 @@
                             "name": "punctuation.definition.tag.mermaid"
                         },
                         "2": {
-                            "name": "punctuation.definition.variable.mermaid"
+                            "name": "keyword.string.mermaid"
                         }
                     },
                     "name": "meta.variable.mermaid"
@@ -108,6 +108,10 @@
                         }
                     },
                     "name": "punctuation.definition.comment.mermaid"
+                },
+                {
+                    "match": "(?:-?-(?:-|\\>)|=?=(?:=|\\>)|(?:\\.-|-\\.)-?\\>?)",
+                    "name": "keyword.function.mermaid"
                 }
 			]
 		}
