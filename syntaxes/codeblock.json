@@ -49,13 +49,16 @@
                     "name": "punctuation.definition.comment.mermaid"
                 },
                 {
-                    "match": "(\\b[-\\w]+\\b\\s?)((?:-?(?:-|\\>)|=?=(?:=|\\>)|(?:\\.-|-\\.)-?\\>?)|(?:[\\[({]))",
+                    "match": "(\\b[-\\w]+\\b\\s*)((?:-?-(?:-|\\>)|=?=(?:=|\\>)|(?:\\.-|-\\.)-?\\>?))(\\s*[-\\w]+\\b)",
                     "captures": {
                         "1": {
                             "name": "variable"
                         },
                         "2": {
                             "name": "string"
+                        },
+                        "3": {
+                            "name": "variable"
                         }
                     },
                     "name": "meta.variable.mermaid"
