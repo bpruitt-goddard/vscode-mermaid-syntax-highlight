@@ -38,9 +38,9 @@ graph TB %% tab completion: 'graph'
 - [x] Keywords
 - [x] %% Comments
 - [x] Entity---Entity (livne )
-- [ ] Entity---Text---Entity
+- [x] Entity---Text---Entity
+- [x] Entity-->|Text|Entity
 - [ ] Entity[Text]
-- [ ] Entity-->|Text|Entity
 
 ## Initial Idea
 
