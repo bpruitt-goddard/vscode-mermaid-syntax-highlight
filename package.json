@@ -5,12 +5,6 @@
   "version": "0.0.1",
   "publisher": "bpruitt-goddard",
   "license": "MIT",
-  "repository": {
-    "url": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight.git"
-  },
-  "bugs": {
-    "url": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/issues"
-  },
   "engines": {
     "vscode": "^1.19.0"
   },
@@ -31,5 +25,17 @@
       }
     ]
   },
-  "dependencies": {  }
+  "bugs": {
+    "url": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/issues"
+  },
+  "homepage": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/blob/master/README.md",
+
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight.git"
+  },
+  "keywords": [
+    "mermaid"
+  ]
 }
