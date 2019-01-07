@@ -19,6 +19,7 @@ graph TB %% tab completion: 'graph'
   %% tab completion: 'class'
   classDef blue fill:#08f,stroke:#fff
   class ID-1 blue
+  class ID-1,ID-2 red
   %% tab completion: 'click'
   click ID-1 "https://github.com" "Tooltip text"
   click ID-2 alert "Tooltip for a callback"
