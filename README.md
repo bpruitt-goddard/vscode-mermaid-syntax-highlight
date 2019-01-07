@@ -4,7 +4,7 @@ Markdown syntax support for the [Mermaid charting language](https://github.com/k
 ## Screenshots/Progress
 
 ### Graph
-<img src="/images/graph.png" alt="Graph Screenshot" width="500">
+<img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/graph.png" alt="Graph Screenshot" width="500">
 
 ```mermaid
 graph TB %% tab completion: 'graph'
