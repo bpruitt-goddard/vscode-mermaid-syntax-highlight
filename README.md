@@ -47,6 +47,10 @@ graph TB %% tab completion: 'graph'
 - [x] class
 - [x] click
 
+### Sequence
+TODO
+### Gantt
+TODO
 ## Initial Idea
 
 Based on the starter language support repo [here](https://github.com/mjbvz/vscode-fenced-code-block-grammar-injection-example), and initially created based on the Atom language support [here](https://github.com/ytisf/language-mermaid).
@@ -55,4 +59,3 @@ Based on the starter language support repo [here](https://github.com/mjbvz/vscod
 
 - [ ] Publish to VS Marketplace
 - [ ] Determine remaining missing syntax issues
-- [ ] Add sequenceDiagram support
