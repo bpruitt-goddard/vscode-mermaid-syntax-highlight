@@ -40,7 +40,11 @@ graph TB %% tab completion: 'graph'
 - [x] Entity---Entity (livne )
 - [x] Entity---Text---Entity
 - [x] Entity-->|Text|Entity
-- [ ] Entity[Text]
+- [ ] Entity-->|Special Chars|Entity
+- [x] Entity[Text]
+- [ ] classDef
+- [ ] class
+- [ ] click 
 
 ## Initial Idea
 
