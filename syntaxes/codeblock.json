@@ -110,6 +110,21 @@
                     }
                 },
                 {
+                    "comment": "(Class)(Node(s))(ClassName)",
+                    "match": "\\s*(class)\\s+(\\b[-,\\w]+)\\s+(\\b\\w+\\b)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.mermaid"
+                        },
+                        "2": {
+                            "name": "variable"
+                        },
+                        "3": {
+                            "name": "string"
+                        }
+                    }
+                },
+                {
                     "match": "%%.*",
                     "name": "comment"
                 },

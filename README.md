@@ -43,7 +43,7 @@ graph TB %% tab completion: 'graph'
 - [x] Entity-->|Special Chars|Entity
 - [x] Entity[Text]
 - [ ] classDef
-- [ ] class
+- [x] class
 - [ ] click 
 
 ## Initial Idea
