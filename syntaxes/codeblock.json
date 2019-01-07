@@ -110,6 +110,54 @@
                     }
                 },
                 {
+                    "comment": "(Class)(Node(s))(ClassName)",
+                    "match": "\\s*(class)\\s+(\\b[-,\\w]+)\\s+(\\b\\w+\\b)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.mermaid"
+                        },
+                        "2": {
+                            "name": "variable"
+                        },
+                        "3": {
+                            "name": "string"
+                        }
+                    }
+                },
+                {
+                    "comment": "(ClassDef)(ClassName)(Styles)",
+                    "match": "\\s*(classDef)\\s+(\\b\\w+\\b)\\s+(\\b[-,:;#\\w]+)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.mermaid"
+                        },
+                        "2": {
+                            "name": "variable"
+                        },
+                        "3": {
+                            "name": "string"
+                        }
+                    }
+                },
+                {
+                    "comment": "(Click)(Entity)(xx)",
+                    "match": "\\s*(click)\\s+(\\b[-\\w]+\\b\\s*)(\\b\\w+\\b)?\\s(\"*.*\")",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.mermaid"
+                        },
+                        "2": {
+                            "name": "variable"
+                        },
+                        "3": {
+                            "name": "variable"
+                        },
+                        "4": {
+                            "name": "string"
+                        }
+                    }
+                },
+                {
                     "match": "%%.*",
                     "name": "comment"
                 },
