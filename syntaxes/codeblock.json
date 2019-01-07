@@ -92,6 +92,24 @@
                     "end": "$"
                 },
                 {
+                    "comment": "(Entity)(Edge/Shape)(Text)(Edge/Shape)",
+                    "match": "(\\b[-\\w]+\\b\\s*)(\\[|\\(+|\\>|\\{)(\\s*[\"\\(\\)#;:\\-\\w\\s]*)(\\]|\\)+|\\})",
+                    "captures": {
+                        "1": {
+                            "name": "variable"
+                        },
+                        "2": {
+                            "name": "keyword.operator.arrow.mermaid"
+                        },
+                        "3": {
+                            "name": "string"
+                        },
+                        "4": {
+                            "name": "keyword.operator.arrow.mermaid"
+                        }
+                    }
+                },
+                {
                     "match": "%%.*",
                     "name": "comment"
                 },
