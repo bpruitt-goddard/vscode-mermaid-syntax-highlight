@@ -17,7 +17,7 @@ graph TB %% tab completion: 'graph'
   ID-3-->|Action from 3 to 1|ID-1
   ID-3 -- "Action from 3 to 2. p/w: '_-!#$%^&*+=?,\'" --> ID-2
   %% tab completion: 'class'
-  classDef blue fill:#08f,stroke:#fff
+  classDef blue fill:#08f,stroke:#fff;
   class ID-1 blue
   class ID-1,ID-2 red
   %% tab completion: 'click'
@@ -43,7 +43,7 @@ graph TB %% tab completion: 'graph'
 - [x] Entity-->|Text|Entity
 - [x] Entity-->|Special Chars|Entity
 - [x] Entity[Text]
-- [ ] classDef
+- [x] classDef
 - [x] class
 - [ ] click 
 

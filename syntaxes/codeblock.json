@@ -125,6 +125,21 @@
                     }
                 },
                 {
+                    "comment": "(ClassDef)(ClassName)(Styles)",
+                    "match": "\\s*(classDef)\\s+(\\b\\w+\\b)\\s+(\\b[-,:;#\\w]+)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.mermaid"
+                        },
+                        "2": {
+                            "name": "variable"
+                        },
+                        "3": {
+                            "name": "string"
+                        }
+                    }
+                },
+                {
                     "match": "%%.*",
                     "name": "comment"
                 },
