@@ -52,7 +52,57 @@ graph TB %% comments
 - [x] click
 
 ### Sequence
-TODO
+
+```mermaid
+sequenceDiagram %% diagram
+  %% participant
+  participant Alice
+  participant B as Bob
+  participant C as Carol
+  Bob->>Carol: Hello Carol, how are you?
+  B-->>C: Great!
+  %% arrows
+  B->C: Solid line without arrow
+  B-->: Dotted line without arrow
+  B->>C:Solid line with arrowhead
+  B-->>C: Dotted line with arrowhead
+  B-xC: Solid line with a cross at end
+  B--xC: Dotted line with a cross at end
+  %% activations
+  activate John
+  deactivate John
+  %% notes
+  Note left of Alice: Alice likes to chat
+  Note over B,C: Bob whispers when sick
+  %% loop
+  loop Every minute
+        B-->C: Can you hear me?
+  end
+  %% alt
+  alt is sick
+    B-->C: Not so good :(
+  else is well
+    B->C: Feeling fresh like a daisy
+  end
+  opt Extra response
+    B->C: You, Carol?
+  end
+```
+
+- [ ] Keywords
+- [x] %% Comments
+- [ ] participant Actor
+- [ ] participant Aliases
+- [ ] Actor->>Actor
+- [ ] 6 arrow types
+- [ ] (de)activate Actor
+- [ ] activate/deactivate shorthand (+/-)
+- [ ] Note Action Actor
+- [ ] Multi-actor notes
+- [ ] loop
+- [ ] alt
+- [ ] alt optional
+
 ### Gantt
 TODO
 ## Initial Idea
