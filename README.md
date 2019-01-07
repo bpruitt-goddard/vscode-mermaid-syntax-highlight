@@ -45,7 +45,7 @@ graph TB %% tab completion: 'graph'
 - [x] Entity[Text]
 - [x] classDef
 - [x] class
-- [ ] click 
+- [x] click
 
 ## Initial Idea
 

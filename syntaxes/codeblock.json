@@ -140,6 +140,24 @@
                     }
                 },
                 {
+                    "comment": "(Click)(Entity)(xx)",
+                    "match": "\\s*(click)\\s+(\\b[-\\w]+\\b\\s*)(\\b\\w+\\b)?\\s(\"*.*\")",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.mermaid"
+                        },
+                        "2": {
+                            "name": "variable"
+                        },
+                        "3": {
+                            "name": "variable"
+                        },
+                        "4": {
+                            "name": "string"
+                        }
+                    }
+                },
+                {
                     "match": "%%.*",
                     "name": "comment"
                 },
