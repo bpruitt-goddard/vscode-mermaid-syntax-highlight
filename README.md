@@ -21,7 +21,7 @@ graph TB %% tab completion: 'graph'
   class ID-1 blue
   class ID-1,ID-2 red
   %% tab completion: 'click'
-  click ID-1 "https://github.com" "Tooltip text"
+  click ID-1 "https://github.com" "Tooltip text" %% comments
   click ID-2 alert "Tooltip for a callback"
   subgraph A subgraph
     ID-4{Node 4}
