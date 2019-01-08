@@ -179,7 +179,7 @@
                             "name": "comment"
                         },
                         {
-                            "comment": "(participant)(Actor)[as][Label]",
+                            "comment": "(participant)(Actor)(as)?(Label)?",
                             "match": "\\s*(participant)\\s+([-\\w]+)\\s+(as)?(\\s[\\w]+)?",
                             "captures": {
                                 "1": {
@@ -192,6 +192,27 @@
                                     "name": "keyword.control.mermaid"
                                 },
                                 "4": {
+                                    "name": "string"
+                                }
+                            }
+                        },
+                        {
+                            "comment": "(Actor)(Arrow)(Arrow)(:)(Message)",
+                            "match": "\\s*(\\b[-\\w]+\\b\\s*)(-?-(?:\\>|x)\\>?[+-]?)(\\s*[-\\w]+\\b)(:)(.*)",
+                            "captures": {
+                                "1": {
+                                    "name": "variable"
+                                },
+                                "2": {
+                                    "name": "keyword.control.mermaid"
+                                },
+                                "3": {
+                                    "name": "variable"
+                                },
+                                "4": {
+                                    "name": "keyword.control.mermaid"
+                                },
+                                "5": {
                                     "name": "string"
                                 }
                             }
