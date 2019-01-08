@@ -177,7 +177,26 @@
                         {
                             "match": "%%.*",
                             "name": "comment"
+                        },
+                        {
+                            "comment": "(participant)(Actor)[as][Label]",
+                            "match": "\\s*(participant)\\s+([-\\w]+)\\s+(as)?(\\s[\\w]+)?",
+                            "captures": {
+                                "1": {
+                                    "name": "keyword.control.mermaid"
+                                },
+                                "2": {
+                                    "name": "variable"
+                                },
+                                "3": {
+                                    "name": "keyword.control.mermaid"
+                                },
+                                "4": {
+                                    "name": "string"
+                                }
+                            }
                         }
+                        
                     ],
                     "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
                 }
