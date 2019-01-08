@@ -99,7 +99,7 @@ sequenceDiagram %% diagram
 - [x] 6 arrow types
 - [x] (de)activate Actor
 - [x] activate/deactivate shorthand (+/-)
-- [ ] Note Action Actor
+- [x] Note Action Actor
 - [ ] Multi-actor notes
 - [ ] loop
 - [ ] alt
