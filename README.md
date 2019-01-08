@@ -64,7 +64,7 @@ sequenceDiagram %% diagram
   B-->>C: Great!
   %% arrows
   B->C: Solid line without arrow
-  B-->: Dotted line without arrow
+  B-->C: Dotted line without arrow
   B->>C:Solid line with arrowhead
   B-->>C: Dotted line with arrowhead
   B-xC: Solid line with a cross at end
@@ -94,8 +94,8 @@ sequenceDiagram %% diagram
 - [x] %% Comments
 - [x] participant Actor
 - [x] participant Aliases
-- [ ] Actor->>Actor
-- [ ] 6 arrow types
+- [x] Actor->>Actor: Message
+- [x] 6 arrow types
 - [ ] (de)activate Actor
 - [ ] activate/deactivate shorthand (+/-)
 - [ ] Note Action Actor
