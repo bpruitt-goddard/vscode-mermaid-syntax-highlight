@@ -52,6 +52,7 @@ graph TB %% comments
 - [x] click
 
 ### Sequence
+<img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/sequenceDiagram.png" alt="Sequence Diagram Screenshot" width="500">
 
 ```mermaid
 sequenceDiagram %% diagram
