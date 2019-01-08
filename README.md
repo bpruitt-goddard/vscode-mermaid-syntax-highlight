@@ -60,8 +60,6 @@ sequenceDiagram %% diagram
   participant Alice
   participant B as Bob
   participant C as Carol
-  Bob->>Carol: Hello Carol, how are you?
-  B-->>C: Great!
   %% arrows
   B->C: Solid line without arrow
   B-->C: Dotted line without arrow
@@ -72,6 +70,9 @@ sequenceDiagram %% diagram
   %% activations
   activate John
   deactivate John
+  %% activation shorthand
+  Bob->>+Carol: Hello Carol, how are you?
+  B-->>-C: Great!
   %% notes
   Note left of Alice: Alice likes to chat
   Note over B,C: Bob whispers when sick
@@ -97,7 +98,7 @@ sequenceDiagram %% diagram
 - [x] Actor->>Actor: Message
 - [x] 6 arrow types
 - [x] (de)activate Actor
-- [ ] activate/deactivate shorthand (+/-)
+- [x] activate/deactivate shorthand (+/-)
 - [ ] Note Action Actor
 - [ ] Multi-actor notes
 - [ ] loop
