@@ -216,6 +216,18 @@
                                     "name": "string"
                                 }
                             }
+                        },
+                        {
+                            "comment": "(activate/deactivate)(Actor)",
+                            "match": "\\s*((?:de)?activate)\\s+(\\b[-\\w]+\\b\\s*)",
+                            "captures": {
+                                "1": {
+                                    "name": "keyword.control.mermaid"
+                                },
+                                "2": {
+                                    "name": "variable"
+                                }
+                            }
                         }
                         
                     ],
