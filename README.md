@@ -92,8 +92,8 @@ sequenceDiagram %% diagram
 
 - [ ] Keywords
 - [x] %% Comments
-- [ ] participant Actor
-- [ ] participant Aliases
+- [x] participant Actor
+- [x] participant Aliases
 - [ ] Actor->>Actor
 - [ ] 6 arrow types
 - [ ] (de)activate Actor
