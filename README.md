@@ -96,7 +96,7 @@ sequenceDiagram %% diagram
 - [x] participant Aliases
 - [x] Actor->>Actor: Message
 - [x] 6 arrow types
-- [ ] (de)activate Actor
+- [x] (de)activate Actor
 - [ ] activate/deactivate shorthand (+/-)
 - [ ] Note Action Actor
 - [ ] Multi-actor notes
