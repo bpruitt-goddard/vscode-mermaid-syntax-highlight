@@ -29,8 +29,6 @@
     "url": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/issues"
   },
   "homepage": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/blob/master/README.md",
-
-
   "repository": {
     "type": "git",
     "url": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight.git"
