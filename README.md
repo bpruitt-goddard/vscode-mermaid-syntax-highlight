@@ -52,7 +52,59 @@ graph TB %% comments
 - [x] click
 
 ### Sequence
-TODO
+<img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/sequenceDiagram.png" alt="Sequence Diagram Screenshot" width="500">
+
+```mermaid
+sequenceDiagram %% diagram
+  %% participant
+  participant Alice
+  participant B as Bob
+  participant C as Carol
+  %% arrows
+  B->C: Solid line without arrow
+  B-->C: Dotted line without arrow
+  B->>C:Solid line with arrowhead
+  B-->>C: Dotted line with arrowhead
+  B-xC: Solid line with a cross at end
+  B--xC: Dotted line with a cross at end
+  %% activations
+  activate John
+  deactivate John
+  %% activation shorthand
+  Bob->>+Carol: Hello Carol, how are you?
+  B-->>-C: Great!
+  %% notes
+  Note left of Alice: Alice likes to chat
+  Note over B,C: Bob whispers when sick
+  %% loop
+  loop Every minute
+        B-->C: Can you hear me?
+  end
+  %% alt
+  alt is sick
+    B-->C: Not so good :(
+  else is well
+    B->C: Feeling fresh like a daisy
+  end
+  opt Extra response
+    B->C: You, Carol?
+  end
+```
+
+- [x] Keywords
+- [x] %% Comments
+- [x] participant Actor
+- [x] participant Aliases
+- [x] Actor->>Actor: Message
+- [x] 6 arrow types
+- [x] (de)activate Actor
+- [x] activate/deactivate shorthand (+/-)
+- [x] Note Action Actor
+- [x] Multi-actor notes
+- [x] loop
+- [x] alt
+- [x] alt optional
+
 ### Gantt
 TODO
 ## Initial Idea
