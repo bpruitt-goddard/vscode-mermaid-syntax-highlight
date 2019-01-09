@@ -255,6 +255,27 @@
                                     "name": "string"
                                 }
                             }
+                        },
+                        {
+                            "comment": "(loop)(loop text)",
+                            "match": "\\s*(loop)\\s+(.*)",
+                            "captures": {
+                                "1": {
+                                    "name": "keyword.control.mermaid"
+                                },
+                                "2": {
+                                    "name": "string"
+                                }
+                            }
+                        },
+                        {
+                            "comment": "(end)",
+                            "match": "\\s*(end)",
+                            "captures": {
+                                "1": {
+                                    "name": "keyword.control.mermaid"
+                                }
+                            }
                         }
                         
                     ],
