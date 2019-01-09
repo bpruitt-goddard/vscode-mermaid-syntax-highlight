@@ -101,7 +101,7 @@ sequenceDiagram %% diagram
 - [x] activate/deactivate shorthand (+/-)
 - [x] Note Action Actor
 - [x] Multi-actor notes
-- [ ] loop
+- [x] loop
 - [ ] alt
 - [ ] alt optional
 
