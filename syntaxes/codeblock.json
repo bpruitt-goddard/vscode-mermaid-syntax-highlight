@@ -276,8 +276,19 @@
                                     "name": "keyword.control.mermaid"
                                 }
                             }
-                        }
-                        
+                        },
+                        {
+                            "comment": "(alt/else/opt)(text)",
+                            "match": "\\s*((?:alt)|(?:else)|(?:opt))\\s+(.*)",
+                            "captures": {
+                                "1": {
+                                    "name": "keyword.control.mermaid"
+                                },
+                                "2": {
+                                    "name": "string"
+                                }
+                            }
+                        }                        
                     ],
                     "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
                 }
