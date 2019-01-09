@@ -91,7 +91,7 @@ sequenceDiagram %% diagram
   end
 ```
 
-- [ ] Keywords
+- [x] Keywords
 - [x] %% Comments
 - [x] participant Actor
 - [x] participant Aliases
@@ -102,8 +102,8 @@ sequenceDiagram %% diagram
 - [x] Note Action Actor
 - [x] Multi-actor notes
 - [x] loop
-- [ ] alt
-- [ ] alt optional
+- [x] alt
+- [x] alt optional
 
 ### Gantt
 TODO
