@@ -25,6 +25,7 @@ graph TB %% comments
   A[Hard edge] -->|Link text| B(Round edge)
   ID-1---ID-2(Text)
   B --> C{Text}
+  C -->|One| D[Text]
   %% class/classDef
   classDef blue fill:#08f,stroke:#fff;
   class ID-1 blue

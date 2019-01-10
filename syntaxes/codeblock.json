@@ -61,8 +61,8 @@
                                     "name": "comment"
                                 },
                                 {
-                                    "comment": "(Graph Link Text)(Graph Link)(Entity To)",
-                                    "match": "(\\s*[.'_\\-!#$%^&*+=?,:\\\\/\"\\w\\s]*)?(-?-[-\\>]\\|?|=?=[=\\>]|(?:\\.-|-\\.)-?\\>?|\\|)(\\s*[-\\w]+\\b)",
+                                    "comment": "(Graph Link Text)?(Graph Link)(Entity To)?(Edge/Shape)?(Text)?(Edge/Shape)?",
+                                    "match": "(\\s*[.'_\\-!#$%^&*+=?,:\\\\/\"\\w\\s]*)?(-?-[-\\>]\\|?|=?=[=\\>]|(?:\\.-|-\\.)-?\\>?|\\|)(\\s*[-\\w]+\\b)(\\[|\\(+|\\>|\\{)?(\\s*[-\\w]+\\b)?(\\]|\\)+|\\})?",
                                     "captures": {
                                         "1": {
                                             "name": "string"
@@ -72,6 +72,15 @@
                                         },
                                         "3": {
                                             "name": "variable"
+                                        },
+                                        "4": {
+                                            "name": "keyword.control.mermaid"
+                                        },
+                                        "5": {
+                                            "name": "string"
+                                        },
+                                        "6": {
+                                            "name": "keyword.control.mermaid"
                                         }
                                     }
                                 },
