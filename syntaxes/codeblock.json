@@ -45,15 +45,6 @@
                             "name": "keyword.control.mermaid"
                         },
                         {
-                            "match": "\\b([\\%]{2}\\s?.+)\\b",
-                            "captures": {
-                                "1": {
-                                    "name": "punctuation.definition.comment.mermaid"
-                                }
-                            },
-                            "name": "punctuation.definition.comment.mermaid"
-                        },
-                        {
                             "comment": "(Entity From)(Graph Link)",
                             "begin": "(\\b[-\\w]+\\b\\s*)(-?-[-\\>]\\|?|=?=[=\\>]|(?:\\.-|-\\.)-?\\>?)",
                             "beginCaptures": {
@@ -61,7 +52,7 @@
                                     "name": "variable"
                                 },
                                 "2": {
-                                    "name": "keyword.operator.arrow.mermaid"
+                                    "name": "keyword.control.mermaid"
                                 }
                             },
                             "patterns": [
@@ -71,13 +62,13 @@
                                 },
                                 {
                                     "comment": "(Graph Link Text)(Graph Link)(Entity To)",
-                                    "match": "(\\s*[.'_\\-!#$%^&*+=?,:\\\\/\"\\w\\s]*)(-?-[-\\>]\\|?|=?=[=\\>]|(?:\\.-|-\\.)-?\\>?|\\|)(\\s*[-\\w]+\\b)",
+                                    "match": "(\\s*[.'_\\-!#$%^&*+=?,:\\\\/\"\\w\\s]*)?(-?-[-\\>]\\|?|=?=[=\\>]|(?:\\.-|-\\.)-?\\>?|\\|)(\\s*[-\\w]+\\b)",
                                     "captures": {
                                         "1": {
                                             "name": "string"
                                         },
                                         "2": {
-                                            "name": "keyword.operator.arrow.mermaid"
+                                            "name": "keyword.control.mermaid"
                                         },
                                         "3": {
                                             "name": "variable"
@@ -85,11 +76,20 @@
                                     }
                                 },
                                 {
-                                    "comment": "(Entity To)",
-                                    "match": "(\\s*[-\\w]+\\b)",
+                                    "comment": "(Entity To)(Edge/Shape)?(Text)?(Edge/Shape)?",
+                                    "match": "(\\s*[-\\w]+\\b)(\\[|\\(+|\\>|\\{)?(\\s*[-\\w]+\\b)?(\\]|\\)+|\\})?",
                                     "captures": {
                                         "1": {
                                             "name": "variable"
+                                        },
+                                        "2": {
+                                            "name": "keyword.control.mermaid"
+                                        },
+                                        "3": {
+                                            "name": "string"
+                                        },
+                                        "4": {
+                                            "name": "keyword.control.mermaid"
                                         }
                                     }
                                 }
