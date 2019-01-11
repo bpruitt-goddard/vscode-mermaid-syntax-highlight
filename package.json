@@ -12,7 +12,18 @@
     "Other"
   ],
   "contributes": {
+    "languages": [
+      {
+        "id": "Mermaid",
+        "extensions": [ ".mmd" ]
+      }
+    ],
     "grammars": [
+      {
+        "language": "Mermaid",
+        "scopeName": "markdown.mermaid.codeblock",
+        "path": "./syntaxes/codeblock.json"
+      },
       {
         "scopeName": "markdown.mermaid.codeblock",
         "path": "./syntaxes/codeblock.json",
@@ -20,7 +31,7 @@
           "text.html.markdown"
         ],
         "embeddedLanguages": {
-          "meta.embedded.block.mermaid": "mermaid"
+          "meta.embedded.block.mermaid": "Mermaid"
         }
       }
     ]

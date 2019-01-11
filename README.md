@@ -1,7 +1,9 @@
 # vscode-mermaid-syntax-highlight
-Markdown syntax support for the [Mermaid charting language](https://github.com/knsv/mermaid)
+Syntax support for the [Mermaid charting language](https://github.com/knsv/mermaid)
 
 [![Version](https://vsmarketplacebadge.apphb.com/version/bpruitt-goddard.mermaid-markdown-syntax-highlighting.svg)](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting) [![Installs](https://vsmarketplacebadge.apphb.com/installs/bpruitt-goddard.mermaid-markdown-syntax-highlighting.svg)](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting) [![Ratings](https://vsmarketplacebadge.apphb.com/rating/bpruitt-goddard.mermaid-markdown-syntax-highlighting.svg)](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting)
+
+Supports both fenced markdown (see screenshots), and mmd files.
 
 ## Screenshots/Progress
 
@@ -123,4 +125,4 @@ Based on the starter language support repo [here](https://github.com/mjbvz/vscod
 - [x] Graph support
 - [x] Sequence Diagram support
 - [ ] Gantt support
-- [ ] Support highlighting in other formats (mermaid file, html tag, etc?)
+- [x] Support highlighting in mmd files.
