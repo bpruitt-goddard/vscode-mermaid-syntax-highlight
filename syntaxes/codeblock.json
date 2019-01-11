@@ -7,10 +7,15 @@
 		}
 	],
 	"repository": {
-		"mermaid-code-block": {
+        "mermaid-code-block": {
 			"begin": "(?<=[`~])mermaid(\\s+[^`~]*)?$",
 			"end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)",
 			"patterns": [
+                { "include": "#mermaid" }
+			]
+        },
+        "mermaid": {
+            "patterns": [
                 {
                     "comment": "Graph",
                     "begin": "\\b(graph)\\s+([A-Za-z\\ 0-9]+)",
@@ -331,8 +336,8 @@
                     ],
                     "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
                 }
-			]
-		}
+            ]
+        }
 	},
 	"scopeName": "markdown.mermaid.codeblock"
 }
