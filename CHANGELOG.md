@@ -5,3 +5,4 @@
 
 ### [v0.0.2]
 - Add support for complex graph cases
+- Add Mermaid language and support for .mmd files
