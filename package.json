@@ -49,6 +49,9 @@
   "keywords": [
     "mermaid"
   ],
+  "scripts": {
+    "convertYaml": "npx js-yaml syntaxes/mermaid.tmLanguage.yaml > syntaxes/mermaid.tmLanguage.json"
+  },
   "devDependencies": {
     "js-yaml": "^3.12.1"
   }
