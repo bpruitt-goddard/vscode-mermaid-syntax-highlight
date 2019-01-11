@@ -4,7 +4,10 @@
 	"patterns": [
 		{
 			"include": "#mermaid-code-block"
-		}
+        },
+        {
+            "include": "#mermaid"
+        }
 	],
 	"repository": {
         "mermaid-code-block": {
