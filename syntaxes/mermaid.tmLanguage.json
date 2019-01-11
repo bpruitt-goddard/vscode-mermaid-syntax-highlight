@@ -223,7 +223,7 @@
           },
           "patterns": [
             {
-              "match": "%%.*",
+              "match": "\\%%.*",
               "name": "comment"
             },
             {

@@ -129,15 +129,15 @@ repository:
             name: string
       end: (^|\G)(?=\s*[`~]{3,}\s*$)
     - comment: Sequence Digram
-      begin: "\\b(sequenceDiagram)"
+      begin: \b(sequenceDiagram)
       beginCaptures:
         '1':
           name: keyword.control.mermaid
       patterns:
-      - match: "%%.*"
+      - match: \%%.*
         name: comment
       - comment: '(participant)(Actor)(as)?(Label)?'
-        match: "\\s*(participant)\\s+([-\\w]+)\\s+(as)?(\\s[\\w]+)?"
+        match: \s*(participant)\s+([-\w]+)\s+(as)?(\s[\w]+)?
         captures:
           '1':
             name: keyword.control.mermaid
@@ -148,7 +148,7 @@ repository:
           '4':
             name: string
       - comment: '(Actor)(Arrow)(Arrow)(:)(Message)'
-        match: "\\s*(\\b[-\\w]+\\b\\s*)(-?-(?:\\>|x)\\>?[+-]?)(\\s*[-\\w]+\\b)(:)(.*)"
+        match: \s*(\b[-\w]+\b\s*)(-?-(?:\>|x)\>?[+-]?)(\s*[-\w]+\b)(:)(.*)
         captures:
           '1':
             name: variable
@@ -161,14 +161,14 @@ repository:
           '5':
             name: string
       - comment: '(activate/deactivate)(Actor)'
-        match: "\\s*((?:de)?activate)\\s+(\\b[-\\w]+\\b\\s*)"
+        match: \s*((?:de)?activate)\s+(\b[-\w]+\b\s*)
         captures:
           '1':
             name: keyword.control.mermaid
           '2':
             name: variable
       - comment: '(Note)(direction)(Actor)(,)?(Actor)?(:)(Message)'
-        match: "\\s*(Note)\\s+((?:left|right)\\sof|over)\\s+(\\b[-\\w]+\\b\\s*)(,)?(\\b[-\\w]+\\b\\s*)?(:)(.*)"
+        match: \s*(Note)\s+((?:left|right)\sof|over)\s+(\b[-\w]+\b\s*)(,)?(\b[-\w]+\b\s*)?(:)(.*)
         captures:
           '1':
             name: keyword.control.mermaid
@@ -185,23 +185,23 @@ repository:
           '7':
             name: string
       - comment: '(loop)(loop text)'
-        match: "\\s*(loop)\\s+(.*)"
+        match: \s*(loop)\s+(.*)
         captures:
           '1':
             name: keyword.control.mermaid
           '2':
             name: string
       - comment: '(end)'
-        match: "\\s*(end)"
+        match: \s*(end)
         captures:
           '1':
             name: keyword.control.mermaid
       - comment: '(alt/else/opt)(text)'
-        match: "\\s*((?:alt)|(?:else)|(?:opt))\\s+(.*)"
+        match: \s*((?:alt)|(?:else)|(?:opt))\s+(.*)
         captures:
           '1':
             name: keyword.control.mermaid
           '2':
             name: string
-      end: "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
+      end: (^|\G)(?=\s*[`~]{3,}\s*$)
 scopeName: markdown.mermaid.codeblock
