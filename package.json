@@ -15,7 +15,9 @@
     "languages": [
       {
         "id": "Mermaid",
-        "extensions": [ ".mmd" ]
+        "extensions": [
+          ".mmd"
+        ]
       }
     ],
     "grammars": [
@@ -46,5 +48,8 @@
   },
   "keywords": [
     "mermaid"
-  ]
+  ],
+  "devDependencies": {
+    "js-yaml": "^3.12.1"
+  }
 }
