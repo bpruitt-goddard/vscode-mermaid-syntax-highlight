@@ -6,40 +6,40 @@ patterns:
 - include: '#mermaid'
 repository:
   mermaid-code-block:
-    begin: "(?<=[`~])mermaid(\\s+[^`~]*)?$"
-    end: "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
+    begin: (?<=[`~])mermaid(\s+[^`~]*)?$
+    end: (^|\G)(?=\s*[`~]{3,}\s*$)
     patterns:
-    - include: "#mermaid"
+    - include: '#mermaid'
   mermaid:
     patterns:
     - comment: Graph
-      begin: "\\b(graph)\\s+([A-Za-z\\ 0-9]+)"
+      begin: \b(graph)\s+([A-Za-z\ 0-9]+)
       beginCaptures:
         '1':
           name: keyword.control.mermaid
         '2':
           name: entity.name.function.mermaid
       patterns:
-      - match: "%%.*"
+      - match: \%%.*
         name: comment
-      - match: "\\b(subgraph)\\s+([A-Za-z\\ 0-9]+)"
+      - match: \b(subgraph)\s+([A-Za-z\ 0-9]+)
         captures:
           '1':
             name: keyword.control.mermaid
           '2':
             name: entity.name.function.mermaid
         name: meta.function.mermaid
-      - match: "\\b(end|RB|BT|RL|TD|LR)\\b"
+      - match: \b(end|RB|BT|RL|TD|LR)\b
         name: keyword.control.mermaid
       - comment: '(Entity From)(Graph Link)'
-        begin: "(\\b[-\\w]+\\b\\s*)(-?-[-\\>]\\|?|=?=[=\\>]|(?:\\.-|-\\.)-?\\>?)"
+        begin: (\b[-\w]+\b\s*)(-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?)
         beginCaptures:
           '1':
             name: variable
           '2':
             name: keyword.control.mermaid
         patterns:
-        - match: "%%.*"
+        - match: \%%.*
           name: comment
         - comment: '(Graph Link Text)?(Graph Link)(Entity To)?(Edge/Shape)?(Text)?(Edge/Shape)?'
           match: (\s*[.'_\-!#$%^&*+=?,:\\/"\w\s]*)?(-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|)(\s*[-\w]+\b)(\[|\(+|\>|\{)?(\s*[-\w]+\b)?(\]|\)+|\})?
@@ -57,7 +57,7 @@ repository:
             '6':
               name: keyword.control.mermaid
         - comment: '(Entity To)(Edge/Shape)?(Text)?(Edge/Shape)?'
-          match: "(\\s*[-\\w]+\\b)(\\[|\\(+|\\>|\\{)?(\\s*[-\\w]+\\b)?(\\]|\\)+|\\})?"
+          match: (\s*[-\w]+\b)(\[|\(+|\>|\{)?(\s*[-\w]+\b)?(\]|\)+|\})?
           captures:
             '1':
               name: variable
@@ -81,7 +81,7 @@ repository:
             name: keyword.control.mermaid
         patterns:
         - comment: '(Graph Link)(Graph Link Text)(Graph Link)(Entity)(Edge/Shape)(Text)(Edge/Shape)'
-          match: "(\\s*-?-[-\\>]\\|?|=?=[=\\>]|(?:\\.-|-\\.)-?\\>?)(\\s*[-\\w\\s]+\\b)(-?-[-\\>]\\|?|=?=[=\\>]|(?:\\.-|-\\.)-?\\>?|\\|)(\\s*\\b[-\\w]+\\b\\s*)(\\[|\\(+|\\>|\\{)(\\s*[-\\w\\s]+\\b)(\\]|\\)+|\\})"
+          match: (\s*-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?)(\s*[-\w\s]+\b)(-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|)(\s*\b[-\w]+\b\s*)(\[|\(+|\>|\{)(\s*[-\w\s]+\b)(\]|\)+|\})
           captures:
             '1':
               name: keyword.control.mermaid
@@ -99,7 +99,7 @@ repository:
               name: keyword.control.mermaid
         end: "$"
       - comment: '(Class)(Node(s))(ClassName)'
-        match: "\\s*(class)\\s+(\\b[-,\\w]+)\\s+(\\b\\w+\\b)"
+        match: \s*(class)\s+(\b[-,\w]+)\s+(\b\w+\b)
         captures:
           '1':
             name: keyword.control.mermaid
@@ -108,7 +108,7 @@ repository:
           '3':
             name: string
       - comment: '(ClassDef)(ClassName)(Styles)'
-        match: "\\s*(classDef)\\s+(\\b\\w+\\b)\\s+(\\b[-,:;#\\w]+)"
+        match: \s*(classDef)\s+(\b\w+\b)\s+(\b[-,:;#\w]+)
         captures:
           '1':
             name: keyword.control.mermaid
@@ -127,7 +127,7 @@ repository:
             name: variable
           '4':
             name: string
-      end: "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
+      end: (^|\G)(?=\s*[`~]{3,}\s*$)
     - comment: Sequence Digram
       begin: "\\b(sequenceDiagram)"
       beginCaptures:
