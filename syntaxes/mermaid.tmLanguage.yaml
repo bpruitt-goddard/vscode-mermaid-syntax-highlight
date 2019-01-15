@@ -32,7 +32,9 @@ repository:
       - match: \b(end|RB|BT|RL|TD|LR)\b
         name: keyword.control.mermaid
       - comment: '(Entity From)(Graph Link)'
-        begin: (\b[-\w]+\b\s*)(-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?)
+        begin: !regex |-
+          (\b[-\w]+\b\s*) # Entity From
+          (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?) # Graph Link
         beginCaptures:
           '1':
             name: variable
@@ -42,7 +44,13 @@ repository:
         - match: \%%.*
           name: comment
         - comment: '(Graph Link Text)?(Graph Link)(Entity To)?(Edge/Shape)?(Text)?(Edge/Shape)?'
-          match: (\s*[.'_\-!#$%^&*+=?,:\\/"\w\s]*)?(-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|)(\s*[-\w]+\b)(\[|\(+|\>|\{)?(\s*[-\w]+\b)?(\]|\)+|\})?
+          match: !regex |-
+            (\s*[.'_\-!#$%^&*+=?,:\\/"\w\s]*)? # Graph Link Text?
+            (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|) # Graph Link
+            (\s*[-\w]+\b) # Entity To
+            (\[|\(+|\>|\{)? # Edge/Shape?
+            (\s*[-\w]+\b)? # Text
+            (\]|\)+|\})? # Edge/shape
           captures:
             '1':
               name: string
@@ -57,7 +65,11 @@ repository:
             '6':
               name: keyword.control.mermaid
         - comment: '(Entity To)(Edge/Shape)?(Text)?(Edge/Shape)?'
-          match: (\s*[-\w]+\b)(\[|\(+|\>|\{)?(\s*[-\w]+\b)?(\]|\)+|\})?
+          match: !regex |-
+            (\s*[-\w]+\b) # Entity To
+            (\[|\(+|\>|\{)? # Edge/Shape?
+            (\s*[-\w]+\b)? # Text?
+            (\]|\)+|\})? # Edge/Shape?
           captures:
             '1':
               name: variable
@@ -69,7 +81,11 @@ repository:
               name: keyword.control.mermaid
         end: "$"
       - comment: '(Entity)(Edge/Shape)(Text)(Edge/Shape)'
-        begin: (\b[-\w]+\b\s*)(\[|\(+|\>|\{)(\s*["\(\)#;:\-\w\s]*)(\]|\)+|\})
+        begin: !regex |-
+          (\b[-\w]+\b\s*) # Entity
+          (\[|\(+|\>|\{) # Edge/Shape
+          (\s*["\(\)#;:\-\w\s]*) # Text
+          (\]|\)+|\}) # Edge/Shape
         beginCaptures:
           '1':
             name: variable
@@ -81,7 +97,14 @@ repository:
             name: keyword.control.mermaid
         patterns:
         - comment: '(Graph Link)(Graph Link Text)(Graph Link)(Entity)(Edge/Shape)(Text)(Edge/Shape)'
-          match: (\s*-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?)(\s*[-\w\s]+\b)(-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|)(\s*\b[-\w]+\b\s*)(\[|\(+|\>|\{)(\s*[-\w\s]+\b)(\]|\)+|\})
+          match: !regex |-
+            (\s*-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?) # Graph Link
+            (\s*[-\w\s]+\b) # Graph Link Text
+            (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|) # Graph Link
+            (\s*\b[-\w]+\b\s*) # Entity
+            (\[|\(+|\>|\{) # Edge/Shape
+            (\s*[-\w\s]+\b) # Text
+            (\]|\)+|\}) # Edge/Shape
           captures:
             '1':
               name: keyword.control.mermaid
@@ -99,7 +122,10 @@ repository:
               name: keyword.control.mermaid
         end: "$"
       - comment: '(Class)(Node(s))(ClassName)'
-        match: \s*(class)\s+(\b[-,\w]+)\s+(\b\w+\b)
+        match: !regex |-
+          \s*(class) # class
+          \s+(\b[-,\w]+) # Node(s)
+          \s+(\b\w+\b) # ClassName
         captures:
           '1':
             name: keyword.control.mermaid
@@ -108,7 +134,10 @@ repository:
           '3':
             name: string
       - comment: '(ClassDef)(ClassName)(Styles)'
-        match: \s*(classDef)\s+(\b\w+\b)\s+(\b[-,:;#\w]+)
+        match: !regex |-
+          \s*(classDef) # classDef
+          \s+(\b\w+\b) # ClassName
+          \s+(\b[-,:;#\w]+) # Styles
         captures:
           '1':
             name: keyword.control.mermaid
@@ -116,8 +145,12 @@ repository:
             name: variable
           '3':
             name: string
-      - comment: '(Click)(Entity)(xx)'
-        match: \s*(click)\s+(\b[-\w]+\b\s*)(\b\w+\b)?\s("*.*")
+      - comment: '(Click)(Entity)(Link)?(Tooltip)'
+        match: !regex |-
+          \s*(click) # Click
+          \s+(\b[-\w]+\b\s*) # Entity
+          (\b\w+\b)? # Link/callback?
+          \s("*.*") # Tooltip
         captures:
           '1':
             name: keyword.control.mermaid
@@ -137,7 +170,11 @@ repository:
       - match: \%%.*
         name: comment
       - comment: '(participant)(Actor)(as)?(Label)?'
-        match: \s*(participant)\s+([-\w]+)\s+(as)?(\s[\w]+)?
+        match: !regex |-
+          \s*(participant) # participant
+          \s+([-\w]+) # Actor
+          \s+(as)? # as?
+          (\s[\w]+)? # Label?
         captures:
           '1':
             name: keyword.control.mermaid
@@ -147,8 +184,13 @@ repository:
             name: keyword.control.mermaid
           '4':
             name: string
-      - comment: '(Actor)(Arrow)(Arrow)(:)(Message)'
-        match: \s*(\b[-\w]+\b\s*)(-?-(?:\>|x)\>?[+-]?)(\s*[-\w]+\b)(:)(.*)
+      - comment: '(Actor)(Arrow)(Actor)(:)(Message)'
+        match: !regex |-
+          \s*(\b[-\w]+\b\s*) # Actor
+          (-?-(?:\>|x)\>?[+-]?) # Arrow
+          (\s*[-\w]+\b) # Actor
+          (:) # :
+          (.*) # Message
         captures:
           '1':
             name: variable
@@ -161,14 +203,23 @@ repository:
           '5':
             name: string
       - comment: '(activate/deactivate)(Actor)'
-        match: \s*((?:de)?activate)\s+(\b[-\w]+\b\s*)
+        match: !regex |-
+          \s*((?:de)?activate) # Activate/Deactivate
+          \s+(\b[-\w]+\b\s*) # Actor
         captures:
           '1':
             name: keyword.control.mermaid
           '2':
             name: variable
       - comment: '(Note)(direction)(Actor)(,)?(Actor)?(:)(Message)'
-        match: \s*(Note)\s+((?:left|right)\sof|over)\s+(\b[-\w]+\b\s*)(,)?(\b[-\w]+\b\s*)?(:)(.*)
+        match: !regex |-
+          \s*(Note) # Note
+          \s+((?:left|right)\sof|over) # Direction
+          \s+(\b[-\w]+\b\s*) # Actor
+          (,)? # ,?
+          (\b[-\w]+\b\s*)? # Actor
+          (:) # :
+          (.*) # Message
         captures:
           '1':
             name: keyword.control.mermaid
@@ -185,7 +236,9 @@ repository:
           '7':
             name: string
       - comment: '(loop)(loop text)'
-        match: \s*(loop)\s+(.*)
+        match: !regex |-
+          \s*(loop) # loop
+          \s+(.*) # Loop Text
         captures:
           '1':
             name: keyword.control.mermaid
@@ -197,7 +250,9 @@ repository:
           '1':
             name: keyword.control.mermaid
       - comment: '(alt/else/opt)(text)'
-        match: \s*((?:alt)|(?:else)|(?:opt))\s+(.*)
+        match: !regex |-
+          \s*((?:alt)|(?:else)|(?:opt)) # alt/else/opt
+          \s+(.*) # text
         captures:
           '1':
             name: keyword.control.mermaid

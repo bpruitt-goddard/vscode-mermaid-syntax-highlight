@@ -193,7 +193,7 @@
               }
             },
             {
-              "comment": "(Click)(Entity)(xx)",
+              "comment": "(Click)(Entity)(Link)?(Tooltip)",
               "match": "\\s*(click)\\s+(\\b[-\\w]+\\b\\s*)(\\b\\w+\\b)?\\s(\"*.*\")",
               "captures": {
                 "1": {
@@ -245,7 +245,7 @@
               }
             },
             {
-              "comment": "(Actor)(Arrow)(Arrow)(:)(Message)",
+              "comment": "(Actor)(Arrow)(Actor)(:)(Message)",
               "match": "\\s*(\\b[-\\w]+\\b\\s*)(-?-(?:\\>|x)\\>?[+-]?)(\\s*[-\\w]+\\b)(:)(.*)",
               "captures": {
                 "1": {
