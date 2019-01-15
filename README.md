@@ -134,3 +134,30 @@ The grammar resides in the `syntaxes/mermaid.tmLanguage.yaml` file. Only make ch
 ```npm run convertYaml```
 
 To test the theme locally, uninstall the theme from the marketplace and clone this repository directly into the vscode extensions folder. Any changes can be seen after running the `Reload Window` command in vs code.
+
+## Developing
+
+The grammar includes a custom yaml type `regex`. This should be used for all but the simplest regex expressions. It was created to allow the regex to be multiline (with no whitespace between lines) and in-line comments that are stripped from the json. To use it, prepend `!regex` as seen below:
+
+```yaml
+reg: !regex |-
+  # Comment
+  \s*(class)\s+ # explanation
+  (\b[-,\w]+)\s+ # comment
+```
+
+Becomes:
+```json
+{
+  "reg": "\\s*(class)\\s+(\\b[-,\\w]+)\\s+"
+}
+```
+
+Instead of:
+```json
+{
+  "reg": "# Comment\n\\s*(class)\\s+ # explanation\n(\\b[-,\\w]+)\\s+ # comment"
+}
+```
+
+This is useful for splitting out sections of the regex (such as capture groups) and commenting on what each group should be matching.
