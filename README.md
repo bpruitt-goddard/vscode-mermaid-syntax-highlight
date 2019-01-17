@@ -137,8 +137,8 @@ gantt %%comment
 ```
 
 - [ ] Keywords
-- [ ] %% Comments
-- [ ] dateFormat
+- [x] %% Comments
+- [x] dateFormat
 - [ ] title
 - [ ] section
 
