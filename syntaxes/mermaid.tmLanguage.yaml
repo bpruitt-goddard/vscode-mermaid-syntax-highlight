@@ -161,7 +161,7 @@ repository:
           '4':
             name: string
       end: (^|\G)(?=\s*[`~]{3,}\s*$)
-    - comment: Sequence Digram
+    - comment: Sequence Diagram
       begin: \b(sequenceDiagram)
       beginCaptures:
         '1':
@@ -258,5 +258,22 @@ repository:
             name: keyword.control.mermaid
           '2':
             name: string
+      end: (^|\G)(?=\s*[`~]{3,}\s*$)
+    - comment: Gantt Diagram
+      begin: \b(gantt)
+      beginCaptures:
+        '1':
+          name: keyword.control.mermaid
+      patterns:
+      - match: \%%.*
+        name: comment
+      - match: !regex |-
+          (dateFormat)\s+ #dateFromat
+          ([\w-]+) # format
+        captures:
+          '1':
+            name: keyword.control.mermaid
+          '2':
+            name: entity.name.function.mermaid
       end: (^|\G)(?=\s*[`~]{3,}\s*$)
 scopeName: markdown.mermaid.codeblock
