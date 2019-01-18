@@ -283,5 +283,13 @@ repository:
             name: keyword.control.mermaid
           '2':
             name: string
+      - match: !regex |-
+          (section)\s+ # section
+          (\s*["\(\)#;:\-\w\s]*) # text
+        captures:
+          '1':
+            name: keyword.control.mermaid
+          '2':
+            name: string
       end: (^|\G)(?=\s*[`~]{3,}\s*$)
 scopeName: markdown.mermaid.codeblock

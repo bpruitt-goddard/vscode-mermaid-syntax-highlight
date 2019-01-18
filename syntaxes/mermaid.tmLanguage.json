@@ -374,6 +374,17 @@
                   "name": "string"
                 }
               }
+            },
+            {
+              "match": "(section)\\s+(\\s*[\"\\(\\)#;:\\-\\w\\s]*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "string"
+                }
+              }
             }
           ],
           "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
