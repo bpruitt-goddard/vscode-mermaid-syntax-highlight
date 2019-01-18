@@ -140,7 +140,7 @@ gantt %%comment
 - [x] %% Comments
 - [x] dateFormat
 - [x] title
-- [ ] section
+- [x] section
 - [ ] task
 
 ## Initial Idea
