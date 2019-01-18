@@ -268,12 +268,20 @@ repository:
       - match: \%%.*
         name: comment
       - match: !regex |-
-          (dateFormat)\s+ #dateFromat
+          (dateFormat)\s+ # dateFromat
           ([\w-]+) # format
         captures:
           '1':
             name: keyword.control.mermaid
           '2':
             name: entity.name.function.mermaid
+      - match: !regex |-
+          (title)\s+ # title
+          (\s*["\(\)#;:\-\w\s]*) # text
+        captures:
+          '1':
+            name: keyword.control.mermaid
+          '2':
+            name: string
       end: (^|\G)(?=\s*[`~]{3,}\s*$)
 scopeName: markdown.mermaid.codeblock
