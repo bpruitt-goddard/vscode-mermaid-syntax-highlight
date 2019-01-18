@@ -139,8 +139,9 @@ gantt %%comment
 - [ ] Keywords
 - [x] %% Comments
 - [x] dateFormat
-- [ ] title
+- [x] title
 - [ ] section
+- [ ] task
 
 ## Initial Idea
 
