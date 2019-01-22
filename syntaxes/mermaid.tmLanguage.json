@@ -385,6 +385,28 @@
                   "name": "string"
                 }
               }
+            },
+            {
+              "begin": "\\s(.*)(:)",
+              "beginCaptures": {
+                "1": {
+                  "name": "string"
+                },
+                "2": {
+                  "name": "keyword.control.mermaid"
+                }
+              },
+              "patterns": [
+                {
+                  "match": "(crit|done|active|after)",
+                  "name": "entity.name.function.mermaid"
+                },
+                {
+                  "match": "\\%%.*",
+                  "name": "comment"
+                }
+              ],
+              "end": "$"
             }
           ],
           "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"

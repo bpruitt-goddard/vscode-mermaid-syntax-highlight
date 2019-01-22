@@ -291,5 +291,19 @@ repository:
             name: keyword.control.mermaid
           '2':
             name: string
+      - begin: !regex |-
+          \s(.*) # Task Text
+          (:) # :
+        beginCaptures:
+          '1':
+            name: string
+          '2':
+            name: keyword.control.mermaid
+        patterns:
+        - match: (crit|done|active|after)
+          name: entity.name.function.mermaid
+        - match: \%%.*
+          name: comment
+        end: "$"
       end: (^|\G)(?=\s*[`~]{3,}\s*$)
 scopeName: markdown.mermaid.codeblock
