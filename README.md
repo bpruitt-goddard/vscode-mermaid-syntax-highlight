@@ -136,12 +136,12 @@ gantt %%comment
   Add to mermaid                      :1d
 ```
 
-- [ ] Keywords
+- [x] Keywords
 - [x] %% Comments
 - [x] dateFormat
 - [x] title
 - [x] section
-- [ ] task
+- [x] task
 
 ## Initial Idea
 
