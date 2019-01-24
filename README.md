@@ -153,7 +153,7 @@ Based on the starter language support repo [here](https://github.com/mjbvz/vscod
 
 - [x] Graph support
 - [x] Sequence Diagram support
-- [ ] Gantt support
+- [x] Gantt support
 - [x] Support highlighting in mmd files.
 
 ## Building
