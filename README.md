@@ -120,6 +120,7 @@ sequenceDiagram %% diagram
 ```mermaid
 gantt %%comment
   dateFormat  YYYY-MM-DD
+  axisFormat  %m/%d/%Y
   title Adding GANTT diagram functionality to mermaid
   section A section %%comment
   Completed task            :done,    des1, 2014-01-06,2014-01-08
@@ -139,6 +140,7 @@ gantt %%comment
 - [x] Keywords
 - [x] %% Comments
 - [x] dateFormat
+- [x] axisFormat
 - [x] title
 - [x] section
 - [x] task
