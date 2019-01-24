@@ -6,3 +6,6 @@
 ### [v0.0.2]
 - Add support for complex graph cases
 - Add Mermaid language and support for .mmd files
+
+### [v1.0.0]
+- Added gantt support, completing support for all 3 graph types

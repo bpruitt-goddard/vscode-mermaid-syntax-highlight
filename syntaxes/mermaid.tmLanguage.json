@@ -214,7 +214,7 @@
           "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
         },
         {
-          "comment": "Sequence Digram",
+          "comment": "Sequence Diagram",
           "begin": "\\b(sequenceDiagram)",
           "beginCaptures": {
             "1": {
@@ -336,6 +336,88 @@
                   "name": "string"
                 }
               }
+            }
+          ],
+          "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
+        },
+        {
+          "comment": "Gantt Diagram",
+          "begin": "\\b(gantt)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.mermaid"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\\%%.*",
+              "name": "comment"
+            },
+            {
+              "match": "(dateFormat)\\s+([\\w-]+)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "entity.name.function.mermaid"
+                }
+              }
+            },
+            {
+              "match": "(axisFormat)\\s+([\\w\\%/-]+)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "entity.name.function.mermaid"
+                }
+              }
+            },
+            {
+              "match": "(title)\\s+(\\s*[\"\\(\\)#;:\\-\\w\\s]*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "string"
+                }
+              }
+            },
+            {
+              "match": "(section)\\s+(\\s*[\"\\(\\)#;:\\-\\w\\s]*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "string"
+                }
+              }
+            },
+            {
+              "begin": "\\s(.*)(:)",
+              "beginCaptures": {
+                "1": {
+                  "name": "string"
+                },
+                "2": {
+                  "name": "keyword.control.mermaid"
+                }
+              },
+              "patterns": [
+                {
+                  "match": "(crit|done|active|after)",
+                  "name": "entity.name.function.mermaid"
+                },
+                {
+                  "match": "\\%%.*",
+                  "name": "comment"
+                }
+              ],
+              "end": "$"
             }
           ],
           "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
