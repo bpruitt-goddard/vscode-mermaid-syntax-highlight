@@ -268,8 +268,16 @@ repository:
       - match: \%%.*
         name: comment
       - match: !regex |-
-          (dateFormat)\s+ # dateFromat
+          (dateFormat)\s+ # dateFormat
           ([\w-]+) # format
+        captures:
+          '1':
+            name: keyword.control.mermaid
+          '2':
+            name: entity.name.function.mermaid
+      - match: !regex |-
+          (axisFormat)\s+ # axisFormat
+          ([\w\%/-]+) # format
         captures:
           '1':
             name: keyword.control.mermaid

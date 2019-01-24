@@ -365,6 +365,17 @@
               }
             },
             {
+              "match": "(axisFormat)\\s+([\\w\\%/-]+)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "entity.name.function.mermaid"
+                }
+              }
+            },
+            {
               "match": "(title)\\s+(\\s*[\"\\(\\)#;:\\-\\w\\s]*)",
               "captures": {
                 "1": {
