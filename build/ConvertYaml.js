@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 var jsYaml = require('js-yaml');
-var GRAMMAR_SCHEMA = require('./customYamlTypes').GRAMMAR_SCHEMA;
+var GRAMMAR_SCHEMA = require("./CustomYamlTypes").GRAMMAR_SCHEMA;
 
 const FILE_IN = "syntaxes/mermaid.tmLanguage.yaml",
     FILE_OUT = "syntaxes/mermaid.tmLanguage.json";
