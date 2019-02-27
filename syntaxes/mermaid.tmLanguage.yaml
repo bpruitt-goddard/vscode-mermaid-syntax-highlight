@@ -84,7 +84,7 @@ repository:
         begin: !regex |-
           (\b[-\w]+\b\s*) # Entity
           (\[|\(+|\>|\{) # Edge/Shape
-          (\s*["\(\)#;:\-\w\s]*) # Text
+          (\s*["\(\)$&%\^/#.,?!;:*+=\'\\\-\w\s]*) # Text
           (\]|\)+|\}) # Edge/Shape
         beginCaptures:
           '1':
@@ -285,7 +285,7 @@ repository:
             name: entity.name.function.mermaid
       - match: !regex |-
           (title)\s+ # title
-          (\s*["\(\)#;:\-\w\s]*) # text
+          (\s*["\(\)$&%\^/#.,?!;:*+=\'\\\-\w\s]*) # text
         captures:
           '1':
             name: keyword.control.mermaid
@@ -293,7 +293,7 @@ repository:
             name: string
       - match: !regex |-
           (section)\s+ # section
-          (\s*["\(\)#;:\-\w\s]*) # text
+          (\s*["\(\)$&%\^/#.,?!;:*+=\'\\\-\w\s]*) # text
         captures:
           '1':
             name: keyword.control.mermaid
