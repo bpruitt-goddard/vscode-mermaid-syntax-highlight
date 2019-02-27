@@ -9,3 +9,6 @@
 
 ### [v1.0.0]
 - Added gantt support, completing support for all 3 graph types
+
+### [v1.0.1]
+- Allow more punctuation in graph and gantt text
