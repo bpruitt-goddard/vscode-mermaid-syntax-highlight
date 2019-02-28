@@ -15,7 +15,7 @@ graph TB %% comments
   %% Entity[Text]
   ID-1[Node 1]
   ID-2>Node 2]
-  ID-3(Node 3)
+  ID-3(Node 3 <br> text)
   %% Entity--Entity
   ID-1---ID-2
   ID-1 --> ID-3
