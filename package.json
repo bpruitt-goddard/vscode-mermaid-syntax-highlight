@@ -17,7 +17,8 @@
         "id": "Mermaid",
         "extensions": [
           ".mmd"
-        ]
+        ],
+        "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
