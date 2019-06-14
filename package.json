@@ -22,18 +22,18 @@
     ],
     "grammars": [
       {
-        "language": "Mermaid",
-        "scopeName": "markdown.mermaid.codeblock",
+        "language": "mermaid",
+        "scopeName": "source.mermaid",
         "path": "./syntaxes/mermaid.tmLanguage.json"
       },
       {
         "scopeName": "markdown.mermaid.codeblock",
-        "path": "./syntaxes/mermaid.tmLanguage.json",
+        "path": "./syntaxes/mermaid-markdown.tmLanguage.json",
         "injectTo": [
           "text.html.markdown"
         ],
         "embeddedLanguages": {
-          "meta.embedded.block.mermaid": "Mermaid"
+          "meta.embedded.block.mermaid": "mermaid"
         }
       }
     ]
@@ -53,6 +53,7 @@
     "convertYaml": "node build/ConvertYaml.js"
   },
   "devDependencies": {
+    "glob": "^7.1.4",
     "js-yaml": "^3.12.1"
   }
 }
