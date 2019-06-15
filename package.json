@@ -14,10 +14,11 @@
   "contributes": {
     "languages": [
       {
-        "id": "Mermaid",
+        "id": "mermaid",
         "extensions": [
           ".mmd"
-        ]
+        ],
+        "configuration": "./configuration.json"
       }
     ],
     "grammars": [
