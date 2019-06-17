@@ -2,14 +2,14 @@
 fileTypes: []
 injectionSelector: L:markup.fenced_code.block.markdown
 patterns:
-- include: '#mermaid-code-block'
-- include: '#mermaid'
+  - include: "#mermaid-code-block"
+  - include: "#mermaid"
 repository:
   mermaid-code-block:
     begin: (?<=[`~])mermaid(\s+[^`~]*)?$
     end: (^|\G)(?=\s*[`~]{3,}\s*$)
     patterns:
-    - include: '#mermaid'
+      - include: "#mermaid"
   mermaid:
     patterns: !!import/deep
       - diagrams/
