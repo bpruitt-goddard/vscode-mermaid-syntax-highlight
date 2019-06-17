@@ -228,12 +228,15 @@
             },
             {
               "comment": "(title)",
-              "match": "(title):\\s+(\\s*[\"\\(\\)$&%\\^/#.,?!:*+=<>\\'\\\\\\-\\w\\s]*)",
+              "match": "(title)\\s*(:)\\s+(\\s*[\"\\(\\)$&%\\^/#.,?!:*+=<>\\'\\\\\\-\\w\\s]*)",
               "captures": {
                 "1": {
                   "name": "keyword.control.mermaid"
                 },
                 "2": {
+                  "name": "keyword.control.mermaid"
+                },
+                "3": {
                   "name": "string"
                 }
               }

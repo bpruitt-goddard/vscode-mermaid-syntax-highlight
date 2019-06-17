@@ -171,12 +171,14 @@ repository:
         name: comment
       - comment: '(title)'
         match: !regex |-
-          (title):\s+ # title
+          (title)\s*(:)\s+ # title
           (\s*["\(\)$&%\^/#.,?!:*+=<>\'\\\-\w\s]*) # text
         captures:
           '1':
             name: keyword.control.mermaid
           '2':
+            name: keyword.control.mermaid
+          '3':
             name: string
       - comment: '(participant)(Actor)(as)?(Label)?'
         match: !regex |-
