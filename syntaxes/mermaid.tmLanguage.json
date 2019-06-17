@@ -243,7 +243,7 @@
             },
             {
               "comment": "(participant)(Actor)(as)?(Label)?",
-              "match": "\\s*(participant)\\s+([\"\\(\\)$&%\\^/#.?!*=<>\\'\\\\\\w\\s]+)(?:\\s+(as))?\\s([\"\\(\\)$&%\\^/#.,?!*=<>\\'\\\\\\w\\s]+)?",
+              "match": "\\s*(participant)\\s+([\"\\(\\)$&%\\^/#.?!*=<>\\'\\\\\\w\\s]+?)(?:\\s+(as))?\\s([\"\\(\\)$&%\\^/#.,?!*=<>\\'\\\\\\w\\s]+)?",
               "captures": {
                 "1": {
                   "name": "keyword.control.mermaid"
