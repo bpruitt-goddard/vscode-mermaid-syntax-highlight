@@ -1,98 +1,113 @@
 - comment: Sequence Diagram
-  begin: \b(sequenceDiagram)
-  beginCaptures:
-    '1':
-      name: keyword.control.mermaid
-  patterns:
-  - match: \%%.*
-    name: comment
-  - comment: '(participant)(Actor)(as)?(Label)?'
-    match: !regex |-
-      \s*(participant) # participant
-      \s+([-\w]+) # Actor
-      \s+(as)? # as?
-      (.*)? # Label?
-    captures:
+    begin: \b(sequenceDiagram)
+    beginCaptures:
       '1':
         name: keyword.control.mermaid
-      '2':
-        name: variable
-      '3':
-        name: keyword.control.mermaid
-      '4':
-        name: string
-  - comment: '(Actor)(Arrow)(Actor)(:)(Message)'
-    match: !regex |-
-      \s*(\b[-\w]+\b\s*) # Actor
-      (-?-(?:\>|x)\>?[+-]?) # Arrow
-      (\s*[-\w]+\b) # Actor
-      (:) # :
-      (.*) # Message
-    captures:
-      '1':
-        name: variable
-      '2':
-        name: keyword.control.mermaid
-      '3':
-        name: variable
-      '4':
-        name: keyword.control.mermaid
-      '5':
-        name: string
-  - comment: '(activate/deactivate)(Actor)'
-    match: !regex |-
-      \s*((?:de)?activate) # Activate/Deactivate
-      \s+(\b[-\w]+\b\s*) # Actor
-    captures:
-      '1':
-        name: keyword.control.mermaid
-      '2':
-        name: variable
-  - comment: '(Note)(direction)(Actor)(,)?(Actor)?(:)(Message)'
-    match: !regex |-
-      \s*(Note) # Note
-      \s+((?:left|right)\sof|over) # Direction
-      \s+(\b[-\w]+\b\s*) # Actor
-      (,)? # ,?
-      (\b[-\w]+\b\s*)? # Actor
-      (:) # :
-      (.*) # Message
-    captures:
-      '1':
-        name: keyword.control.mermaid
-      '2':
-        name: entity.name.function.mermaid
-      '3':
-        name: variable
-      '4':
-        name: keyword.control.mermaid
-      '5':
-        name: variable
-      '6':
-        name: keyword.control.mermaid
-      '7':
-        name: string
-  - comment: '(loop)(loop text)'
-    match: !regex |-
-      \s*(loop) # loop
-      \s+(.*) # Loop Text
-    captures:
-      '1':
-        name: keyword.control.mermaid
-      '2':
-        name: string
-  - comment: '(end)'
-    match: \s*(end)
-    captures:
-      '1':
-        name: keyword.control.mermaid
-  - comment: '(alt/else/opt)(text)'
-    match: !regex |-
-      \s*((?:alt)|(?:else)|(?:opt)) # alt/else/opt
-      \s+(.*) # text
-    captures:
-      '1':
-        name: keyword.control.mermaid
-      '2':
-        name: string
-  end: (^|\G)(?=\s*[`~]{3,}\s*$)
+    patterns:
+    - match: (\%%|#).*
+      name: comment
+    - comment: '(title)'
+      match: !regex |-
+        (title):\s+ # title
+        (\s*["\(\)$&%\^/#.,?!:*+=<>\'\\\-\w\s]*) # text
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: string
+    - comment: '(participant)(Actor)(as)?(Label)?'
+      match: !regex |-
+        \s*(participant) # participant
+        \s+(["\(\)$&%\^/#.?!*=<>\'\\\w\s]+) # Actor
+        (?:\s+(as))? # as?
+        \s(["\(\)$&%\^/#.,?!*=<>\'\\\w\s]+)? # Label?
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: variable
+        '3':
+          name: keyword.control.mermaid
+        '4':
+          name: string
+    - comment: '(activate/deactivate)(Actor)'
+      match: !regex |-
+        \s*((?:de)?activate) # Activate/Deactivate
+        \s+(\b["\(\)$&%\^/#.?!*=<>\'\\\w\s]+\b\s*) # Actor
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: variable
+    - comment: '(Note)(direction)(Actor)(,)?(Actor)?(:)(Message)'
+      match: !regex |-
+        \s*(Note) # Note
+        \s+((?:left|right)\sof|over) # Direction
+        \s+(\b["\(\)$&%\^/#.?!*=<>\'\\\w\s]+\b\s*) # Actor
+        (,)? # ,?
+        (\b["\(\)$&%\^/#.?!*=<>\'\\\w\s]+\b\s*)? # Actor
+        (:) # :
+        (?:\s+([^;#]*))? # Message
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: entity.name.function.mermaid
+        '3':
+          name: variable
+        '4':
+          name: keyword.control.mermaid
+        '5':
+          name: variable
+        '6':
+          name: keyword.control.mermaid
+        '7':
+          name: string
+    - comment: '(loop)(loop text)'
+      match: !regex |-
+        \s*(loop) # loop
+        (?:\s+([^;#]*))? # Loop Text
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: string
+    - comment: '(end)'
+      match: \s*(end)
+      captures:
+        '1':
+          name: keyword.control.mermaid
+    - comment: '(alt/else/opt/par)(text)'
+      match: !regex |-
+        \s*(alt|else|opt|par|and) # alt/else/opt/par/and
+        (?:\s+([^#;]*))? # text
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: string
+    - comment: '(Actor)(Arrow)(Actor)(:)(Message)'
+      match: !regex |-
+        \s*
+        (\b["\(\)$&%\^/#.?!*=<>\'\\\w\s]+\b) # Actor
+        \s*
+        (-?-(?:\>|x)\>?[+-]?) # Arrow
+        \s*
+        (["\(\)$&%\^/#.?!*=<>\'\\\w\s]+\b) # Actor
+        \s*
+        (:) # :
+        \s*
+        ([^;#]*) # Message
+      captures:
+        '1':
+          name: variable
+        '2':
+          name: keyword.control.mermaid
+        '3':
+          name: variable
+        '4':
+          name: keyword.control.mermaid
+        '5':
+          name: string
+    end: (^|\G)(?=\s*[`~]{3,}\s*$)
+  
