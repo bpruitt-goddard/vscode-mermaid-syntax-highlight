@@ -1,0 +1,14 @@
+---
+fileTypes: []
+injectionSelector: L:markup.fenced_code.block.markdown
+scopeName: markdown.mermaid.codeblock
+patterns:
+- include: '#mermaid-code-block'
+- include: 'source.mermaid'
+repository:
+  mermaid-code-block:
+    begin: (?<=[`~])mermaid(\s+[^`~]*)?$
+    end: (^|\G)(?=\s*[`~]{3,}\s*$)
+    patterns:
+    - include: 'source.mermaid'
+
