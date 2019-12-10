@@ -53,6 +53,6 @@
     "convertYaml": "node build/ConvertYaml.js"
   },
   "devDependencies": {
-    "js-yaml": "^3.12.1"
+    "js-yaml": "^3.13.1"
   }
 }
