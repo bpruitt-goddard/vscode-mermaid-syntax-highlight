@@ -12,3 +12,6 @@
 
 ### [v1.0.1]
 - Allow more punctuation in graph and gantt text
+
+### [v1.0.2]
+- Add pie chart support 
