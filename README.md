@@ -145,6 +145,21 @@ gantt %%comment
 - [x] section
 - [x] task
 
+### Pie
+<img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/pieChart.png" alt="Pie Chart Screenshot" width="500">
+
+```mermaid
+pie
+    title Key elements in Product X 
+    "Calcium" : 42.96
+    "Potassium" : 50.05
+    "Magnesium" : 10.01
+    "Iron" :  5
+```
+
+- [x] Title
+- [x] Data Sets
+
 ## Initial Idea
 
 Based on the starter language support repo [here](https://github.com/mjbvz/vscode-fenced-code-block-grammar-injection-example), and initially created based on the Atom language support [here](https://github.com/ytisf/language-mermaid).
