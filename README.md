@@ -67,7 +67,7 @@ graph TB %% comments
 sequenceDiagram %% diagram
   %% participant
   participant Alice
-  participant B as Bob
+  participant B as Bob</br>Newline
   participant C as Carol
   %% arrows
   B->C: Solid line without arrow
