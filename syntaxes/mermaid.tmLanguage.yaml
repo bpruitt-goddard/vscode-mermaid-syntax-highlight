@@ -174,7 +174,7 @@ repository:
           \s*(participant) # participant
           \s+([-\w]+) # Actor
           \s+(as)? # as?
-          (\s[\w]+)? # Label?
+          (.*)? # Label?
         captures:
           '1':
             name: keyword.control.mermaid
