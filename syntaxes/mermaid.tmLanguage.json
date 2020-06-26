@@ -228,7 +228,7 @@
             },
             {
               "comment": "(participant)(Actor)(as)?(Label)?",
-              "match": "\\s*(participant)\\s+([-\\w]+)\\s+(as)?(\\s[\\w]+)?",
+              "match": "\\s*(participant)\\s+([-\\w]+)\\s+(as)?(.*)?",
               "captures": {
                 "1": {
                   "name": "keyword.control.mermaid"
