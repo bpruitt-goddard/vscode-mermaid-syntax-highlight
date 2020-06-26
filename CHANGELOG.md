@@ -15,3 +15,6 @@
 
 ### [v1.0.2]
 - Add pie chart support 
+
+### [v1.0.3]
+- Fix sequence diagram participant label highlighting
