@@ -100,7 +100,7 @@ repository:
           match: !regex |-
             (\s*\b[-\w]+\b\s*) # Entity
             (\[|\(+|\>|\{) # Edge/Shape
-            (\s*[-\w\s]+\b) # Text
+            (\s*["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # Text
             (\]|\)+|\}) # Edge/Shape
           captures:
             '1':
@@ -118,7 +118,7 @@ repository:
             (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|) # Graph Link
             (\s*\b[-\w]+\b\s*) # Entity
             (\[|\(+|\>|\{) # Edge/Shape
-            (\s*[-\w\s]+\b) # Text
+            (\s*["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # Text
             (\]|\)+|\}) # Edge/Shape
           captures:
             '1':
