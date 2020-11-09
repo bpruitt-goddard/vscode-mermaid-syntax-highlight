@@ -28,6 +28,8 @@ graph TB %% comments
   ID-1---ID-2(Text)
   B --> C{Text}
   C -->|One| D[Text]
+  A(A) --> B(B)
+  C[/C/] --> D>D]
   %% class/classDef
   classDef blue fill:#08f,stroke:#fff;
   class ID-1 blue
@@ -150,7 +152,7 @@ gantt %%comment
 
 ```mermaid
 pie
-    title Key elements in Product X 
+    title Key elements in Product X
     "Calcium" : 42.96
     "Potassium" : 50.05
     "Magnesium" : 10.01
