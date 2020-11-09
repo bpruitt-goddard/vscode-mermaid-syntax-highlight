@@ -116,7 +116,7 @@
             },
             {
               "comment": "(Entity)(Edge/Shape)(Text)(Edge/Shape)",
-              "begin": "(\\b[-\\w]+\\b\\s*)(\\[|\\(+|\\>|\\{)(\\s*[\"\\(\\)$&%\\^/#.,?!;:*+=<>\\'\\\\\\-\\w\\s]*)(\\]|\\)+|\\})",
+              "begin": "(\\b[-\\w]+\\b\\s*)(\\[|\\(+|\\>|\\{)(\\s*[\"\\($&%\\^/#.,?!;:*+=<>\\'\\\\\\-\\w\\s]*)(\\]|\\)+|\\})",
               "beginCaptures": {
                 "1": {
                   "name": "variable"
@@ -132,6 +132,24 @@
                 }
               },
               "patterns": [
+                {
+                  "comment": "(Entity)(Edge/Shape)(Text)(Edge/Shape)",
+                  "match": "(\\s*\\b[-\\w]+\\b\\s*)(\\[|\\(+|\\>|\\{)(\\s*[-\\w\\s]+\\b)(\\]|\\)+|\\})",
+                  "captures": {
+                    "1": {
+                      "name": "variable"
+                    },
+                    "2": {
+                      "name": "keyword.control.mermaid"
+                    },
+                    "3": {
+                      "name": "string"
+                    },
+                    "4": {
+                      "name": "keyword.control.mermaid"
+                    }
+                  }
+                },
                 {
                   "comment": "(Graph Link)(Graph Link Text)(Graph Link)(Entity)(Edge/Shape)(Text)(Edge/Shape)",
                   "match": "(\\s*-?-[-\\>]\\|?|=?=[=\\>]|(?:\\.-|-\\.)-?\\>?)(\\s*[-\\w\\s]+\\b)(-?-[-\\>]\\|?|=?=[=\\>]|(?:\\.-|-\\.)-?\\>?|\\|)(\\s*\\b[-\\w]+\\b\\s*)(\\[|\\(+|\\>|\\{)(\\s*[-\\w\\s]+\\b)(\\]|\\)+|\\})",

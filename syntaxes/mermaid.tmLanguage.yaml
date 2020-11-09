@@ -84,7 +84,7 @@ repository:
         begin: !regex |-
           (\b[-\w]+\b\s*) # Entity
           (\[|\(+|\>|\{) # Edge/Shape
-          (\s*["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # Text
+          (\s*["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # Text
           (\]|\)+|\}) # Edge/Shape
         beginCaptures:
           '1':
@@ -96,6 +96,21 @@ repository:
           '4':
             name: keyword.control.mermaid
         patterns:
+        - comment: '(Entity)(Edge/Shape)(Text)(Edge/Shape)'
+          match: !regex |-
+            (\s*\b[-\w]+\b\s*) # Entity
+            (\[|\(+|\>|\{) # Edge/Shape
+            (\s*[-\w\s]+\b) # Text
+            (\]|\)+|\}) # Edge/Shape
+          captures:
+            '1':
+              name: variable
+            '2':
+              name: keyword.control.mermaid
+            '3':
+              name: string
+            '4':
+              name: keyword.control.mermaid
         - comment: '(Graph Link)(Graph Link Text)(Graph Link)(Entity)(Edge/Shape)(Text)(Edge/Shape)'
           match: !regex |-
             (\s*-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?) # Graph Link
