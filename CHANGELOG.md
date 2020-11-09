@@ -14,7 +14,10 @@
 - Allow more punctuation in graph and gantt text
 
 ### [v1.0.2]
-- Add pie chart support 
+- Add pie chart support
 
 ### [v1.0.3]
 - Fix sequence diagram participant label highlighting
+
+### [v1.0.4]
+- Fix sequence diagram entity text highlighting
