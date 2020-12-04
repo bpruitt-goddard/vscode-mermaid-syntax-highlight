@@ -484,6 +484,46 @@
             }
           ],
           "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
+        },
+        {
+          "comment": "Class Diagram",
+          "begin": "\\b(classDiagram)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.mermaid"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\\%%.*",
+              "name": "comment"
+            },
+            {
+              "comment": "class (class name) ({)?",
+              "match": "(class)\\s+([\\w-]+)\\s?({)?",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "variable"
+                },
+                "3": {
+                  "name": "keyword.control.mermaid"
+                }
+              }
+            },
+            {
+              "comment": "(})?",
+              "match": "\\s*(})",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                }
+              }
+            }
+          ],
+          "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
         }
       ]
     }
