@@ -162,6 +162,59 @@ pie
 - [x] Title
 - [x] Data Sets
 
+### Class Diagram
+<img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/classDiagram.png" alt="Class Diagram Screenshot" width="500">
+
+```mermaid
+classDiagram
+  Animal <|-- Duck
+  Animal --o Fish
+  Animal : +int age
+  Animal : +String gender
+  Animal: +mate()
+  class Duck{
+      %% Class Members
+      +String beakColor
+      #quack()
+  }
+  class Fish{
+      -int abstractMethod()*
+      staticMethod$
+  }
+  %% Class member generics
+  class Square~Shape~{
+      List~int~ position
+      setPoints(List~int~ points)
+      getPoints() List~int~
+  }
+  Square : -List~string~ messages
+  Square : ~setMessages(List~string~ messages)
+  Square : +getMessages() List~string~
+
+  %% Multiplicity relations
+  Customer "1" --> "*" Ticket
+  Student "1" --> "1..*" Course
+  Galaxy --> "many" Star : Contains
+
+  %% Annotations
+  class Annotate1
+  <<interface>> Animal
+
+  class Annotate2{
+    <<interface>> Animal
+  }
+```
+
+#### Progress
+
+- [ ] %% Comments
+- [ ] Class
+- [ ] Class members
+- [ ] Class member visibility
+- [ ] Class members generics
+- [ ] Class relationships
+- [ ] Annotations
+
 ## Initial Idea
 
 Based on the starter language support repo [here](https://github.com/mjbvz/vscode-fenced-code-block-grammar-injection-example), and initially created based on the Atom language support [here](https://github.com/ytisf/language-mermaid).
@@ -172,6 +225,7 @@ Based on the starter language support repo [here](https://github.com/mjbvz/vscod
 - [x] Sequence Diagram support
 - [x] Gantt support
 - [x] Support highlighting in mmd files.
+- [ ] Class Diagram support
 
 ## Building
 
