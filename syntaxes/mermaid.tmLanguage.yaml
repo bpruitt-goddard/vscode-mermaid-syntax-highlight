@@ -13,7 +13,7 @@ repository:
   mermaid:
     patterns:
     - comment: Graph
-      begin: \b(graph)\s+([A-Za-z\ 0-9]+)
+      begin: \b(graph|flowchart)\s+([A-Za-z\ 0-9]+)
       beginCaptures:
         '1':
           name: keyword.control.mermaid
