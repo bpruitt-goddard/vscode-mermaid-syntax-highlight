@@ -21,3 +21,6 @@
 
 ### [v1.0.4]
 - Fix sequence diagram entity text highlighting
+
+### [v1.0.5]
+- Add basic flowchart support
