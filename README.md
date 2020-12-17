@@ -171,15 +171,16 @@ classDiagram
   Animal --o Fish
   Animal : +int age
   Animal : +String gender
-  Animal: +mate()
+  Animal: mate()
+  Animal : #method(param)* return
   class Duck{
       %% Class Members
       +String beakColor
       #quack()
   }
   class Fish{
-      -int abstractMethod()*
-      staticMethod$
+      -abstractMethod()*
+      staticMethod()$
   }
   %% Class member generics
   class Square~Shape~{
@@ -207,10 +208,10 @@ classDiagram
 
 #### Progress
 
-- [ ] %% Comments
-- [ ] Class
-- [ ] Class members
-- [ ] Class member visibility
+- [x] %% Comments
+- [x] Class
+- [x] Class members
+- [x] Class member visibility
 - [ ] Class members generics
 - [ ] Class relationships
 - [ ] Annotations
