@@ -366,17 +366,26 @@ repository:
       patterns:
       - match: \%%.*
         name: comment
-      - comment: 'class (class name) ({)?'
+      - comment: 'class (class name) ~?(generic type)?~? ({)?'
         match: !regex |-
           (class)\s+ #class
           ([\w-]+) # class name
+          (~)? # ~
+          ([\w-]+)? # generic type name
+          (~)? # ~
           \s?({)? # begin bracket
         captures:
           '1':
             name: keyword.control.mermaid
           '2':
-            name: variable
+            name: entity.name.type.class.mermaid
           '3':
+            name: punctuation.definition.typeparameters.begin.mermaid
+          '4':
+            name: storage.type.mermaid
+          '5':
+            name: punctuation.definition.typeparameters.end.mermaid
+          '6':
             name: keyword.control.mermaid
       - comment: '(class name)? :? (visibility)?(function)( (function param/generic param)? )(classifier)? (return/generic return)?$'
         match: !regex |-
