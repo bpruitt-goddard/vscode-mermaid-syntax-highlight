@@ -212,7 +212,7 @@ classDiagram
 - [x] Class
 - [x] Class members
 - [x] Class member visibility
-- [ ] Class members generics
+- [x] Class members generics
 - [ ] Class relationships
 - [ ] Annotations
 
