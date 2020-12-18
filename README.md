@@ -196,7 +196,7 @@ classDiagram
   %% Multiplicity relations
   Customer "1" --> "*" Ticket
   Student "1" --> "1..*" Course
-  Galaxy --> "many" Star : Contains
+  Galaxy --> "6" Star : Contains
 
   %% Annotations
   class Annotate1
@@ -214,7 +214,7 @@ classDiagram
 - [x] Class members
 - [x] Class member visibility
 - [x] Class members generics
-- [ ] Class relationships
+- [x] Class relationships
 - [ ] Annotations
 
 ## Initial Idea
