@@ -167,7 +167,8 @@ pie
 
 ```mermaid
 classDiagram
-  Animal <|-- Duck
+  Animal <|-- Duck : LabelText
+  class1 --o other
   Animal --o Fish
   Animal : +int age
   Animal : +String gender

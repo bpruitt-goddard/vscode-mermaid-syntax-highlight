@@ -387,6 +387,24 @@ repository:
             name: punctuation.definition.typeparameters.end.mermaid
           '6':
             name: keyword.control.mermaid
+      - comment: '(class name) (relationship) (class name) :? (labelText)?'
+        match: !regex |-
+          ([\w-]+) # class name
+          \s?(--o|--\*|\<--|--\>|<\.\.|\.\.\>|\<\|\.\.|\.\.\|\>|\<\|--|--\|>|--\*|--|\.\.) # relationship
+          \s?([\w-]+) # class name
+          \s?(:)? # :
+          \s(.*)$ # label text
+        captures:
+          '1':
+            name: entity.name.type.class.mermaid
+          '2':
+            name: keyword.control.mermaid
+          '3':
+            name: entity.name.type.class.mermaid
+          '4':
+            name: keyword.control.mermaid
+          '5':
+            name: string
       - comment: '(class name)? :? (visibility)?(function)( (function param/generic param)? )(classifier)? (return/generic return)?$'
         match: !regex |-
           ([\w-]+)? # class name
