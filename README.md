@@ -203,7 +203,7 @@ classDiagram
   <<interface>> Animal
 
   class Annotate2{
-    <<interface>> Animal
+    <<Service>>
   }
 ```
 
@@ -215,7 +215,7 @@ classDiagram
 - [x] Class member visibility
 - [x] Class members generics
 - [x] Class relationships
-- [ ] Annotations
+- [x] Annotations
 
 ## Initial Idea
 

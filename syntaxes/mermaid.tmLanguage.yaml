@@ -494,6 +494,21 @@ repository:
         captures:
           '1':
             name: keyword.control.mermaid
+      - comment: '<<(Annotation)>> (class name)'
+        match: !regex |-
+          (<<) # <<
+          ([\w-]+) # annotation
+          (>>) # >>
+          \s?([\w-]+)? # class name
+        captures:
+            '1':
+              name: punctuation.definition.typeparameters.begin.mermaid
+            '2':
+              name: storage.type.mermaid
+            '3':
+             name: punctuation.definition.typeparameters.end.mermaid
+            '4':
+              name: entity.name.type.class.mermaid
       end: (^|\G)(?=\s*[`~]{3,}\s*$)
 
 scopeName: markdown.mermaid.codeblock
