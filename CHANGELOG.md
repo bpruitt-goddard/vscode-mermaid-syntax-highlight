@@ -24,3 +24,6 @@
 
 ### [v1.0.5]
 - Add basic flowchart support
+
+### [v1.1.0]
+- Add class diagram support
