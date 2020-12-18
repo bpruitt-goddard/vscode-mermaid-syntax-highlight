@@ -227,7 +227,7 @@ Based on the starter language support repo [here](https://github.com/mjbvz/vscod
 - [x] Sequence Diagram support
 - [x] Gantt support
 - [x] Support highlighting in mmd files.
-- [ ] Class Diagram support
+- [x] Class Diagram support
 
 ## Building
 
