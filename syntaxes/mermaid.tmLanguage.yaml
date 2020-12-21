@@ -12,10 +12,6 @@ repository:
     - include: '#mermaid'
   mermaid:
     patterns: !!import/deep
-      - diagrams/graph.yaml
-      - diagrams/sequenceDiagram.yaml
-      - diagrams/ganttDiagram.yaml
-      - diagrams/pieChart.yaml
-      - diagrams/classDiagram.yaml
+      - diagrams/
 
 scopeName: markdown.mermaid.codeblock
