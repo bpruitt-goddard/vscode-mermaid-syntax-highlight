@@ -217,6 +217,63 @@ classDiagram
 - [x] Class relationships
 - [x] Annotations
 
+### State Diagram
+<img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/stateDiagram.png" alt="State Diagram Screenshot" width="500">
+
+```mermaid
+stateDiagram %%comment
+  s1
+  state "Description with parenthesis" as s2
+  s3 : Description with colon
+
+  s1 --> s2
+  s2 --> s3: Colon transition
+  [*] --> s1
+  s3 --> [*]
+
+  [*] --> Composite
+  state Composite {
+      [*] --> second
+      second --> [*]
+  }
+
+  [*] --> NestedComposite
+
+  state NestedComposite {
+      [*] --> Nested
+
+      state Nested {
+          [*] --> second
+          second --> InnerMost
+
+          state InnerMost {
+              [*] --> third
+              third --> [*]
+          }
+      }
+  }
+
+  state fork_state <<fork>>
+      [*] --> fork_state
+      fork_state --> State2
+      fork_state --> State3
+
+      state join_state <<join>>
+      State2 --> join_state
+      State3 --> join_state
+      join_state --> State4
+      State4 --> [*]
+```
+
+#### Progress
+- [ ] States with description
+- [ ] Transition with text
+- [ ] Composite states
+- [ ] Nested Composite states
+- [ ] Forks
+- [ ] Comments
+
+
 ## Initial Idea
 
 Based on the starter language support repo [here](https://github.com/mjbvz/vscode-fenced-code-block-grammar-injection-example), and initially created based on the Atom language support [here](https://github.com/ytisf/language-mermaid).
