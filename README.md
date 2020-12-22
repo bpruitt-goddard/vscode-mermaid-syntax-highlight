@@ -231,7 +231,7 @@ Based on the starter language support repo [here](https://github.com/mjbvz/vscod
 
 ## Building
 
-The grammar resides in the `syntaxes/mermaid.tmLanguage.yaml` file. Only make changes to this file. The `json` version is required for the extension and is generated. To generate the json file run:
+The grammars for each digaram type reside in `syntaxes/diagrams` in separate files. Only make changes to these files. The complete file `mermaid.tmLanguage.json` is required for the extension and is generated. To generate the json file run:
 
 ```npm run convertYaml```
 
