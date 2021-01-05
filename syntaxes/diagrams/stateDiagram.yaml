@@ -6,4 +6,34 @@
   patterns:
   - match: \%%.*
     name: comment
+  - comment: '(state)'
+    match: ^\s*([\w-]+)$
+    name: variable
+  - comment: '(state) : (description)'
+    match: !regex |-
+      ([\w-]+) # state name
+      \s+(:) # :
+      \s+(\s*[-\w\s]+\b) # description
+    captures:
+      '1':
+        name: variable
+      '2':
+        name: keyword.control.mermaid
+      '3':
+        name: string
+  - comment: 'state "(description)" as (state)'
+    match: !regex |-
+      (state) # state
+      \s+("[-\w\s]+\b") # description
+      \s+(as) # as
+      \s+([\w-]+) # state name
+    captures:
+      '1':
+        name: keyword.control.mermaid
+      '2':
+        name: string
+      '3':
+        name: keyword.control.mermaid
+      '4':
+        name: variable
   end: (^|\G)(?=\s*[`~]{3,}\s*$)

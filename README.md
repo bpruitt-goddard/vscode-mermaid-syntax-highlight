@@ -266,7 +266,7 @@ stateDiagram %%comment
 ```
 
 #### Progress
-- [ ] States with description
+- [x] States with description
 - [ ] Transition with text
 - [ ] Composite states
 - [ ] Nested Composite states

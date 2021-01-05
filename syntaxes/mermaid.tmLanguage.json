@@ -675,6 +675,44 @@
             {
               "match": "\\%%.*",
               "name": "comment"
+            },
+            {
+              "comment": "(state)",
+              "match": "^\\s*([\\w-]+)$",
+              "name": "variable"
+            },
+            {
+              "comment": "(state) : (description)",
+              "match": "([\\w-]+)\\s+(:)\\s+(\\s*[-\\w\\s]+\\b)",
+              "captures": {
+                "1": {
+                  "name": "variable"
+                },
+                "2": {
+                  "name": "keyword.control.mermaid"
+                },
+                "3": {
+                  "name": "string"
+                }
+              }
+            },
+            {
+              "comment": "state \"(description)\" as (state)",
+              "match": "(state)\\s+(\"[-\\w\\s]+\\b\")\\s+(as)\\s+([\\w-]+)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "string"
+                },
+                "3": {
+                  "name": "keyword.control.mermaid"
+                },
+                "4": {
+                  "name": "variable"
+                }
+              }
             }
           ],
           "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
