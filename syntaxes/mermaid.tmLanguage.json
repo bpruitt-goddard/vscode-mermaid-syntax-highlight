@@ -713,6 +713,64 @@
                   "name": "variable"
                 }
               }
+            },
+            {
+              "comment": "(state) --> (state) (:)? (transition text)?",
+              "begin": "([\\w-]+)\\s+(-->)",
+              "beginCaptures": {
+                "1": {
+                  "name": "variable"
+                },
+                "2": {
+                  "name": "keyword.control.mermaid"
+                }
+              },
+              "patterns": [
+                {
+                  "comment": "(state)",
+                  "match": "\\s+([\\w-]+)",
+                  "captures": {
+                    "1": {
+                      "name": "variable"
+                    }
+                  }
+                },
+                {
+                  "comment": "[*]",
+                  "match": "(\\[\\*\\])",
+                  "name": "keyword.control.mermaid"
+                }
+              ],
+              "end": "\\s*(:)?\\s*(\\s*[-\\w\\s]+\\b)?$",
+              "endCaptures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "string"
+                }
+              }
+            },
+            {
+              "comment": "[*] --> (state) (:)? (transition text)?",
+              "match": "(\\[\\*\\])\\s+(-->)\\s+([\\w-]+)\\s*(:)?\\s*(\\s*[-\\w\\s]+\\b)?",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "keyword.control.mermaid"
+                },
+                "3": {
+                  "name": "variable"
+                },
+                "4": {
+                  "name": "keyword.control.mermaid"
+                },
+                "5": {
+                  "name": "string"
+                }
+              }
             }
           ],
           "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"

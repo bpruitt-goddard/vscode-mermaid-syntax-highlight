@@ -228,7 +228,7 @@ stateDiagram %%comment
 
   s1 --> s2
   s2 --> s3: Colon transition
-  [*] --> s1
+  [*] --> s1 : Transition text
   s3 --> [*]
 
   [*] --> Composite
@@ -267,7 +267,7 @@ stateDiagram %%comment
 
 #### Progress
 - [x] States with description
-- [ ] Transition with text
+- [x] Transition with text
 - [ ] Composite states
 - [ ] Nested Composite states
 - [ ] Forks

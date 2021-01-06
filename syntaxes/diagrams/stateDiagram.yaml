@@ -36,4 +36,50 @@
         name: keyword.control.mermaid
       '4':
         name: variable
+  - comment: '(state) --> (state) (:)? (transition text)?'
+    begin: !regex |-
+      ([\w-]+) # state name
+      \s+(-->) # -->
+    beginCaptures:
+      '1':
+        name: variable
+      '2':
+        name: keyword.control.mermaid
+    patterns:
+    - comment: '(state)'
+      match: !regex |-
+        \s+([\w-]+) # state name
+      captures:
+        '1':
+          name: variable
+    - comment: '[*]'
+      match: (\[\*\])
+      name: keyword.control.mermaid
+    end: !regex |-
+        \s*(:)? # :
+        \s*(\s*[-\w\s]+\b)? # transition text
+        $ # end
+    endCaptures:
+      '1':
+        name: keyword.control.mermaid
+      '2':
+        name: string
+  - comment: '[*] --> (state) (:)? (transition text)?'
+    match: !regex |-
+      (\[\*\]) # [*]
+      \s+(-->) # -->
+      \s+([\w-]+) # state name
+      \s*(:)? # :
+      \s*(\s*[-\w\s]+\b)? # transition text
+    captures:
+      '1':
+        name: keyword.control.mermaid
+      '2':
+        name: keyword.control.mermaid
+      '3':
+        name: variable
+      '4':
+        name: keyword.control.mermaid
+      '5':
+        name: string
   end: (^|\G)(?=\s*[`~]{3,}\s*$)
