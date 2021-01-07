@@ -275,7 +275,7 @@ stateDiagram %%comment
 - [x] Transition with text
 - [x] Composite states
 - [x] Forks
-- [ ] Notes
+- [x] Notes
 - [ ] Concurrency
 - [ ] Comments
 

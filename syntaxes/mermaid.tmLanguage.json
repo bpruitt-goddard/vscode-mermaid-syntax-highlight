@@ -813,6 +813,43 @@
                   "name": "string"
                 }
               }
+            },
+            {
+              "comment": "note left|right of (state name)",
+              "match": "(note (?:left|right) of)\\s+([\\w-]+)\\s+(:)\\s*(\\s*[-\\w\\s]+\\b)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "variable"
+                },
+                "3": {
+                  "name": "keyword.control.mermaid"
+                },
+                "4": {
+                  "name": "string"
+                }
+              }
+            },
+            {
+              "comment": "note left|right of (state name)",
+              "begin": "(note (?:left|right) of)\\s+([\\w-]+)(.|\\n)",
+              "beginCaptures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "variable"
+                }
+              },
+              "contentName": "string",
+              "end": "(end note)",
+              "endCaptures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                }
+              }
             }
           ],
           "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
