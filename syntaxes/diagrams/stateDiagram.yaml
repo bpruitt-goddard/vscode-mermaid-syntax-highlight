@@ -6,6 +6,11 @@
   patterns:
   - match: \%%.*
     name: comment
+  - comment: '}'
+    match: \s+(})\s+
+    captures:
+      '1':
+        name: keyword.control.mermaid
   - comment: '(state)'
     match: ^\s*([\w-]+)$
     name: variable
@@ -21,21 +26,35 @@
         name: keyword.control.mermaid
       '3':
         name: string
-  - comment: 'state "(description)" as (state)'
-    match: !regex |-
+  - comment: 'state'
+    begin: !regex |-
       (state) # state
-      \s+("[-\w\s]+\b") # description
-      \s+(as) # as
-      \s+([\w-]+) # state name
-    captures:
+    beginCaptures:
       '1':
         name: keyword.control.mermaid
-      '2':
-        name: string
-      '3':
-        name: keyword.control.mermaid
-      '4':
-        name: variable
+    patterns:
+    - comment: '"(description)" as (state)'
+      match: !regex |-
+        \s+("[-\w\s]+\b") # description
+        \s+(as) # as
+        \s+([\w-]+) # state name
+      captures:
+        '1':
+          name: string
+        '2':
+          name: keyword.control.mermaid
+        '3':
+          name: variable
+    - comment: '(state name) {'
+      match: !regex |-
+        \s+([\w-]+) # state name
+        \s+({) # {
+      captures:
+        '1':
+          name: variable
+        '2':
+          name: keyword.control.mermaid
+    end: "$"
   - comment: '(state) --> (state) (:)? (transition text)?'
     begin: !regex |-
       ([\w-]+) # state name

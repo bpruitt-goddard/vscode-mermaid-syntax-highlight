@@ -677,6 +677,15 @@
               "name": "comment"
             },
             {
+              "comment": "}",
+              "match": "\\s+(})\\s+",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                }
+              }
+            },
+            {
               "comment": "(state)",
               "match": "^\\s*([\\w-]+)$",
               "name": "variable"
@@ -697,22 +706,43 @@
               }
             },
             {
-              "comment": "state \"(description)\" as (state)",
-              "match": "(state)\\s+(\"[-\\w\\s]+\\b\")\\s+(as)\\s+([\\w-]+)",
-              "captures": {
+              "comment": "state",
+              "begin": "(state)",
+              "beginCaptures": {
                 "1": {
                   "name": "keyword.control.mermaid"
-                },
-                "2": {
-                  "name": "string"
-                },
-                "3": {
-                  "name": "keyword.control.mermaid"
-                },
-                "4": {
-                  "name": "variable"
                 }
-              }
+              },
+              "patterns": [
+                {
+                  "comment": "\"(description)\" as (state)",
+                  "match": "\\s+(\"[-\\w\\s]+\\b\")\\s+(as)\\s+([\\w-]+)",
+                  "captures": {
+                    "1": {
+                      "name": "string"
+                    },
+                    "2": {
+                      "name": "keyword.control.mermaid"
+                    },
+                    "3": {
+                      "name": "variable"
+                    }
+                  }
+                },
+                {
+                  "comment": "(state name) {",
+                  "match": "\\s+([\\w-]+)\\s+({)",
+                  "captures": {
+                    "1": {
+                      "name": "variable"
+                    },
+                    "2": {
+                      "name": "keyword.control.mermaid"
+                    }
+                  }
+                }
+              ],
+              "end": "$"
             },
             {
               "comment": "(state) --> (state) (:)? (transition text)?",

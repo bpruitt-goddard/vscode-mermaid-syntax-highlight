@@ -231,28 +231,15 @@ stateDiagram %%comment
   [*] --> s1 : Transition text
   s3 --> [*]
 
-  [*] --> Composite
-  state Composite {
-      [*] --> second
-      second --> [*]
-  }
-
-  [*] --> NestedComposite
-
   state NestedComposite {
       [*] --> Nested
 
       state Nested {
           [*] --> second
-          second --> InnerMost
-
-          state InnerMost {
-              [*] --> third
-              third --> [*]
-          }
       }
   }
 
+  %% comment here
   state fork_state <<fork>>
       [*] --> fork_state
       fork_state --> State2
@@ -263,14 +250,34 @@ stateDiagram %%comment
       State3 --> join_state
       join_state --> State4
       State4 --> [*]
+
+  note right of State1
+    Important information! You can write
+    notes.
+  end note
+  State1 --> State2
+  note left of State2 : This is the note to the left.
+
+  %% concurrency
+  state Active {
+      [*] --> NumLockOff
+      NumLockOff --> NumLockOn : EvNumLockPressed
+      NumLockOn --> NumLockOff : EvNumLockPressed
+      --
+      [*] --> CapsLockOff
+      CapsLockOff --> CapsLockOn : EvCapsLockPressed
+      CapsLockOn --> CapsLockOff : EvCapsLockPressed
+  }
 ```
 
 #### Progress
 - [x] States with description
 - [x] Transition with text
-- [ ] Composite states
+- [x] Composite states
 - [ ] Nested Composite states
 - [ ] Forks
+- [ ] Notes
+- [ ] Concurrency
 - [ ] Comments
 
 
