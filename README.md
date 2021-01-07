@@ -274,8 +274,7 @@ stateDiagram %%comment
 - [x] States with description
 - [x] Transition with text
 - [x] Composite states
-- [ ] Nested Composite states
-- [ ] Forks
+- [x] Forks
 - [ ] Notes
 - [ ] Concurrency
 - [ ] Comments

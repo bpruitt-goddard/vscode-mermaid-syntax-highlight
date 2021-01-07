@@ -54,6 +54,15 @@
           name: variable
         '2':
           name: keyword.control.mermaid
+    - comment: '(state name) <<fork|join>>'
+      match: !regex |-
+        \s+([\w-]+) # state name
+        \s+(<<(?:fork|join)>>) # <<fork|join>>
+      captures:
+        '1':
+          name: variable
+        '2':
+          name: keyword.control.mermaid
     end: "$"
   - comment: '(state) --> (state) (:)? (transition text)?'
     begin: !regex |-

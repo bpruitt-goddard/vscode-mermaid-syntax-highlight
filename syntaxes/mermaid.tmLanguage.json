@@ -740,6 +740,18 @@
                       "name": "keyword.control.mermaid"
                     }
                   }
+                },
+                {
+                  "comment": "(state name) <<fork|join>>",
+                  "match": "\\s+([\\w-]+)\\s+(<<(?:fork|join)>>)",
+                  "captures": {
+                    "1": {
+                      "name": "variable"
+                    },
+                    "2": {
+                      "name": "keyword.control.mermaid"
+                    }
+                  }
                 }
               ],
               "end": "$"
