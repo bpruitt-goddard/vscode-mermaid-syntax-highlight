@@ -69,7 +69,7 @@
         '2':
           name: keyword.control.mermaid
     end: "$"
-  - comment: '(state) --> (state) (:)? (transition text)?'
+  - comment: '(state) -->'
     begin: !regex |-
       ([\w-]+) # state name
       \s+(-->) # -->
@@ -79,24 +79,31 @@
       '2':
         name: keyword.control.mermaid
     patterns:
-    - comment: '(state)'
+    - comment: '(state) (:)? (transition text)?'
       match: !regex |-
         \s+([\w-]+) # state name
+        \s*(:)? # :
+        \s*(\s*[-\w\s]+\b)? # transition text
       captures:
         '1':
           name: variable
-    - comment: '[*]'
-      match: (\[\*\])
-      name: keyword.control.mermaid
-    end: !regex |-
+        '2':
+          name: keyword.control.mermaid
+        '3':
+          name: string
+    - comment: '[*] (:)? (transition text)?'
+      match: !regex |-
+        (\[\*\]) # [*]
         \s*(:)? # :
         \s*(\s*[-\w\s]+\b)? # transition text
-        $ # end
-    endCaptures:
-      '1':
-        name: keyword.control.mermaid
-      '2':
-        name: string
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: keyword.control.mermaid
+        '3':
+          name: string
+    end: $
   - comment: '[*] --> (state) (:)? (transition text)?'
     match: !regex |-
       (\[\*\]) # [*]

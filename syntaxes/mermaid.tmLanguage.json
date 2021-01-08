@@ -766,7 +766,7 @@
               "end": "$"
             },
             {
-              "comment": "(state) --> (state) (:)? (transition text)?",
+              "comment": "(state) -->",
               "begin": "([\\w-]+)\\s+(-->)",
               "beginCaptures": {
                 "1": {
@@ -778,29 +778,37 @@
               },
               "patterns": [
                 {
-                  "comment": "(state)",
-                  "match": "\\s+([\\w-]+)",
+                  "comment": "(state) (:)? (transition text)?",
+                  "match": "\\s+([\\w-]+)\\s*(:)?\\s*(\\s*[-\\w\\s]+\\b)?",
                   "captures": {
                     "1": {
                       "name": "variable"
+                    },
+                    "2": {
+                      "name": "keyword.control.mermaid"
+                    },
+                    "3": {
+                      "name": "string"
                     }
                   }
                 },
                 {
-                  "comment": "[*]",
-                  "match": "(\\[\\*\\])",
-                  "name": "keyword.control.mermaid"
+                  "comment": "[*] (:)? (transition text)?",
+                  "match": "(\\[\\*\\])\\s*(:)?\\s*(\\s*[-\\w\\s]+\\b)?",
+                  "captures": {
+                    "1": {
+                      "name": "keyword.control.mermaid"
+                    },
+                    "2": {
+                      "name": "keyword.control.mermaid"
+                    },
+                    "3": {
+                      "name": "string"
+                    }
+                  }
                 }
               ],
-              "end": "\\s*(:)?\\s*(\\s*[-\\w\\s]+\\b)?$",
-              "endCaptures": {
-                "1": {
-                  "name": "keyword.control.mermaid"
-                },
-                "2": {
-                  "name": "string"
-                }
-              }
+              "end": "$"
             },
             {
               "comment": "[*] --> (state) (:)? (transition text)?",
