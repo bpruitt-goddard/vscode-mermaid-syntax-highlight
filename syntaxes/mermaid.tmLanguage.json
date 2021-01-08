@@ -662,6 +662,214 @@
             }
           ],
           "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
+        },
+        {
+          "comment": "State Diagram",
+          "begin": "\\b(stateDiagram)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.mermaid"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\\%%.*",
+              "name": "comment"
+            },
+            {
+              "comment": "}",
+              "match": "\\s+(})\\s+",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                }
+              }
+            },
+            {
+              "comment": "--",
+              "match": "\\s+(--)\\s+",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                }
+              }
+            },
+            {
+              "comment": "(state)",
+              "match": "^\\s*([\\w-]+)$",
+              "name": "variable"
+            },
+            {
+              "comment": "(state) : (description)",
+              "match": "([\\w-]+)\\s+(:)\\s+(\\s*[-\\w\\s]+\\b)",
+              "captures": {
+                "1": {
+                  "name": "variable"
+                },
+                "2": {
+                  "name": "keyword.control.mermaid"
+                },
+                "3": {
+                  "name": "string"
+                }
+              }
+            },
+            {
+              "comment": "state",
+              "begin": "(state)",
+              "beginCaptures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                }
+              },
+              "patterns": [
+                {
+                  "comment": "\"(description)\" as (state)",
+                  "match": "\\s+(\"[-\\w\\s]+\\b\")\\s+(as)\\s+([\\w-]+)",
+                  "captures": {
+                    "1": {
+                      "name": "string"
+                    },
+                    "2": {
+                      "name": "keyword.control.mermaid"
+                    },
+                    "3": {
+                      "name": "variable"
+                    }
+                  }
+                },
+                {
+                  "comment": "(state name) {",
+                  "match": "\\s+([\\w-]+)\\s+({)",
+                  "captures": {
+                    "1": {
+                      "name": "variable"
+                    },
+                    "2": {
+                      "name": "keyword.control.mermaid"
+                    }
+                  }
+                },
+                {
+                  "comment": "(state name) <<fork|join>>",
+                  "match": "\\s+([\\w-]+)\\s+(<<(?:fork|join)>>)",
+                  "captures": {
+                    "1": {
+                      "name": "variable"
+                    },
+                    "2": {
+                      "name": "keyword.control.mermaid"
+                    }
+                  }
+                }
+              ],
+              "end": "$"
+            },
+            {
+              "comment": "(state) -->",
+              "begin": "([\\w-]+)\\s+(-->)",
+              "beginCaptures": {
+                "1": {
+                  "name": "variable"
+                },
+                "2": {
+                  "name": "keyword.control.mermaid"
+                }
+              },
+              "patterns": [
+                {
+                  "comment": "(state) (:)? (transition text)?",
+                  "match": "\\s+([\\w-]+)\\s*(:)?\\s*(\\s*[-\\w\\s]+\\b)?",
+                  "captures": {
+                    "1": {
+                      "name": "variable"
+                    },
+                    "2": {
+                      "name": "keyword.control.mermaid"
+                    },
+                    "3": {
+                      "name": "string"
+                    }
+                  }
+                },
+                {
+                  "comment": "[*] (:)? (transition text)?",
+                  "match": "(\\[\\*\\])\\s*(:)?\\s*(\\s*[-\\w\\s]+\\b)?",
+                  "captures": {
+                    "1": {
+                      "name": "keyword.control.mermaid"
+                    },
+                    "2": {
+                      "name": "keyword.control.mermaid"
+                    },
+                    "3": {
+                      "name": "string"
+                    }
+                  }
+                }
+              ],
+              "end": "$"
+            },
+            {
+              "comment": "[*] --> (state) (:)? (transition text)?",
+              "match": "(\\[\\*\\])\\s+(-->)\\s+([\\w-]+)\\s*(:)?\\s*(\\s*[-\\w\\s]+\\b)?",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "keyword.control.mermaid"
+                },
+                "3": {
+                  "name": "variable"
+                },
+                "4": {
+                  "name": "keyword.control.mermaid"
+                },
+                "5": {
+                  "name": "string"
+                }
+              }
+            },
+            {
+              "comment": "note left|right of (state name)",
+              "match": "(note (?:left|right) of)\\s+([\\w-]+)\\s+(:)\\s*(\\s*[-\\w\\s]+\\b)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "variable"
+                },
+                "3": {
+                  "name": "keyword.control.mermaid"
+                },
+                "4": {
+                  "name": "string"
+                }
+              }
+            },
+            {
+              "comment": "note left|right of (state name) (note text) end note",
+              "begin": "(note (?:left|right) of)\\s+([\\w-]+)(.|\\n)",
+              "beginCaptures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "variable"
+                }
+              },
+              "contentName": "string",
+              "end": "(end note)",
+              "endCaptures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                }
+              }
+            }
+          ],
+          "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)"
         }
       ]
     }

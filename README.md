@@ -217,6 +217,64 @@ classDiagram
 - [x] Class relationships
 - [x] Annotations
 
+### State Diagram
+<img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/stateDiagram.png" alt="State Diagram Screenshot" width="500">
+
+```mermaid
+stateDiagram %%comment
+  s1
+  state "Description with parenthesis" as s2
+  s3 : Description with colon
+
+  s1 --> s2
+  s2 --> s3: Colon transition
+  [*] --> s1 : Transition text
+  s3 --> [*]
+
+  state NestedComposite {
+      [*] --> Nested
+
+      state Nested {
+          [*] --> second
+      }
+  }
+
+  %% comment here
+  state fork_state <<fork>>
+      [*] --> fork_state
+      fork_state --> State2
+
+      state join_state <<join>>
+      State2 --> join_state
+
+  note right of State1
+    Important information! You can write
+    notes.
+  end note
+  note left of State2 : This is the note to the left.
+
+  %% concurrency
+  state Active {
+      [*] --> NumLockOff
+      NumLockOff --> NumLockOn : EvNumLockPressed
+      NumLockOn --> NumLockOff : EvNumLockPressed
+      --
+      [*] --> CapsLockOff
+      CapsLockOff --> CapsLockOn : EvCapsLockPressed
+      CapsLockOn --> CapsLockOff : EvCapsLockPressed
+  }
+```
+
+#### Progress
+- [x] States with description
+- [x] Transition with text
+- [x] Composite states
+- [x] Forks
+- [x] Notes
+- [x] Concurrency
+- [x] Comments
+
+
 ## Initial Idea
 
 Based on the starter language support repo [here](https://github.com/mjbvz/vscode-fenced-code-block-grammar-injection-example), and initially created based on the Atom language support [here](https://github.com/ytisf/language-mermaid).
