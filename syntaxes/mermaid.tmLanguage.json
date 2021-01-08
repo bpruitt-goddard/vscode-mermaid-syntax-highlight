@@ -686,6 +686,15 @@
               }
             },
             {
+              "comment": "--",
+              "match": "\\s+(--)\\s+",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                }
+              }
+            },
+            {
               "comment": "(state)",
               "match": "^\\s*([\\w-]+)$",
               "name": "variable"
@@ -833,7 +842,7 @@
               }
             },
             {
-              "comment": "note left|right of (state name)",
+              "comment": "note left|right of (state name) (note text) end note",
               "begin": "(note (?:left|right) of)\\s+([\\w-]+)(.|\\n)",
               "beginCaptures": {
                 "1": {

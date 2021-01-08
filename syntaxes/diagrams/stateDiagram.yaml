@@ -11,6 +11,11 @@
     captures:
       '1':
         name: keyword.control.mermaid
+  - comment: '--'
+    match: \s+(--)\s+
+    captures:
+      '1':
+        name: keyword.control.mermaid
   - comment: '(state)'
     match: ^\s*([\w-]+)$
     name: variable

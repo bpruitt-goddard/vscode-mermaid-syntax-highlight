@@ -276,7 +276,7 @@ stateDiagram %%comment
 - [x] Composite states
 - [x] Forks
 - [x] Notes
-- [ ] Concurrency
+- [x] Concurrency
 - [ ] Comments
 
 
