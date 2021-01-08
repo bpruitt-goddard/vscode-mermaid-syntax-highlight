@@ -243,19 +243,14 @@ stateDiagram %%comment
   state fork_state <<fork>>
       [*] --> fork_state
       fork_state --> State2
-      fork_state --> State3
 
       state join_state <<join>>
       State2 --> join_state
-      State3 --> join_state
-      join_state --> State4
-      State4 --> [*]
 
   note right of State1
     Important information! You can write
     notes.
   end note
-  State1 --> State2
   note left of State2 : This is the note to the left.
 
   %% concurrency
@@ -277,7 +272,7 @@ stateDiagram %%comment
 - [x] Forks
 - [x] Notes
 - [x] Concurrency
-- [ ] Comments
+- [x] Comments
 
 
 ## Initial Idea
