@@ -24,7 +24,7 @@
   - comment: '(Actor)(Arrow)(Actor)(:)(Message)'
     match: !regex |-
       \s*(\b[-\w]+\b\s*) # Actor
-      (-?-(?:\>|x)\>?[+-]?) # Arrow
+      (-?-(?:\>|x|\))\>?[+-]?) # Arrow
       (\s*[-\w]+\b) # Actor
       (:) # :
       (.*) # Message
