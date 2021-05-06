@@ -73,7 +73,7 @@ sequenceDiagram %% diagram
   autonumber
   %% participant
   participant Alice
-  participant B as Bob\nNewline
+  participant B as Bob<br>Newline
   participant C as Carol
   %% arrows
   B->C: Solid line without arrow
