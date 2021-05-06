@@ -1,4 +1,5 @@
 # vscode-mermaid-syntax-highlight
+
 Syntax support for the [Mermaid charting language](https://github.com/knsv/mermaid)
 
 [![Version](https://vsmarketplacebadge.apphb.com/version/bpruitt-goddard.mermaid-markdown-syntax-highlighting.svg)](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting) [![Installs](https://vsmarketplacebadge.apphb.com/installs/bpruitt-goddard.mermaid-markdown-syntax-highlighting.svg)](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting) [![Ratings](https://vsmarketplacebadge.apphb.com/rating/bpruitt-goddard.mermaid-markdown-syntax-highlighting.svg)](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting)
@@ -8,6 +9,7 @@ Supports both fenced markdown (see screenshots), and mmd files.
 ## Screenshots/Progress
 
 ### Graph
+
 <img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/graph.png" alt="Graph Screenshot" width="500">
 
 ```mermaid
@@ -63,33 +65,36 @@ graph TB %% comments
 - [x] click
 
 ### Sequence
+
 <img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/sequenceDiagram.png" alt="Sequence Diagram Screenshot" width="500">
 
 ```mermaid
 sequenceDiagram %% diagram
+  autonumber
   %% participant
   participant Alice
-  participant B as Bob</br>Newline
+  participant B as Bob<br>Newline
   participant C as Carol
   %% arrows
   B->C: Solid line without arrow
   B-->C: Dotted line without arrow
   B->>C:Solid line with arrowhead
   B-->>C: Dotted line with arrowhead
+  B-)C: Solid line with Async arrow
+  B--)C: Dotted line with Async arrow
   B-xC: Solid line with a cross at end
   B--xC: Dotted line with a cross at end
-  %% activations
-  activate John
-  deactivate John
-  %% activation shorthand
-  Bob->>+Carol: Hello Carol, how are you?
-  B-->>-C: Great!
+  %% activation, shorthand
+  activate Alice
+  B->>+C: Arrow with + that activates Carol
+  C->>-B: Arrow with - that deactivates Carol
+  deactivate Alice
   %% notes
   Note left of Alice: Alice likes to chat
   Note over B,C: Bob whispers when sick
   %% loop
   loop Every minute
-        B-->C: Can you hear me?
+    B-->C: Can you hear me?
   end
   %% alt
   alt is sick
@@ -100,6 +105,15 @@ sequenceDiagram %% diagram
   opt Extra response
     B->C: You, Carol?
   end
+  %% par
+  par Action 1
+    B-->C: I'm good
+  and Action 2
+    B->>C: I'm better now
+  end
+  rect rgba(128, 128, 128, 0.5)
+    B->>C: So colourful!
+  end
 ```
 
 - [x] Keywords
@@ -107,7 +121,7 @@ sequenceDiagram %% diagram
 - [x] participant Actor
 - [x] participant Aliases
 - [x] Actor->>Actor: Message
-- [x] 6 arrow types
+- [x] 8 arrow types
 - [x] (de)activate Actor
 - [x] activate/deactivate shorthand (+/-)
 - [x] Note Action Actor
@@ -115,8 +129,12 @@ sequenceDiagram %% diagram
 - [x] loop
 - [x] alt
 - [x] alt optional
+- [x] rect
+- [x] par
+- [x] autonumber
 
 ### Gantt
+
 <img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/ganttDiagram.png" alt="Gantt Diagram Screenshot" width="500">
 
 ```mermaid
@@ -148,6 +166,7 @@ gantt %%comment
 - [x] task
 
 ### Pie
+
 <img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/pieChart.png" alt="Pie Chart Screenshot" width="500">
 
 ```mermaid
@@ -163,6 +182,7 @@ pie
 - [x] Data Sets
 
 ### Class Diagram
+
 <img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/classDiagram.png" alt="Class Diagram Screenshot" width="500">
 
 ```mermaid
@@ -218,6 +238,7 @@ classDiagram
 - [x] Annotations
 
 ### State Diagram
+
 <img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/stateDiagram.png" alt="State Diagram Screenshot" width="500">
 
 ```mermaid
@@ -266,6 +287,7 @@ stateDiagram %%comment
 ```
 
 #### Progress
+
 - [x] States with description
 - [x] Transition with text
 - [x] Composite states
@@ -273,7 +295,6 @@ stateDiagram %%comment
 - [x] Notes
 - [x] Concurrency
 - [x] Comments
-
 
 ## Initial Idea
 
@@ -291,7 +312,7 @@ Based on the starter language support repo [here](https://github.com/mjbvz/vscod
 
 The grammars for each digaram type reside in `syntaxes/diagrams` in separate files. Only make changes to these files. The complete file `mermaid.tmLanguage.json` is required for the extension and is generated. To generate the json file run:
 
-```npm run convertYaml```
+`npm run convertYaml`
 
 To test the theme locally, uninstall the theme from the marketplace and clone this repository directly into the vscode extensions folder. Any changes can be seen after running the `Reload Window` command in vs code.
 
@@ -307,6 +328,7 @@ reg: !regex |-
 ```
 
 Becomes:
+
 ```json
 {
   "reg": "\\s*(class)\\s+(\\b[-,\\w]+)\\s+"
@@ -314,6 +336,7 @@ Becomes:
 ```
 
 Instead of:
+
 ```json
 {
   "reg": "# Comment\n\\s*(class)\\s+ # explanation\n(\\b[-,\\w]+)\\s+ # comment"
