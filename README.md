@@ -310,11 +310,15 @@ Based on the starter language support repo [here](https://github.com/mjbvz/vscod
 
 ## Building
 
-The grammars for each digaram type reside in `syntaxes/diagrams` in separate files. Only make changes to these files. The complete file `mermaid.tmLanguage.json` is required for the extension and is generated. To generate the json file run:
+The grammars for each diagram type reside in `syntaxes/diagrams` in separate files.
 
-`npm run convertYaml`
-
-To test the theme locally, uninstall the theme from the marketplace and clone this repository directly into the vscode extensions folder. Any changes can be seen after running the `Reload Window` command in vs code.
+To test changes locally:
+1. Build the theme and create the vsix package by running:
+```sh
+npm install
+vsce package
+```
+2. Install the theme locally by using the `Install from VSIX` command. This may require reloading VS Code to see the changes.
 
 ## Developing
 
