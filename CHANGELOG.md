@@ -30,3 +30,10 @@
 
 ### [v1.2.0]
 - Add state diagram support
+
+### [v1.2.1]
+- Update sequence diagram support with:
+    - Async arrows
+    - Autonumber
+    - Par blocks
+    - Rect (color) blocks
