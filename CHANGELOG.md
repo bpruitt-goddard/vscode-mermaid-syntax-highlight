@@ -37,3 +37,6 @@
     - Autonumber
     - Par blocks
     - Rect (color) blocks
+
+### [v1.2.2]
+- Fix bug in new prepublish build step causing extension to break
