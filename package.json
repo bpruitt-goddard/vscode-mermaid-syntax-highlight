@@ -50,7 +50,7 @@
 		"mermaid"
 	],
 	"scripts": {
-		"prepublish": "npm run convertYaml",
+		"vscode:prepublish": "npm run convertYaml",
 		"convertYaml": "node build/ConvertYaml.js"
 	},
 	"devDependencies": {
