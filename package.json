@@ -2,7 +2,7 @@
 	"name": "mermaid-markdown-syntax-highlighting",
 	"displayName": "Mermaid Markdown Syntax Highlighting",
 	"description": "Markdown syntax support for the Mermaid charting language",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"publisher": "bpruitt-goddard",
 	"license": "MIT",
 	"engines": {
@@ -50,7 +50,7 @@
 		"mermaid"
 	],
 	"scripts": {
-		"prepublish": "npm run convertYaml",
+		"vscode:prepublish": "npm run convertYaml",
 		"convertYaml": "node build/ConvertYaml.js"
 	},
 	"devDependencies": {
