@@ -16,7 +16,8 @@
 			{
 				"id": "Mermaid",
 				"extensions": [
-					".mmd"
+					".mmd",
+					".mermaid"
 				]
 			}
 		],
