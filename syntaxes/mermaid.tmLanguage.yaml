@@ -6,8 +6,8 @@ patterns:
   - include: '#mermaid'
 repository:
   mermaid-code-block:
-    begin: (?<=[`~])mermaid(\s+[^`~]*)?$
-    end: (^|\G)(?=\s*[`~]{3,}\s*$)
+    begin: (?<=[`~])mermaid(\s+[^`~]*)?$|<div class=['"]mermaid['"]>$
+    end: (^|\G)(?=\s*[`~]{3,}\s*$|</div>$)
     patterns:
       - include: '#mermaid'
   mermaid:
