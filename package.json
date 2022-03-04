@@ -14,7 +14,7 @@
 	"contributes": {
 		"languages": [
 			{
-				"id": "Mermaid",
+				"id": "mermaid",
 				"extensions": [
 					".mmd"
 				]
@@ -22,7 +22,7 @@
 		],
 		"grammars": [
 			{
-				"language": "Mermaid",
+				"language": "mermaid",
 				"scopeName": "markdown.mermaid.codeblock",
 				"path": "./out/mermaid.tmLanguage.json"
 			},
