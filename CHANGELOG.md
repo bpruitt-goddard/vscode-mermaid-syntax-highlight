@@ -40,3 +40,7 @@
 
 ### [v1.2.2]
 - Fix bug in new prepublish build step causing extension to break
+
+### [v1.2.3]
+- Fix bug preventing .mmd files from being properly highlighted
+- Add support in graphs for nodes with id only
