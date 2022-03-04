@@ -25,6 +25,7 @@ graph TB %% comments
   ID-2--Link between 2 and 3---ID-3
   ID-3-->|Action from 3 to 1|ID-1
   ID-3 -- "Action from 3 to 2. p/w: '_-!#$%^&*+=?,\'" --> ID-2
+  ID-4 
   %% Complex cases
   A[Hard edge] -->|Link text| B(Round edge)
   ID-1---ID-2(Text)

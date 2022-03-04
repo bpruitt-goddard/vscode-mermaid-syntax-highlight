@@ -122,6 +122,8 @@
         '7':
           name: keyword.control.mermaid
     end: "$"
+  - match: (\b[-\w]+\b\s*)
+    name: variable
   - comment: '(Class)(Node(s))(ClassName)'
     match: !regex |-
       \s*(class) # class
