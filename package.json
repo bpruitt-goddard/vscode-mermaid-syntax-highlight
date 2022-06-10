@@ -24,18 +24,23 @@
 			{
 				"language": "mermaid",
 				"scopeName": "markdown.mermaid.codeblock",
-				"path": "./out/mermaid.tmLanguage.json"
+				"path": "./out/mermaid.tmLanguage-markdown.json"
 			},
 			{
 				"scopeName": "markdown.mermaid.codeblock",
-				"path": "./out/mermaid.tmLanguage.json",
+				"path": "./out/mermaid.tmLanguage-markdown.json",
 				"injectTo": [
 					"text.html.markdown"
 				],
 				"embeddedLanguages": {
 					"meta.embedded.block.mermaid": "Mermaid"
 				}
-			}
+			},
+			{
+				"language": "mermaid",
+				"scopeName": "source.mermaid",
+				"path": "./out/mermaid.tmLanguage.json"
+			}	
 		]
 	},
 	"bugs": {
