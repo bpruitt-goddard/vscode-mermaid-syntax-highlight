@@ -297,6 +297,18 @@ stateDiagram %%comment
 - [x] Concurrency
 - [x] Comments
 
+
+### ADO Support
+
+Supports highlighting in Azure Dev Ops (ADO) colon syntax:
+
+<img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/adoSyntax.png" alt="ADO Syntax Screenshot" width="150">
+
+::: mermaid
+graph LR
+  A --> B
+:::
+
 ## Initial Idea
 
 Based on the starter language support repo [here](https://github.com/mjbvz/vscode-fenced-code-block-grammar-injection-example), and initially created based on the Atom language support [here](https://github.com/ytisf/language-mermaid).
