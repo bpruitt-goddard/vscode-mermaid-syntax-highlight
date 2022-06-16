@@ -298,6 +298,39 @@ stateDiagram %%comment
 - [x] Comments
 
 
+### Entity Relationship Diagrams
+
+<img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/erDiagram.png" alt="Entity Relationship Diagram Screenshot" width="500">
+
+```mermaid
+erDiagram %% comment
+    %% entities
+    ANOTHER-ENTITY1
+    attribute-entity {
+      string name
+      int number
+      foo another-attribute "attribute comment"
+      guid foreign-key FK "attribute comment"
+      guid primary-key PK
+    }
+    %% relationships
+    ANOTHER-ENTITY1 |o..o| ORDER : zero-or-one
+    ANOTHER-ENTITY1 ||--|| ORDER : exactly-one
+    ANOTHER-ENTITY1 }o--o{ ORDER : zero-or-more
+    ANOTHER-ENTITY1 }|..|{ ORDER : one-or-more
+    ANOTHER-ENTITY1 }|..|{ OTHER : ""
+    ANOTHER-ENTITY1 }|..|{ OTHER : "multiple words"
+```
+
+
+#### Progress
+
+- [] Entities
+- [] Comments
+- [] Entity Attributes (and keys/comments)
+- [] Relationships (and labels)
+
+
 ### ADO Support
 
 Supports highlighting in Azure Dev Ops (ADO) colon syntax:
