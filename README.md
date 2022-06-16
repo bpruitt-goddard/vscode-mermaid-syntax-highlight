@@ -322,13 +322,12 @@ erDiagram %% comment
     ANOTHER-ENTITY1 }|..|{ OTHER : "multiple words"
 ```
 
-
 #### Progress
 
 - [x] Entities
 - [x] Comments
 - [x] Entity Attributes (and keys/comments)
-- [] Relationships (and labels)
+- [x] Relationships (and labels)
 
 
 ### ADO Support

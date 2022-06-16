@@ -38,5 +38,23 @@
     endCaptures:
       '1':
         name: keyword.control.mermaid
+  - comment: '(entity) (relationship) (entity) : (label)'
+    match: !regex |-
+        \s*([\w-]+)\s+ # entity
+        ((?:\|o|\|\||}o|}\|)(?:..|--)(?:o\||\|\||o{|\|{))\s+ # relationship
+        ([\w-]+)\s+ # entity
+        (:)\s+ # :
+        ((?:"[\w\s]*")|(?:[\w-]+)) # label
+    captures:
+      '1':
+        name: variable
+      '2':
+        name: keyword.control.mermaid
+      '3':
+        name: variable
+      '4':
+        name: keyword.control.mermaid
+      '5':
+        name: string
   end: (^|\G)(?=\s*[`~]{3,}\s*$)
   
