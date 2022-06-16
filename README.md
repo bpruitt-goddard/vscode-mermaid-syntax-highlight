@@ -310,8 +310,8 @@ erDiagram %% comment
       string name
       int number
       foo another-attribute "attribute comment"
-      guid foreign-key FK "attribute comment"
-      guid primary-key PK
+      guid foreign-key FK "comment special characters '_-!#$%^&*+=?,\'"
+      guid primary-key PK ""
     }
     %% relationships
     ANOTHER-ENTITY1 |o..o| ORDER : zero-or-one
@@ -325,9 +325,9 @@ erDiagram %% comment
 
 #### Progress
 
-- [] Entities
+- [x] Entities
 - [x] Comments
-- [] Entity Attributes (and keys/comments)
+- [x] Entity Attributes (and keys/comments)
 - [] Relationships (and labels)
 
 

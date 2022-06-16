@@ -6,4 +6,37 @@
   patterns:
   - match: \%%.*
     name: comment
+  - comment: '(entity)'
+    match: ^\s*([\w-]+)$
+    name: variable
+  - comment: '(entity) {'
+    begin: !regex |-
+        \s+([\w-]+) # entity name
+        \s+({) # {
+    beginCaptures:
+      '1':
+        name: variable
+      '2':
+        name: keyword.control.mermaid
+    patterns:
+    - comment: '(type) (name) (PK|FK)? ("comment")?'
+      match: !regex |-
+          \s*([\w-]+)\s+ # type
+          ([\w-]+)\s+ # name
+          (PK|FK)?\s* # key?
+          ("["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*")?\s* # comment?
+      captures:
+        '1':
+          name: storage.type.mermaid
+        '2':
+          name: variable
+        '3':
+          name: keyword.control.mermaid
+        '4':
+          name: string
+    end: (})
+    endCaptures:
+      '1':
+        name: keyword.control.mermaid
   end: (^|\G)(?=\s*[`~]{3,}\s*$)
+  
