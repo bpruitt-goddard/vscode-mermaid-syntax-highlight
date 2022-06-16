@@ -44,3 +44,9 @@
 ### [v1.2.3]
 - Fix bug preventing .mmd files from being properly highlighted
 - Add support in graphs for nodes with id only
+
+### [v1.2.4]
+- Add ADO syntax support
+
+### [v1.3.0]
+- Add entity relationship diagram support
