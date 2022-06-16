@@ -326,7 +326,7 @@ erDiagram %% comment
 #### Progress
 
 - [] Entities
-- [] Comments
+- [x] Comments
 - [] Entity Attributes (and keys/comments)
 - [] Relationships (and labels)
 
