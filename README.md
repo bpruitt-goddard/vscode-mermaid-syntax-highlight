@@ -191,6 +191,8 @@ classDiagram
   Animal <|-- Duck : LabelText
   class1 --o other
   Animal --o Fish
+  Animal *-- classD
+  Animal o-- ClassD : Aggregation
   Animal : +int age
   Animal : +String gender
   Animal: mate()
