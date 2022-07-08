@@ -50,3 +50,6 @@
 
 ### [v1.3.0]
 - Add entity relationship diagram support
+
+### [v1.3.1]
+- Add classDiagram reversed arrow support
