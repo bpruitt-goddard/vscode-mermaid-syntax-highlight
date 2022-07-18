@@ -1,0 +1,179 @@
+%% SYNTAX TEST "source.mermaid" "sequence diagram test"
+
+sequenceDiagram
+%% <-------------- keyword.control.mermaid
+  autonumber
+%%^^^^^^^^^^ keyword.control.mermaid
+  %% participant
+  participant Alice
+%%^^^^^^^^^^^ keyword.control.mermaid
+%%            ^^^^^ variable
+  participant B as Bob<br>Newline
+%%^^^^^^^^^^^ keyword.control.mermaid
+%%            ^ variable 
+%%              ^^ keyword.control.mermaid 
+%%                 ^^^^^^^^^^^^^^ string
+  participant C as Carol
+%%^^^^^^^^^^^ keyword.control.mermaid
+%%            ^ variable 
+%%              ^^ keyword.control.mermaid 
+%%                 ^^^^^ string
+  %% arrows
+  B->C: Solid line without arrow
+%%^ variable
+%% ^^ keyword.control.mermaid
+%%   ^ variable
+%%    ^ keyword.control.mermaid 
+%%      ^^^^^^^^^^^^^^^^^^^^^^^^ string
+  B-->C: Dotted line without arrow
+%%^ variable
+%% ^^^ keyword.control.mermaid
+%%    ^ variable
+%%     ^ keyword.control.mermaid 
+%%       ^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  B->>C:Solid line with arrowhead
+%%^ variable
+%% ^^^ keyword.control.mermaid
+%%    ^ variable
+%%     ^ keyword.control.mermaid 
+%%      ^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  B-->>C: Dotted line with arrowhead
+%%^ variable
+%% ^^^^ keyword.control.mermaid
+%%     ^ variable
+%%      ^ keyword.control.mermaid 
+%%        ^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  B-)C: Solid line with Async arrow
+%%^ variable
+%% ^^ keyword.control.mermaid
+%%   ^ variable
+%%    ^ keyword.control.mermaid 
+%%      ^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  B--)C: Dotted line with Async arrow
+%%^ variable
+%% ^^^ keyword.control.mermaid
+%%    ^ variable
+%%     ^ keyword.control.mermaid 
+%%       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  B-xC: Solid line with a cross at end
+%%^ variable
+%% ^^ keyword.control.mermaid
+%%   ^ variable
+%%    ^ keyword.control.mermaid 
+%%      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  B--xC: Dotted line with a cross at end
+%%^ variable
+%% ^^^ keyword.control.mermaid
+%%    ^ variable
+%%     ^ keyword.control.mermaid 
+%%       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  %% activation, shorthand
+  activate Alice
+%%^^^^^^^^ keyword.control.mermaid
+%%         ^^^^^ variable
+  B->>+C: Arrow with + that activates Carol
+%%^ variable
+%% ^^^^ keyword.control.mermaid
+%%     ^ variable
+%%      ^ keyword.control.mermaid 
+%%        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  C->>-B: Arrow with - that deactivates Carol
+%%^ variable
+%% ^^^^ keyword.control.mermaid
+%%     ^ variable
+%%      ^ keyword.control.mermaid 
+%%        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  deactivate Alice
+%%^^^^^^^^^^ keyword.control.mermaid
+%%           ^^^^^ variable
+  %% notes
+  Note left of Alice: Alice likes to chat
+%%^^^^ keyword.control.mermaid
+%%     ^^^^^^^ entity.name.function.mermaid
+%%             ^^^^^ variable
+%%                  ^ keyword.control.mermaid 
+%%                    ^^^^^^^^^^^^^^^^^^^ string
+  Note over B,C: Bob whispers when sick
+%%^^^^ keyword.control.mermaid
+%%     ^^^^ entity.name.function.mermaid
+%%          ^ variable
+%%           ^ keyword.control.mermaid
+%%            ^ variable
+%%             ^ keyword.control.mermaid 
+%%               ^^^^^^^^^^^^^^^^^^^^^^ string
+  %% loop
+  loop Every minute
+%%^^^^ keyword.control.mermaid
+%%     ^^^^^^^^^^^^ string
+    B-->C: Can you hear me?
+%%  ^ variable
+%%   ^^^ keyword.control.mermaid
+%%      ^ variable
+%%       ^ keyword.control.mermaid 
+%%         ^^^^^^^^^^^^^^^^ string
+  end
+%%^^^ keyword.control.mermaid
+  %% alt
+  alt is sick
+%%^^^ keyword.control.mermaid
+%%    ^^^^^^^ string
+    B-->C: Not so good :(
+%%  ^ variable
+%%   ^^^ keyword.control.mermaid
+%%      ^ variable
+%%       ^ keyword.control.mermaid
+%%         ^^^^^^^^^^^^^^ string
+  else is well
+%%^^^^ keyword.control.mermaid
+%%     ^^^^^^^ string
+    B->C: Feeling fresh like a daisy
+%%  ^ variable
+%%   ^^ keyword.control.mermaid
+%%     ^ variable
+%%      ^ keyword.control.mermaid
+%%        ^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  end
+%%^^^ keyword.control.mermaid
+  opt Extra response
+%%^^^ keyword.control.mermaid
+%%    ^^^^^^^^^^^^^^ string
+    B->C: You, Carol?
+%%  ^ variable
+%%   ^^ keyword.control.mermaid
+%%     ^ variable
+%%      ^ keyword.control.mermaid
+%%        ^^^^^^^^^^^ string
+  end
+%%^^^ keyword.control.mermaid
+  %% par
+  par Action 1
+%%^^^ keyword.control.mermaid
+%%    ^^^^^^^^ string
+    B-->C: I'm good
+%%  ^ variable
+%%   ^^^ keyword.control.mermaid
+%%      ^ variable
+%%       ^ keyword.control.mermaid
+%%         ^^^^^^^^ string
+  and Action 2
+%%^^^ keyword.control.mermaid
+%%    ^^^^^^^^ string
+    B->>C: I'm better now
+%%  ^ variable
+%%   ^^^ keyword.control.mermaid
+%%      ^ variable
+%%       ^ keyword.control.mermaid
+%%         ^^^^^^^^^^^^^^ string
+  end
+%%^^^ keyword.control.mermaid
+  rect rgba(128, 128, 128, 0.5)
+%%^^^^ keyword.control.mermaid
+%%     ^^^^^^^^^^^^^^^^^^^^^^^^ string
+    B->>C: So colourful!
+%%  ^ variable
+%%   ^^^ keyword.control.mermaid
+%%      ^ variable
+%%       ^ keyword.control.mermaid
+%%         ^^^^^^^^^^^^^ string
+end
+%% <--- keyword.control.mermaid
