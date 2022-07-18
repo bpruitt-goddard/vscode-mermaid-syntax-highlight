@@ -40,7 +40,7 @@
 				"language": "mermaid",
 				"scopeName": "source.mermaid",
 				"path": "./out/mermaid.tmLanguage.json"
-			}	
+			}
 		]
 	},
 	"bugs": {
@@ -56,10 +56,12 @@
 	],
 	"scripts": {
 		"vscode:prepublish": "npm run convertYaml",
-		"convertYaml": "node build/ConvertYaml.js"
+		"convertYaml": "node build/ConvertYaml.js",
+		"test": "vscode-tmgrammar-test 'tests/**/*.test.mermaid'"
 	},
 	"devDependencies": {
 		"js-yaml": "^3.13.1",
+		"vscode-tmgrammar-test": "^0.1.1",
 		"yaml-import": "^2.0.0"
 	},
 	"__metadata": {
