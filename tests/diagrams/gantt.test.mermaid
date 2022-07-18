@@ -1,0 +1,64 @@
+%% SYNTAX TEST "source.mermaid" "sequence diagram test"
+
+gantt
+%% <-------------- keyword.control.mermaid
+  dateFormat  YYYY-MM-DD
+%%^^^^^^^^^^ keyword.control.mermaid
+%%            ^^^^^^^^^^ entity.name.function.mermaid
+  axisFormat  %m/%d/%Y
+%%^^^^^^^^^^ keyword.control.mermaid
+%%            ^^^^^^^^ entity.name.function.mermaid
+  title Adding GANTT diagram functionality to mermaid
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  section A section %%comment
+%%^^^^^^^ keyword.control.mermaid
+%%        ^^^^^^^^^^^^^^^^^^^ string
+  %% TODO fix rest of line after comma
+  Completed task            :done,    des1, 2014-01-06,2014-01-08
+%%^^^^^^^^^^^^^^ string
+%%                          ^ keyword.control.mermaid
+%%                           ^^^^ entity.name.function.mermaid
+  %% TODO fix rest of line after comma
+  Active task               :active,  des2, 2014-01-09, 3d
+%%^^^^^^^^^^^ string
+%%                          ^ keyword.control.mermaid
+%%                           ^^^^^^ entity.name.function.mermaid
+  %% TODO fix rest of line after colon
+  Future task               :         des3, after des2, 5d %%comment
+%%^^^^^^^^^^^ string
+%%                          ^ keyword.control.mermaid
+  %% TODO fix rest of line after colon
+  Future task2               :         des4, after des3, 5d
+%%^^^^^^^^^^^^ string
+%%                           ^ keyword.control.mermaid
+  %% TODO fix rest of line after colon
+  A task           :a1, 2014-01-01, 30d
+%%^^^^^^ string
+%%                 ^ keyword.control.mermaid
+  section Critical tasks
+%%^^^^^^^ keyword.control.mermaid
+%%        ^^^^^^^^^^^^^^ string
+  Completed task in the critical line :crit, done, 2014-01-06,24h
+%%^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+%%                                    ^ keyword.control.mermaid
+  %% TODO fix rest of line after comma
+  Implement parser and jison          :crit, done, after des1, 2d
+%%^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+%%                                    ^ keyword.control.mermaid
+  %% TODO fix rest of line after comma
+  Create tests for parser             :crit, active, 3d
+%%^^^^^^^^^^^^^^^^^^^^^^^ string
+%%                                    ^ keyword.control.mermaid
+  %% TODO fix rest of line after comma
+  Future task in critical line        :crit, 5d
+%%^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+%%                                    ^ keyword.control.mermaid
+  %% TODO fix rest of line after colon
+  Create tests for renderer           :2d
+%%^^^^^^^^^^^^^^^^^^^^^^^^^ string
+%%                                    ^ keyword.control.mermaid
+  %% TODO fix rest of line after colon
+  Add to mermaid                      :1d
+%%^^^^^^^^^^^^^^ string
+%%                                    ^ keyword.control.mermaid
