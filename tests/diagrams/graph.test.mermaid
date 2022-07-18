@@ -1,0 +1,176 @@
+%% SYNTAX TEST "source.mermaid" "diagram test"
+
+graph TB
+%% <----- keyword.control.mermaid 
+%%    ^^ entity.name.function.mermaid
+  %% Entity[Text]
+  ID-1[Node 1]
+%%^^^^ variable
+%%    ^ keyword.control.mermaid 
+%%     ^^^^^^ string
+%%           ^ keyword.control.mermaid 
+  ID-2>Node 2]
+%%^^^^ variable
+%%    ^ keyword.control.mermaid 
+%%     ^^^^^^ string
+%%           ^ keyword.control.mermaid 
+  ID-3(Node 3 <br> text)
+%%^^^^ variable
+%%    ^ keyword.control.mermaid 
+%%     ^^^^^^^^^^^^^^^^ string
+%%                     ^ keyword.control.mermaid 
+  %% Entity--Entity
+  ID-1---ID-2
+%%^^^^ variable
+%%    ^^^ keyword.control.mermaid 
+%%       ^^^^ variable
+  ID-1 --> ID-3
+%%^^^^ variable
+%%     ^^^ keyword.control.mermaid 
+%%         ^^^ variable
+  %% Entity--Text--Entity
+  %% TODO: fix incorrect string after first 3, position 29
+  ID-2--Link between 2 and 3---ID-3
+%%^^^^ variable
+%%    ^^ keyword.control.mermaid 
+%%      ^^^^^^^^^^^^^^^^^^^^ string
+%%                           ^^ keyword.control.mermaid
+%%                             ^^^^ variable
+  ID-3-->|Action from 3 to 1|ID-1
+%%^^^^ variable
+%%    ^^^^ keyword.control.mermaid 
+%%        ^^^^^^^^^^^^^^^^^^ string
+%%                          ^ keyword.control.mermaid
+%%                           ^^^^ variable
+  %% TODO: fix incorrect string after first -, position 55
+  ID-3 -- "Action from 3 to 2. p/w: '_-!#$%^&*+=?,\'" --> ID-2
+%%^^^^ variable
+%%     ^^  keyword.control.mermaid 
+%%        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+%%                                                     ^^ keyword.control.mermaid
+%%                                                        ^^^^ variable
+  ID-4 
+%%^^^^ variable
+  %% Complex cases
+  A[Hard edge] -->|Link text| B(Round edge)
+%%^ variable
+%% ^  keyword.control.mermaid 
+%%  ^^^^^^^^^ string
+%%           ^ keyword.control.mermaid
+%%             ^^^^ keyword.control.mermaid
+%%                 ^^^^^^^^^ string
+%%                          ^ keyword.control.mermaid
+%%                            ^ variable
+%%                             ^ keyword.control.mermaid
+%%                              ^^^^^^^^^^ string
+%%                                        ^ keyword.control.mermaid
+  ID-1---ID-2(Text)
+%%^^^^ variable
+%%    ^^^  keyword.control.mermaid 
+%%       ^^^^ variable
+%%           ^ keyword.control.mermaid
+%%            ^^^^ string
+%%                ^ keyword.control.mermaid
+  B --> C{Text}
+%%^ variable
+%%  ^^^  keyword.control.mermaid 
+%%      ^ variable
+%%       ^ keyword.control.mermaid
+%%        ^^^^ string
+%%            ^ keyword.control.mermaid
+  C -->|One| D[Text]
+%%^ variable
+%%  ^^^^  keyword.control.mermaid 
+%%      ^^^ string
+%%         ^ keyword.control.mermaid
+%%           ^ variable
+%%            ^ keyword.control.mermaid
+%%             ^^^^ string
+%%                 ^ keyword.control.mermaid
+  %% TODO: fix arrow
+  A(A) --> B(B)
+%%^ variable
+%% ^  keyword.control.mermaid 
+%%  ^ string
+%%   ^ keyword.control.mermaid
+%%         ^ variable
+%%          ^ keyword.control.mermaid
+%%           ^ string
+%%            ^ keyword.control.mermaid
+  %% TODO: fix arrow
+  C[/C/] --> D>D]
+%%^ variable
+%% ^  keyword.control.mermaid 
+%%  ^^^ string
+%%     ^ keyword.control.mermaid
+%%           ^ variable
+%%            ^ keyword.control.mermaid
+%%             ^ string
+%%              ^ keyword.control.mermaid
+  %% class/classDef
+  classDef blue fill:#08f,stroke:#fff;
+%%^^^^^^^^ keyword.control.mermaid
+%%         ^^^^  variable 
+%%              ^^^^^^^^^^^^^^^^^^^^^^ string
+  class ID-1 blue
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^  variable 
+%%           ^^^^ string
+  class ID-1,ID-2 red
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^^^^^^  variable 
+%%                ^^^^ string
+  %% click
+  click ID-1 "https://github.com" "Tooltip text" %% comments
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^  variable 
+%%           ^^^^^^^^^^^^^^^^^^^^ string
+%%                                ^^^^^^^^^^^^^^ string
+  click ID-2 alert "Tooltip for a callback"
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^  variable 
+%%           ^^^^^  variable 
+%%                 ^^^^^^^^^^^^^^^^^^^^^^^^ string
+  subgraph A subgraph
+%%^^^^^^^^ keyword.control.mermaid
+%%         ^^^^^^^^^^  entity.name.function.mermaid 
+    ID-4{Node 4}
+%%  ^^^^ variable
+%%      ^  keyword.control.mermaid 
+%%  ^^^^ variable
+%%      ^  keyword.control.mermaid 
+%%       ^^^^^^  string 
+%%             ^ keyword.control.mermaid
+    ID-5((fa:fa-spinner))
+%%  ^^^^ variable
+%%      ^^  keyword.control.mermaid 
+%%        ^^^^^^^^^^^^^ string
+%%                     ^^  keyword.control.mermaid 
+    %% TODO fix end of string/control
+    ID-6["Node 6 (same #quot;shape#quot;)"]
+%%  ^^^^ variable
+%%      ^  keyword.control.mermaid 
+%%       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+    ID-4-.->ID-5
+%%  ^^^^ variable
+%%      ^^^^  keyword.control.mermaid 
+%%          ^^^^ variable
+    ID-5 -. Action from 5 to 4 .-> ID-4
+%%  ^^^^ variable
+%%       ^^  keyword.control.mermaid 
+%%          ^^^^^^^^^^^^^^^^^^^^ string
+%%                              ^^  keyword.control.mermaid 
+%%                                 ^^^^ variable
+    ID-5==>ID-6
+%%  ^^^^ variable
+%%      ^^^  keyword.control.mermaid 
+%%         ^^^^ variable
+    %% TODO fix string extending into control first =, position 32
+    ID-6 == Action from 6 to 5 ==> ID-5
+%%  ^^^^ variable
+%%       ^^  keyword.control.mermaid 
+%%          ^^^^^^^^^^^^^^^^^^ string
+%%                              ^^  keyword.control.mermaid 
+%%                                 ^^^^ variable
+end
+%% <--- keyword.control.mermaid
