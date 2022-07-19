@@ -1,0 +1,132 @@
+%% SYNTAX TEST "source.mermaid" "state diagram test"
+
+stateDiagram
+%% <------------ keyword.control.mermaid
+  s1
+%%^^ variable
+  state "Description with parenthesis" as s2
+%%^^^^^ keyword.control.mermaid
+  s3 : Description with colon
+%%^^ variable
+%%   ^ keyword.control.mermaid
+%%     ^^^^^^^^^^^^^^^^^^^^^^ string
+
+  s1 --> s2
+%%^^ variable
+%%   ^^^ keyword.control.mermaid
+%%       ^^ variable
+  s2 --> s3: Colon transition
+%%^^ variable
+%%   ^^^ keyword.control.mermaid
+%%       ^^ variable
+%%           ^^^^^^^^^^^^^^^^ string
+  [*] --> s1 : Transition text
+%%^^^ keyword.control.mermaid
+%%    ^^^ keyword.control.mermaid
+%%        ^^ variable
+%%           ^ keyword.control.mermaid
+%%             ^^^^^^^^^^^^^^^ string
+  s3 --> [*]
+%%^^ variable
+%%   ^^^ keyword.control.mermaid
+%%       ^^^ keyword.control.mermaid
+
+  state NestedComposite {
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^^^^^^^^^^^^ variable
+%%                      ^ keyword.control.mermaid
+      [*] --> Nested
+%%    ^^^ keyword.control.mermaid
+%%        ^^^ keyword.control.mermaid
+%%            ^^^^^^ variable
+
+      state Nested {
+%%    ^^^^^ keyword.control.mermaid
+%%          ^^^^^^ variable
+%%                 ^ keyword.control.mermaid
+          [*] --> second
+%%        ^^^ keyword.control.mermaid
+%%            ^^^ keyword.control.mermaid
+%%                ^^^^^^ variable
+      }
+%%    ^ keyword.control.mermaid
+  }
+%%^ keyword.control.mermaid
+
+  state fork_state <<fork>>
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^^^^^^^ variable
+%%                 ^^^^^^^^ keyword.control.mermaid
+      [*] --> fork_state
+%%    ^^^ keyword.control.mermaid
+%%        ^^^ keyword.control.mermaid
+%%            ^^^^^^^^^^ variable
+      fork_state --> State2
+%%    ^^^^^^^^^^ variable
+%%               ^^^ keyword.control.mermaid
+%%                   ^^^^^^ variable
+
+      state join_state <<join>>
+%%    ^^^^^ keyword.control.mermaid
+%%          ^^^^^^^^^^ variable
+%%                      ^^^^^^^ keyword.control.mermaid
+      State2 --> join_state
+%%    ^^^^^^ variable
+%%           ^^^ keyword.control.mermaid
+%%               ^^^^^^^^^^ variable
+
+  note right of State1
+%%^^^^^^^^^^^^^ keyword.control.mermaid
+    Important information! You can write
+%%  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+    notes.
+%%  ^^^^^^ string
+  end note
+%%^^^^^^^^ keyword.control.mermaid
+  note left of State2 : This is the note to the left.
+%%^^^^^^^^^^^^ keyword.control.mermaid
+%%             ^^^^^^ variable
+%%                    ^ keyword.control.mermaid
+%%                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+
+  %% concurrency
+  state Active {
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^^^ variable
+%%             ^ keyword.control.mermaid
+      [*] --> NumLockOff
+%%    ^^^ keyword.control.mermaid
+%%        ^^^ keyword.control.mermaid
+%%            ^^^^^^^^^^ variable
+      NumLockOff --> NumLockOn : EvNumLockPressed
+%%    ^^^^^^^^^^ variable
+%%               ^^^ keyword.control.mermaid
+%%                   ^^^^^^^^^ variable
+%%                             ^ keyword.control.mermaid
+%%                               ^^^^^^^^^^^^^^^^ string
+      NumLockOn --> NumLockOff : EvNumLockPressed
+%%    ^^^^^^^^^ variable
+%%              ^^^ keyword.control.mermaid
+%%                  ^^^^^^^^^^ variable
+%%                             ^ keyword.control.mermaid
+%%                               ^^^^^^^^^^^^^^^^ string
+      --
+%%    ^^ keyword.control.mermaid
+      [*] --> CapsLockOff
+%%    ^^^ keyword.control.mermaid
+%%        ^^^ keyword.control.mermaid
+%%            ^^^^^^^^^^^ variable
+      CapsLockOff --> CapsLockOn : EvCapsLockPressed
+%%    ^^^^^^^^^^^ variable
+%%                ^^^ keyword.control.mermaid
+%%                    ^^^^^^^^^^ variable
+%%                               ^ keyword.control.mermaid
+%%                                 ^^^^^^^^^^^^^^^^^ string
+      CapsLockOn --> CapsLockOff : EvCapsLockPressed
+%%    ^^^^^^^^^^ variable
+%%               ^^^ keyword.control.mermaid
+%%                   ^^^^^^^^^^^ variable
+%%                               ^ keyword.control.mermaid
+%%                                 ^^^^^^^^^^^^^^^^^ string
+  }
+%%^ keyword.control.mermaid
