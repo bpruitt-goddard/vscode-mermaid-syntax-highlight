@@ -1,0 +1,23 @@
+%% SYNTAX TEST "source.mermaid" "pie diagram test"
+
+pie
+%% <--- keyword.control.mermaid
+  title Key elements in Product X
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^^^^^^^^^^^^^^^^^^^^^^ string
+    "Calcium" : 42.96
+%%  ^^^^^^^^^ string
+%%            ^ keyword.control.mermaid
+%%              ^^^^^ source.mermaid
+    "Potassium" : 50.05
+%%  ^^^^^^^^^^^ string
+%%              ^ keyword.control.mermaid
+%%                ^^^^^ source.mermaid
+    "Magnesium" : 10.01
+%%  ^^^^^^^^^^^ string
+%%              ^ keyword.control.mermaid
+%%                ^^^^^ source.mermaid
+    "Iron" :  5
+%%  ^^^^^^ string
+%%         ^ keyword.control.mermaid
+%%            ^ source.mermaid

@@ -1,0 +1,193 @@
+%% SYNTAX TEST "source.mermaid" "class diagram test"
+
+classDiagram
+%% <------------ keyword.control.mermaid
+  Animal <|-- Duck : LabelText
+%%^^^^^^ entity.name.type.class.mermaid
+%%       ^^^^ keyword.control.mermaid
+%%            ^^^^ entity.name.type.class.mermaid
+%%                 ^ keyword.control.mermaid
+%%                   ^^^^^^^^^ string
+  class1 --o other
+%%^^^^^^ entity.name.type.class.mermaid
+%%       ^^^ keyword.control.mermaid
+%%           ^^^^^ entity.name.type.class.mermaid
+  Animal --o Fish
+%%^^^^^^ entity.name.type.class.mermaid
+%%       ^^^ keyword.control.mermaid
+%%           ^^^^ entity.name.type.class.mermaid
+  Animal *-- classD
+%%^^^^^^ entity.name.type.class.mermaid
+%%       ^^^ keyword.control.mermaid
+%%           ^^^^^^ entity.name.type.class.mermaid
+  Animal o-- ClassD : Aggregation
+%%^^^^^^ entity.name.type.class.mermaid
+%%       ^^^ keyword.control.mermaid
+%%           ^^^^^^ entity.name.type.class.mermaid
+%%                  ^ keyword.control.mermaid
+%%                    ^^^^^^^^^^^ string
+  Animal : +int age
+%%^^^^^^ entity.name.type.class.mermaid
+%%       ^ keyword.control.mermaid
+%%         ^ keyword.control.mermaid
+%%          ^^^ storage.type.mermaid
+%%               ^^^ entity.name.variable.field.mermaid
+  Animal : +String gender
+%%^^^^^^ entity.name.type.class.mermaid
+%%       ^ keyword.control.mermaid
+%%         ^ keyword.control.mermaid
+%%          ^^^^^^ storage.type.mermaid
+%%                 ^^^^^^ entity.name.variable.field.mermaid
+  Animal: mate()
+%%^^^^^^ entity.name.type.class.mermaid
+%%      ^ keyword.control.mermaid
+%%        ^^^^ entity.name.function.mermaid
+%%            ^ punctuation.parenthesis.open.mermaid
+%%             ^ punctuation.parenthesis.closed.mermaid
+  Animal : #method(param)* return
+%%^^^^^^ entity.name.type.class.mermaid
+%%       ^ keyword.control.mermaid
+%%         ^ keyword.control.mermaid
+%%          ^^^^^^ entity.name.function.mermaid
+%%                ^ punctuation.parenthesis.open.mermaid
+%%                 ^^^^^ storage.type.mermaid
+%%                      ^ punctuation.parenthesis.closed.mermaid
+%%                         ^^^^^^ storage.type.mermaid
+  class Duck{
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^ entity.name.type.class.mermaid
+%%          ^ keyword.control.mermaid
+      %% Class Members
+      +String beakColor
+%%    ^ keyword.control.mermaid
+%%     ^^^^^^ storage.type.mermaid
+%%            ^^^^^^^^^ entity.name.variable.field.mermaid
+      #quack()
+%%    ^ keyword.control.mermaid
+%%     ^^^^^ entity.name.function.mermaid
+%%          ^ punctuation.parenthesis.open.mermaid
+%%           ^ punctuation.parenthesis.closed.mermaid
+  }
+%%^ keyword.control.mermaid
+  class Fish{
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^ entity.name.type.class.mermaid
+%%          ^ keyword.control.mermaid
+      -abstractMethod()*
+%%    ^ keyword.control.mermaid
+%%     ^^^^^^^^^^^^^^ entity.name.function.mermaid
+%%                   ^ punctuation.parenthesis.open.mermaid
+%%                    ^ punctuation.parenthesis.closed.mermaid
+%%                     ^ keyword.control.mermaid
+      staticMethod()$
+%%    ^^^^^^^^^^^^ entity.name.function.mermaid
+%%                ^ punctuation.parenthesis.open.mermaid
+%%                 ^ punctuation.parenthesis.closed.mermaid
+%%                  ^ keyword.control.mermaid
+  }
+%%^ keyword.control.mermaid
+  %% Class member generics
+  class Square~Shape~{
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^^^ entity.name.type.class.mermaid
+%%            ^ punctuation.definition.typeparameters.begin.mermaid
+%%             ^^^^^ storage.type.mermaid
+%%                  ^ punctuation.definition.typeparameters.end.mermaid
+%%                   ^ keyword.control.mermaid
+      List~int~ position
+%%    ^^^^ storage.type.mermaid
+%%        ^ punctuation.definition.typeparameters.begin.mermaid
+%%         ^^^ storage.type.mermaid
+%%            ^ punctuation.definition.typeparameters.end.mermaid
+%%              ^^^^^^^^ entity.name.variable.field.mermaid
+      setPoints(List~int~ points)
+%%    ^^^^^^^^^ entity.name.function.mermaid
+%%             ^ punctuation.parenthesis.open.mermaid
+%%              ^^^^ storage.type.mermaid
+%%                  ^ punctuation.definition.typeparameters.begin.mermaid
+%%                   ^^^ storage.type.mermaid
+%%                      ^ punctuation.definition.typeparameters.end.mermaid
+%%                        ^^^^^^ entity.name.variable.parameter.mermaid
+%%                              ^ punctuation.parenthesis.closed.mermaid
+      getPoints() List~int~
+%%    ^^^^^^^^^ entity.name.function.mermaid
+%%             ^ punctuation.parenthesis.open.mermaid
+%%              ^ punctuation.parenthesis.closed.mermaid
+%%                ^^^^ storage.type.mermaid
+%%                    ^ punctuation.definition.typeparameters.begin.mermaid
+%%                     ^^^ storage.type.mermaid
+%%                        ^ punctuation.definition.typeparameters.end.mermaid
+  }
+%%^ keyword.control.mermaid
+  Square : -List~string~ messages
+%%^^^^^^ entity.name.type.class.mermaid
+%%                       ^^^^^^^^ entity.name.variable.field.mermaid
+%%         ^ keyword.control.mermaid
+%%          ^^^^ storage.type.mermaid
+%%              ^ punctuation.definition.typeparameters.begin.mermaid
+%%               ^^^^^^ storage.type.mermaid
+%%                     ^ punctuation.definition.typeparameters.end.mermaid
+%%                       ^^^^^^^^ entity.name.variable.field.mermaid
+  Square : ~setMessages(List~string~ messages)
+%%^^^^^^ entity.name.type.class.mermaid
+%%       ^ keyword.control.mermaid
+%%         ^ keyword.control.mermaid
+%%          ^^^^^^^^^^^ entity.name.function.mermaid
+%%                      ^^^^ storage.type.mermaid
+%%                          ^ punctuation.definition.typeparameters.begin.mermaid
+%%                           ^^^^^^ storage.type.mermaid
+%%                                 ^ punctuation.definition.typeparameters.end.mermaid
+%%                                   ^^^^^^^^ entity.name.variable.parameter.mermaid
+%%                                           ^ punctuation.parenthesis.closed.mermaid
+  Square : +getMessages() List~string~
+%%^^^^^^ entity.name.type.class.mermaid
+%%       ^ keyword.control.mermaid
+%%         ^ keyword.control.mermaid
+%%          ^^^^^^^^^^^ entity.name.function.mermaid
+%%                     ^ punctuation.parenthesis.open.mermaid
+%%                      ^ punctuation.parenthesis.closed.mermaid
+%%                        ^^^^ storage.type.mermaid
+%%                            ^ punctuation.definition.typeparameters.begin.mermaid
+%%                             ^^^^^^ storage.type.mermaid
+%%                                   ^ punctuation.definition.typeparameters.end.mermaid
+ 
+  %% Multiplicity relations
+  Customer "1" --> "*" Ticket
+%%^^^^^^^^ entity.name.type.class.mermaid
+%%         ^^^ keyword.control.mermaid
+%%             ^^^ keyword.control.mermaid
+%%                 ^^^ keyword.control.mermaid
+%%                     ^^^^^^ entity.name.type.class.mermaid
+  Student "1" --> "1..*" Course
+%%^^^^^^^ entity.name.type.class.mermaid
+%%        ^^^ keyword.control.mermaid
+%%            ^^^ keyword.control.mermaid
+%%                ^^^^^^ keyword.control.mermaid
+%%                       ^^^^^^ entity.name.type.class.mermaid
+  Galaxy --> "6" Star : Contains
+%%^^^^^^ entity.name.type.class.mermaid
+%%       ^^^ keyword.control.mermaid
+%%           ^^^ keyword.control.mermaid
+%%               ^^^^ entity.name.type.class.mermaid
+%%                    ^ keyword.control.mermaid
+%%                      ^^^^^^^^ string
+
+  %% Annotations
+  class Annotate1
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^^^^^^ entity.name.type.class.mermaid
+  <<interface>> Animal
+%%^^ punctuation.definition.typeparameters.begin.mermaid
+%%  ^^^^^^^^^ storage.type.mermaid
+%%           ^^ punctuation.definition.typeparameters.end.mermaid
+%%              ^^^^^^ entity.name.type.class.mermaid
+  class Annotate2{
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^^^^^^ entity.name.type.class.mermaid
+%%               ^ keyword.control.mermaid
+    <<Service>>
+%%  ^^ punctuation.definition.typeparameters.begin.mermaid
+%%    ^^^^^^^ storage.type.mermaid
+%%           ^^ punctuation.definition.typeparameters.end.mermaid
+  }
+%%^ keyword.control.mermaid
