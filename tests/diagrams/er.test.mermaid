@@ -1,0 +1,68 @@
+%% SYNTAX TEST "source.mermaid" "er diagram test"
+
+erDiagram
+%% <--------- keyword.control.mermaid
+  ANOTHER-ENTITY1
+%%^^^^^^^^^^^^^^^ variable
+  attribute-entity {
+%%^^^^^^^^^^^^^^^^ variable
+%%                 ^ keyword.control.mermaid
+    string name
+%%  ^^^^^^ storage.type.mermaid
+%%         ^^^^ variable
+    int number
+%%  ^^^ storage.type.mermaid
+%%      ^^^^^^ variable
+    foo another-attribute "attribute comment"
+%%  ^^^ storage.type.mermaid
+%%      ^^^^^^^^^^^^^^^^^ variable
+%%                        ^^^^^^^^^^^^^^^^^^^ string
+    guid foreign-key FK "comment special characters '_-!#$%^&*+=?,\'"
+%%  ^^^^ storage.type.mermaid
+%%       ^^^^^^^^^^^ variable
+%%                   ^^ keyword.control.mermaid
+%%                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+    guid primary-key PK ""
+%%  ^^^^ storage.type.mermaid
+%%       ^^^^^^^^^^^ variable
+%%                   ^^ keyword.control.mermaid
+%%                      ^^ string
+  }
+%%^ keyword.control.mermaid
+  %% relationships
+  ANOTHER-ENTITY1 |o..o| ORDER : zero-or-one
+%%^^^^^^^^^^^^^^^ variable
+%%                ^^^^^^ keyword.control.mermaid
+%%                       ^^^^^ variable
+%%                             ^ keyword.control.mermaid
+%%                               ^^^^^^^^^^^ string
+  ANOTHER-ENTITY1 ||--|| ORDER : exactly-one
+%%^^^^^^^^^^^^^^^ variable
+%%                ^^^^^^ keyword.control.mermaid
+%%                       ^^^^^ variable
+%%                             ^ keyword.control.mermaid
+%%                               ^^^^^^^^^^^ string
+  ANOTHER-ENTITY1 }o--o{ ORDER : zero-or-more
+%%^^^^^^^^^^^^^^^ variable
+%%                ^^^^^^ keyword.control.mermaid
+%%                       ^^^^^ variable
+%%                             ^ keyword.control.mermaid
+%%                               ^^^^^^^^^^^ string
+  ANOTHER-ENTITY1 }|..|{ ORDER : one-or-more
+%%^^^^^^^^^^^^^^^ variable
+%%                ^^^^^^ keyword.control.mermaid
+%%                       ^^^^^ variable
+%%                             ^ keyword.control.mermaid
+%%                               ^^^^^^^^^^^ string
+  ANOTHER-ENTITY1 }|..|{ OTHER : ""
+%%^^^^^^^^^^^^^^^ variable
+%%                ^^^^^^ keyword.control.mermaid
+%%                       ^^^^^ variable
+%%                             ^ keyword.control.mermaid
+%%                               ^^^^^^^^^^^ string
+  ANOTHER-ENTITY1 }|..|{ OTHER : "multiple words"
+%%^^^^^^^^^^^^^^^ variable
+%%                ^^^^^^ keyword.control.mermaid
+%%                       ^^^^^ variable
+%%                             ^ keyword.control.mermaid
+%%                               ^^^^^^^^^^^ string
