@@ -1,5 +1,5 @@
 - comment: State Diagram
-  begin: \b(stateDiagram)
+  begin: ^\s*(stateDiagram)
   beginCaptures:
     '1':
       name: keyword.control.mermaid

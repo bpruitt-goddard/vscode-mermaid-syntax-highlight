@@ -1,5 +1,5 @@
 - comment: Pie Chart
-  begin: \b(pie)
+  begin: ^\s*(pie)
   beginCaptures:
     '1':
       name: keyword.control.mermaid

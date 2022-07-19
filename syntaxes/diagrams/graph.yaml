@@ -1,5 +1,5 @@
 - comment: Graph
-  begin: \b(graph|flowchart)\s+([A-Za-z\ 0-9]+)
+  begin: ^\s*(graph|flowchart)\s+([A-Za-z\ 0-9]+)
   beginCaptures:
     '1':
       name: keyword.control.mermaid
