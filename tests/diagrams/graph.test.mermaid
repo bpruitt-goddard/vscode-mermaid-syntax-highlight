@@ -1,4 +1,4 @@
-%% SYNTAX TEST "source.mermaid" "diagram test"
+%% SYNTAX TEST "source.mermaid" "graph/flowchart test"
 
 graph TB
 %% <----- keyword.control.mermaid 
@@ -29,12 +29,11 @@ graph TB
 %%     ^^^ keyword.control.mermaid 
 %%         ^^^ variable
   %% Entity--Text--Entity
-  %% TODO: fix incorrect string after first 3, position 29
   ID-2--Link between 2 and 3---ID-3
 %%^^^^ variable
 %%    ^^ keyword.control.mermaid 
 %%      ^^^^^^^^^^^^^^^^^^^^ string
-%%                           ^^ keyword.control.mermaid
+%%                          ^^^ keyword.control.mermaid
 %%                             ^^^^ variable
   ID-3-->|Action from 3 to 1|ID-1
 %%^^^^ variable
@@ -42,12 +41,11 @@ graph TB
 %%        ^^^^^^^^^^^^^^^^^^ string
 %%                          ^ keyword.control.mermaid
 %%                           ^^^^ variable
-  %% TODO: fix incorrect string after first -, position 55
   ID-3 -- "Action from 3 to 2. p/w: '_-!#$%^&*+=?,\'" --> ID-2
 %%^^^^ variable
 %%     ^^  keyword.control.mermaid 
 %%        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
-%%                                                     ^^ keyword.control.mermaid
+%%                                                    ^^^ keyword.control.mermaid
 %%                                                        ^^^^ variable
   ID-4 
 %%^^^^ variable
@@ -141,16 +139,11 @@ graph TB
 %%      ^  keyword.control.mermaid 
 %%       ^^^^^^  string 
 %%             ^ keyword.control.mermaid
-    ID-5((fa:fa-spinner))
-%%  ^^^^ variable
-%%      ^^  keyword.control.mermaid 
-%%        ^^^^^^^^^^^^^ string
-%%                     ^^  keyword.control.mermaid 
-    %% TODO fix end of string/control
     ID-6["Node 6 (same #quot;shape#quot;)"]
 %%  ^^^^ variable
 %%      ^  keyword.control.mermaid 
-%%       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+%%       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+%%                                        ^  keyword.control.mermaid 
     ID-4-.->ID-5
 %%  ^^^^ variable
 %%      ^^^^  keyword.control.mermaid 
@@ -165,12 +158,11 @@ graph TB
 %%  ^^^^ variable
 %%      ^^^  keyword.control.mermaid 
 %%         ^^^^ variable
-    %% TODO fix string extending into control first =, position 32
     ID-6 == Action from 6 to 5 ==> ID-5
 %%  ^^^^ variable
 %%       ^^  keyword.control.mermaid 
 %%          ^^^^^^^^^^^^^^^^^^ string
-%%                              ^^  keyword.control.mermaid 
+%%                             ^^^  keyword.control.mermaid 
 %%                                 ^^^^ variable
 end
 %% <--- keyword.control.mermaid
