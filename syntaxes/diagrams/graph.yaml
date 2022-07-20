@@ -100,11 +100,11 @@
     - comment: '(Graph Link)(Graph Link Text)(Graph Link)(Entity)(Edge/Shape)(Text)(Edge/Shape)'
       match: !regex |-
         (\s*-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?) # Graph Link
-        (\s*[-\w\s]+\b) # Graph Link Text
-        (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|) # Graph Link
+        (\s*[-\w\s]+\b)? # Graph Link Text
+        (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|)? # Graph Link
         (\s*\b[-\w]+\b\s*) # Entity
         (\[|\(+|\>|\{) # Edge/Shape
-        (\s*["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # Text
+        (\s*["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*)? # Text
         (\]|\)+|\}) # Edge/Shape
       captures:
         '1':
