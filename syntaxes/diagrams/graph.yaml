@@ -20,7 +20,7 @@
   - comment: '(Entity From)(Graph Link)'
     begin: !regex |-
       (\b[-\w]+\b\s*) # Entity From
-      (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?) # Graph Link
+      (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|<-->) # Graph Link
     beginCaptures:
       '1':
         name: variable
