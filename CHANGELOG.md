@@ -53,3 +53,6 @@
 
 ### [v1.3.1]
 - Add classDiagram reversed arrow support
+
+### [v1.3.2]
+- Add graph diagram double arrow support
