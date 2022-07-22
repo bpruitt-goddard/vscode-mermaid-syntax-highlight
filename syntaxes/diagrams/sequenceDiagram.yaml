@@ -1,5 +1,5 @@
 - comment: Sequence Diagram
-  begin: \b(sequenceDiagram)
+  begin: ^\s*(sequenceDiagram)
   beginCaptures:
     '1':
       name: keyword.control.mermaid

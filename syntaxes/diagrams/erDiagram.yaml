@@ -1,5 +1,5 @@
 - comment: Entity Relationship Diagram
-  begin: \b(erDiagram)
+  begin: ^\s*(erDiagram)
   beginCaptures:
     '1':
       name: keyword.control.mermaid

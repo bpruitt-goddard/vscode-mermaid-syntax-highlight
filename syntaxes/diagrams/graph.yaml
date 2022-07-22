@@ -1,5 +1,5 @@
 - comment: Graph
-  begin: \b(graph|flowchart)\s+([A-Za-z\ 0-9]+)
+  begin: ^\s*(graph|flowchart)\s+([A-Za-z\ 0-9]+)
   beginCaptures:
     '1':
       name: keyword.control.mermaid
@@ -20,7 +20,7 @@
   - comment: '(Entity From)(Graph Link)'
     begin: !regex |-
       (\b[-\w]+\b\s*) # Entity From
-      (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?) # Graph Link
+      (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|<-->) # Graph Link
     beginCaptures:
       '1':
         name: variable
@@ -31,8 +31,8 @@
       name: comment
     - comment: '(Graph Link Text)?(Graph Link)(Entity To)?(Edge/Shape)?(Text)?(Edge/Shape)?'
       match: !regex |-
-        (\s*[.'_\-!#$%^&*+=?,:\\/"\w\s]*)? # Graph Link Text?
-        (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|) # Graph Link
+        (\s*(?:"[^"]+")|(?:[\($&%\^/#.,?!;:*+<>_\'\\\w\s]*))? # Graph Link Text?
+        \s*(-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|) # Graph Link
         (\s*[-\w]+\b) # Entity To
         (\[|\(+|\>|\{)? # Edge/Shape?
         (\s*[-\w]+\b)? # Text
@@ -69,9 +69,9 @@
   - comment: '(Entity)(Edge/Shape)(Text)(Edge/Shape)'
     begin: !regex |-
       (\b[-\w]+\b\s*) # Entity
-      (\[|\(+|\>|\{) # Edge/Shape
-      (\s*["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # Text
-      (\]|\)+|\}) # Edge/Shape
+      (\[|\(+|\>|\{|\(\() # Edge/Shape
+      (\s*(?:"[^"]+")|(?:[$&%\^/#.,?!;:*+<>_\'\\\w\s]*)) # Text
+      (\]|\)+|\}|\)\)) # Edge/Shape
     beginCaptures:
       '1':
         name: variable
@@ -100,11 +100,11 @@
     - comment: '(Graph Link)(Graph Link Text)(Graph Link)(Entity)(Edge/Shape)(Text)(Edge/Shape)'
       match: !regex |-
         (\s*-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?) # Graph Link
-        (\s*[-\w\s]+\b) # Graph Link Text
-        (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|) # Graph Link
+        (\s*[-\w\s]+\b)? # Graph Link Text
+        (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|)? # Graph Link
         (\s*\b[-\w]+\b\s*) # Entity
         (\[|\(+|\>|\{) # Edge/Shape
-        (\s*["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # Text
+        (\s*["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*)? # Text
         (\]|\)+|\}) # Edge/Shape
       captures:
         '1':

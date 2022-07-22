@@ -1,5 +1,5 @@
 - comment: Class Diagram
-  begin: \b(classDiagram)
+  begin: ^\s*(classDiagram)
   beginCaptures:
     '1':
       name: keyword.control.mermaid

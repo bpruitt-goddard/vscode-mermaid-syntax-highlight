@@ -1,5 +1,5 @@
 - comment: Gantt Diagram
-  begin: \b(gantt)
+  begin: ^\s*(gantt)
   beginCaptures:
     '1':
       name: keyword.control.mermaid
