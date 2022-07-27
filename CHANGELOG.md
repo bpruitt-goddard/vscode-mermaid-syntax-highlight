@@ -56,3 +56,4 @@
 
 ### [v1.3.2]
 - Add graph diagram double arrow support
+- Add class diagram multiple parameter support
