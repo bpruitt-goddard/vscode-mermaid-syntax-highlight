@@ -20,8 +20,8 @@
     - comment: '(participant)(Actor)(as)?(Label)?'
       match: !regex |-
         \s*(participant|actor) # participant
-        \s+(["\(\)$&%\^/#.?!*=<>\'\\\w\s]+?) # Actor
-        (?:\s+(as))? # as?
+        \s+((?:(?! as )["\(\)$&%\^/#.?!*=<>\'\\\w\s])+) # Actor
+        \s*(as)? # as?
         \s(["\(\)$&%\^/#.,?!*=<>\'\\\w\s]+)? # Label?
       captures:
         '1':
