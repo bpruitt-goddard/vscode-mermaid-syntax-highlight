@@ -6,9 +6,9 @@
   patterns:
     - match: (\%%|#).*
       name: comment
-    - comment: '(title)'
+    - comment: '(title)(title text)'
       match: !regex |-
-        (title)\s*(:)\s+ # title
+        (title)\s*(:)?\s+ # title
         (\s*["\(\)$&%\^/#.,?!:*+=<>\'\\\-\w\s]*) # text
       captures:
         '1':
@@ -20,8 +20,8 @@
     - comment: '(participant)(Actor)(as)?(Label)?'
       match: !regex |-
         \s*(participant|actor) # participant
-        \s+(["\(\)$&%\^/#.?!*=<>\'\\\w\s]+?) # Actor
-        (?:\s+(as))? # as?
+        \s+((?:(?! as )["\(\)$&%\^/#.?!*=<>\'\\\w\s])+) # Actor
+        \s*(as)? # as?
         \s(["\(\)$&%\^/#.,?!*=<>\'\\\w\s]+)? # Label?
       captures:
         '1':
