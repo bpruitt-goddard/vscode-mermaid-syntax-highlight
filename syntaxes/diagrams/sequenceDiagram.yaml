@@ -19,7 +19,7 @@
           name: string
     - comment: '(participant)(Actor)(as)?(Label)?'
       match: !regex |-
-        \s*(participant) # participant
+        \s*(participant|actor) # participant
         \s+(["\(\)$&%\^/#.?!*=<>\'\\\w\s]+?) # Actor
         (?:\s+(as))? # as?
         \s(["\(\)$&%\^/#.,?!*=<>\'\\\w\s]+)? # Label?
