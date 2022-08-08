@@ -2,7 +2,7 @@
 	"name": "mermaid-markdown-syntax-highlighting",
 	"displayName": "Mermaid Markdown Syntax Highlighting",
 	"description": "Markdown syntax support for the Mermaid charting language",
-	"version": "1.3.3",
+	"version": "1.3.4",
 	"publisher": "bpruitt-goddard",
 	"license": "MIT",
 	"engines": {

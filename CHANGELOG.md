@@ -60,3 +60,7 @@
 
 ### [v1.3.3]
 - Add sequence diagram actor support
+
+### [v1.3.4]
+- Fix sequence diagram title whitespace
+- Fix sequence diagram actor/participant whitespace
