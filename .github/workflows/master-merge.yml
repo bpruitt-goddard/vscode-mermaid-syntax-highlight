@@ -1,0 +1,37 @@
+# Deploy to VS Marketplace on master merge as long as the version has
+# changed (inferred by a change to CHANGELOG.md)
+
+name: 'Github Master Merge'
+
+on:
+  pull_request:
+    types:
+      - closed
+    paths:
+      - 'CHANGELOG.md'
+
+jobs:
+  deploy:
+    if: github.event.pull_request.merged
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.4.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Publish to Visual Studio Marketplace
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+          registryUrl: https://marketplace.visualstudio.com
