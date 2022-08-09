@@ -1,0 +1,29 @@
+- comment: Git Graph
+  begin: ^\s*(gitGraph)
+  beginCaptures:
+    '1':
+      name: keyword.control.mermaid
+  patterns:
+  - match: \%%.*
+    name: comment
+  - comment: commit
+    begin: !regex |-
+      \s*(commit) # commit
+    beginCaptures:
+      '1':
+        name: keyword.control.mermaid
+    patterns:
+    - comment: '(id)(:) ("id")'
+      match: !regex |-
+        \s*(id) # id
+        (:) # :
+        \s("["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*") # text
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: keyword.control.mermaid
+        '3':
+          name: keyword.control.mermaid
+    end: "$"
+  end: (^|\G)(?=\s*[`~]{3,}\s*$)
