@@ -25,5 +25,17 @@
           name: keyword.control.mermaid
         '3':
           name: keyword.control.mermaid
+    - comment: '(type)(:) (COMMIT_TYPE)'
+      match: !regex |-
+        \s*(type) # type
+        (:) # :
+        \s(NORMAL|REVERSE|HIGHLIGHT) # commit_type
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: keyword.control.mermaid
+        '3':
+          name: entity.name.function.mermaid
     end: "$"
   end: (^|\G)(?=\s*[`~]{3,}\s*$)

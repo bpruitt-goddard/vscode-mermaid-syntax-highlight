@@ -3,9 +3,40 @@
 gitGraph
 %%%%%%%% <--- keyword.control.mermaid
   commit
-  ^^^^^^  <--- keyword.control.mermaid
+%%^^^^^^ keyword.control.mermaid
   commit id: "Normal"
-  ^^^^^^  <--- keyword.control.mermaid
-         ^^ <--- keyword.control.mermaid
-           ^  <--- keyword.control.mermaid
-             ^^^^^^^^ <--- string
+%%^^^^^^  keyword.control.mermaid
+         ^^ keyword.control.mermaid
+           ^ keyword.control.mermaid
+             ^^^^^^^^ string
+  commit type: NORMAL
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^ keyword.control.mermaid
+%%           ^ keyword.control.mermaid
+%%             ^^^^^^ entity.name.function.mermaid
+  commit type: HIGHLIGHT
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^ keyword.control.mermaid
+%%           ^ keyword.control.mermaid
+%%             ^^^^^^^^^ entity.name.function.mermaid
+  commit type: REVERSE
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^ keyword.control.mermaid
+%%           ^ keyword.control.mermaid
+%%             ^^^^^^^ entity.name.function.mermaid
+  commit id: "Reverse" type: REVERSE
+%%^^^^^^ keyword.control.mermaid
+%%       ^^ keyword.control.mermaid
+%%         ^ keyword.control.mermaid
+%%           ^^^^^^^^^ string
+%%                     ^^^^ keyword.control.mermaid
+%%                         ^ keyword.control.mermaid
+%%                           ^^^^^^^ entity.name.function.mermaid
+  commit type: REVERSE id: "Re-order type and id"
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^ keyword.control.mermaid
+%%           ^ keyword.control.mermaid
+%%             ^^^^^^^ entity.name.function.mermaid
+%%                     ^^ keyword.control.mermaid
+%%                       ^ keyword.control.mermaid
+%%                         ^^^^^^^^^^^^^^^^^^^^^^ string
