@@ -50,4 +50,13 @@
         '3':
           name: string
     end: "$"
+  - comment: '(checkout) (branch-name)'
+    match: !regex |-
+      \s*(checkout) # id
+      (\s*["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # branch-name
+    captures:
+      '1':
+        name: keyword.control.mermaid
+      '2':
+        name: variable
   end: (^|\G)(?=\s*[`~]{3,}\s*$)
