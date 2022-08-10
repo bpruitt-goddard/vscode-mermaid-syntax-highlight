@@ -53,10 +53,26 @@
   - comment: '(checkout) (branch-name)'
     match: !regex |-
       \s*(checkout) # id
-      (\s*["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # branch-name
+      \s*([^\s"]*) # branch-name
     captures:
       '1':
         name: keyword.control.mermaid
       '2':
         name: variable
+  - comment: '(branch) (branch-name) (order)?(:) (number)'
+    match: !regex |-
+      \s*(branch) # id
+      \s*([^\s"]*) # branch-name
+      \s*(?:(order)(:)\s?(\d+))? # (order)(:) (number)
+    captures:
+      '1':
+        name: keyword.control.mermaid
+      '2':
+        name: variable
+      '3':
+        name: keyword.control.mermaid
+      '4':
+        name: keyword.control.mermaid
+      '5':
+        name: constant.numeric.decimal.mermaid
   end: (^|\G)(?=\s*[`~]{3,}\s*$)
