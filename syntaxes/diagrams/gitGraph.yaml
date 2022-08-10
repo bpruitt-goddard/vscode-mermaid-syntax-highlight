@@ -17,14 +17,14 @@
       match: !regex |-
         \s*(id) # id
         (:) # :
-        \s("["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*") # text
+        \s("[\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*") # text
       captures:
         '1':
           name: keyword.control.mermaid
         '2':
           name: keyword.control.mermaid
         '3':
-          name: keyword.control.mermaid
+          name: string
     - comment: '(type)(:) (COMMIT_TYPE)'
       match: !regex |-
         \s*(type) # type
@@ -37,5 +37,17 @@
           name: keyword.control.mermaid
         '3':
           name: entity.name.function.mermaid
+    - comment: '(tag)(:) ("tag")'
+      match: !regex |-
+        \s*(tag) # tag
+        (:) # :
+        \s("[\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*") # text
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: keyword.control.mermaid
+        '3':
+          name: string
     end: "$"
   end: (^|\G)(?=\s*[`~]{3,}\s*$)
