@@ -75,4 +75,20 @@
         name: keyword.control.mermaid
       '5':
         name: constant.numeric.decimal.mermaid
+  - comment: '(merge) (branch-name) (tag: "tag-name")?'
+    match: !regex |-
+      \s*(merge) # merge
+      \s*([^\s"]*) # branch-name
+      \s*(?:(tag)(:)\s?("[^"\n]*"))? # (tag: "tag-name")?
+    captures:
+      '1':
+        name: keyword.control.mermaid
+      '2':
+        name: variable
+      '3':
+        name: keyword.control.mermaid
+      '4':
+        name: keyword.control.mermaid
+      '5':
+        name: string
   end: (^|\G)(?=\s*[`~]{3,}\s*$)
