@@ -17,7 +17,7 @@
       match: !regex |-
         \s*(id) # id
         (:) # :
-        \s("[\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*") # text
+        \s?("[\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*") # text
       captures:
         '1':
           name: keyword.control.mermaid
@@ -29,7 +29,7 @@
       match: !regex |-
         \s*(type) # type
         (:) # :
-        \s(NORMAL|REVERSE|HIGHLIGHT) # commit_type
+        \s?(NORMAL|REVERSE|HIGHLIGHT) # commit_type
       captures:
         '1':
           name: keyword.control.mermaid
@@ -41,7 +41,7 @@
       match: !regex |-
         \s*(tag) # tag
         (:) # :
-        \s("[\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*") # text
+        \s?("[\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*") # text
       captures:
         '1':
           name: keyword.control.mermaid
