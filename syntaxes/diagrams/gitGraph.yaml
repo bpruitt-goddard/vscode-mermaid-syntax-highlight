@@ -17,7 +17,7 @@
       match: !regex |-
         \s*(id) # id
         (:) # :
-        \s?("[\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*") # text
+        \s?("[^"\n]*") # text
       captures:
         '1':
           name: keyword.control.mermaid
