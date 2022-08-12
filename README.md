@@ -50,7 +50,6 @@ Supports highlighting in Azure Dev Ops (ADO) colon syntax:
 
 Based on the starter language support repo [here](https://github.com/mjbvz/vscode-fenced-code-block-grammar-injection-example), and initially created based on the Atom language support [here](https://github.com/ytisf/language-mermaid).
 
-
 ## Contributing
 
 For information on how to build/test/contribute, see the [Contributing Guide](CONTRIBUTING.md).
