@@ -35,7 +35,7 @@
             \s*(-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|) # Graph Link
             (\s*[-\w]+\b) # Entity To
             (\[|\(+|\>|\{)? # Edge/Shape?
-            (\s*[-\w]+\b)? # Text
+            \s*([^\]\)\}\n]+)? # Text
             (\]|\)+|\})? # Edge/shape
           captures:
             '1':
@@ -54,7 +54,7 @@
           match: !regex |-
             (\s*[-\w]+\b) # Entity To
             (\[|\(+|\>|\{)? # Edge/Shape?
-            (\s*[-\w]+\b)? # Text?
+            \s*([^\]\)\}\n]+)? # Text?
             (\]|\)+|\})? # Edge/Shape?
           captures:
             '1':
