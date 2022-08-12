@@ -3,14 +3,18 @@
 The grammars for each diagram type reside in `syntaxes/diagrams` in separate files.
 
 To test changes locally:
+
 1. Build the theme and create the vsix package by running:
+
 ```sh
 npm install
 vsce package
 ```
+
 2. Install the theme locally by using the `Install from VSIX` command. This may require reloading VS Code to see the changes.
 
 ## Testing
+
 There are tests validating the grammar that can be triggered by running:
 
 ```sh
@@ -20,7 +24,7 @@ npm test
 The tests will validate the grammar for all diagrams. Note this does _not_ build the grammar, this will need to be done if changes have been made to the `yaml`. To test and build, run:
 
 ```sh
-npm run convertYaml && npm test  
+npm run convertYaml && npm test
 ```
 
 ## Developing

@@ -4,52 +4,52 @@
     '1':
       name: keyword.control.mermaid
   patterns:
-  - match: \%%.*
-    name: comment
-  - match: !regex |-
-      (dateFormat)\s+ # dateFormat
-      ([\w-]+) # format
-    captures:
-      '1':
-        name: keyword.control.mermaid
-      '2':
-        name: entity.name.function.mermaid
-  - match: !regex |-
-      (axisFormat)\s+ # axisFormat
-      ([\w\%/-]+) # format
-    captures:
-      '1':
-        name: keyword.control.mermaid
-      '2':
-        name: entity.name.function.mermaid
-  - match: !regex |-
-      (title)\s+ # title
-      (\s*["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # text
-    captures:
-      '1':
-        name: keyword.control.mermaid
-      '2':
-        name: string
-  - match: !regex |-
-      (section)\s+ # section
-      (\s*["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # text
-    captures:
-      '1':
-        name: keyword.control.mermaid
-      '2':
-        name: string
-  - begin: !regex |-
-      \s(.*) # Task Text
-      (:) # :
-    beginCaptures:
-      '1':
-        name: string
-      '2':
-        name: keyword.control.mermaid
-    patterns:
-    - match: (crit|done|active|after)
-      name: entity.name.function.mermaid
     - match: \%%.*
       name: comment
-    end: "$"
+    - match: !regex |-
+        (dateFormat)\s+ # dateFormat
+        ([\w-]+) # format
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: entity.name.function.mermaid
+    - match: !regex |-
+        (axisFormat)\s+ # axisFormat
+        ([\w\%/-]+) # format
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: entity.name.function.mermaid
+    - match: !regex |-
+        (title)\s+ # title
+        (\s*["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # text
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: string
+    - match: !regex |-
+        (section)\s+ # section
+        (\s*["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # text
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: string
+    - begin: !regex |-
+        \s(.*) # Task Text
+        (:) # :
+      beginCaptures:
+        '1':
+          name: string
+        '2':
+          name: keyword.control.mermaid
+      patterns:
+        - match: (crit|done|active|after)
+          name: entity.name.function.mermaid
+        - match: \%%.*
+          name: comment
+      end: '$'
   end: (^|\G)(?=\s*[`~]{3,}\s*$)
