@@ -23,6 +23,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Prettier check
+        uses: creyD/prettier_action@v4.2
+        with:
+          dry: true
+          prettier_options: --check **/*.{js,yaml,md}
+
       - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
