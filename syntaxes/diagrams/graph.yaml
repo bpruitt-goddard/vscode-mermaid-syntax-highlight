@@ -6,89 +6,73 @@
     '2':
       name: entity.name.function.mermaid
   patterns:
-  - match: \%%.*
-    name: comment
-  - match: \b(subgraph)\s+([A-Za-z\ 0-9]+)
-    captures:
-      '1':
-        name: keyword.control.mermaid
-      '2':
-        name: entity.name.function.mermaid
-    name: meta.function.mermaid
-  - match: \b(end|RB|BT|RL|TD|LR)\b
-    name: keyword.control.mermaid
-  - comment: '(Entity From)(Graph Link)'
-    begin: !regex |-
-      (\b[-\w]+\b\s*) # Entity From
-      (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|<-->) # Graph Link
-    beginCaptures:
-      '1':
-        name: variable
-      '2':
-        name: keyword.control.mermaid
-    patterns:
     - match: \%%.*
       name: comment
-    - comment: '(Graph Link Text)?(Graph Link)(Entity To)?(Edge/Shape)?(Text)?(Edge/Shape)?'
-      match: !regex |-
-        (\s*(?:"[^"]+")|(?:[\($&%\^/#.,?!;:*+<>_\'\\\w\s]*))? # Graph Link Text?
-        \s*(-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|) # Graph Link
-        (\s*[-\w]+\b) # Entity To
-        (\[|\(+|\>|\{)? # Edge/Shape?
-        (\s*[-\w]+\b)? # Text
-        (\]|\)+|\})? # Edge/shape
+    - match: \b(subgraph)\s+([A-Za-z\ 0-9]+)
       captures:
         '1':
-          name: string
+          name: keyword.control.mermaid
         '2':
-          name: keyword.control.mermaid
-        '3':
-          name: variable
-        '4':
-          name: keyword.control.mermaid
-        '5':
-          name: string
-        '6':
-          name: keyword.control.mermaid
-    - comment: '(Entity To)(Edge/Shape)?(Text)?(Edge/Shape)?'
-      match: !regex |-
-        (\s*[-\w]+\b) # Entity To
-        (\[|\(+|\>|\{)? # Edge/Shape?
-        (\s*[-\w]+\b)? # Text?
-        (\]|\)+|\})? # Edge/Shape?
-      captures:
+          name: entity.name.function.mermaid
+      name: meta.function.mermaid
+    - match: \b(end|RB|BT|RL|TD|LR)\b
+      name: keyword.control.mermaid
+    - comment: '(Entity From)(Graph Link)'
+      begin: !regex |-
+        (\b[-\w]+\b\s*) # Entity From
+        (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|<-->) # Graph Link
+      beginCaptures:
         '1':
           name: variable
         '2':
           name: keyword.control.mermaid
-        '3':
-          name: string
-        '4':
-          name: keyword.control.mermaid
-    end: "$"
-  - comment: '(Entity)(Edge/Shape)(Text)(Edge/Shape)'
-    begin: !regex |-
-      (\b[-\w]+\b\s*) # Entity
-      (\[|\(+|\>|\{|\(\() # Edge/Shape
-      (\s*(?:"[^"]+")|(?:[$&%\^/#.,?!;:*+<>_\'\\\w\s]*)) # Text
-      (\]|\)+|\}|\)\)) # Edge/Shape
-    beginCaptures:
-      '1':
-        name: variable
-      '2':
-        name: keyword.control.mermaid
-      '3':
-        name: string
-      '4':
-        name: keyword.control.mermaid
-    patterns:
+      patterns:
+        - match: \%%.*
+          name: comment
+        - comment: '(Graph Link Text)?(Graph Link)(Entity To)?(Edge/Shape)?(Text)?(Edge/Shape)?'
+          match: !regex |-
+            (\s*(?:"[^"]+")|(?:[\($&%\^/#.,?!;:*+<>_\'\\\w\s]*))? # Graph Link Text?
+            \s*(-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|) # Graph Link
+            (\s*[-\w]+\b) # Entity To
+            (\[|\(+|\>|\{)? # Edge/Shape?
+            (\s*[-\w]+\b)? # Text
+            (\]|\)+|\})? # Edge/shape
+          captures:
+            '1':
+              name: string
+            '2':
+              name: keyword.control.mermaid
+            '3':
+              name: variable
+            '4':
+              name: keyword.control.mermaid
+            '5':
+              name: string
+            '6':
+              name: keyword.control.mermaid
+        - comment: '(Entity To)(Edge/Shape)?(Text)?(Edge/Shape)?'
+          match: !regex |-
+            (\s*[-\w]+\b) # Entity To
+            (\[|\(+|\>|\{)? # Edge/Shape?
+            (\s*[-\w]+\b)? # Text?
+            (\]|\)+|\})? # Edge/Shape?
+          captures:
+            '1':
+              name: variable
+            '2':
+              name: keyword.control.mermaid
+            '3':
+              name: string
+            '4':
+              name: keyword.control.mermaid
+      end: '$'
     - comment: '(Entity)(Edge/Shape)(Text)(Edge/Shape)'
-      match: !regex |-
-        (\s*\b[-\w]+\b\s*) # Entity
-        (\[|\(+|\>|\{) # Edge/Shape
-        (\s*["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # Text
-        (\]|\)+|\}) # Edge/Shape
-      captures:
+      begin: !regex |-
+        (\b[-\w]+\b\s*) # Entity
+        (\[|\(+|\>|\{|\(\() # Edge/Shape
+        (\s*(?:"[^"]+")|(?:[$&%\^/#.,?!;:*+<>_\'\\\w\s]*)) # Text
+        (\]|\)+|\}|\)\)) # Edge/Shape
+      beginCaptures:
         '1':
           name: variable
         '2':
@@ -97,70 +81,86 @@
           name: string
         '4':
           name: keyword.control.mermaid
-    - comment: '(Graph Link)(Graph Link Text)(Graph Link)(Entity)(Edge/Shape)(Text)(Edge/Shape)'
+      patterns:
+        - comment: '(Entity)(Edge/Shape)(Text)(Edge/Shape)'
+          match: !regex |-
+            (\s*\b[-\w]+\b\s*) # Entity
+            (\[|\(+|\>|\{) # Edge/Shape
+            (\s*["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # Text
+            (\]|\)+|\}) # Edge/Shape
+          captures:
+            '1':
+              name: variable
+            '2':
+              name: keyword.control.mermaid
+            '3':
+              name: string
+            '4':
+              name: keyword.control.mermaid
+        - comment: '(Graph Link)(Graph Link Text)(Graph Link)(Entity)(Edge/Shape)(Text)(Edge/Shape)'
+          match: !regex |-
+            (\s*-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?) # Graph Link
+            (\s*[-\w\s]+\b)? # Graph Link Text
+            (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|)? # Graph Link
+            (\s*\b[-\w]+\b\s*) # Entity
+            (\[|\(+|\>|\{) # Edge/Shape
+            (\s*["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*)? # Text
+            (\]|\)+|\}) # Edge/Shape
+          captures:
+            '1':
+              name: keyword.control.mermaid
+            '2':
+              name: string
+            '3':
+              name: keyword.control.mermaid
+            '4':
+              name: variable
+            '5':
+              name: keyword.control.mermaid
+            '6':
+              name: string
+            '7':
+              name: keyword.control.mermaid
+      end: '$'
+    - match: (\b[-\w]+\b\s*)
+      name: variable
+    - comment: '(Class)(Node(s))(ClassName)'
       match: !regex |-
-        (\s*-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?) # Graph Link
-        (\s*[-\w\s]+\b)? # Graph Link Text
-        (-?-[-\>]\|?|=?=[=\>]|(?:\.-|-\.)-?\>?|\|)? # Graph Link
-        (\s*\b[-\w]+\b\s*) # Entity
-        (\[|\(+|\>|\{) # Edge/Shape
-        (\s*["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*)? # Text
-        (\]|\)+|\}) # Edge/Shape
+        \s*(class) # class
+        \s+(\b[-,\w]+) # Node(s)
+        \s+(\b\w+\b) # ClassName
       captures:
         '1':
           name: keyword.control.mermaid
         '2':
-          name: string
-        '3':
-          name: keyword.control.mermaid
-        '4':
           name: variable
-        '5':
-          name: keyword.control.mermaid
-        '6':
+        '3':
           name: string
-        '7':
+    - comment: '(ClassDef)(ClassName)(Styles)'
+      match: !regex |-
+        \s*(classDef) # classDef
+        \s+(\b\w+\b) # ClassName
+        \s+(\b[-,:;#\w]+) # Styles
+      captures:
+        '1':
           name: keyword.control.mermaid
-    end: "$"
-  - match: (\b[-\w]+\b\s*)
-    name: variable
-  - comment: '(Class)(Node(s))(ClassName)'
-    match: !regex |-
-      \s*(class) # class
-      \s+(\b[-,\w]+) # Node(s)
-      \s+(\b\w+\b) # ClassName
-    captures:
-      '1':
-        name: keyword.control.mermaid
-      '2':
-        name: variable
-      '3':
-        name: string
-  - comment: '(ClassDef)(ClassName)(Styles)'
-    match: !regex |-
-      \s*(classDef) # classDef
-      \s+(\b\w+\b) # ClassName
-      \s+(\b[-,:;#\w]+) # Styles
-    captures:
-      '1':
-        name: keyword.control.mermaid
-      '2':
-        name: variable
-      '3':
-        name: string
-  - comment: '(Click)(Entity)(Link)?(Tooltip)'
-    match: !regex |-
-      \s*(click) # Click
-      \s+(\b[-\w]+\b\s*) # Entity
-      (\b\w+\b)? # Link/callback?
-      \s("*.*") # Tooltip
-    captures:
-      '1':
-        name: keyword.control.mermaid
-      '2':
-        name: variable
-      '3':
-        name: variable
-      '4':
-        name: string
+        '2':
+          name: variable
+        '3':
+          name: string
+    - comment: '(Click)(Entity)(Link)?(Tooltip)'
+      match: !regex |-
+        \s*(click) # Click
+        \s+(\b[-\w]+\b\s*) # Entity
+        (\b\w+\b)? # Link/callback?
+        \s("*.*") # Tooltip
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: variable
+        '3':
+          name: variable
+        '4':
+          name: string
   end: (^|\G)(?=\s*[`~]{3,}\s*$)
