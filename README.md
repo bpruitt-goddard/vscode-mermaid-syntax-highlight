@@ -36,6 +36,10 @@ Supports both fenced markdown (see screenshots), and mmd files.
 
 <img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/erDiagram.png" alt="Entity Relationship Diagram Screenshot" width="500">
 
+### Git Graph
+
+<img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/gitGraph.png" alt="Git Graph Screenshot" width="325">
+
 ### ADO Support
 
 Supports highlighting in Azure Dev Ops (ADO) colon syntax:
