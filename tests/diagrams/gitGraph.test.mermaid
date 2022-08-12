@@ -1,0 +1,94 @@
+%% SYNTAX TEST "source.mermaid" "git graph test"
+
+gitGraph
+%%%%%%%% <--- keyword.control.mermaid
+  %% comment
+%%^^^^^^^^^^ comment
+  commit
+%%^^^^^^ keyword.control.mermaid
+  commit id:"Normal"
+%%^^^^^^  keyword.control.mermaid
+%%       ^^ keyword.control.mermaid
+%%         ^ keyword.control.mermaid
+%%          ^^^^^^^^ string
+  commit type: NORMAL
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^ keyword.control.mermaid
+%%           ^ keyword.control.mermaid
+%%             ^^^^^^ entity.name.function.mermaid
+  commit type: HIGHLIGHT
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^ keyword.control.mermaid
+%%           ^ keyword.control.mermaid
+%%             ^^^^^^^^^ entity.name.function.mermaid
+  commit type: REVERSE
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^ keyword.control.mermaid
+%%           ^ keyword.control.mermaid
+%%             ^^^^^^^ entity.name.function.mermaid
+  commit id: "Reverse" type: REVERSE
+%%^^^^^^ keyword.control.mermaid
+%%       ^^ keyword.control.mermaid
+%%         ^ keyword.control.mermaid
+%%           ^^^^^^^^^ string
+%%                     ^^^^ keyword.control.mermaid
+%%                         ^ keyword.control.mermaid
+%%                           ^^^^^^^ entity.name.function.mermaid
+  commit id: "feat(api): ..."
+%%^^^^^^  keyword.control.mermaid
+%%       ^^ keyword.control.mermaid
+%%         ^ keyword.control.mermaid
+%%           ^^^^^^^^^^^^^^^^ string
+  commit type: REVERSE id: "Re-order type and id"
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^ keyword.control.mermaid
+%%           ^ keyword.control.mermaid
+%%             ^^^^^^^ entity.name.function.mermaid
+%%                     ^^ keyword.control.mermaid
+%%                       ^ keyword.control.mermaid
+%%                         ^^^^^^^^^^^^^^^^^^^^^^ string
+  commit tag: "v1.0.0"
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^ keyword.control.mermaid
+%%          ^ keyword.control.mermaid
+%%            ^^^^^^^^ string
+  commit tag: "v1.1.0" type: REVERSE id: "tag and type and id"
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^ keyword.control.mermaid
+%%          ^ keyword.control.mermaid
+%%            ^^^^^^^^ string
+%%                     ^^^^ keyword.control.mermaid
+%%                         ^ keyword.control.mermaid
+%%                           ^^^^^^^ entity.name.function.mermaid
+%%                                   ^^ keyword.control.mermaid
+%%                                     ^ keyword.control.mermaid
+%%                                       ^^^^^^^^^^^^^^^^^^^^^^ string
+  checkout master
+%%^^^^^^^^ keyword.control.mermaid
+%%         ^^^^^^ variable
+  checkout branch-name
+%%^^^^^^^^ keyword.control.mermaid
+%%         ^^^^^^^^^^^ variable
+  branch new-branch
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^^^^^^^ variable
+  branch branch-3 order: 1
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^^^^^ variable
+%%                ^^^^^ keyword.control.mermaid
+%%                     ^ keyword.control.mermaid
+%%                       ^ constant.numeric.decimal.mermaid
+  merge merge-branch
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^^^^^^^^^ variable
+  merge merge-branch tag:"MY JUNCTION"
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^^^^^^^^^ variable
+%%                   ^^^ keyword.control.mermaid
+%%                      ^ keyword.control.mermaid
+%%                       ^^^^^^^^^^^^^ string
+  cherry-pick id:"Normal"
+%%^^^^^^^^^^^  keyword.control.mermaid
+%%            ^^ keyword.control.mermaid
+%%              ^ keyword.control.mermaid
+%%               ^^^^^^^^ string

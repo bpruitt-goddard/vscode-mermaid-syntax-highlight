@@ -64,3 +64,6 @@
 ### [v1.3.4]
 - Fix sequence diagram title whitespace
 - Fix sequence diagram actor/participant whitespace
+
+### [v1.4.0]
+- Add git graph support
