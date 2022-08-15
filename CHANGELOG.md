@@ -87,3 +87,7 @@
 ### [v1.4.0]
 
 - Add git graph support
+
+### [v1.4.1]
+
+- Add missing graph entity shapes
