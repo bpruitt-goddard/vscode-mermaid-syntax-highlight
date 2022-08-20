@@ -127,7 +127,7 @@
         (note (?:left|right) of) # note left|right of
         \s+([\w-]+) # state name
         \s+(:) # :
-        \s*(\s*[-\w\s]+\b) # note text
+        \s*([^\n:]+) # note text
       captures:
         '1':
           name: keyword.control.mermaid
