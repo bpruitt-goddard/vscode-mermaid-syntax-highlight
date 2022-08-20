@@ -10,7 +10,6 @@ stateDiagram
 %%^^ variable
 %%   ^ keyword.control.mermaid
 %%     ^^^^^^^^^^^^^^^^^^^^^^ string
-
   s1 --> s2
 %%^^ variable
 %%   ^^^ keyword.control.mermaid
@@ -116,12 +115,12 @@ stateDiagram
 %%    ^^^ keyword.control.mermaid
 %%        ^^^ keyword.control.mermaid
 %%            ^^^^^^^^^^^ variable
-      CapsLockOff --> CapsLockOn : EvCapsLockPressed
+      CapsLockOff --> CapsLockOn : EvCapsLockPressed/moreText
 %%    ^^^^^^^^^^^ variable
 %%                ^^^ keyword.control.mermaid
 %%                    ^^^^^^^^^^ variable
 %%                               ^ keyword.control.mermaid
-%%                                 ^^^^^^^^^^^^^^^^^ string
+%%                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^ string
       CapsLockOn --> CapsLockOff : EvCapsLockPressed
 %%    ^^^^^^^^^^ variable
 %%               ^^^ keyword.control.mermaid

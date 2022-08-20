@@ -83,7 +83,7 @@
           match: !regex |-
             \s+([\w-]+) # state name
             \s*(:)? # :
-            \s*(\s*[-\w\s]+\b)? # transition text
+            \s*([^\n:]+)? # transition text
           captures:
             '1':
               name: variable
@@ -95,7 +95,7 @@
           match: !regex |-
             (\[\*\]) # [*]
             \s*(:)? # :
-            \s*(\s*[-\w\s]+\b)? # transition text
+            \s*([^\n:]+)? # transition text
           captures:
             '1':
               name: keyword.control.mermaid
@@ -110,7 +110,7 @@
         \s+(-->) # -->
         \s+([\w-]+) # state name
         \s*(:)? # :
-        \s*(\s*[-\w\s]+\b)? # transition text
+        \s*([^\n:]+)? # transition text
       captures:
         '1':
           name: keyword.control.mermaid
