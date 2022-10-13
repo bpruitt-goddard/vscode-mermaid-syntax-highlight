@@ -6,6 +6,17 @@ graph TB
   ID-4 
 %%^^^^ variable
   %% Entity[Text]
+  A["
+%%^ variable
+%% ^  keyword.control.mermaid 
+%%  ^ string
+    Hard 
+%%  ^^^^ string
+    edge
+%%  ^^^^ string
+  "]
+%%^ string
+%% ^  keyword.control.mermaid 
   ID-1[Node 1]
 %%^^^^ variable
 %%    ^ keyword.control.mermaid 
@@ -105,6 +116,37 @@ graph TB
 %%                             ^ keyword.control.mermaid
 %%                              ^^^^^^^^^^ string
 %%                                        ^ keyword.control.mermaid
+  A["
+%%^ variable
+%% ^  keyword.control.mermaid 
+%%  ^ string
+    Hard 
+%%  ^^^^ string
+    edge
+%%  ^^^^ string
+  "] -->|"
+%%^ string
+%% ^ keyword.control.mermaid
+%%   ^^^^ keyword.control.mermaid
+%%       ^ string
+    Link
+%%  ^^^^ string
+    text
+%%  ^^^^ string
+  "| B("
+%%^ string
+%% ^ keyword.control.mermaid
+%%   ^ variable
+%%    ^ keyword.control.mermaid
+%%     ^ string
+    Round
+%%  ^^^^ string
+    edge
+%%  ^^^^ string
+  ")
+%%^ string
+%% ^ keyword.control.mermaid
+
   ID-1---ID-2(Text multi word)
 %%^^^^ variable
 %%    ^^^  keyword.control.mermaid 
