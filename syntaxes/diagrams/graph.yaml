@@ -29,20 +29,20 @@
         '3':
           name: string
       patterns:
-        - comment: ("multi-line text") 
+        - comment: ("multi-line text")
           begin: '\s*(")'
           beginCaptures:
             '1':
               name: string
           patterns:
-            - comment: '(capture inner text between quotes)'
+            - comment: capture inner text between quotes
               begin: !regex |-
                 ([^"]*)
               beginCaptures:
                 '1':
                   name: string
               patterns:
-              # This capture is needed to make the begin capture function
+                # This capture is needed to make the begin capture function
                 - match: '([^"]*)'
                   captures:
                     '1':
@@ -52,7 +52,7 @@
           endCaptures:
             '1':
               name: string
-        - comment: single line text
+        - comment: (single line text)
           match: !regex |-
             \s*([$&%\^/#.,?!;:*+<>_\'\\\w\s]+) # Text
           captures:
@@ -63,27 +63,27 @@
       endCaptures:
         '1':
           name: keyword.control.mermaid
-    - comment: Graph Link With Multiline text
+    - comment: (Graph Link)("Multiline text")(Graph Link)
       begin: !regex |-
         \s*((?:-{2,5}|={2,5})[xo>]?\|) # Start arrow
       beginCaptures:
         '1':
           name: keyword.control.mermaid
       patterns:
-        - comment: ("multi-line text") 
+        - comment: ("multi-line text")
           begin: '\s*(")'
           beginCaptures:
             '1':
               name: string
           patterns:
-            - comment: '(capture inner text between quotes)'
+            - comment: capture inner text between quotes
               begin: !regex |-
                 ([^"]*)
               beginCaptures:
                 '1':
                   name: string
               patterns:
-              # This capture is needed to make the begin capture function
+                # This capture is needed to make the begin capture function
                 - match: '([^"]*)'
                   captures:
                     '1':
@@ -93,7 +93,7 @@
           endCaptures:
             '1':
               name: string
-        - comment: single line text
+        - comment: (single line text)
           match: !regex |-
             \s*([$&%\^/#.,?!;:*+<>_\'\\\w\s]+) # Text
           captures:
@@ -104,8 +104,8 @@
       endCaptures:
         '1':
           name: keyword.control.mermaid
-    - comment: Graph Link With Text
-      match: !regex |-       
+    - comment: (Graph Link Start Arrow)(Text)(Graph Link End Arrow)
+      match: !regex |-
         \s*([xo<]?(?:-{2,5}|={2,5}|-\.{1,3}|-\.)) # Start Arrow        
         ((?:(?!--|==)[\w\s*+%=\\/:\.\-'`,"&^#$!?])*) # Text
         ((?:-{2,5}|={2,5}|\.{1,3}-|\.-)[xo>]?) # End Arrow
@@ -116,13 +116,13 @@
           name: string
         '3':
           name: keyword.control.mermaid
-    - comment: Graph Link
+    - comment: (Graph Link)
       match: !regex |-
         \s*([ox<]?(?:-.{1,3}-|-{1,3}|={1,3})[ox>]?) # Graph Link
       captures:
         '1':
           name: keyword.control.mermaid
-    - comment: Entity  
+    - comment: Entity
       match: (\b(?:(?!--|==)[-\w])+\b\s*)
       name: variable
     - comment: '(Class)(Node(s))(ClassName)'
