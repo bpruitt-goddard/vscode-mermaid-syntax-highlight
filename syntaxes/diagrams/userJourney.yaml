@@ -1,0 +1,9 @@
+- comment: User Journey
+  begin: ^\s*(journey)
+  beginCaptures:
+    '1':
+      name: keyword.control.mermaid
+  patterns:
+    - match: \%%.*
+      name: comment
+  end: (^|\G)(?=\s*[`~]{3,}\s*$)
