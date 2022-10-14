@@ -1,47 +1,49 @@
-## Change Log
+# Change Log
 
-### [v0.0.1]
+## [v1.4.1]
 
-- Initial release with flowchart/graph and sequence diagram support
+- Add missing graph entity shapes
 
-### [v0.0.2]
+## [v1.4.0]
 
-- Add support for complex graph cases
-- Add Mermaid language and support for .mmd files
+- Add git graph support
 
-### [v1.0.0]
+## [v1.3.4]
 
-- Added gantt support, completing support for all 3 graph types
+- Fix sequence diagram title whitespace
+- Fix sequence diagram actor/participant whitespace
 
-### [v1.0.1]
+## [v1.3.3]
 
-- Allow more punctuation in graph and gantt text
+- Add sequence diagram actor support
 
-### [v1.0.2]
+## [v1.3.2]
 
-- Add pie chart support
+- Add graph diagram double arrow support
+- Add class diagram multiple parameter support
 
-### [v1.0.3]
+## [v1.3.1]
 
-- Fix sequence diagram participant label highlighting
+- Add classDiagram reversed arrow support
 
-### [v1.0.4]
+## [v1.3.0]
 
-- Fix sequence diagram entity text highlighting
+- Add entity relationship diagram support
 
-### [v1.0.5]
+## [v1.2.4]
 
-- Add basic flowchart support
+- Add ADO syntax support
 
-### [v1.1.0]
+## [v1.2.3]
 
-- Add class diagram support
+- Fix bug preventing .mmd files from being properly highlighted
+- Add support in graphs for nodes with id only
 
-### [v1.2.0]
+## [v1.2.2]
 
-- Add state diagram support
+- Fix bug in new prepublish build step causing extension to break
 
-### [v1.2.1]
+## [v1.2.1]
 
 - Update sequence diagram support with:
   - Async arrows
@@ -49,45 +51,43 @@
   - Par blocks
   - Rect (color) blocks
 
-### [v1.2.2]
+## [v1.2.0]
 
-- Fix bug in new prepublish build step causing extension to break
+- Add state diagram support
 
-### [v1.2.3]
+## [v1.1.0]
 
-- Fix bug preventing .mmd files from being properly highlighted
-- Add support in graphs for nodes with id only
+- Add class diagram support
 
-### [v1.2.4]
+## [v1.0.5]
 
-- Add ADO syntax support
+- Add basic flowchart support
 
-### [v1.3.0]
+## [v1.0.4]
 
-- Add entity relationship diagram support
+- Fix sequence diagram entity text highlighting
 
-### [v1.3.1]
+## [v1.0.3]
 
-- Add classDiagram reversed arrow support
+- Fix sequence diagram participant label highlighting
 
-### [v1.3.2]
+## [v1.0.2]
 
-- Add graph diagram double arrow support
-- Add class diagram multiple parameter support
+- Add pie chart support
 
-### [v1.3.3]
+## [v1.0.1]
 
-- Add sequence diagram actor support
+- Allow more punctuation in graph and gantt text
 
-### [v1.3.4]
+## [v1.0.0]
 
-- Fix sequence diagram title whitespace
-- Fix sequence diagram actor/participant whitespace
+- Added gantt support, completing support for all 3 graph types
 
-### [v1.4.0]
+## [v0.0.2]
 
-- Add git graph support
+- Add support for complex graph cases
+- Add Mermaid language and support for .mmd files
 
-### [v1.4.1]
+## [v0.0.1]
 
-- Add missing graph entity shapes
+- Initial release with flowchart/graph and sequence diagram support
