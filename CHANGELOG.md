@@ -1,5 +1,9 @@
 # Change Log
 
+## [v1.5.0]
+
+- Add user journey support
+
 ## [v1.4.2]
 
 - Add graph multiline entity support
