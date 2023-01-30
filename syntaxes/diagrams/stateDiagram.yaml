@@ -152,4 +152,4 @@
       endCaptures:
         '1':
           name: keyword.control.mermaid
-  end: (^|\G)(?=\s*[`~]{3,}\s*$)
+  end: (^|\G)(?=\s*[`:~]{3,}\s*$)
