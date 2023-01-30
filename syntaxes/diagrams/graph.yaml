@@ -164,4 +164,4 @@
           name: variable
         '4':
           name: string
-  end: (^|\G)(?=\s*[`~]{3,}\s*$)
+  end: (^|\G)(?=\s*[`:~]{3,}\s*$)

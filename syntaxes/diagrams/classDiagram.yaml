@@ -256,5 +256,4 @@
           name: storage.type.mermaid
         '5':
           name: punctuation.definition.typeparameters.end.mermaid
-
-  end: (^|\G)(?=\s*[`~]{3,}\s*$)
+  end: (^|\G)(?=\s*[`:~]{3,}\s*$)
