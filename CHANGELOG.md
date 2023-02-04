@@ -1,5 +1,9 @@
 # Change Log
 
+## [v1.6.0]
+
+- Add support for curly braces in code block pattern
+
 ## [v1.5.0]
 
 - Add user journey support
