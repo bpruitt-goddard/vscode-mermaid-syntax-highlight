@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath16">
+      <path d="M 0,1320.455 H 1080 V 0 H 0 Z" id="path14"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath832">
+      <path d="m 462.136,883.202 h 117.6 v 113.52 h -117.6 z" id="path830"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath850">
+      <path d="m 561.426,883.702 h 117.6 v 113.521 h -117.6 z" id="path848"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath868">
+      <path d="M 0,1320.455 H 1080 V 0 H 0 Z" id="path866"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath880">
+      <path d="m 551.156,642.55 h 104.4 v 113.04 h -104.4 z" id="path878"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath898">
+      <path d="M 0,1320.455 H 1080 V 0 H 0 Z" id="path896"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath914">
+      <path d="m 500.704,975.091 h 132 v 116.64 h -132 z" id="path912"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath932">
+      <path d="M 0,1320.455 H 1080 V 0 H 0 Z" id="path930"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath940">
+      <path d="m 530.423,1024.82 h 80.4 v -99.84 h -80.4 z" id="path938"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath944">
+      <path d="m 530.423,1024.82 h 80.4 v -99.84 h -80.4 z" id="path942"/>
+    </clipPath>
+    <mask maskUnits="userSpaceOnUse" x="0" y="0" width="1" height="1" id="mask946">
+      <g id="g956">
+        <g clip-path="url(#clipPath944)" id="g954">
+          <g id="g952">
+            <g transform="matrix(80.399994,0,0,99.839996,530.42285,924.97983)" id="g950">
+              <image width="1" height="1" style="image-rendering:optimizeSpeed" preserveAspectRatio="none" transform="matrix(1,0,0,-1,0,1)" id="image948" xlink:href="data:image/png;base64,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"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath982">
+      <path d="M 357.78,677.695 H 506.339 V 789.776 H 357.78 Z" id="path980"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath1000">
+      <path d="m 440.717,734.197 h 112.08 v 127.2 h -112.08 z" id="path998"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath1018">
+      <path d="m 591.873,626.533 h 201.6 v 245.759 h -201.6 z" id="path1016"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath1036">
+      <path d="M 312.701,659.993 H 415.18 v 82.561 H 312.701 Z" id="path1034"/>
+    </clipPath>
+  </defs>
+  <g id="g8" transform="matrix(0, -0.519848, -0.519848, 0, 1130.133057, 718.086548)" style="">
+    <g id="g10" transform="matrix(1.032997, 0, 0, 1.032997, 182.652069, 1318.689941)" style="">
+      <g id="g12" clip-path="url(#clipPath16)">
+        <g id="g18" transform="translate(462.27,861.1582)"/>
+        <g id="g22" transform="translate(757.8691,330.4248)">
+          <path d="M 0 0 C 70.436 -20.811 96.77 101.039 204.816 61.889 C 171.275 105.158 46.248 176.654 -26.764 104.693 C -48.699 83.076 -50.873 70.83 -74.334 64.926 C -80.699 56.248 -99.203 28.826 -103.768 20.813 C -97.18 -8.611 -109.48 -42.488 -79 -97.67 C -64.844 -123.295 9.387 -226.195 107.621 -202.557 C -32.107 -114.805 52.555 -52.096 0 0" style="fill-opacity: 1; fill-rule: nonzero; stroke: none; fill: rgb(96, 193, 229);" id="path24"/>
+        </g>
+        <g id="g26" transform="translate(655.1602,351.0801)"/>
+        <g id="g30" transform="translate(808.6602,364.708)"/>
+        <g id="g34" transform="translate(754.9609,167.5381)"/>
+        <g id="g38" transform="translate(363.0562,694.626)">
+          <path style="fill-opacity: 1; fill-rule: nonzero; stroke: none; fill: rgb(96, 193, 229);" id="path40" d="M 0 0 C -0.103 0.32 -2.818 -3.57 0 0"/>
+        </g>
+        <g id="g42" transform="translate(334.2139,690.9482)"/>
+        <g id="g46" transform="translate(788.9004,653.749)"/>
+        <g id="g50" transform="translate(778.5,652.7979)"/>
+        <g id="g54" transform="translate(373.0908,715.1274)"/>
+        <g id="g58" transform="translate(388.4282,697.0146)"/>
+        <g id="g62" transform="translate(533.936,812.0884)"/>
+        <g id="g66" transform="translate(376.3232,684.5361)"/>
+        <g id="g70" transform="translate(669.5957,735.3008)"/>
+        <g id="g74" transform="translate(553.1836,862.8779)"/>
+        <g id="g82" transform="translate(657.2246,383.6357)">
+          <path d="M 26.744 11.016 C 10.854 27.426 -23.422 59.951 -22.184 103.666 C -20.479 163.959 39.15 126.696 1.039 216.567 C -30.244 204.055 -113.051 283.693 -142.912 302.463 C -213.707 134.324 -57.229 -9.233 -3.104 -32.452" style="fill-opacity: 1; fill-rule: nonzero; stroke: none; fill: rgb(96, 193, 229);" id="path84"/>
+        </g>
+        <g id="g86" transform="translate(514.7842,684.6338)"/>
+        <g id="g90" transform="translate(657.0117,364.0127)"/>
+        <g id="g94" transform="translate(627.7891,621.6807)"/>
+        <g id="g98" transform="translate(526.6128,638.958)"/>
+        <g id="g102" transform="translate(558.1406,534.374)"/>
+        <g id="g106" transform="translate(616.2344,398.8115)"/>
+        <g id="g110" transform="translate(632.4453,407.3428)"/>
+        <g id="g114" transform="translate(653.7734,420.1416)"/>
+        <g id="g118" transform="translate(651.9961,415.8291)"/>
+        <g id="g122" transform="translate(627.9336,389.9424)"/>
+        <g id="g126" transform="translate(647.1309,404.874)"/>
+        <g id="g130" transform="translate(661.0352,409.3252)"/>
+        <g id="g134" transform="translate(660.1133,404.5186)"/>
+        <g id="g138" transform="translate(641.8379,389.2744)"/>
+        <g id="g142" transform="translate(644.8223,375.1982)"/>
+        <g id="g146" transform="translate(671.6992,400.3682)"/>
+        <g id="g150" transform="translate(532.6646,528.4639)"/>
+        <g id="g154" transform="translate(613.3145,562.5283)"/>
+        <g id="g158" transform="translate(527.5728,573.0986)"/>
+        <g id="g162" transform="translate(560.1719,635.5459)"/>
+        <g id="g166" transform="translate(579.4414,578.665)"/>
+        <g id="g170" transform="translate(583.5781,576.3135)"/>
+        <g id="g174" transform="translate(562.1328,471.3135)"/>
+        <g id="g178" transform="translate(609.6445,489.4365)"/>
+        <g id="g182" transform="translate(628.1328,493.1143)"/>
+        <g id="g186" transform="translate(591.0898,504.3584)"/>
+        <g id="g190" transform="translate(613.1074,640.9697)"/>
+        <g id="g194" transform="translate(639.9824,555.6475)">
+          <path d="M 0 0 C -2.408 -2.008 -1.148 -5.002 0 0" style="fill-opacity: 1; fill-rule: nonzero; stroke: none; fill: rgb(96, 193, 229);" id="path196"/>
+        </g>
+        <g id="g198" transform="translate(636.5605,654.251)"/>
+        <g id="g202" transform="translate(608.707,601.7959)"/>
+        <g id="g206" transform="translate(627.3457,604.6338)"/>
+        <g id="g210" transform="translate(590.6914,518.5049)"/>
+        <g id="g214" transform="translate(585.123,519.5576)"/>
+        <g id="g218" transform="translate(609.8672,529.3545)"/>
+        <g id="g222" transform="translate(628.0293,534.415)"/>
+        <g id="g226" transform="translate(600.5547,412.4072)"/>
+        <g id="g230" transform="translate(605.207,418.79)"/>
+        <g id="g234" transform="translate(620.1602,414.0791)"/>
+        <g id="g238" transform="translate(630.6523,418.9541)"/>
+        <g id="g242" transform="translate(642.7715,426.4521)"/>
+        <g id="g246" transform="translate(573.0762,455.1611)"/>
+        <g id="g250" transform="translate(570.998,451.4111)"/>
+        <g id="g254" transform="translate(584.5957,461.1318)"/>
+        <g id="g258" transform="translate(584.1973,425.1846)"/>
+        <g id="g262" transform="translate(595.6895,432.5498)"/>
+        <g id="g266" transform="translate(616.166,444.0674)"/>
+        <g id="g270" transform="translate(633.6563,455.1592)"/>
+        <g id="g274" transform="translate(631.752,450.9736)"/>
+        <g id="g278" transform="translate(575.2109,524.2686)"/>
+        <g id="g282" transform="translate(614.8867,458.999)"/>
+        <g id="g286" transform="translate(620.0313,464.8564)"/>
+        <g id="g290" transform="translate(631.5234,472.2236)"/>
+        <g id="g294" transform="translate(582.2129,654.0322)"/>
+        <g id="g298" transform="translate(521.7056,612.083)"/>
+        <g id="g302" transform="translate(640.5078,631.3506)"/>
+        <g id="g306" transform="translate(540.6899,663.3467)"/>
+        <g id="g310" transform="translate(518.2134,665.1865)"/>
+        <g id="g314" transform="translate(597.4043,621.458)"/>
+        <g id="g318" transform="translate(574.8535,621.4502)"/>
+        <g id="g322" transform="translate(583.9063,558.2607)"/>
+        <g id="g326" transform="translate(562.9043,518.2432)"/>
+        <g id="g330" transform="translate(526.0132,502.9131)"/>
+        <g id="g334" transform="translate(507.1646,591.8701)"/>
+        <g id="g338" transform="translate(529.7163,591.8799)"/>
+        <g id="g342" transform="translate(579.5332,436.7979)"/>
+        <g id="g346" transform="translate(594.8203,448.0361)"/>
+        <g id="g350" transform="translate(605.1602,662.8135)"/>
+        <g id="g354" transform="translate(553.9688,612.7568)"/>
+        <g id="g358" transform="translate(553.6094,574.8115)"/>
+        <g id="g362" transform="translate(615.8242,507.8604)"/>
+        <g id="g366" transform="translate(619.9727,506.5947)"/>
+        <g id="g370" transform="translate(524.6587,547.665)"/>
+        <g id="g374" transform="translate(539.1802,549.4131)"/>
+        <g id="g378" transform="translate(580.6758,598.2021)"/>
+        <g id="g382" transform="translate(583.5586,596.9502)"/>
+        <g id="g386" transform="translate(566.0215,494.7334)"/>
+        <g id="g390" transform="translate(536.4907,481.2549)"/>
+        <g id="g394" transform="translate(574.7461,538.4775)"/>
+        <g id="g398" transform="translate(592.6211,539.7568)"/>
+        <g id="g402" transform="translate(587.7539,483.7686)"/>
+        <g id="g406" transform="translate(628.0215,431.6709)"/>
+        <g id="g410" transform="translate(640.7598,438.8584)"/>
+        <g id="g414" transform="translate(627.9844,582.1846)"/>
+        <g id="g418" transform="translate(619.4355,579.626)"/>
+        <g id="g422" transform="translate(602.5293,470.4697)"/>
+        <g id="g426" transform="translate(615.1426,473.4854)"/>
+        <g id="g430" transform="translate(666.332,363.6455)"/>
+        <g id="g434" transform="translate(673.8223,366.8467)"/>
+        <g id="g438" transform="translate(679.1836,368.0576)"/>
+        <g id="g442" transform="translate(659.6035,349.5576)"/>
+        <g id="g446" transform="translate(681.1152,380.1553)"/>
+        <g id="g450" transform="translate(679.0605,373.7627)"/>
+        <g id="g454" transform="translate(688.8164,390.5869)"/>
+        <g id="g458" transform="translate(590.291,812.6934)"/>
+        <g id="g462" transform="translate(513.7437,772.5566)"/>
+        <g id="g466" transform="translate(515.3032,730.5103)"/>
+        <g id="g470" transform="translate(515.272,772.0591)"/>
+        <g id="g474" transform="translate(585.1289,805.5474)"/>
+        <g id="g478" transform="translate(527.9097,873.0991)"/>
+        <g id="g482" transform="translate(533.9429,857.8901)"/>
+        <g id="g486" transform="translate(539.5933,865.3081)"/>
+        <g id="g490" transform="translate(533.2642,865.2402)"/>
+        <g id="g494" transform="translate(596.4512,874.52)"/>
+        <g id="g498" transform="translate(602.4824,859.3101)"/>
+        <g id="g502" transform="translate(608.1328,866.729)"/>
+        <g id="g506" transform="translate(601.8027,866.6621)"/>
+        <g id="g510" transform="translate(548.8711,851.6704)"/>
+        <g id="g514" transform="translate(535.1016,839.0615)"/>
+        <g id="g518" transform="translate(539.561,841.2651)"/>
+        <g id="g522" transform="translate(539.3877,846.3862)"/>
+        <g id="g526" transform="translate(595.4805,848.187)"/>
+        <g id="g530" transform="translate(600.7832,852.4829)"/>
+        <g id="g534" transform="translate(608.7578,846.5063)"/>
+        <g id="g538" transform="translate(602.6777,844.481)"/>
+        <g id="g542" transform="translate(543.5117,835.0229)"/>
+        <g id="g546" transform="translate(544.1592,820.1226)"/>
+        <g id="g550" transform="translate(549.4707,822.9546)"/>
+        <g id="g554" transform="translate(549.7158,822.9063)"/>
+        <g id="g558" transform="translate(611.0996,829.0361)"/>
+        <g id="g562" transform="translate(600.125,823.2905)"/>
+        <g id="g566" transform="translate(598.1445,830.1675)"/>
+        <g id="g570" transform="translate(597.7344,830.0278)"/>
+        <g id="g574" transform="translate(591.5215,825.7065)"/>
+        <g id="g578" transform="translate(582.4834,811.5815)"/>
+        <g id="g582" transform="translate(583.4941,815.4775)"/>
+        <g id="g586" transform="translate(583.5908,815.2471)"/>
+        <g id="g590" transform="translate(553.7422,817.4873)"/>
+        <g id="g594" transform="translate(556.9707,819.5713)"/>
+        <g id="g598" transform="translate(566.7266,813.9463)"/>
+        <g id="g602" transform="translate(562.6338,813.9771)"/>
+        <g id="g606" transform="translate(574.6543,1104.2383)"/>
+        <g id="g610" transform="translate(657.9375,992.3042)"/>
+        <g id="g614" transform="translate(672.5566,969.5757)"/>
+        <g id="g618" transform="translate(484.7515,1026.604)"/>
+        <g id="g622" transform="translate(484.0825,991.4585)"/>
+        <g id="g626" transform="translate(469.4634,968.73)"/>
+        <g id="g630" transform="translate(573.8496,876.8652)"/>
+        <g id="g634" transform="translate(420.9106,1001.8936)"/>
+        <g id="g638" transform="translate(446.7095,955.3569)"/>
+        <g id="g642" transform="translate(461.6216,982.8452)"/>
+        <g id="g646" transform="translate(441.2642,979.2705)"/>
+        <g id="g650" transform="translate(558.7441,1104.0229)"/>
+        <g id="g654" transform="translate(591.5977,1089.1089)"/>
+        <g id="g658" transform="translate(427.7114,1063.0112)"/>
+        <g id="g662" transform="translate(562.7012,1119.1064)"/>
+        <g id="g666" transform="translate(250.0493,942.1313)"/>
+        <g id="g670" transform="translate(508.1128,1058.6987)"/>
+        <g id="g674" transform="translate(608.3008,1148.0483)"/>
+        <g id="g678" transform="translate(766.5762,1014.5698)"/>
+        <g id="g682" transform="translate(847.3965,892.8672)"/>
+        <g id="g686" transform="translate(744.5664,980.5918)"/>
+        <g id="g690" transform="translate(606.293,1100.0171)"/>
+        <g id="g694" transform="translate(775.6563,761.1655)"/>
+        <g id="g698" transform="translate(390.0522,954.936)"/>
+        <g id="g702" transform="translate(634.4043,985.0562)"/>
+        <g id="g706" transform="translate(622.7832,990.2998)"/>
+        <g id="g710" transform="translate(599.2637,988.4956)"/>
+        <g id="g714" transform="translate(599.2637,988.4956)"/>
+        <g id="g718" transform="translate(602.5488,986.4414)"/>
+        <g id="g722" transform="translate(602.5488,986.4414)"/>
+        <g id="g726" transform="translate(606.2461,990.4185)"/>
+        <g id="g730" transform="translate(614.5986,977.4517)"/>
+        <g id="g734" transform="translate(595.3516,991.7119)"/>
+        <g id="g738" transform="translate(608.2266,993.5977)"/>
+        <g id="g742" transform="translate(560.6016,975.0747)"/>
+        <g id="g746" transform="translate(517.498,988.4619)"/>
+        <g id="g750" transform="translate(541.668,987.4014)"/>
+        <g id="g754" transform="translate(541.668,987.4014)"/>
+        <g id="g758" transform="translate(538.4077,985.2158)"/>
+        <g id="g762" transform="translate(538.4077,985.2158)"/>
+        <g id="g766" transform="translate(525.6323,987.6616)"/>
+        <g id="g770" transform="translate(534.2417,976.4829)"/>
+        <g id="g774" transform="translate(544.543,990.2788)"/>
+        <g id="g778" transform="translate(546.5059,988.6548)"/>
+        <g id="g782" transform="translate(508.7393,978.1406)"/>
+        <g id="g786" transform="translate(544.4609,915.2725)"/>
+        <g id="g790" transform="translate(545.8955,914.3154)"/>
+        <g id="g794" transform="translate(545.1016,915.2646)"/>
+        <g id="g798" transform="translate(547.6953,914.0063)"/>
+        <g id="g802" transform="translate(571.1797,903.811)"/>
+        <g id="g806" transform="translate(543.3584,908.3765)"/>
+        <g id="g810" transform="translate(602.748,909.918)"/>
+        <g id="g814" transform="translate(552.9746,945.1377)"/>
+        <g id="g818" transform="translate(568.0508,949.1289)"/>
+        <g id="g822" transform="translate(553.5879,944.7217)"/>
+      </g>
+    </g>
+    <g id="g826">
+      <g id="g828" clip-path="url(#clipPath832)">
+        <g id="g834">
+          <g id="g836" transform="matrix(117.59999,0,0,113.52,462.13574,883.20216)"/>
+        </g>
+      </g>
+    </g>
+    <g id="g844">
+      <g id="g846" clip-path="url(#clipPath850)">
+        <g id="g852">
+          <g id="g854" transform="matrix(117.59999,0,0,113.52,561.42676,883.70216)"/>
+        </g>
+      </g>
+    </g>
+    <g id="g862">
+      <g id="g864" clip-path="url(#clipPath868)">
+        <g id="g870" transform="translate(574.8594,687.8936)"/>
+      </g>
+    </g>
+    <g id="g874">
+      <g id="g876" clip-path="url(#clipPath880)">
+        <g id="g882">
+          <g id="g884" transform="matrix(104.39999,0,0,113.03999,551.15625,642.55083)"/>
+        </g>
+      </g>
+    </g>
+    <g id="g892">
+      <g id="g894" clip-path="url(#clipPath898)">
+        <g id="g900" transform="translate(526.4155,1006.8555)"/>
+        <g id="g904" transform="translate(611.9844,1008.708)"/>
+      </g>
+    </g>
+    <g id="g908">
+      <g id="g910" clip-path="url(#clipPath914)">
+        <g id="g916">
+          <g id="g918" transform="matrix(132,0,0,116.64,500.70459,975.09193)"/>
+        </g>
+      </g>
+    </g>
+    <g id="g926">
+      <g id="g928" clip-path="url(#clipPath932)">
+        <g id="g934">
+          <g id="g936"/>
+          <g id="g974">
+            <g clip-path="url(#clipPath940)" opacity="0.759995" id="g972">
+              <g id="g970">
+                <g id="g962"/>
+                <g mask="url(#mask946)" id="g968">
+                  <g transform="matrix(80.399994,0,0,99.839996,530.42285,924.97983)" id="g966"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="g976">
+      <g id="g978" clip-path="url(#clipPath982)">
+        <g id="g984">
+          <g id="g986" transform="matrix(148.56,0,0,112.08,357.7793,677.6949)"/>
+        </g>
+      </g>
+    </g>
+    <g id="g994">
+      <g id="g996" clip-path="url(#clipPath1000)">
+        <g id="g1002">
+          <g id="g1004" transform="matrix(112.08,0,0,127.2,440.71729,734.19649)"/>
+        </g>
+      </g>
+    </g>
+    <g id="g1012">
+      <g id="g1014" clip-path="url(#clipPath1018)">
+        <g id="g1020">
+          <g id="g1022" transform="matrix(201.59999,0,0,245.75999,591.87305,626.53297)"/>
+        </g>
+      </g>
+    </g>
+    <g id="g1030">
+      <g id="g1032" clip-path="url(#clipPath1036)">
+        <g id="g1038">
+          <g id="g1040" transform="matrix(102.48,0,0,82.559998,312.7002,659.99371)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
