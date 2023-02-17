@@ -1,5 +1,11 @@
 # Change Log
 
+## [v1.5.1]
+
+- Add fancy icons
+- Fix ADO highlighting not closing properly
+- Add chinese character support to graph subgraphs
+
 ## [v1.5.0]
 
 - Add user journey support
