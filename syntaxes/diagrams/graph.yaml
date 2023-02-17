@@ -1,5 +1,5 @@
 - comment: Graph
-  begin: ^\s*(graph|flowchart)\s+([A-Za-z\ 0-9]+)
+  begin: ^\s*(graph|flowchart)\s+([\p{Letter}\ 0-9]+)
   beginCaptures:
     '1':
       name: keyword.control.mermaid
@@ -8,7 +8,7 @@
   patterns:
     - match: \%%.*
       name: comment
-    - match: \b(subgraph)\s+([A-Za-z\ 0-9]+)
+    - match: \b(subgraph)\s+([\p{Letter}\ 0-9]+)
       captures:
         '1':
           name: keyword.control.mermaid
