@@ -2,7 +2,7 @@
 
 ## [v1.5.1]
 
-- Add fancy icons
+- Add fancy extension icons
 - Fix ADO highlighting not closing properly
 - Add chinese character support to graph subgraphs
 
