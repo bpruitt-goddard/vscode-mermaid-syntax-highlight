@@ -2,7 +2,7 @@
 
 Syntax support for the [Mermaid charting language](https://github.com/knsv/mermaid)
 
-[![Version](https://vsmarketplacebadge.apphb.com/version/bpruitt-goddard.mermaid-markdown-syntax-highlighting.svg)](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting) [![Installs](https://vsmarketplacebadge.apphb.com/installs/bpruitt-goddard.mermaid-markdown-syntax-highlighting.svg)](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting) [![Ratings](https://vsmarketplacebadge.apphb.com/rating/bpruitt-goddard.mermaid-markdown-syntax-highlighting.svg)](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting)
+[![Version](https://img.shields.io/visual-studio-marketplace/v/bpruitt-goddard.mermaid-markdown-syntax-highlighting)](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting) [![Installs](https://img.shields.io/visual-studio-marketplace/i/bpruitt-goddard.mermaid-markdown-syntax-highlighting)](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting) [![Ratings](https://img.shields.io/visual-studio-marketplace/r/bpruitt-goddard.mermaid-markdown-syntax-highlighting)](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting)
 
 Supports both fenced markdown (see screenshots), and mmd files.
 
