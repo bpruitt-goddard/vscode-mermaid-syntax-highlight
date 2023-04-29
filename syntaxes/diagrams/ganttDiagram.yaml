@@ -39,6 +39,14 @@
         '2':
           name: string
     - match: !regex |-
+        ^\s+(todayMarker)\s+ # todayMarker
+        (.*)$ # "off" or styles
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: string
+    - match: !regex |-
         (section)\s+ # section
         (\s*["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # text
       captures:
@@ -47,7 +55,7 @@
         '2':
           name: string
     - begin: !regex |-
-        \s(.*) # Task Text
+        ^\s(.*) # Task Text
         (:) # :
       beginCaptures:
         '1':
