@@ -32,7 +32,7 @@
           name: string
     - match: !regex |-
         (excludes)\s+ # excludes
-        ((?:[\d\-,]+|monday|tuesday|wednesday|thursday|friday|saturday|sunday|weekends)+) # date or weekday
+        ((?:[\d\-,\s]+|monday|tuesday|wednesday|thursday|friday|saturday|sunday|weekends)+) # date or weekday
       captures:
         '1':
           name: keyword.control.mermaid
