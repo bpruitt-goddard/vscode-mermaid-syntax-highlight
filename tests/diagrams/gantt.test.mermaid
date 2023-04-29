@@ -2,15 +2,24 @@
 
 gantt
 %% <-------------- keyword.control.mermaid
-  dateFormat  YYYY-MM-DD
+  dateFormat YYYY-MM-DD
 %%^^^^^^^^^^ keyword.control.mermaid
-%%            ^^^^^^^^^^ entity.name.function.mermaid
-  axisFormat  %m/%d/%Y
+%%           ^^^^^^^^^^ entity.name.function.mermaid
+  axisFormat %m/%d/%Y
 %%^^^^^^^^^^ keyword.control.mermaid
-%%            ^^^^^^^^ entity.name.function.mermaid
+%%           ^^^^^^^^ entity.name.function.mermaid
   title Adding GANTT diagram functionality to mermaid
 %%^^^^^ keyword.control.mermaid
 %%      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  excludes 2023-02-28
+%%^^^^^^^^ keyword.control.mermaid
+%%         ^^^^^^^^^ string
+  excludes weekends
+%%^^^^^^^^ keyword.control.mermaid
+%%         ^^^^^^^^ string
+  excludes 2023-02-28,sunday,2023-01-01,weekends
+%%^^^^^^^^ keyword.control.mermaid
+%%         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
   section A section %%comment
 %%^^^^^^^ keyword.control.mermaid
 %%        ^^^^^^^^^^^^^^^^^^^ string
