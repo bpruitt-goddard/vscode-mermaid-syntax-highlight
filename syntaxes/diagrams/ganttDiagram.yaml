@@ -31,6 +31,14 @@
         '2':
           name: string
     - match: !regex |-
+        (excludes)\s+ # excludes
+        ((?:[\d\-,]+|monday|tuesday|wednesday|thursday|friday|saturday|sunday|weekends)+) # date or weekday
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: string
+    - match: !regex |-
         (section)\s+ # section
         (\s*["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # text
       captures:
