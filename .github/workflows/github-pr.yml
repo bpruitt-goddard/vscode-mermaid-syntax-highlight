@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Prettier check
-        uses: creyD/prettier_action@v4.2
+        uses: creyD/prettier_action@v4.3
         with:
           dry: true
           prettier_options: --check **/*.{js,yaml,md}
