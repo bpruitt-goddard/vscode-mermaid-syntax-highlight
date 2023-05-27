@@ -8,7 +8,7 @@
       name: comment
     - match: !regex |-
         (dateFormat)\s+ # dateFormat
-        ([\w-]+) # format
+        ([\w\-\.]+) # format
       captures:
         '1':
           name: keyword.control.mermaid
@@ -16,7 +16,7 @@
           name: entity.name.function.mermaid
     - match: !regex |-
         (axisFormat)\s+ # axisFormat
-        ([\w\%/-]+) # format
+        ([\w\%\/\\\-\.]+) # format
       captures:
         '1':
           name: keyword.control.mermaid
