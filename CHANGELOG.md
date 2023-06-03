@@ -1,5 +1,10 @@
 # Change Log
 
+## [v1.5.2]
+
+- Add gantt excludes and todaymarker
+- Improve gantt dateformat and axisformat support
+
 ## [v1.5.1]
 
 - Add fancy extension icons
