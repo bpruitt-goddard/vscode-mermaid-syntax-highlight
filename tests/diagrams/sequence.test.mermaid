@@ -94,6 +94,12 @@ sequenceDiagram
 %%     ^ variable
 %%      ^ keyword.control.mermaid 
 %%        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  Participant1 (with brackets) -->Backend (with brackets) : wrong on this line
+%%^^^^^^^^^^^^^^^^^^^^^^^^^^^^ variable
+%%                             ^^^ keyword.control.mermaid
+%%                                ^^^^^^^^^^^^^^^^^^^^^^^ variable
+%%                                                        ^ keyword.control.mermaid 
+%%                                                          ^^^^^^^^^^^^^^^^^^ string
   deactivate Alice
 %%^^^^^^^^^^ keyword.control.mermaid
 %%           ^^^^^ variable
@@ -104,6 +110,12 @@ sequenceDiagram
 %%             ^^^^^ variable
 %%                  ^ keyword.control.mermaid 
 %%                    ^^^^^^^^^^^^^^^^^^^ string
+  Note left of Alice (brackets): Alice likes to chat
+%%^^^^ keyword.control.mermaid
+%%     ^^^^^^^ entity.name.function.mermaid
+%%             ^^^^^^^^^^^^^^^^ variable
+%%                             ^ keyword.control.mermaid 
+%%                               ^^^^^^^^^^^^^^^^^^^ string
   Note over B,C: Bob whispers when sick
 %%^^^^ keyword.control.mermaid
 %%     ^^^^ entity.name.function.mermaid
