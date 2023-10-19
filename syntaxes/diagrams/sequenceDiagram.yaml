@@ -79,9 +79,9 @@
       captures:
         '1':
           name: keyword.control.mermaid
-    - comment: '(alt/else/opt/par/and/autonumber)(text)'
+    - comment: '(alt/else/option/par/and/autonumber/critical/opt)(text)'
       match: !regex |-
-        \s*(alt|else|opt|par|and|rect|autonumber) # alt/else/opt/par/and/rect/autonumber
+        \s*(alt|else|option|par|and|rect|autonumber|critical|opt) # keyword
         (?:\s+([^#;]*))? # text
       captures:
         '1':

@@ -198,5 +198,25 @@ sequenceDiagram
 %%      ^ variable
 %%       ^ keyword.control.mermaid
 %%         ^^^^^^^^^^^^^ string
+  critical Establish a connection to the DB
+%%^^^^^^^^ keyword.control.mermaid
+%%         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+    Service-->DB: connect
+%%  ^^^^^^^ variable
+%%         ^^^ keyword.control.mermaid
+%%            ^^ variable
+%%              ^ keyword.control.mermaid
+%%                ^^^^^^^ string
+  option Network timeout
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^^^^^^^^^^^^ string
+    Service-->Service: Log error
+%%  ^^^^^^^ variable
+%%         ^^^ keyword.control.mermaid
+%%            ^^^^^^^ variable
+%%                   ^ keyword.control.mermaid
+%%                     ^^^^^^^^^ string
+  end
+%%^^^ keyword.control.mermaid
 end
 %% <--- keyword.control.mermaid
