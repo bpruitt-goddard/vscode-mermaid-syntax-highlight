@@ -1,5 +1,10 @@
 # Change Log
 
+## [v1.5.3]
+
+- Fix sequence actors matching ending parentheses
+- Add sequence critical
+
 ## [v1.5.2]
 
 - Add gantt excludes and todaymarker
