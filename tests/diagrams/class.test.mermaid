@@ -87,17 +87,33 @@ classDiagram
 %%^^^^^ keyword.control.mermaid
 %%      ^^^^ entity.name.type.class.mermaid
 %%          ^ keyword.control.mermaid
-      -abstractMethod()*
-%%    ^ keyword.control.mermaid
-%%     ^^^^^^^^^^^^^^ entity.name.function.mermaid
-%%                   ^ punctuation.parenthesis.open.mermaid
-%%                    ^ punctuation.parenthesis.closed.mermaid
-%%                     ^ keyword.control.mermaid
-      staticMethod()$
-%%    ^^^^^^^^^^^^ entity.name.function.mermaid
-%%                ^ punctuation.parenthesis.open.mermaid
-%%                 ^ punctuation.parenthesis.closed.mermaid
-%%                  ^ keyword.control.mermaid
+    -abstractMethod()*
+%%  ^ keyword.control.mermaid
+%%   ^^^^^^^^^^^^^^ entity.name.function.mermaid
+%%                 ^ punctuation.parenthesis.open.mermaid
+%%                  ^ punctuation.parenthesis.closed.mermaid
+%%                   ^ keyword.control.mermaid
+    staticMethod()$
+%%  ^^^^^^^^^^^^ entity.name.function.mermaid
+%%              ^ punctuation.parenthesis.open.mermaid
+%%               ^ punctuation.parenthesis.closed.mermaid
+%%                ^ keyword.control.mermaid
+    +abstractStaticMethod(X x)*$
+%%  ^ keyword.control.mermaid
+%%   ^^^^^^^^^^^^^^^^^^^^ entity.name.function.mermaid
+%%                       ^ punctuation.parenthesis.open.mermaid
+%%                        ^ storage.type.mermaid
+%%                          ^ entity.name.variable.parameter.mermaid
+%%                           ^ punctuation.parenthesis.closed.mermaid
+%%                            ^^ keyword.control.mermaid
+    +abstractStaticMethod(X x)$*
+%%  ^ keyword.control.mermaid
+%%   ^^^^^^^^^^^^^^^^^^^^ entity.name.function.mermaid
+%%                       ^ punctuation.parenthesis.open.mermaid
+%%                        ^ storage.type.mermaid
+%%                          ^ entity.name.variable.parameter.mermaid
+%%                           ^ punctuation.parenthesis.closed.mermaid
+%%                            ^^ keyword.control.mermaid
   }
 %%^ keyword.control.mermaid
   %% Class member generics
