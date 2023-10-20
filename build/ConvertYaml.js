@@ -18,7 +18,7 @@ fs.readdirSync(path.join(__dirname, FILE_DIR))
     var inputName = path.join(INPUT_DIR, file);
     var outputName = path.join(
       OUTPUT_DIR,
-      path.parse(inputName).name + '.json'
+      path.parse(inputName).name + '.json',
     );
     var res = read(inputName, null, GRAMMAR_SCHEMA);
 
