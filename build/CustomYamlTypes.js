@@ -35,7 +35,7 @@ if (require.main === module) {
       } else {
         console.error(error.stack || error.message || String(error));
       }
-    }
+    },
   );
 }
 
