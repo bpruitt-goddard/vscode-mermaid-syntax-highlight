@@ -43,7 +43,7 @@
         (~)? # ~
         \s?([\w-]+)? # function name
         (\)) # )
-        ([*\$])? # classifier
+        ([*\$]{0,2}) # classifier
         \s?([\w-]+)? # return type
         (~)? # ~
         ([\w-]+)? # generic return type
@@ -180,7 +180,7 @@
                   name: entity.name.variable.parameter.mermaid
           end: !regex |-
             (\)) # )
-            ([*\$])? # classifier
+            ([*\$]{0,2}) # classifier
             \s?([\w-]+)? # return type
             (~)? # ~
             ([\w-]+)? # generic return type
