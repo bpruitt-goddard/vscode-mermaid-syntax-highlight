@@ -43,7 +43,7 @@
     - comment: '(entity) (relationship) (entity) : (label)'
       match: !regex |-
         \s*([\w-]+)\s+ # entity
-        ((?:\|o|\|\||}o|}\|)(?:..|--)(?:o\||\|\||o{|\|{))\s+ # relationship
+        ((?:\|o|\|\||}o|}\||one or (?:zero|more|many)|zero or (?:one|more|many)|many\((?:0|1)\))(?:..|--)(?:o\||\|\||o{|\|{|one or (?:zero|more|many)|zero or (?:one|more|many)|many\((?:0|1)\)))\s+ # relationship
         ([\w-]+)\s+ # entity
         (:)\s+ # :
         ((?:"[\w\s]*")|(?:[\w-]+)) # label
