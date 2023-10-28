@@ -6,7 +6,7 @@ patterns:
   - include: '#mermaid-ado-code-block'
 repository:
   mermaid-code-block:
-    begin: (?<=[`~])mermaid(\s+[^`~]*)?$
+    begin: (?<=[`~])\{?(\{\.)?mermaid(\s+[^`~]*)?$
     end: (^|\G)(?=\s*[`~]{3,}\s*$)
     patterns:
       - include: '#mermaid'
