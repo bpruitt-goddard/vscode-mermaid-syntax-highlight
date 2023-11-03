@@ -3,10 +3,16 @@ fileTypes: []
 injectionSelector: L:text.html.markdown
 patterns:
   - include: '#mermaid-code-block'
+  - include: '#mermaid-code-block-with-attributes'
   - include: '#mermaid-ado-code-block'
 repository:
   mermaid-code-block:
     begin: (?<=[`~])mermaid(\s+[^`~]*)?$
+    end: (^|\G)(?=\s*[`~]{3,}\s*$)
+    patterns:
+      - include: '#mermaid'
+  mermaid-code-block-with-attributes:
+    begin: (?<=[`~])\{ *\.mermaid(\s+[^`~]*)?$
     end: (^|\G)(?=\s*[`~]{3,}\s*$)
     patterns:
       - include: '#mermaid'
