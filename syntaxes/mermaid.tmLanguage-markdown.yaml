@@ -12,7 +12,7 @@ repository:
     patterns:
       - include: '#mermaid'
   mermaid-code-block-with-attributes:
-    begin: (?<=[`~])\{ *\.mermaid(\s+[^`~]*)?$
+    begin: (?<=[`~])\{\s*\.?mermaid(\s+[^`~]*)?$
     end: (^|\G)(?=\s*[`~]{3,}\s*$)
     patterns:
       - include: '#mermaid'
