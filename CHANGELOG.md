@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.6.0]
+
+- Add support for pandoc code blocks syntax
+- Improve ER diagram relationship alias support
+- Improve ER diagram whitespace sensitivity
+- Add Class diagram abstract static method support
+
 ## [v1.5.3]
 
 - Fix sequence actors matching ending parentheses
