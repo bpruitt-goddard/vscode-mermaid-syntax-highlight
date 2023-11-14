@@ -111,4 +111,25 @@
           name: keyword.control.mermaid
         '5':
           name: string
+    - comment: '(box transparent text)'
+      match: !regex |-
+        \s*(box) # box
+        \s+(transparent) # transparent box background
+        (?:\s+([^;#]*))? # Box Text
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: entity.name.function.mermaid
+        '3':
+          name: string
+    - comment: '(box text)'
+      match: !regex |-
+        \s*(box) # box
+        (?:\s+([^;#]*))? # Box Text
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: string
   end: (^|\G)(?=\s*[`:~]{3,}\s*$)
