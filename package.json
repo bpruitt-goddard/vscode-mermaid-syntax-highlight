@@ -17,8 +17,10 @@
 			{
 				"id": "mermaid",
 				"extensions": [
-					".mmd"
-				]
+					".mmd",
+					".mermaid"
+				],
+				"configuration": "./mermaid-language-configuration.json"
 			}
 		],
 		"grammars": [
@@ -34,7 +36,7 @@
 					"text.html.markdown"
 				],
 				"embeddedLanguages": {
-					"meta.embedded.block.mermaid": "Mermaid"
+					"meta.embedded.block.mermaid": "mermaid"
 				}
 			},
 			{
