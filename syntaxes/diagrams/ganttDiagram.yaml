@@ -23,6 +23,14 @@
         '2':
           name: entity.name.function.mermaid
     - match: !regex |-
+        (tickInterval)\s+ # tickInterval
+        (([1-9][0-9]*)(millisecond|second|minute|hour|day|week|month)) # format
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: string
+    - match: !regex |-
         (title)\s+ # title
         (\s*["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # text
       captures:
