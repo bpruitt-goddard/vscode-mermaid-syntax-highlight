@@ -106,8 +106,8 @@
           name: keyword.control.mermaid
     - comment: (Graph Link Start Arrow)(Text)(Graph Link End Arrow)
       match: !regex |-
-        \s*([xo<]?(?:-{2,5}|={2,5}|-\.{1,3}|-\.)) # Start Arrow        
-        ((?:(?!--|==)[\w\s*+%=\\/:\.\-'`,"&^#$!?])*) # Text
+        \s*([xo<]?(?:-{2,5}|={2,5}|-\.{1,3}|-\.)) # Start Arrow
+        ((?:(?!--|==)[\w\s*+%=\\/:\.\-'`,"&^#$!?<>\[\]])*) # Text
         ((?:-{2,5}|={2,5}|\.{1,3}-|\.-)[xo>]?) # End Arrow
       captures:
         '1':
