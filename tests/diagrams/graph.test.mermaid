@@ -1,112 +1,118 @@
 %% SYNTAX TEST "source.mermaid" "graph/flowchart test"
 
 graph TB
-%% <----- keyword.control.mermaid 
+%% <----- keyword.control.mermaid
 %%    ^^ entity.name.function.mermaid
-  ID-4 
+  ID-4
 %%^^^^ variable
   %% Entity[Text]
   A["
 %%^ variable
-%% ^  keyword.control.mermaid 
+%% ^  keyword.control.mermaid
 %%  ^ string
-    Hard 
+    Hard
 %%  ^^^^ string
     edge
 %%  ^^^^ string
   "]
 %%^ string
-%% ^  keyword.control.mermaid 
+%% ^  keyword.control.mermaid
   ID-1[Node 1]
 %%^^^^ variable
-%%    ^ keyword.control.mermaid 
+%%    ^ keyword.control.mermaid
 %%     ^^^^^^ string
-%%           ^ keyword.control.mermaid 
+%%           ^ keyword.control.mermaid
   ID-2>Node 2]
 %%^^^^ variable
-%%    ^ keyword.control.mermaid 
+%%    ^ keyword.control.mermaid
 %%     ^^^^^^ string
-%%           ^ keyword.control.mermaid 
+%%           ^ keyword.control.mermaid
   ID-3(Node 3 <br> text)
 %%^^^^ variable
-%%    ^ keyword.control.mermaid 
+%%    ^ keyword.control.mermaid
 %%     ^^^^^^^^^^^^^^^^ string
-%%                     ^ keyword.control.mermaid 
+%%                     ^ keyword.control.mermaid
   ID-4([Stadium shape])
 %%^^^^ variable
-%%    ^^ keyword.control.mermaid 
+%%    ^^ keyword.control.mermaid
 %%      ^^^^^^^^^^^^^ string
-%%                   ^^ keyword.control.mermaid 
+%%                   ^^ keyword.control.mermaid
   ID-4[[Subroutine shape]]
 %%^^^^ variable
-%%    ^^ keyword.control.mermaid 
+%%    ^^ keyword.control.mermaid
 %%      ^^^^^^^^^^^^^^^^ string
-%%                      ^^ keyword.control.mermaid 
+%%                      ^^ keyword.control.mermaid
   ID-4[(Cylindrical shape)]
 %%^^^^ variable
-%%    ^^ keyword.control.mermaid 
+%%    ^^ keyword.control.mermaid
 %%      ^^^^^^^^^^^^^^^^^ string
-%%                       ^^ keyword.control.mermaid 
+%%                       ^^ keyword.control.mermaid
   ID-4((Circle shape))
 %%^^^^ variable
-%%    ^^ keyword.control.mermaid 
+%%    ^^ keyword.control.mermaid
 %%      ^^^^^^^^^^^^ string
-%%                  ^^ keyword.control.mermaid 
+%%                  ^^ keyword.control.mermaid
   %% Entity--Entity
   ID-1---ID-2
 %%^^^^ variable
-%%    ^^^ keyword.control.mermaid 
+%%    ^^^ keyword.control.mermaid
 %%       ^^^^ variable
-  
+
   ID-1 --> ID-3
 %%^^^^ variable
-%%     ^^^ keyword.control.mermaid 
+%%     ^^^ keyword.control.mermaid
 %%         ^^^ variable
   ID-1<-->ID-2
-%%    ^^^^ keyword.control.mermaid 
+%%    ^^^^ keyword.control.mermaid
 %%^^^^ variable
 %%        ^^^^ variable
   %% Entity--Text--Entity
   ID-2--Link between 2 and 3---ID-3
 %%^^^^ variable
-%%    ^^ keyword.control.mermaid 
+%%    ^^ keyword.control.mermaid
 %%      ^^^^^^^^^^^^^^^^^^^^ string
 %%                          ^^^ keyword.control.mermaid
 %%                             ^^^^ variable
+  B--"<b>[b]</b>\nb"-->C
+%%^ variable
+%% ^^ keyword.control.mermaid
+%%   ^^^^^^^^^^^^^^^ string
+%%                  ^^^ keyword.control.mermaid
+%%                     ^ variable
   ID-3-->|Action from 3 to 1|ID-1
 %%^^^^ variable
-%%    ^^^^ keyword.control.mermaid 
+%%    ^^^^ keyword.control.mermaid
 %%        ^^^^^^^^^^^^^^^^^^ string
 %%                          ^ keyword.control.mermaid
 %%                           ^^^^ variable
   ID-3 -- "Action from 3 to 2. p/w: '_-!#$%^&*+=?,\'" --> ID-2
 %%^^^^ variable
-%%     ^^  keyword.control.mermaid 
+%%     ^^  keyword.control.mermaid
 %%        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
 %%                                                    ^^^ keyword.control.mermaid
 %%                                                        ^^^^ variable
   ID-3--|This is the text|ID-1
 %%^^^^ variable
-%%    ^^^ keyword.control.mermaid 
+%%    ^^^ keyword.control.mermaid
 %%       ^^^^^^^^^^^^^^^^ string
 %%                       ^ keyword.control.mermaid
 %%                        ^^^^ variable
   ID-3-->|This is the text|ID-1
 %%^^^^ variable
-%%    ^^^^ keyword.control.mermaid 
+%%    ^^^^ keyword.control.mermaid
 %%        ^^^^^^^^^^^^^^^^ string
 %%                        ^ keyword.control.mermaid
 %%                         ^^^^ variable
   ID-3-- This is the text -->ID-1
 %%^^^^ variable
-%%    ^^ keyword.control.mermaid 
+%%    ^^ keyword.control.mermaid
 %%       ^^^^^^^^^^^^^^^^ string
 %%                        ^^^ keyword.control.mermaid
 %%                           ^^^^ variable
   %% Complex cases
   A[Hard edge] -->|Link text| B(Round edge)
 %%^ variable
-%% ^  keyword.control.mermaid 
+%% ^  keyword.control.mermaid
 %%  ^^^^^^^^^ string
 %%           ^ keyword.control.mermaid
 %%             ^^^^ keyword.control.mermaid
@@ -118,9 +124,9 @@ graph TB
 %%                                        ^ keyword.control.mermaid
   A["
 %%^ variable
-%% ^  keyword.control.mermaid 
+%% ^  keyword.control.mermaid
 %%  ^ string
-    Hard 
+    Hard
 %%  ^^^^ string
     edge
 %%  ^^^^ string
@@ -149,21 +155,21 @@ graph TB
 
   ID-1---ID-2(Text multi word)
 %%^^^^ variable
-%%    ^^^  keyword.control.mermaid 
+%%    ^^^  keyword.control.mermaid
 %%       ^^^^ variable
 %%           ^ keyword.control.mermaid
 %%            ^^^^^^^^^^^^^^^ string
 %%                           ^ keyword.control.mermaid
   B --> C{Text}
 %%^ variable
-%%  ^^^  keyword.control.mermaid 
+%%  ^^^  keyword.control.mermaid
 %%      ^ variable
 %%       ^ keyword.control.mermaid
 %%        ^^^^ string
 %%            ^ keyword.control.mermaid
   C -->|One| D[Text]
 %%^ variable
-%%  ^^^^  keyword.control.mermaid 
+%%  ^^^^  keyword.control.mermaid
 %%      ^^^ string
 %%         ^ keyword.control.mermaid
 %%           ^ variable
@@ -172,20 +178,20 @@ graph TB
 %%                 ^ keyword.control.mermaid
   A(A) --> B(B)
 %%^ variable
-%% ^  keyword.control.mermaid 
+%% ^  keyword.control.mermaid
 %%  ^ string
 %%   ^ keyword.control.mermaid
-%%     ^^^  keyword.control.mermaid 
+%%     ^^^  keyword.control.mermaid
 %%         ^ variable
 %%          ^ keyword.control.mermaid
 %%           ^ string
 %%            ^ keyword.control.mermaid
   C[/C/] --> D>D]
 %%^ variable
-%% ^  keyword.control.mermaid 
+%% ^  keyword.control.mermaid
 %%  ^^^ string
 %%     ^ keyword.control.mermaid
-%%       ^^^  keyword.control.mermaid 
+%%       ^^^  keyword.control.mermaid
 %%           ^ variable
 %%            ^ keyword.control.mermaid
 %%             ^ string
@@ -193,68 +199,68 @@ graph TB
   %% class/classDef
   classDef blue fill:#08f,stroke:#fff;
 %%^^^^^^^^ keyword.control.mermaid
-%%         ^^^^  variable 
+%%         ^^^^  variable
 %%              ^^^^^^^^^^^^^^^^^^^^^^ string
   class ID-1 blue
 %%^^^^^ keyword.control.mermaid
-%%      ^^^^  variable 
+%%      ^^^^  variable
 %%           ^^^^ string
   class ID-1,ID-2 red
 %%^^^^^ keyword.control.mermaid
-%%      ^^^^^^^^^  variable 
+%%      ^^^^^^^^^  variable
 %%                ^^^^ string
   %% click
   click ID-1 "https://github.com" "Tooltip text" %% comments
 %%^^^^^ keyword.control.mermaid
-%%      ^^^^  variable 
+%%      ^^^^  variable
 %%           ^^^^^^^^^^^^^^^^^^^^ string
 %%                                ^^^^^^^^^^^^^^ string
   click ID-2 alert "Tooltip for a callback"
 %%^^^^^ keyword.control.mermaid
-%%      ^^^^  variable 
-%%           ^^^^^  variable 
+%%      ^^^^  variable
+%%           ^^^^^  variable
 %%                 ^^^^^^^^^^^^^^^^^^^^^^^^ string
   subgraph A subgraph
 %%^^^^^^^^ keyword.control.mermaid
-%%         ^^^^^^^^^^  entity.name.function.mermaid 
+%%         ^^^^^^^^^^  entity.name.function.mermaid
     ID-4{Node 4}
 %%  ^^^^ variable
-%%      ^  keyword.control.mermaid 
+%%      ^  keyword.control.mermaid
 %%  ^^^^ variable
-%%      ^  keyword.control.mermaid 
-%%       ^^^^^^  string 
+%%      ^  keyword.control.mermaid
+%%       ^^^^^^  string
 %%             ^ keyword.control.mermaid
     ID-6["Node 6 (same #quot;shape#quot;)"]
 %%  ^^^^ variable
-%%      ^  keyword.control.mermaid 
+%%      ^  keyword.control.mermaid
 %%       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
-%%                                        ^  keyword.control.mermaid 
+%%                                        ^  keyword.control.mermaid
     ID-4-.->ID-5
 %%  ^^^^ variable
-%%      ^^^^  keyword.control.mermaid 
+%%      ^^^^  keyword.control.mermaid
 %%          ^^^^ variable
     ID-5 -. Action from 5 to 4 .-> ID-4
 %%  ^^^^ variable
-%%       ^^  keyword.control.mermaid 
+%%       ^^  keyword.control.mermaid
 %%          ^^^^^^^^^^^^^^^^^^ string
-%%                             ^^  keyword.control.mermaid 
+%%                             ^^  keyword.control.mermaid
 %%                                 ^^^^ variable
     ID-5==>ID-6
 %%  ^^^^ variable
-%%      ^^^  keyword.control.mermaid 
+%%      ^^^  keyword.control.mermaid
 %%         ^^^^ variable
     ID-6 == Action from 6 to 5 ==> ID-5
 %%  ^^^^ variable
-%%       ^^  keyword.control.mermaid 
+%%       ^^  keyword.control.mermaid
 %%          ^^^^^^^^^^^^^^^^^^ string
-%%                             ^^^  keyword.control.mermaid 
+%%                             ^^^  keyword.control.mermaid
 %%                                 ^^^^ variable
   end
 %%~~~ keyword.control.mermaid
 
   subgraph 多电压测试
 %%^^^^^^^^ keyword.control.mermaid
-%%         ^^^^^^^^  entity.name.function.mermaid 
+%%         ^^^^^^^^  entity.name.function.mermaid
     多电压测试1
 %%  ^^^^^^^^^ variable
   end
