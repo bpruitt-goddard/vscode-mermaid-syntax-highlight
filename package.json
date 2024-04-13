@@ -58,7 +58,7 @@
 	"scripts": {
 		"vscode:prepublish": "npm run convertYaml",
 		"convertYaml": "node build/ConvertYaml.js",
-		"test": "vscode-tmgrammar-test 'tests/**/*.test.{mermaid,md}'"
+		"test": "vscode-tmgrammar-test \"tests/**/*.test.{mermaid,md}\""
 	},
 	"devDependencies": {
 		"js-yaml": "^3.13.1",
