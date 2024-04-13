@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.6.1]
+
+- Add sequence diagram box support
+- Fix case insensitive code block
+- Add gannt diagram tickInterval support
+- Fix graph text with html tags
+
 ## [v1.6.0]
 
 - Add support for pandoc code blocks syntax
