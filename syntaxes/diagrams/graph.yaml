@@ -8,7 +8,25 @@
   patterns:
     - match: \%%.*
       name: comment
-    - match: \b(subgraph)\s+([\p{Letter}\ 0-9]+)
+    - comment: ''
+      match: !regex |-
+        \b(subgraph)\s+
+        (\w+)
+        (\[)
+        ("?[\w\s*+%=\\/:\.\-'`,&^#$!?<>]*"?)
+        (\])
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: variable
+        '3':
+          name: keyword.control.mermaid
+        '4':
+          name: string
+        '5':
+          name: keyword.control.mermaid
+    - match: \b(subgraph)\s+([\p{Letter}\ 0-9<>]+)
       captures:
         '1':
           name: keyword.control.mermaid
