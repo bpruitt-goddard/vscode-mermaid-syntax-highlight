@@ -1,5 +1,9 @@
 # Change Log
 
+## [v1.6.2]
+
+- Add requirement diagram support
+
 ## [v1.6.1]
 
 - Add sequence diagram box support
