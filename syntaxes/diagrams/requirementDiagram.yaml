@@ -6,4 +6,23 @@
   patterns:
     - match: \%%.*
       name: comment
+    - comment: (requirement) (name) ({)
+      begin: !regex |-
+        ^\s*((?i)(?:functional|interface|performance|physical)?requirement|designConstraint) # requirement
+        \s*(["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # name
+        \s*({) # }
+      beginCaptures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: variable
+        '3':
+          name: keyword.control.mermaid
+      # patterns:
+
+      end: !regex |-
+        \s*(}) # end bracket
+      endCaptures:
+        '1':
+          name: keyword.control.mermaid
   end: (^|\G)(?=\s*[`:~]{3,}\s*$)
