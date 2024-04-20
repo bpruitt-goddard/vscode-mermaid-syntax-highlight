@@ -96,4 +96,40 @@
       endCaptures:
         '1':
           name: keyword.control.mermaid
+    - comment: (source) (-) (type) (->) (destination)
+      match: !regex |-
+        ^\s*([\w]+) # source
+        \s*(-) # -
+        \s*((?i)contains|copies|derives|satisfies|verifies|refines|traces) # type
+        \s*(->) # ->
+        \s*([\w]+)\s*$ # destination
+      captures:
+        '1':
+          name: variable
+        '2':
+          name: keyword.control.mermaid
+        '3':
+          name: keyword.control.mermaid
+        '4':
+          name: keyword.control.mermaid
+        '5':
+          name: variable
+    - comment: (destination) (<-) (type) (-) (source)
+      match: !regex |-
+        ^\s*([\w]+) # destination
+        \s*(<-) # <-
+        \s*((?i)contains|copies|derives|satisfies|verifies|refines|traces) # type
+        \s*(-) # -
+        \s*([\w]+)\s*$ # source
+      captures:
+        '1':
+          name: variable
+        '2':
+          name: keyword.control.mermaid
+        '3':
+          name: keyword.control.mermaid
+        '4':
+          name: keyword.control.mermaid
+        '5':
+          name: variable
   end: (^|\G)(?=\s*[`:~]{3,}\s*$)

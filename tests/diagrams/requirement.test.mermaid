@@ -153,3 +153,52 @@ requirementDiagram
 %%              ^^^^^^^^^^^^^^^^^^^^^^^^ variable
     }
 %%  ^ keyword.control.mermaid
+
+    test_entity - satisfies -> test_req2
+%%  ^^^^^^^^^^^ variable
+%%              ^ keyword.control.mermaid
+%%                ^^^^^^^^^ keyword.control.mermaid
+%%                          ^^ keyword.control.mermaid
+%%                             ^^^^^^^^^ variable
+    test_req - traces -> test_req2
+%%  ^^^^^^^^ variable
+%%           ^ keyword.control.mermaid
+%%             ^^^^^^ keyword.control.mermaid
+%%                    ^^ keyword.control.mermaid
+%%                       ^^^^^^^^^ variable
+    test_req - contains -> test_req3
+%%  ^^^^^^^^ variable
+%%           ^ keyword.control.mermaid
+%%             ^^^^^^^^ keyword.control.mermaid
+%%                      ^^ keyword.control.mermaid
+%%                         ^^^^^^^^^ variable
+    test_req3 - contains -> test_req4
+%%  ^^^^^^^^^ variable
+%%            ^ keyword.control.mermaid
+%%              ^^^^^^^^ keyword.control.mermaid
+%%                       ^^ keyword.control.mermaid
+%%                          ^^^^^^^^^ variable
+    test_req4 - derives -> test_req5
+%%  ^^^^^^^^^ variable
+%%            ^ keyword.control.mermaid
+%%              ^^^^^^^ keyword.control.mermaid
+%%                      ^^ keyword.control.mermaid
+%%                         ^^^^^^^^^ variable
+    test_req5 - refines -> test_req6
+%%  ^^^^^^^^^ variable
+%%            ^ keyword.control.mermaid
+%%              ^^^^^^^ keyword.control.mermaid
+%%                      ^^ keyword.control.mermaid
+%%                         ^^^^^^^^^ variable
+    test_entity3 - verifies -> test_req5
+%%  ^^^^^^^^^^^^ variable
+%%               ^ keyword.control.mermaid
+%%                 ^^^^^^^^ keyword.control.mermaid
+%%                          ^^ keyword.control.mermaid
+%%                             ^^^^^^^^^ variable
+    test_req <- copies - test_entity2
+%%  ^^^^^^^^ variable
+%%           ^^ keyword.control.mermaid
+%%              ^^^^^^ keyword.control.mermaid
+%%                     ^ keyword.control.mermaid
+%%                       ^^^^^^^^^^^^ variable
