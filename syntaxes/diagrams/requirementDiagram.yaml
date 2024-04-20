@@ -45,7 +45,7 @@
             '1':
               name: keyword.control.mermaid
             '2':
-              name: keyword.control.mermaid
+              name: entity.name.function.mermaid
         - comment: (verifyMethod)(:) (method)
           match: !regex |-
             \s*(verifymethod:) # verifyMethod:
@@ -54,7 +54,7 @@
             '1':
               name: keyword.control.mermaid
             '2':
-              name: keyword.control.mermaid
+              name: entity.name.function.mermaid
       end: !regex |-
         \s*(}) # end bracket
       endCaptures:
