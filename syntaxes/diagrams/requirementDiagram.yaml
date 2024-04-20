@@ -19,7 +19,7 @@
         '3':
           name: keyword.control.mermaid
       patterns:
-        - comment: (id)(:) (variable id)
+        - comment: (id:) (variable id)
           match: !regex |-
             \s*(id:) # id:
             \s*([$&%\^/#.,?!;:*+<>_\'\\\w\s]+) # Variable id
@@ -28,7 +28,7 @@
               name: keyword.control.mermaid
             '2':
               name: variable
-        - comment: (text)(:) (text string)
+        - comment: (text:) (text string)
           match: !regex |-
             \s*(text:) # text:
             \s*([$&%\^/#.,?!;:*+<>_\'\\\w\s]+) # Text string
@@ -37,7 +37,7 @@
               name: keyword.control.mermaid
             '2':
               name: string
-        - comment: (risk)(:) (risk option)
+        - comment: (risk:) (risk option)
           match: !regex |-
             \s*(risk:) # risk:
             \s*(low|medium|high)\s*$ # risk option
@@ -72,6 +72,25 @@
           name: variable
         '3':
           name: keyword.control.mermaid
+      patterns:
+        - comment: (type:) (user type)
+          match: !regex |-
+            \s*(type:) # id:
+            \s*(["$&%\^/#.,?!;:*+<>_\'\\\w\s]+) # user type
+          captures:
+            '1':
+              name: keyword.control.mermaid
+            '2':
+              name: variable
+        - comment: (docref:) (user ref)
+          match: !regex |-
+            \s*(?i)(docref:) # docref:
+            \s*([$&%\^/#.,?!;:*+<>_\'\\\w\s]+) # user ref
+          captures:
+            '1':
+              name: keyword.control.mermaid
+            '2':
+              name: variable
       end: !regex |-
         \s*(}) # end bracket
       endCaptures:
