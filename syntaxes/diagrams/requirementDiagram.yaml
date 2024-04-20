@@ -55,7 +55,23 @@
               name: keyword.control.mermaid
             '2':
               name: keyword.control.mermaid
-
+      end: !regex |-
+        \s*(}) # end bracket
+      endCaptures:
+        '1':
+          name: keyword.control.mermaid
+    - comment: (element) (name) ({)
+      begin: !regex |-
+        ^\s*(element) # element
+        \s*(["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # name
+        \s*({) # }
+      beginCaptures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: variable
+        '3':
+          name: keyword.control.mermaid
       end: !regex |-
         \s*(}) # end bracket
       endCaptures:
