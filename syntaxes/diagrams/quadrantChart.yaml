@@ -1,0 +1,9 @@
+- comment: Quadrant Chart
+  begin: ^\s*(quadrantChart)
+  beginCaptures:
+    '1':
+      name: keyword.control.mermaid
+  patterns:
+    - match: \%%.*
+      name: comment
+  end: (^|\G)(?=\s*[`:~]{3,}\s*$)
