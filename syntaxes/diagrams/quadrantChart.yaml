@@ -6,4 +6,32 @@
   patterns:
     - match: \%%.*
       name: comment
+    - match: !regex |-
+        (title) # title
+        \s*(["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # text
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: string
+    - comment: 'x|y-axis (text) (-->)? (text)?'
+      begin: !regex |-
+        ([xy]-axis) # x|y-axis
+        \s+((?:(?!-->)[$&%/#.,?!*+=\'\\\-\w\s])*) # text
+      beginCaptures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: string
+      patterns:
+        - comment: (-->) (text)
+          match: !regex |-
+            \s*(-->) # -->
+            \s*([$&%/#.,?!*+=\'\\\-\w\s]*) # text
+          captures:
+            '1':
+              name: keyword.control.mermaid
+            '2':
+              name: string
+      end: '$'
   end: (^|\G)(?=\s*[`:~]{3,}\s*$)
