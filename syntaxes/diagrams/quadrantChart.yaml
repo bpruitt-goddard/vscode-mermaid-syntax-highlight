@@ -14,7 +14,7 @@
           name: keyword.control.mermaid
         '2':
           name: string
-    - comment: 'x|y-axis (text) (-->)? (text)?'
+    - comment: '(x|y-axis) (text) (-->)? (text)?'
       begin: !regex |-
         ([xy]-axis) # x|y-axis
         \s+((?:(?!-->)[$&%/#.,?!*+=\'\\\-\w\s])*) # text
@@ -34,4 +34,36 @@
             '2':
               name: string
       end: '$'
+    - match: !regex |-
+        (quadrant-[1234]) # quadrant-x
+        \s*(["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # text
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: string
+    - comment: (text)(:) ([)(decimal)(,) (decimal)(])
+      match: !regex |-
+        \s*([$&%/#.,?!*+=\'\\\-\w\s]*) # text
+        \s*(:) # :
+        \s*(\[) # [
+        \s*(\d\.\d+) # decimal
+        \s*(,) # ,
+        \s*(\d\.\d+) # decimal
+        \s*(\]) # ]
+      captures:
+        '1':
+          name: string
+        '2':
+          name: keyword.control.mermaid
+        '3':
+          name: keyword.control.mermaid
+        '4':
+          name: constant.numeric.decimal.mermaid
+        '5':
+          name: keyword.control.mermaid
+        '6':
+          name: constant.numeric.decimal.mermaid
+        '7':
+          name: keyword.control.mermaid
   end: (^|\G)(?=\s*[`:~]{3,}\s*$)
