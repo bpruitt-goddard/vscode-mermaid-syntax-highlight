@@ -1,5 +1,9 @@
 # Change Log
 
+## [v1.6.3]
+
+- Add quadrant chart support
+
 ## [v1.6.2]
 
 - Add requirement diagram support
