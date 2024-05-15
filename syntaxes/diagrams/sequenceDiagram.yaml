@@ -82,7 +82,7 @@
     - comment: '(alt/else/option/par/and/autonumber/critical/opt)(text)'
       match: !regex |-
         \s*(alt|else|option|par|and|rect|autonumber|critical|opt) # keyword
-        (?:\s+([^#;]*))? # text
+        (?:\s+([^#;]*))?$ # text? <end of line>
       captures:
         '1':
           name: keyword.control.mermaid
