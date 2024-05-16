@@ -33,14 +33,14 @@
           name: string
     - comment: 'state'
       begin: !regex |-
-        (state) # state
+        ^\s*(state)\s+ # state
       beginCaptures:
         '1':
           name: keyword.control.mermaid
       patterns:
         - comment: '"(description)" as (state)'
           match: !regex |-
-            \s+("[-\w\s]+\b") # description
+            \s*("[-\w\s]+\b") # description
             \s+(as) # as
             \s+([\w-]+) # state name
           captures:
@@ -52,7 +52,7 @@
               name: variable
         - comment: '(state name) {'
           match: !regex |-
-            \s+([\w-]+) # state name
+            \s*([\w-]+) # state name
             \s+({) # {
           captures:
             '1':
@@ -61,7 +61,7 @@
               name: keyword.control.mermaid
         - comment: '(state name) <<fork|join>>'
           match: !regex |-
-            \s+([\w-]+) # state name
+            \s*([\w-]+) # state name
             \s+(<<(?:fork|join)>>) # <<fork|join>>
           captures:
             '1':
