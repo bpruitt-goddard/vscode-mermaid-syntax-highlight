@@ -8,7 +8,7 @@
       name: comment
     - comment: (requirement) (name) ({)
       begin: !regex |-
-        ^\s*((?i)(?:functional|interface|performance|physical)?requirement|designConstraint) # requirement
+        ^\s*((?:functional|interface|performance|physical)?requirement|designConstraint) # requirement
         \s*(["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # name
         \s*({) # }
       beginCaptures:
@@ -84,7 +84,7 @@
               name: variable
         - comment: (docref:) (user ref)
           match: !regex |-
-            \s*(?i)(docref:) # docref:
+            \s*(docref:) # docref:
             \s*([$&%\^/#.,?!;:*+<>_\'\\\w\s]+) # user ref
           captures:
             '1':
@@ -100,7 +100,7 @@
       match: !regex |-
         ^\s*([\w]+) # source
         \s*(-) # -
-        \s*((?i)contains|copies|derives|satisfies|verifies|refines|traces) # type
+        \s*(contains|copies|derives|satisfies|verifies|refines|traces) # type
         \s*(->) # ->
         \s*([\w]+)\s*$ # destination
       captures:
@@ -118,7 +118,7 @@
       match: !regex |-
         ^\s*([\w]+) # destination
         \s*(<-) # <-
-        \s*((?i)contains|copies|derives|satisfies|verifies|refines|traces) # type
+        \s*(contains|copies|derives|satisfies|verifies|refines|traces) # type
         \s*(-) # -
         \s*([\w]+)\s*$ # source
       captures:
