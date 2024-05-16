@@ -9,7 +9,8 @@ var RegexYamlType = new yaml.Type('!regex', {
   kind: 'scalar',
   construct: function (data) {
     return (
-      data
+      // Make regex case-insensitive since this cannot be applied globally
+      `(?i)${data}`
         //Remove end of line comments (space then #)
         .replace(/(^|\s)#.*/g, '')
         //Remove new lines from yaml multistring
