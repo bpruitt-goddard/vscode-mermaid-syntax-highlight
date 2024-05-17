@@ -92,3 +92,15 @@ gitGraph
 %%            ^^ keyword.control.mermaid
 %%              ^ keyword.control.mermaid
 %%               ^^^^^^^^ string
+
+  %% negative cases
+  invalid_commit
+%%^^^^^^^^^^^^^^ source.mermaid - keyword.control.mermaid
+  invalid_checkout
+%%^^^^^^^^^^^^^^^^ source.mermaid - keyword.control.mermaid
+  invalid_branch
+%%^^^^^^^^^^^^^^ source.mermaid - keyword.control.mermaid
+  invalid_merge
+%%^^^^^^^^^^^^^ source.mermaid - keyword.control.mermaid
+  invalid_cherry-pick id:"anId"
+%%^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.mermaid - keyword.control.mermaid
