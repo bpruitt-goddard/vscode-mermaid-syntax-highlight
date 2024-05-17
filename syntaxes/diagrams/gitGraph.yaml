@@ -8,7 +8,7 @@
       name: comment
     - comment: commit
       begin: !regex |-
-        \s*(commit) # commit
+        ^\s*(commit) # commit
       beginCaptures:
         '1':
           name: keyword.control.mermaid
@@ -52,7 +52,7 @@
       end: '$'
     - comment: '(checkout) (branch-name)'
       match: !regex |-
-        \s*(checkout) # checkout
+        ^\s*(checkout) # checkout
         \s*([^\s"]*) # branch-name
       captures:
         '1':
@@ -61,7 +61,7 @@
           name: variable
     - comment: '(branch) (branch-name) (order)?(:) (number)'
       match: !regex |-
-        \s*(branch) # branch
+        ^\s*(branch) # branch
         \s*([^\s"]*) # branch-name
         \s*(?:(order)(:)\s?(\d+))? # (order)(:) (number)
       captures:
@@ -77,7 +77,7 @@
           name: constant.numeric.decimal.mermaid
     - comment: '(merge) (branch-name) (tag: "tag-name")?'
       match: !regex |-
-        \s*(merge) # merge
+        ^\s*(merge) # merge
         \s*([^\s"]*) # branch-name
         \s*(?:(tag)(:)\s?("[^"\n]*"))? # (tag: "tag-name")?
       captures:
@@ -93,7 +93,7 @@
           name: string
     - comment: '(cherry-pick) (id)(:)("commit-id")'
       match: !regex |-
-        \s*(cherry-pick) # cherry-pick
+        ^\s*(cherry-pick) # cherry-pick
         \s+(id) # id
         (:) # :
         \s*("[^"\n]*") # "commit-id"
