@@ -106,3 +106,15 @@ gantt
 %%^^^^^^^^^^^^^^ string
 %%                                    ^ keyword.control.mermaid
 %%                                     ^^ source.mermaid
+
+  %% negative cases
+  invalid_title
+%%^^^^^^^^^^^^^ source.mermaid - keyword.control.mermaid
+  invalid_excludes monday
+%%^^^^^^^^^^^^^^^^^^^^^^^ source.mermaid - keyword.control.mermaid
+  invalid_section
+%%^^^^^^^^^^^^^^^ source.mermaid - keyword.control.mermaid
+  invalid_axisFormat 44
+%%^^^^^^^^^^^^^^^^^^^^^ source.mermaid - keyword.control.mermaid
+  invalid_dateFormat  DD.MM.YYYY
+%%^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.mermaid - keyword.control.mermaid
