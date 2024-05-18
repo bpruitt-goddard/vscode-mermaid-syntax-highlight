@@ -32,8 +32,13 @@
           name: keyword.control.mermaid
         '2':
           name: entity.name.function.mermaid
-      name: meta.function.mermaid
-    - match: \b(end|RB|BT|RL|TD|LR)\b
+    - match: ^(?i)\s*(direction)\s+(RB|BT|RL|TD|LR)
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: entity.name.function.mermaid
+    - match: \b(end)\b
       name: keyword.control.mermaid
     - comment: '(Entity)(Edge/Shape)(Text)(Edge/Shape)'
       begin: !regex |-
