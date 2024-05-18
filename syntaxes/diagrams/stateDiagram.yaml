@@ -124,7 +124,7 @@
           name: string
     - comment: 'note left|right of (state name)'
       match: !regex |-
-        (note (?:left|right) of) # note left|right of
+        ^\s*(note (?:left|right) of) # note left|right of
         \s+([\w-]+) # state name
         \s+(:) # :
         \s*([^\n:]+) # note text
@@ -139,7 +139,7 @@
           name: string
     - comment: 'note left|right of (state name) (note text) end note'
       begin: !regex |-
-        (note (?:left|right) of) # note left|right of
+        ^\s*(note (?:left|right) of) # note left|right of
         \s+([\w-]+)(.|\n) # state name
       beginCaptures:
         '1':
