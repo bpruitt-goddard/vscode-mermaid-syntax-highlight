@@ -10,7 +10,7 @@
       name: comment
     - comment: ''
       match: !regex |-
-        \b(subgraph)\s+
+        ^\s*(subgraph)\s+
         (\w+)
         (\[)
         ("?[\w\s*+%=\\/:\.\-'`,&^#$!?<>]*"?)
@@ -26,7 +26,7 @@
           name: string
         '5':
           name: keyword.control.mermaid
-    - match: \b(subgraph)\s+([\p{Letter}\ 0-9<>]+)
+    - match: ^\s*(subgraph)\s+([\p{Letter}\ 0-9<>]+)
       captures:
         '1':
           name: keyword.control.mermaid
