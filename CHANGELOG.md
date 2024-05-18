@@ -1,5 +1,10 @@
 # Change Log
 
+## [v1.6.4]
+
+- Make all keywords case-insensitive
+- Fix graph subgraph direction
+
 ## [v1.6.3]
 
 - Add quadrant chart support
