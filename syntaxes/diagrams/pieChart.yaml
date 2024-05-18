@@ -7,7 +7,7 @@
     - match: \%%.*
       name: comment
     - match: !regex |-
-        (title)\s+ # title
+        ^\s*(title)\s+ # title
         (\s*["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # text
       captures:
         '1':
