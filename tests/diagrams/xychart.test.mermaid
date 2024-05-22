@@ -1,0 +1,101 @@
+%% SYNTAX TEST "source.mermaid" "xy chart test"
+
+xychart-beta
+%%% <--- keyword.control.mermaid
+  title Chess ELO rating over time
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+
+  x-axis Day
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^ string
+
+  x-axis 1 --> 10
+%%^^^^^^ keyword.control.mermaid
+%%       ^ constant.numeric.decimal.mermaid
+%%         ^^^ keyword.control.mermaid
+%%             ^^ constant.numeric.decimal.mermaid
+
+  x-axis "Day" 1.0 --> 10.0
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^^ string
+%%             ^^^ constant.numeric.decimal.mermaid
+%%                 ^^^ keyword.control.mermaid
+%%                     ^^^^ constant.numeric.decimal.mermaid
+
+  x-axis "Day" 1 --> 10
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^^ string
+%%             ^ constant.numeric.decimal.mermaid
+%%               ^^^ keyword.control.mermaid
+%%                   ^^ constant.numeric.decimal.mermaid
+
+  x-axis "Day of the month" 1 --> 10
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^^^^^^^^^^^^^^^ string
+%%                          ^ constant.numeric.decimal.mermaid
+%%                            ^^^ keyword.control.mermaid
+%%                                ^^ constant.numeric.decimal.mermaid
+
+  x-axis "Day of week" ["Mon"]
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^^^^^^^^^^ string
+%%                     ^ keyword.control.mermaid
+%%                      ^^^^^ string
+%%                           ^ keyword.control.mermaid
+
+  x-axis "Day of week" ["Mon", "Tue",Wed]
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^^^^^^^^^^ string
+%%                     ^ keyword.control.mermaid
+%%                      ^^^^^ string
+%%                           ^ keyword.control.mermaid
+%%                             ^^^^^ string
+%%                                  ^ keyword.control.mermaid
+%%                                   ^^^ string
+%%                                      ^ keyword.control.mermaid
+
+  y-axis ELO
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^ string
+
+  y-axis 1000 --> 2000
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^ constant.numeric.decimal.mermaid
+%%            ^^^ keyword.control.mermaid
+%%                ^^^^ constant.numeric.decimal.mermaid
+
+  y-axis "ELO" 1000 --> 2000
+%%^^^^^^ keyword.control.mermaid
+%%       ^^^^^ string
+%%             ^^^^ constant.numeric.decimal.mermaid
+%%                  ^^^ keyword.control.mermaid
+%%                      ^^^^ constant.numeric.decimal.mermaid
+
+  line [1,-2,+3, 4]
+%%^^^^ keyword.control.mermaid
+%%     ^ keyword.control.mermaid
+%%      ^ constant.numeric.decimal.mermaid
+%%       ^ keyword.control.mermaid
+%%        ^^ constant.numeric.decimal.mermaid
+%%          ^ keyword.control.mermaid
+%%           ^^ constant.numeric.decimal.mermaid
+%%             ^ keyword.control.mermaid
+%%               ^ constant.numeric.decimal.mermaid
+%%                ^ keyword.control.mermaid
+
+  bar [1,-2,+3, 4]
+%%^^^ keyword.control.mermaid
+%%    ^ keyword.control.mermaid
+%%     ^ constant.numeric.decimal.mermaid
+%%      ^ keyword.control.mermaid
+%%       ^^ constant.numeric.decimal.mermaid
+%%         ^ keyword.control.mermaid
+%%          ^^ constant.numeric.decimal.mermaid
+%%            ^ keyword.control.mermaid
+%%              ^ constant.numeric.decimal.mermaid
+%%               ^ keyword.control.mermaid
+
+  %% negative cases
+  invalid title invalid
+%%^^^^^^^^^^^^^^^^^^^^^ source.mermaid - keyword.control.mermaid
