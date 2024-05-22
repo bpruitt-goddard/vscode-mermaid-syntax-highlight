@@ -1,5 +1,9 @@
 # Change Log
 
+## [v1.6.5]
+
+- Add xy chart support
+
 ## [v1.6.4]
 
 - Make all keywords case-insensitive
