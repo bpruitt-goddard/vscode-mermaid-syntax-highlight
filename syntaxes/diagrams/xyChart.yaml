@@ -1,0 +1,141 @@
+- comment: XY Chart
+  begin: ^\s*(xychart(?:-beta)?(?:\s+horizontal)?)
+  beginCaptures:
+    '1':
+      name: keyword.control.mermaid
+  patterns:
+    - match: \%%.*
+      name: comment
+    - match: !regex |-
+        ^\s*(title)\s+ # title
+        (\s*["\(\)$&%\^/#.,?!;:*+=<>\'\\\-\w\s]*) # text
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: string
+    - comment: (x-axis)
+      begin: !regex |-
+        ^\s*(x-axis) # x-axis
+      beginCaptures:
+        '1':
+          name: keyword.control.mermaid
+      patterns:
+        - comment: (decimal) (-->) (decimal)
+          match: !regex |-
+            \s*([-+]?\d+\.?\d*) # decimal
+            \s*(-->) # -->
+            \s*([-+]?\d+\.?\d*) # decimal
+          captures:
+            '1':
+              name: constant.numeric.decimal.mermaid
+            '2':
+              name: keyword.control.mermaid
+            '3':
+              name: constant.numeric.decimal.mermaid
+        - comment: ("text")
+          match: !regex |-
+            \s+("[\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*") # "text"
+          captures:
+            '1':
+              name: string
+        - comment: (text)
+          match: !regex |-
+            \s+([\($&%\^/#.,?!;:*+=<>\'\\\-\w]*) # text
+          captures:
+            '1':
+              name: string
+        - comment: ([)(text)(,)(text)*(])
+          begin: \s*(\[) # [
+          beginCaptures:
+            '1':
+              name: keyword.control.mermaid
+          patterns:
+            - comment: (decimal)
+              match: !regex |-
+                \s*([-+]?\d+\.?\d*) # decimal
+              captures:
+                '1':
+                  name: constant.numeric.decimal.mermaid
+            - comment: ("text")
+              match: !regex |-
+                \s*("[\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*") # "text"
+              captures:
+                '1':
+                  name: string
+            - comment: (text)
+              match: !regex |-
+                \s*([\($&%\^/#.?!;:*+=<>\'\\\-\w\s]+) # text
+              captures:
+                '1':
+                  name: string
+            - comment: (,)
+              match: !regex |-
+                \s*(,) # ,
+              captures:
+                '1':
+                  name: keyword.control.mermaid
+          end: \s*(\]) # ]
+          endCaptures:
+            '1':
+              name: keyword.control.mermaid
+      end: '$'
+    - comment: (y-axis)
+      begin: !regex |-
+        ^\s*(y-axis) # y-axis
+      beginCaptures:
+        '1':
+          name: keyword.control.mermaid
+      patterns:
+        - comment: (decimal) (-->) (decimal)
+          match: !regex |-
+            \s*([-+]?\d+\.?\d*) # decimal
+            \s*(-->) # -->
+            \s*([-+]?\d+\.?\d*) # decimal
+          captures:
+            '1':
+              name: constant.numeric.decimal.mermaid
+            '2':
+              name: keyword.control.mermaid
+            '3':
+              name: constant.numeric.decimal.mermaid
+        - comment: ("text")
+          match: !regex |-
+            \s+("[\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*") # "text"
+          captures:
+            '1':
+              name: string
+        - comment: (text)
+          match: !regex |-
+            \s+([\($&%\^/#.,?!;:*+=<>\'\\\-\w]*) # text
+          captures:
+            '1':
+              name: string
+      end: '$'
+    - comment: (line|bar) ([)(decimal)+(])
+      begin: !regex |-
+        ^\s*(line|bar) # line|bar
+        \s*(\[) # [
+      beginCaptures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: keyword.control.mermaid
+      patterns:
+        - comment: (decimal)
+          match: !regex |-
+            \s*([-+]?\d+\.?\d*) # decimal
+          captures:
+            '1':
+              name: constant.numeric.decimal.mermaid
+        - comment: (,)
+          match: !regex |-
+            \s*(,) # ,
+          captures:
+            '1':
+              name: keyword.control.mermaid
+      end: \s*(\]) # ]
+      endCaptures:
+        '1':
+          name: keyword.control.mermaid
+  end: (^|\G)(?=\s*[`:~]{3,}\s*$)
