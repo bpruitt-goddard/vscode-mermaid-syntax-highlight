@@ -1,0 +1,48 @@
+---
+fileTypes: []
+injectionSelector: L:source.mdx
+patterns:
+  - include: '#mermaid-code-block'
+repository:
+  mermaid-code-block:
+    patterns:
+      - begin:
+          "(?:^|\\G)[\\t ]*(`{3,})(?:[\\t ]*((?i:(?:.*\\.)?mermaid))(?:[\\t ]+((?:[^\\n\\r`])+))?)(?:[\\t
+          ]*$)"
+        beginCaptures:
+          1:
+            name: string.other.begin.code.fenced.mdx
+          2:
+            name: entity.name.function.mdx
+        contentName: meta.embedded.mermaid
+        end: "(\\1)(?:[\\t ]*$)"
+        endCaptures:
+          1:
+            name: string.other.end.code.fenced.mdx
+        name: markup.code.mermaid.mdx
+        patterns:
+          - begin: "(^|\\G)(\\s*)(.*)"
+            while: "(^|\\G)(?!\\s*([`~]{3,})\\s*$)"
+            patterns:
+              - contentName: meta.embedded.block.mermaid
+                include: source.mermaid
+      - begin:
+          "(?:^|\\G)[\\t ]*(~{3,})(?:[\\t ]*((?i:(?:.*\\.)?mermaid))(?:[\\t ]+((?:[^\\n\\r])+))?)(?:[\\t
+          ]*$)"
+        beginCaptures:
+          1:
+            name: string.other.begin.code.fenced.mdx
+          2:
+            name: entity.name.function.mdx
+        contentName: meta.embedded.mermaid
+        end: "(\\1)(?:[\\t ]*$)"
+        endCaptures:
+          1:
+            name: string.other.end.code.fenced.mdx
+        name: markup.code.mermaid.mdx
+        patterns:
+          - begin: "(^|\\G)(\\s*)(.*)"
+            while: "(^|\\G)(?!\\s*([`~]{3,})\\s*$)"
+            patterns: !!import/deep
+              - diagrams/
+scopeName: mdx.mermaid.codeblock
