@@ -40,6 +40,16 @@
 				}
 			},
 			{
+				"scopeName": "mdx.mermaid.codeblock",
+				"path": "./out/mermaid.tmLanguage-mdx.json",
+				"injectTo": [
+					"source.mdx"
+				],
+				"embeddedLanguages": {
+					"mdx.embedded.mermaid": "mermaid"
+				}
+			},
+			{
 				"language": "mermaid",
 				"scopeName": "source.mermaid",
 				"path": "./out/mermaid.tmLanguage.json"
@@ -60,7 +70,7 @@
 	"scripts": {
 		"vscode:prepublish": "npm run convertYaml",
 		"convertYaml": "node build/ConvertYaml.js",
-		"test": "vscode-tmgrammar-test \"tests/**/*.test.{mermaid,md}\""
+		"test": "vscode-tmgrammar-test \"tests/**/*.test.{mermaid,md,mdx}\""
 	},
 	"devDependencies": {
 		"js-yaml": "^3.13.1",
