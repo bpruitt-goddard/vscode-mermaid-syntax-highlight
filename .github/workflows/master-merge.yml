@@ -4,15 +4,13 @@
 name: 'Github Master Merge'
 
 on:
-  pull_request:
-    types:
-      - closed
+  push:
+    branches: master
     paths:
       - 'CHANGELOG.md'
 
 jobs:
   deploy:
-    if: github.event.pull_request.merged
     runs-on: ubuntu-latest
     strategy:
       matrix:
