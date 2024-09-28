@@ -52,6 +52,10 @@ Supports both fenced markdown (see screenshots), and mmd files.
 
 <img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/quadrantChart.png" alt="Quadrant Chart Screenshot" width="325">
 
+### Architecture Diagram
+
+<img src="https://raw.githubusercontent.com/castachick/vscode-mermaid-syntax-highlight/master/images/architecture.png" alt="Architecture Diagram Screenshot" width="500">
+
 ### ADO Support
 
 Supports highlighting in Azure Dev Ops (ADO) colon syntax:
