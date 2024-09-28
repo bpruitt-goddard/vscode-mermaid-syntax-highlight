@@ -1,0 +1,135 @@
+%% SYNTAX TEST "source.mermaid" "architecture diagram test"
+
+architecture-beta
+%% <------------ keyword.control.mermaid
+  %% Group
+  group public_api(cloud)[Public API]
+%%^^^^^keyword.control.mermaid
+%%      ^^^^^^^^^^variable
+%%                ^punctuation.definition.typeparameters.begin.mermaid
+%%                 ^^^^^string
+%%                      ^punctuation.definition.typeparameters.end.mermaid
+%%                       ^punctuation.definition.typeparameters.begin.mermaid
+%%                        ^^^^^^^^^^string
+%%                                  ^punctuation.definition.typeparameters.end.mermaid
+
+  %% Group without icon and title
+  group private_api
+%%^^^^^keyword.control.mermaid
+%%      ^^^^^^^^^^^variable
+
+  %% Group in Other Group
+  group private_api(cloud)[Private API] in public_api
+%%^^^^^keyword.control.mermaid
+%%      ^^^^^^^^^^^variable
+%%                 ^punctuation.definition.typeparameters.begin.mermaid
+%%                  ^^^^^string
+%%                       ^punctuation.definition.typeparameters.end.mermaid
+%%                        ^punctuation.definition.typeparameters.begin.mermaid
+%%                         ^^^^^^^^^^^string
+%%                                    ^punctuation.definition.typeparameters.end.mermaid
+%%                                      ^^keyword.control.mermaid
+%%                                         ^^^^^^^^^^variable
+
+  %% Group with Logos
+  group api(logos:aws-lambda)[API]
+%%^^^^^keyword.control.mermaid
+%%      ^^^variable
+%%         ^punctuation.definition.typeparameters.begin.mermaid
+%%          ^^^^^string
+%%               ^keyword.control.mermaid
+%%                ^^^^^^^^^^string
+%%                          ^punctuation.definition.typeparameters.end.mermaid
+%%                           ^punctuation.definition.typeparameters.begin.mermaid
+%%                            ^^^string
+%%                               ^punctuation.definition.typeparameters.end.mermaid
+
+  %% Service
+  service disk(disk)[Storage]
+%%^^^^^^^keyword.control.mermaid
+%%        ^^^^variable
+%%            ^punctuation.definition.typeparameters.begin.mermaid
+%%             ^^^^string
+%%                 ^punctuation.definition.typeparameters.end.mermaid
+%%                  ^punctuation.definition.typeparameters.begin.mermaid
+%%                   ^^^^^^^string
+%%                          ^punctuation.definition.typeparameters.end.mermaid
+
+  %% Service without icon and title
+  service server
+%%^^^^^^^keyword.control.mermaid
+%%        ^^^^^^variable
+
+  %% Service with Logos
+  service server(logos:aws-ec2)[EC2 Instance]
+%%^^^^^^^keyword.control.mermaid
+%%        ^^^^^^variable
+%%              ^punctuation.definition.typeparameters.begin.mermaid
+%%               ^^^^^string
+%%                    ^keyword.control.mermaid
+%%                     ^^^^^^^string
+%%                            ^punctuation.definition.typeparameters.end.mermaid
+%%                             ^punctuation.definition.typeparameters.begin.mermaid
+%%                              ^^^^^^^^^^^^string
+%%                                          ^punctuation.definition.typeparameters.end.mermaid
+
+  %% Service in Group
+  service database(db)[Database] in private_api
+%%^^^^^^^keyword.control.mermaid
+%%        ^^^^^^^^variable
+%%                ^punctuation.definition.typeparameters.begin.mermaid
+%%                 ^^string
+%%                   ^punctuation.definition.typeparameters.end.mermaid
+%%                    ^punctuation.definition.typeparameters.begin.mermaid
+%%                     ^^^^^^^^string
+%%                             ^punctuation.definition.typeparameters.end.mermaid
+%%                               ^^keyword.control.mermaid
+%%                                  ^^^^^^^^^^^variable
+
+  %% Simple Edge
+  db:L -- R:server
+%%^^variable
+%%  ^keyword.control.mermaid
+%%   ^entity.name.function.mermaid
+%%     ^^keyword.control.mermaid
+%%        ^entity.name.function.mermaid
+%%         ^keyword.control.mermaid
+%%          ^^^^^^variable
+
+  %% Edge with Arrows
+  private_api:L <--> R:public_api
+%%^^^^^^^^^^^variable
+%%           ^keyword.control.mermaid
+%%            ^entity.name.function.mermaid
+%%              ^^^^keyword.control.mermaid
+%%                   ^entity.name.function.mermaid
+%%                    ^keyword.control.mermaid
+%%                     ^^^^^^^^^^variable
+
+    %% Edge out of Group
+  server{group}:B --> T:subnet{group}
+%%^^^^^^variable
+%%      ^punctuation.definition.typeparameters.begin.mermaid
+%%       ^^^^^variable
+%%            ^punctuation.definition.typeparameters.end.mermaid
+%%             ^keyword.control.mermaid
+%%              ^entity.name.function.mermaid
+%%                ^^^keyword.control.mermaid
+%%                    ^entity.name.function.mermaid
+%%                     ^keyword.control.mermaid
+%%                      ^^^^^^variable
+%%                            ^punctuation.definition.typeparameters.begin.mermaid
+%%                             ^^^^^variable
+%%                                  ^punctuation.definition.typeparameters.end.mermaid
+
+  %% Junction
+  junction junctionCenter
+%%^^^^^^^^keyword.control.mermaid
+%%         ^^^^^^^^^^^^^^variable
+
+  %% Junction in Group
+  junction junctionRight in public_api
+%%^^^^^^^^keyword.control.mermaid
+%%         ^^^^^^^^^^^^^variable
+%%                       ^^keyword.control.mermaid
+%%                          ^^^^^^^^^^variable
