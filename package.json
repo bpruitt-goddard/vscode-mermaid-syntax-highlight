@@ -1,10 +1,10 @@
 {
-	"name": "mermaid-markdown-syntax-highlighting",
-	"displayName": "Mermaid Markdown Syntax Highlighting",
+	"name": "forked-mermaid-markdown-syntax-highlighting",
+	"displayName": "Mermaid: Syntax Highlighting for Markdown",
 	"description": "Markdown syntax support for the Mermaid charting language",
 	"icon": "images/icon/iconPNG.png",
-	"version": "1.6.6",
-	"publisher": "bpruitt-goddard",
+	"version": "1.0.0",
+	"publisher": "castachick",
 	"license": "MIT",
 	"engines": {
 		"vscode": "^1.19.0"
