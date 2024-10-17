@@ -2,7 +2,7 @@
   begin: ^\s*(architecture-beta)
   beginCaptures:
     '1':
-      name: keyword.control.mermaid 
+      name: keyword.control.mermaid
   patterns:
     - match: \%%.*
       name: comment
