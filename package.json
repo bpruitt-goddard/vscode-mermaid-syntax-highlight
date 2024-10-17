@@ -70,10 +70,12 @@
 	"scripts": {
 		"vscode:prepublish": "npm run convertYaml",
 		"convertYaml": "node build/ConvertYaml.js",
-		"test": "vscode-tmgrammar-test \"tests/**/*.test.{mermaid,md,mdx}\""
+		"test": "vscode-tmgrammar-test \"tests/**/*.test.{mermaid,md,mdx}\"",
+		"format:write": "prettier --write syntaxes"
 	},
 	"devDependencies": {
 		"js-yaml": "^3.13.1",
+		"prettier": "^3.3.3",
 		"vscode-tmgrammar-test": "^0.1.1",
 		"yaml-import": "^2.0.0"
 	},
