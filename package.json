@@ -3,7 +3,7 @@
 	"displayName": "Mermaid: Syntax Highlighting for Markdown",
 	"description": "Markdown syntax support for the Mermaid charting language",
 	"icon": "images/icon/iconPNG.png",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"publisher": "castachick",
 	"license": "MIT",
 	"engines": {
@@ -57,12 +57,12 @@
 		]
 	},
 	"bugs": {
-		"url": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/issues"
+		"url": "https://github.com/castachick/vscode-mermaid-syntax-highlight/issues"
 	},
-	"homepage": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/blob/master/README.md",
+	"homepage": "https://github.com/castachick/vscode-mermaid-syntax-highlight/blob/master/README.md",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight.git"
+		"url": "https://github.com/castachick/vscode-mermaid-syntax-highlight.git"
 	},
 	"keywords": [
 		"mermaid"
@@ -78,10 +78,5 @@
 		"prettier": "^3.3.3",
 		"vscode-tmgrammar-test": "^0.1.1",
 		"yaml-import": "^2.0.0"
-	},
-	"__metadata": {
-		"id": "08792992-bb56-41fb-b5dd-8551bbee0cb6",
-		"publisherDisplayName": "Brian Pruitt-Goddard",
-		"publisherId": "79536266-6400-41d0-b043-2af5390d2788"
 	}
 }
