@@ -25,11 +25,20 @@
     - comment: '(entity) {'
       begin: !regex |-
         \s+([\w-]+) # entity name
+        \s*(\[)? # [
+        \s*([\w-]+)? # alias
+        \s*(\])? # ]
         \s*({) # {
       beginCaptures:
         '1':
           name: variable
         '2':
+          name: keyword.control.mermaid
+        '3':
+          name: string
+        '4':
+          name: keyword.control.mermaid
+        '5':
           name: keyword.control.mermaid
       patterns:
         - comment: '(type) (name) (PK|FK)? ("comment")?'
