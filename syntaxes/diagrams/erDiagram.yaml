@@ -7,8 +7,21 @@
     - match: \%%.*
       name: comment
     - comment: '(entity)'
-      match: ^\s*([\w-]+)$
-      name: variable
+      match: !regex |-
+        ^\s*([\w-]+) # entity name
+        \s*(\[)? # [
+        \s*([\w-]+)? # alias
+        \s*(\])? # ]
+        $ # end of line
+      captures:
+        '1':
+          name: variable
+        '2':
+          name: keyword.control.mermaid
+        '3':
+          name: string
+        '4':
+          name: keyword.control.mermaid
     - comment: '(entity) {'
       begin: !regex |-
         \s+([\w-]+) # entity name
@@ -44,7 +57,7 @@
       match: !regex |-
         \s*([\w-]+)\s* # entity
         ((?:\|o|\|\||}o|}\||one or (?:zero|more|many)|zero or (?:one|more|many)|many\((?:0|1)\)|only one|0\+|1\+?) #relationship left
-        (?:..|--) # relationship identification 
+        (?:..|--) # relationship identification
         (?:o\||\|\||o{|\|{|one or (?:zero|more|many)|zero or (?:one|more|many)|many\((?:0|1)\)|only one|0\+|1\+?))\s* # relationship right
         ([\w-]+)\s* # entity
         (:)\s* # :
