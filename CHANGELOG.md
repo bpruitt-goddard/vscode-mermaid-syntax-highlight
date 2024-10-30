@@ -2,6 +2,10 @@
 
 ## [v1.6.6]
 
+- Add support for ER diagram named aliases
+
+## [v1.6.6]
+
 - Add support for Mermaid code blocks in MDX
 
 ## [v1.6.5]
