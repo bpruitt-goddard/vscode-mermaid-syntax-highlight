@@ -102,3 +102,4 @@
           name: keyword.control.mermaid
         '4':
           name: variable
+  end: (^|\G)(?=\s*[`:~]{3,}\s*$)
