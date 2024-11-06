@@ -18,10 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.4.x]
+        node-version: [22]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v34
 
       - name: Prettier check
         uses: creyD/prettier_action@v4.3
@@ -30,7 +30,7 @@ jobs:
           prettier_options: --check **/*.{js,yaml,md}
 
       - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
