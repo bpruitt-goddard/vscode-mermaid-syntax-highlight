@@ -1,6 +1,10 @@
 # Change Log
 
-## [v1.6.6]
+## [v1.7.0]
+
+- Add architecture diagram support
+
+## [v1.6.7]
 
 - Add support for ER diagram named aliases
 

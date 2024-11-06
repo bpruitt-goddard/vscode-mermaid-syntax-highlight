@@ -54,7 +54,7 @@ Supports both fenced markdown (see screenshots), and mmd files.
 
 ### Architecture Diagram
 
-<img src="https://raw.githubusercontent.com/castachick/vscode-mermaid-syntax-highlight/master/images/architecture.png" alt="Architecture Diagram Screenshot" width="500">
+<img src="https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/images/architecture.png" alt="Architecture Diagram Screenshot" width="500">
 
 ### ADO Support
 
