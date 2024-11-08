@@ -8,7 +8,7 @@ To test changes locally:
 
 ```sh
 npm install
-vsce package
+npx @vscode/vsce package
 ```
 
 2. Install the theme locally by using the `Install from VSIX` command. This may require reloading VS Code to see the changes.
