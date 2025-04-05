@@ -1,5 +1,5 @@
 - comment: Graph
-  begin: ^\s*(graph|flowchart)\s+([\p{Letter}\ 0-9]+)
+  begin: ^\s*(graph|flowchart)\s+([\p{Letter}\ 0-9]+)?
   beginCaptures:
     '1':
       name: keyword.control.mermaid
@@ -187,4 +187,25 @@
           name: variable
         '4':
           name: string
+    - comment: (ExtendedNodeDescription)
+      match: !regex |-
+        \s*(\@\{) # Opening brace
+        \s*((?:shape|label)\:)?([^\,]*) # Node description 1 (e.g. shape: odd)
+        (?:(\,)\s*((?:label|shape)\:)?(.*))? # Node description 2 (e.g. label: "Odd")
+        (\}) # Closing brace
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: entity.name.function.mermaid
+        '3':
+          name: string
+        '4':
+          name: keyword.control.mermaid
+        '5':
+          name: entity.name.function.mermaid
+        '6': 
+          name: string
+        '7':
+          name: keyword.control.mermaid
   end: (^|\G)(?=\s*[`:~]{3,}\s*$)
