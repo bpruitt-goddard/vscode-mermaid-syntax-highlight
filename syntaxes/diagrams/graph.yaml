@@ -187,7 +187,7 @@
           name: variable
         '4':
           name: string
-    - comment: (ExtendedOpeningBrace)(NodeDescription1)(NodeDescription2)(ExtendedClosingBrace)
+    - comment: (ExtendedOpeningBrace)(shape/label 1)(shape/label text 1)(shape/label 2)(shape/label text 2)(ExtendedClosingBrace)
       match: !regex |-
         \s*(\@\{) # Opening brace
         \s*((?:shape|label)\:)?([^\,]*) # Node description 1 (e.g. shape: odd)
@@ -197,13 +197,13 @@
         '1':
           name: keyword.control.mermaid
         '2':
-          name: entity.name.function.mermaid
+          name: keyword.control.mermaid
         '3':
           name: string
         '4':
           name: keyword.control.mermaid
         '5':
-          name: entity.name.function.mermaid
+          name: keyword.control.mermaid
         '6':
           name: string
         '7':
