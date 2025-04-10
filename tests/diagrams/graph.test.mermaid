@@ -297,3 +297,38 @@ end
   %% negative cases
   invalid subgraph invalid
 %%^^^^^^^^^^^^^^^^^^^^^^^^ source.mermaid - keyword.control.mermaid
+  
+  %% extended node shapes
+text@{shape: odd, label: "asd</br>asd"}
+%% <---- variable
+%%  ^^ keyword.control.mermaid
+%%    ^^^^^^ keyword.control.mermaid
+%%          ^^^^ string
+%%              ^ keyword.control.mermaid
+%%                ^^^^^^ keyword.control.mermaid
+%%                      ^^^^^^^^^^^^^^ string
+%%                                    ^ keyword.control.mermaid
+  %% different description order, no space between, no "
+text@{label: text,shape: odd}
+%% <---- variable
+%%  ^^ keyword.control.mermaid
+%%    ^^^^^^ keyword.control.mermaid
+%%          ^^^^^ string
+%%               ^ keyword.control.mermaid
+%%                 ^^^^^ keyword.control.mermaid
+%%                      ^^^^ string
+%%                          ^ keyword.control.mermaid
+  %% single prop in description (label)
+text@{label: text}
+%% <---- variable
+%%  ^^ keyword.control.mermaid
+%%    ^^^^^^ keyword.control.mermaid
+%%          ^^^^^ string
+%%               ^ keyword.control.mermaid
+  %% single prop in description (shape)
+text@{shape: lean-r}
+%% <---- variable
+%%  ^^ keyword.control.mermaid
+%%    ^^^^^^ keyword.control.mermaid
+%%          ^^^^^^^ string
+%%                 ^ keyword.control.mermaid
