@@ -187,25 +187,34 @@
           name: variable
         '4':
           name: string
-    - comment: (ExtendedOpeningBrace)(shape/label 1)(shape/label text 1)(shape/label 2)(shape/label text 2)(ExtendedClosingBrace)
-      match: !regex |-
-        \s*(\@\{) # Opening brace
-        \s*((?:shape|label)\:)?([^\,]*) # Node description 1 (e.g. shape: odd)
-        (?:(\,)\s*((?:label|shape)\:)?(.*))? # Node description 2 (e.g. label: "Odd")
-        (\}) # Closing brace
-      captures:
-        '1':
+    - comment: ExtendedNodeShapes
+      begin: \s*(\@\{)
+      beginCaptures:
+        '1': 
           name: keyword.control.mermaid
-        '2':
-          name: keyword.control.mermaid
-        '3':
-          name: string
-        '4':
-          name: keyword.control.mermaid
-        '5':
-          name: keyword.control.mermaid
-        '6':
-          name: string
-        '7':
+      patterns:
+        - comment: (shape)(shape name)(comma)?
+          match: !regex |-
+            \s*(shape\s*\:)([^\,\}]*)(\,)?
+          captures:
+            '1':
+              name: keyword.control.mermaid
+            '2':
+              name: entity.name.function.mermaid
+            '3':
+              name: keyword.control.mermaid
+        - comment: (label)(label text)(comma)?
+          match: !regex |-
+            \s*(label\s*\:)([^\,\}]*)(\,)?
+          captures:
+            '1':
+              name: keyword.control.mermaid
+            '2':
+              name: string
+            '3':
+              name: keyword.control.mermaid
+      end: (\})
+      endCaptures: 
+        '1': 
           name: keyword.control.mermaid
   end: (^|\G)(?=\s*[`:~]{3,}\s*$)

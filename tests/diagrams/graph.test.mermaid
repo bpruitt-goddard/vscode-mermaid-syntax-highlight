@@ -303,7 +303,7 @@ text@{shape: odd, label: "asd</br>asd"}
 %% <---- variable
 %%  ^^ keyword.control.mermaid
 %%    ^^^^^^ keyword.control.mermaid
-%%          ^^^^ string
+%%          ^^^^ entity.name.function.mermaid
 %%              ^ keyword.control.mermaid
 %%                ^^^^^^ keyword.control.mermaid
 %%                      ^^^^^^^^^^^^^^ string
@@ -316,7 +316,7 @@ text@{label: text,shape: odd}
 %%          ^^^^^ string
 %%               ^ keyword.control.mermaid
 %%                 ^^^^^ keyword.control.mermaid
-%%                      ^^^^ string
+%%                      ^^^^ entity.name.function.mermaid
 %%                          ^ keyword.control.mermaid
   %% single prop in description (label)
 text@{label: text}
@@ -330,5 +330,12 @@ text@{shape: lean-r}
 %% <---- variable
 %%  ^^ keyword.control.mermaid
 %%    ^^^^^^ keyword.control.mermaid
-%%          ^^^^^^^ string
+%%          ^^^^^^^ entity.name.function.mermaid
 %%                 ^ keyword.control.mermaid
+  %% space between 'shape' and ':'
+text@{shape   : lean-r}
+%% <---- variable
+%%  ^^ keyword.control.mermaid
+%%    ^^^^^^^^^ keyword.control.mermaid
+%%             ^^^^^^^ entity.name.function.mermaid
+%%                    ^ keyword.control.mermaid
