@@ -1,5 +1,9 @@
 # Change Log
 
+## [v1.7.1]
+
+- Add support for extended node shapes (graph/flowchart)
+
 ## [v1.7.0]
 
 - Add architecture diagram support
