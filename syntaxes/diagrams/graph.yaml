@@ -190,7 +190,7 @@
     - comment: ExtendedNodeShapes
       begin: \s*(\@\{)
       beginCaptures:
-        '1': 
+        '1':
           name: keyword.control.mermaid
       patterns:
         - comment: (shape)(shape name)(comma)?
@@ -214,7 +214,7 @@
             '3':
               name: keyword.control.mermaid
       end: (\})
-      endCaptures: 
-        '1': 
+      endCaptures:
+        '1':
           name: keyword.control.mermaid
   end: (^|\G)(?=\s*[`:~]{3,}\s*$)
