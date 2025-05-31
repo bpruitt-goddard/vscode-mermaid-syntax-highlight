@@ -3,7 +3,7 @@
 	"displayName": "Mermaid Markdown Syntax Highlighting",
 	"description": "Markdown syntax support for the Mermaid charting language",
 	"icon": "images/icon/iconPNG.png",
-	"version": "1.7.1",
+	"version": "1.7.3",
 	"publisher": "bpruitt-goddard",
 	"license": "MIT",
 	"type": "module",
