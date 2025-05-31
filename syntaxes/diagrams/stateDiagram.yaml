@@ -81,7 +81,7 @@
     - comment: '(state) -->'
       begin: !regex |-
         ([\w-]+) # state name
-        \s+(-->) # -->
+        \s*(-->) # -->
       beginCaptures:
         '1':
           name: variable
@@ -90,7 +90,7 @@
       patterns:
         - comment: '(state) (:)? (transition text)?'
           match: !regex |-
-            \s+([\w-]+) # state name
+            \s*([\w-]+) # state name
             \s*(:)? # :
             \s*([^\n:]+)? # transition text
           captures:
@@ -116,8 +116,8 @@
     - comment: '[*] --> (state) (:)? (transition text)?'
       match: !regex |-
         (\[\*\]) # [*]
-        \s+(-->) # -->
-        \s+([\w-]+) # state name
+        \s*(-->) # -->
+        \s*([\w-]+) # state name
         \s*(:)? # :
         \s*([^\n:]+)? # transition text
       captures:

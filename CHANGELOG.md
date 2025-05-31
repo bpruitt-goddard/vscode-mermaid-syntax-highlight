@@ -6,7 +6,7 @@ State diagram:
 
 - Add support for direction
 - Add support for symbols in state description
-- Adjust requirements for spaces in state and note declarations
+- Adjust requirements for spaces in state and note declarations and links
 
 ## [v1.7.1]
 
