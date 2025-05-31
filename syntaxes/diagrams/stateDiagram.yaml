@@ -6,6 +6,12 @@
   patterns:
     - match: \%%.*
       name: comment
+    - match: ^(?i)\s*(direction)\s+(BT|RL|TB|LR)
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: entity.name.function.mermaid
     - comment: '}'
       match: \s+(})\s+
       captures:
