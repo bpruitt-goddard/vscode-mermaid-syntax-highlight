@@ -28,8 +28,8 @@
     - comment: '(state) : (description)'
       match: !regex |-
         ([\w-]+) # state name
-        \s+(:) # :
-        \s+(\s*[-\w\s]+\b) # description
+        \s*(:) # :
+        \s*(\s*[^:]+) # description
       captures:
         '1':
           name: variable
@@ -44,11 +44,12 @@
         '1':
           name: keyword.control.mermaid
       patterns:
-        - comment: '"(description)" as (state)'
+        - comment: '"(description)" as (state) ({)'
           match: !regex |-
-            \s*("[-\w\s]+\b") # description
-            \s+(as) # as
+            \s*("[^"]+") # description
+            \s*(as) # as
             \s+([\w-]+) # state name
+            \s*({)? # {
           captures:
             '1':
               name: string
@@ -56,7 +57,9 @@
               name: keyword.control.mermaid
             '3':
               name: variable
-        - comment: '(state name) {'
+            '4':
+              name: keyword.control.mermaid
+        - comment: '(state name) ({)'
           match: !regex |-
             \s*([\w-]+) # state name
             \s+({) # {
@@ -132,7 +135,7 @@
       match: !regex |-
         ^\s*(note (?:left|right) of) # note left|right of
         \s+([\w-]+) # state name
-        \s+(:) # :
+        \s*(:) # :
         \s*([^\n:]+) # note text
       captures:
         '1':

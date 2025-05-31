@@ -9,10 +9,30 @@ stateDiagram
 %%          ^^ entity.name.function.mermaid
   state "Description with parenthesis" as s2
 %%^^^^^ keyword.control.mermaid
+  state "Desc<br>" as s2 {
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^^^^^^^ string
+%%                 ^^ keyword.control.mermaid
+%%                    ^^ variable
+%%                       ^ keyword.control.mermaid
+  state "no space"as s2{
+%%^^^^^ keyword.control.mermaid
+%%      ^^^^^^^^^^ string
+%%                ^^ keyword.control.mermaid
+%%                   ^^ variable
+%%                     ^ keyword.control.mermaid
   s3 : Description with colon
 %%^^ variable
 %%   ^ keyword.control.mermaid
 %%     ^^^^^^^^^^^^^^^^^^^^^^ string
+  s4 : symbols in description<br>./"
+%%^^ variable
+%%   ^ keyword.control.mermaid
+%%     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  s5:desc without spaces
+%%^^ variable
+%%  ^ keyword.control.mermaid
+%%   ^^^^^^^^^^^^^^^^^^^ string
   s1 --> s2
 %%^^ variable
 %%   ^^^ keyword.control.mermaid
@@ -90,7 +110,13 @@ stateDiagram
 %%             ^^^^^^ variable
 %%                    ^ keyword.control.mermaid
 %%                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
-
+  note right of State2: no space before semicolon
+%%^^^^^^^^^^^^^ keyword.control.mermaid
+%%              ^^^^^^ variable
+%%                    ^ keyword.control.mermaid
+%%                      ^^^^^^^^^^^^^^^^^^^^^^^^^ string
+  note left of State2: semicolon invalid:
+%%                                      ^ source.mermaid
   %% concurrency
   state Active {
 %%^^^^^ keyword.control.mermaid
