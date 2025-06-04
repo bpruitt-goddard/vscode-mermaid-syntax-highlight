@@ -88,7 +88,7 @@
           name: keyword.control.mermaid
     - comment: (Graph Link)("Multiline text")(Graph Link)
       begin: !regex |-
-        \s*((?:-{2,5}|={2,5})[xo>]?\|) # Start arrow
+        \s*((?:-?\.{1,4}-|-{2,5}|={2,5})[xo>]?\|) # Start arrow
       beginCaptures:
         '1':
           name: keyword.control.mermaid
@@ -141,7 +141,7 @@
           name: keyword.control.mermaid
     - comment: (Graph Link)
       match: !regex |-
-        \s*([ox<]?(?:-.{1,3}-|-{1,3}|={1,3})[ox>]?) # Graph Link
+        \s*([ox<]?(?:-?\.{1,4}-|-{1,4}|={1,4})[ox>]?) # Graph Link
       captures:
         '1':
           name: keyword.control.mermaid
