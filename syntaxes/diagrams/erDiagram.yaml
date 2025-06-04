@@ -41,11 +41,11 @@
         '5':
           name: keyword.control.mermaid
       patterns:
-        - comment: '(type) (name) (PK|FK)? ("comment")?'
+        - comment: '(type) (name) (constraints)? ("comment")?'
           match: !regex |-
             \s*([\w-]+)\s+ # type
             ([\w-]+)\s+ # name
-            (PK|FK)?\s* # key?
+            ([PFU]K(?:,\s*[PFU]K){0,2})?\s* # key?
             ("["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*")?\s* # comment?
           captures:
             '1':

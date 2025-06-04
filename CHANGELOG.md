@@ -1,5 +1,9 @@
 # Change Log
 
+## [v1.7.4]
+
+- Support multiple constraints (ER)
+
 ## [v1.7.3]
 
 State diagram:
