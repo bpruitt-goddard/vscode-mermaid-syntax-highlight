@@ -6,6 +6,12 @@
   patterns:
     - match: \%%.*
       name: comment
+    - match: ^(?i)\s*(direction)\s+(BT|RL|TB|LR)
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: entity.name.function.mermaid
     - comment: '}'
       match: \s+(})\s+
       captures:
@@ -22,8 +28,8 @@
     - comment: '(state) : (description)'
       match: !regex |-
         ([\w-]+) # state name
-        \s+(:) # :
-        \s+(\s*[-\w\s]+\b) # description
+        \s*(:) # :
+        \s*(\s*[^:]+) # description
       captures:
         '1':
           name: variable
@@ -38,11 +44,12 @@
         '1':
           name: keyword.control.mermaid
       patterns:
-        - comment: '"(description)" as (state)'
+        - comment: '"(description)" as (state) ({)'
           match: !regex |-
-            \s*("[-\w\s]+\b") # description
-            \s+(as) # as
+            \s*("[^"]+") # description
+            \s*(as) # as
             \s+([\w-]+) # state name
+            \s*({)? # {
           captures:
             '1':
               name: string
@@ -50,7 +57,9 @@
               name: keyword.control.mermaid
             '3':
               name: variable
-        - comment: '(state name) {'
+            '4':
+              name: keyword.control.mermaid
+        - comment: '(state name) ({)'
           match: !regex |-
             \s*([\w-]+) # state name
             \s+({) # {
@@ -72,7 +81,7 @@
     - comment: '(state) -->'
       begin: !regex |-
         ([\w-]+) # state name
-        \s+(-->) # -->
+        \s*(-->) # -->
       beginCaptures:
         '1':
           name: variable
@@ -81,7 +90,7 @@
       patterns:
         - comment: '(state) (:)? (transition text)?'
           match: !regex |-
-            \s+([\w-]+) # state name
+            \s*([\w-]+) # state name
             \s*(:)? # :
             \s*([^\n:]+)? # transition text
           captures:
@@ -107,8 +116,8 @@
     - comment: '[*] --> (state) (:)? (transition text)?'
       match: !regex |-
         (\[\*\]) # [*]
-        \s+(-->) # -->
-        \s+([\w-]+) # state name
+        \s*(-->) # -->
+        \s*([\w-]+) # state name
         \s*(:)? # :
         \s*([^\n:]+)? # transition text
       captures:
@@ -126,7 +135,7 @@
       match: !regex |-
         ^\s*(note (?:left|right) of) # note left|right of
         \s+([\w-]+) # state name
-        \s+(:) # :
+        \s*(:) # :
         \s*([^\n:]+) # note text
       captures:
         '1':

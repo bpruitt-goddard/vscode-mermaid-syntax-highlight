@@ -1,5 +1,13 @@
 # Change Log
 
+## [v1.7.3]
+
+State diagram:
+
+- Add support for direction
+- Add support for symbols in state description
+- Adjust requirements for spaces in state and note declarations and links
+
 ## [v1.7.2]
 
 - Add support for a dotted link syntax variation without leading dash
