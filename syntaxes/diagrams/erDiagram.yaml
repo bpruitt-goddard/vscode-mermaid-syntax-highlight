@@ -46,7 +46,7 @@
             \s*([\w-]+)\s+ # type
             ([\w-]+)\s+ # name
             ([PFU]K(?:,\s*[PFU]K){0,2})?\s* # key?
-            ("["\($&%\^/#.,?!;:*+=<>\'\\\-\w\s]*")?\s* # comment?
+            ("[^"\r\n]*")?\s* # comment?
           captures:
             '1':
               name: storage.type.mermaid
