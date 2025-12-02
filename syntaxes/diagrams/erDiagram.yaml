@@ -24,7 +24,7 @@
           name: keyword.control.mermaid
     - comment: '(entity) {'
       begin: !regex |-
-        \s+([\w-]+) # entity name
+        \s*([\w-]+) # entity name
         \s*(\[)? # [
         \s*((?:[\w-]+)|(?:"[\w\s-]+"))? # alias
         \s*(\])? # ]
