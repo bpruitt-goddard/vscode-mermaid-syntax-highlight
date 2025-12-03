@@ -1,5 +1,11 @@
 # Change Log
 
+## [v1.7.5]
+
+- Support whitespace in markdown code block header before Mermaid language specifier
+- Support unindented entities (ER)
+- Allow more characters in entity attribute comment (ER)
+
 ## [v1.7.4]
 
 - Support multiple constraints (ER)
