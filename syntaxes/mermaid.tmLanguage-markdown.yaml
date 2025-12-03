@@ -7,13 +7,13 @@ patterns:
   - include: '#mermaid-ado-code-block'
 repository:
   mermaid-code-block:
-    begin: (?i)(?<=[`~])mermaid(\s+[^`~]*)?$
+    begin: (?i)(?<=[`~])\s*mermaid(\s+[^`~]*)?$
     end: (^|\G)(?=\s*[`~]{3,}\s*$)
     contentName: 'meta.embedded.block.mermaid'
     patterns:
       - include: '#mermaid'
   mermaid-code-block-with-attributes:
-    begin: (?i)(?<=[`~])\{\s*\.?mermaid(\s+[^`~]*)?$
+    begin: (?i)(?<=[`~])\s*\{\s*\.?mermaid(\s+[^`~]*)?$
     end: (^|\G)(?=\s*[`~]{3,}\s*$)
     contentName: 'meta.embedded.block.mermaid'
     patterns:
