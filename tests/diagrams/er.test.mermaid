@@ -42,6 +42,18 @@ erDiagram
 
   }
 %%^ keyword.control.mermaid
+
+UNINDENTED-ENTITY
+%%<--------------- variable
+unindented-attribute-entity {
+%%<--------------------------- variable
+%%                          ^ keyword.control.mermaid
+  string name
+%%^^^^^^ storage.type.mermaid
+%%       ^^^^ variable
+}
+%%<- keyword.control.mermaid
+
   %% relationships
   ANOTHER-ENTITY1 |o..o| ORDER : zero-or-one
 %%^^^^^^^^^^^^^^^ variable
