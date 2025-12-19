@@ -6,4 +6,6 @@
   patterns:
     - match: \%%.*
       name: comment
+    - match: ^(\s*["$&\^/#.,?!;:*+=<>\'\\\-\w\s]*)
+      name: string
   end: (^|\G)(?=\s*[`:~]{3,}\s*$)
