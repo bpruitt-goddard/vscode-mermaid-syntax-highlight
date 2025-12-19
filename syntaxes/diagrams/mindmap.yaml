@@ -6,6 +6,21 @@
   patterns:
     - match: \%%.*
       name: comment
+    - comment: ::icon(Text)
+      match: !regex |-
+        (\s*::icon) # ::icon
+        (\s*\() # (
+        (\s*["$&\^/#.,?!;:*+=<>\'\\\-\w\s]*) # Text
+        (\s*\)) # )
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: punctuation.parenthesis.open.mermaid
+        '3':
+          name: string
+        '4':
+          name: punctuation.parenthesis.close.mermaid
     - comment: (Id)(Shape Start)(Text)(Shape End)
       match: !regex |-
         (\s*["$&\^/#.,?!;:*+=<>\'\\\-\w\s]*) # Id
