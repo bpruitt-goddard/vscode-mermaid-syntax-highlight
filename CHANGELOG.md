@@ -1,5 +1,9 @@
 # Change Log
 
+## [v1.7.6]
+
+- Add mindmap diagram support
+
 ## [v1.7.5]
 
 - Support whitespace in markdown code block header before Mermaid language specifier
