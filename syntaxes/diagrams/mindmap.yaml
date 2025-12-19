@@ -6,11 +6,20 @@
   patterns:
     - match: \%%.*
       name: comment
+    - comment: :::Text
+      match: !regex |-
+        (\s*:::) # :::
+        (\s*["$&\^/#.,?!;*+=<>\'\\\-\w\s]*) # Text
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: string
     - comment: ::icon(Text)
       match: !regex |-
         (\s*::icon) # ::icon
         (\s*\() # (
-        (\s*["$&\^/#.,?!;:*+=<>\'\\\-\w\s]*) # Text
+        (\s*["$&\^/#.,?!;*+=<>\'\\\-\w\s]*) # Text
         (\s*\)) # )
       captures:
         '1':
