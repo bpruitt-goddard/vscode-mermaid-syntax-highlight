@@ -6,6 +6,21 @@
   patterns:
     - match: \%%.*
       name: comment
+    - comment: (Id)(Shape Start)(Text)(Shape End)
+      match: !regex |-
+        (\s*["$&\^/#.,?!;:*+=<>\'\\\-\w\s]*) # Id
+        (\s*\({1,2}|\){1,2}|\{\{|\[) # Start Shape
+        (\s*["$&\^/#.,?!;:*+=<>\'\\\-\w\s]*) # Text
+        (\s*\){1,2}|\({1,2}|\}\}|\]) # End Shape
+      captures:
+        '1':
+          name: variable
+        '2':
+          name: keyword.control.mermaid
+        '3':
+          name: string
+        '4':
+          name: keyword.control.mermaid
     - match: ^(\s*["$&\^/#.,?!;:*+=<>\'\\\-\w\s]*)
       name: string
   end: (^|\G)(?=\s*[`:~]{3,}\s*$)
