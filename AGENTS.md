@@ -104,3 +104,21 @@ Tests verify that the generated grammar correctly scopes the Mermaid code.
 ## 3. Cursor/Copilot Rules
 
 _No specific `.cursor/rules` or `.github/copilot-instructions.md` were found in the repository._
+
+## 4. Deployment Commit Workflow
+
+When asked to create a deployment or release commit, follow these steps:
+
+1.  **Update Version:**
+
+    - Take the provided version number.
+    - Update the `version` field in `package.json`.
+
+2.  **Update Changelog:**
+
+    - Add a new H2 header at the top of `CHANGELOG.md` following the existing format (e.g., `## [v1.2.3]`).
+    - Below the header, add a very brief bulleted list of the changes from the current branch or prompt.
+
+3.  **Create Commit:**
+    - Create a commit including `package.json` and `CHANGELOG.md`.
+    - Use the commit message format: `chore: bump version to <version number> for <very brief change>`
