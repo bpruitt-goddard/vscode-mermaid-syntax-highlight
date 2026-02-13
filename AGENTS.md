@@ -115,10 +115,20 @@ In this example:
 
 ### Development Workflow
 
-1.  **Modify:** Edit the appropriate `.yaml` file in `syntaxes/diagrams/`.
-2.  **Compile:** Run `npm run convertYaml`.
-3.  **Verify:** Run `npm test` or a specific test file.
-4.  **Debug:** If a test fails, check the scope names in the test file against the grammar definition.
+1.  **Analyze:** Break down the request into discrete grammar changes.
+2.  **Iterate:** For each discrete change, complete the full cycle below before moving to the next change.
+3.  **Implement:** Edit the appropriate `.yaml` file in `syntaxes/diagrams/`.
+4.  **Compile:** Run `npm run convertYaml`.
+5.  **Test:** Run `npm test` or a specific test file for the change.
+6.  **Verify:** Confirm tests pass. If tests fail, debug and repeat steps 3-5.
+7.  **Commit:** Once verified successful, commit the change before proceeding to the next discrete grammar change.
+8.  **Repeat:** Continue until all grammar changes are complete.
+
+**Iterative Workflow Principle:** Never implement multiple grammar changes in a single cycle. Each change must be implemented, tested, and committed separately. This ensures:
+
+- Changes are easily reversible
+- Test failures can be traced to specific changes
+- The commit history accurately reflects the evolution of the grammar
 
 ### Directory Structure
 
@@ -159,7 +169,8 @@ When asked to create a deployment or release commit, follow these steps:
   2.  Identifies necessary syntax changes or additions.
   3.  Reviews the existing codebase (`syntaxes/` directory) and general TextMate naming conventions.
   4.  Determines the appropriate TextMate scopes for each syntax token.
-  5.  **When uncertain about scope selection:** Ask the user for clarification. Provide:
+  5.  **Breaks down work:** Identifies discrete grammar changes and prioritizes them for iterative implementation.
+  6.  **When uncertain about scope selection:** Ask the user for clarification. Provide:
       - The specific word/character in question
       - Example text/context showing where it appears
       - A brief explanation of why the scope is uncertain
@@ -173,6 +184,7 @@ When asked to create a deployment or release commit, follow these steps:
   2.  Applies the scopes determined by the Researcher.
   3.  Follows the repository's testing conventions (using `<-----` and `^^^^` markers) to create clear validation lines for the expected changes.
   4.  **IMPORTANT:** Every non-commented line in the test file must have corresponding scope assertions below it. Every non-whitespace character on the test line must have a corresponding scope validation line below it. Assertions should not cover whitespace characters.
+  5.  Works iteratively - creates and updates tests for one discrete grammar change at a time, coordinating with the Implementer to test each change before moving to the next.
 
 ### Implementer
 
@@ -181,3 +193,4 @@ When asked to create a deployment or release commit, follow these steps:
   1.  Modifies the actual syntax definitions in `syntaxes/diagrams/*.yaml`.
   2.  Implements the regex patterns and scope mappings defined by the Researcher.
   3.  Ensures the YAML is valid and follows the `!regex` custom tag conventions described in the "Code Style & Conventions" section.
+  4.  Works iteratively - implements one discrete grammar change at a time, compiles, tests, and commits before moving to the next change.
