@@ -79,6 +79,10 @@ Tests verify that the generated grammar correctly scopes the Mermaid code.
 - **Scope Assertion Rules:**
   - **Every non-commented line must have corresponding scope assertions below it.**
   - **Every non-whitespace character on the test line must have a corresponding scope validation line below it.** Assertions should not cover whitespace characters (spaces, tabs) - only test actual content.
+  - **Scope specificity requirement:** Assertions must use specific TextMate scope names from the grammar (e.g., `keyword.control.mermaid`, `variable`, `string.quoted.double.mermaid`, `punctuation.separator.comma.mermaid`). Do not use generic scopes like `source.mermaid` or built-in values - the goal is human-readable/parsable test output.
+  - **Grammar-first approach:** Before writing tests, ensure the grammar (`syntaxes/diagrams/*.yaml`) defines proper capture groups with specific scope names. If a grammar element lacks captures for parameters (like commas, strings, variables), either update the grammar to add them or test only the elements that are captured.
+  - **Assertions must never be `source.mermaid`.** Use the most specific scope available (e.g., `variable`, `string.quoted.double.mermaid`, `punctuation.separator.comma.mermaid`).
+  - **Assertion lines for a single line under test can never overlap.** Each character position on the line can only be asserted by exactly one assertion line. Multiple assertion lines must cover contiguous, non-overlapping spans.
   - Use comments (`%%`) for assertion lines - these are ignored by Mermaid but read by the test framework.
   - Assertion lines must directly follow the line they are testing (no blank lines between).
 - **Defining Scopes:** There are two ways to identify the expected scope for a token:
@@ -98,7 +102,7 @@ Tests verify that the generated grammar correctly scopes the Mermaid code.
 
 ```mermaid
 graph TD
-%%^^^^^ keyword.control.mermaid
+%% <----- keyword.control.mermaid
 %%    ^^ entity.name.function.mermaid
     A[Start]
 %%  ^ variable
@@ -184,6 +188,10 @@ When asked to create a deployment or release commit, follow these steps:
   2.  Applies the scopes determined by the Researcher.
   3.  Follows the repository's testing conventions (using `<-----` and `^^^^` markers) to create clear validation lines for the expected changes.
   4.  **IMPORTANT:** Every non-commented line in the test file must have corresponding scope assertions below it. Every non-whitespace character on the test line must have a corresponding scope validation line below it. Assertions should not cover whitespace characters.
+  5.  **Scope specificity:** All scope assertions must use specific TextMate scope names from the grammar (e.g., `keyword.control.mermaid`, `variable`, `string.quoted.double.mermaid`, `punctuation.separator.comma.mermaid`). Do not use generic scopes like `source.mermaid` or built-in values - the goal is human-readable/parsable test output.
+  6.  **Grammar-first approach:** Before writing tests, verify the grammar (`syntaxes/diagrams/*.yaml`) defines proper capture groups with specific scope names. If a grammar element lacks captures for parameters (like commas, strings, variables), either update the grammar to add them or test only the elements that are captured.
+  7.  Works iteratively - creates and updates tests for one discrete grammar change at a time, coordinating with the Implementer to test each change before moving to the next.
+  4.  **IMPORTANT:** Every non-commented line in the test file must have corresponding scope assertions below it. Every non-whitespace character on the test line must have a corresponding scope validation line below it. Assertions must never be `source.mermaid` and can never overlap with other assertions on the same line.
   5.  Works iteratively - creates and updates tests for one discrete grammar change at a time, coordinating with the Implementer to test each change before moving to the next.
 
 ### Implementer
