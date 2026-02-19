@@ -6,23 +6,34 @@
 
 const [line, spansJson] = process.argv.slice(2);
 if (!line || !spansJson) {
-  console.error('Usage: node tests/tools/gen-assertions.js "<line>" "<spansJson>"');
-  console.error('Example: node tests/tools/gen-assertions.js "Person(customer, \"Customer\", \"A customer\")" "{\"1-6\":\"keyword.control.mermaid\",\"7\":\"punctuation.parenthesis.open.mermaid\"}"');
+  console.error(
+    'Usage: node tests/tools/gen-assertions.js "<line>" "<spansJson>"',
+  );
+  console.error(
+    'Example: node tests/tools/gen-assertions.js "Person(customer, "Customer", "A customer")" "{"1-6":"keyword.control.mermaid","7":"punctuation.parenthesis.open.mermaid"}"',
+  );
   process.exit(2);
 }
 
 let spans;
-try { spans = JSON.parse(spansJson); } catch (e) { console.error('Invalid JSON for spans:', e.message); process.exit(2); }
+try {
+  spans = JSON.parse(spansJson);
+} catch (e) {
+  console.error('Invalid JSON for spans:', e.message);
+  process.exit(2);
+}
 
 const prefix = '%% ';
-const parsed = Object.keys(spans).map(k => {
-  if (k.includes('-')) {
-    const [s, e] = k.split('-').map(Number);
-    return { start: s, end: e, scope: spans[k] };
-  }
-  const p = Number(k);
-  return { start: p, end: p, scope: spans[k] };
-}).sort((a, b) => a.start - b.start);
+const parsed = Object.keys(spans)
+  .map((k) => {
+    if (k.includes('-')) {
+      const [s, e] = k.split('-').map(Number);
+      return { start: s, end: e, scope: spans[k] };
+    }
+    const p = Number(k);
+    return { start: p, end: p, scope: spans[k] };
+  })
+  .sort((a, b) => a.start - b.start);
 
 console.log(line);
 for (const span of parsed) {
@@ -36,7 +47,9 @@ for (const span of parsed) {
     const spacesBefore = ' '.repeat(Math.max(0, span.start - 1));
     const tildes = '~'.repeat(Math.max(0, span.start - 1));
     const dashes = '-'.repeat(len);
-    console.log(prefix + spacesBefore + '<' + tildes + dashes + ' ' + span.scope);
+    console.log(
+      prefix + spacesBefore + '<' + tildes + dashes + ' ' + span.scope,
+    );
     continue;
   }
 

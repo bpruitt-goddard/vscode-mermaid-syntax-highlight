@@ -45,7 +45,6 @@ Tests verify that the generated grammar correctly scopes the Mermaid code.
 - **Format:** YAML files in `syntaxes/diagrams/`.
 - **Required Tests:** Every diagram grammar file must have one or more associated test files in `tests/diagrams/`. Tests are required to validate the grammar scoping and prevent regressions.
 - **Custom YAML Tag `!regex`:**
-
   - Use `!regex |-` for all non-trivial regular expressions.
   - This allows multiline regexes with comments, which are stripped during compilation.
   - **Structure pattern:** Split the regex into multiple lines, with each line corresponding to a capture group. This makes it easier to match the regex with the associated capture group definition.
@@ -178,12 +177,10 @@ _No specific `.cursor/rules` or `.github/copilot-instructions.md` were found in 
 When asked to create a deployment or release commit, follow these steps:
 
 1.  **Update Version:**
-
     - Take the provided version number.
     - Update the `version` field in `package.json`.
 
 2.  **Update Changelog:**
-
     - Add a new H2 header at the top of `CHANGELOG.md` following the existing format (e.g., `## [v1.2.3]`).
     - Below the header, add a very brief bulleted list of the changes from the current branch or prompt.
 
@@ -219,8 +216,8 @@ When asked to create a deployment or release commit, follow these steps:
   5.  **Scope specificity:** All scope assertions must use specific TextMate scope names from the grammar (e.g., `keyword.control.mermaid`, `variable`, `string.quoted.double.mermaid`, `punctuation.separator.comma.mermaid`). Do not use generic scopes like `source.mermaid` or built-in values - the goal is human-readable/parsable test output.
   6.  **Grammar-first approach:** Before writing tests, verify the grammar (`syntaxes/diagrams/*.yaml`) defines proper capture groups with specific scope names. If a grammar element lacks captures for parameters (like commas, strings, variables), either update the grammar to add them or test only the elements that are captured.
   7.  Works iteratively - creates and updates tests for one discrete grammar change at a time, coordinating with the Implementer to test each change before moving to the next.
-  4.  **IMPORTANT:** Every non-commented line in the test file must have corresponding scope assertions below it. Every non-whitespace character on the test line must have a corresponding scope validation line below it. Assertions must never be `source.mermaid` and can never overlap with other assertions on the same line.
-  5.  Works iteratively - creates and updates tests for one discrete grammar change at a time, coordinating with the Implementer to test each change before moving to the next.
+  8.  **IMPORTANT:** Every non-commented line in the test file must have corresponding scope assertions below it. Every non-whitespace character on the test line must have a corresponding scope validation line below it. Assertions must never be `source.mermaid` and can never overlap with other assertions on the same line.
+  9.  Works iteratively - creates and updates tests for one discrete grammar change at a time, coordinating with the Implementer to test each change before moving to the next.
 
 ### Implementer
 
