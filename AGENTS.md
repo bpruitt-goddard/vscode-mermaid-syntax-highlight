@@ -117,6 +117,34 @@ In this example:
 - `    A[Start]` - 4 leading spaces are not tested, then "A" at position 5, "[" at position 6, "Start" at positions 7-11, "]" at position 12
 - Assertions are ordered consecutively by their starting character position on the line
 
+#### Automation (recommended)
+
+**Problem:** Assertion lines are whitespace-sensitive and manual column counting is error-prone for humans and agents.
+
+**Solution:** A small helper exists at [tests/tools/gen-assertions.js](tests/tools/gen-assertions.js). It accepts a test line and a compact JSON span map (1-based start or start-end → scope) and prints the test line plus aligned `%%` assertion lines ready to paste into the test file.
+
+Usage example (call the existing script):
+
+```bash
+node tests/tools/gen-assertions.js 'Person(customer, "Customer", "A customer")' '{"1-6":"keyword.control.mermaid","7":"punctuation.parenthesis.open.mermaid","8-15":"variable","16":"punctuation.separator.comma.mermaid","18-27":"string.quoted.double.mermaid","28":"punctuation.separator.comma.mermaid","30-41":"string.quoted.double.mermaid","42":"punctuation.parenthesis.close.mermaid"}'
+```
+
+Example stdout (paste this under the test line):
+
+```text
+Person(customer, "Customer", "A customer")
+%% <------ keyword.control.mermaid
+%%    ^ punctuation.parenthesis.open.mermaid
+%%     ^^^^^^^^ variable
+%%             ^ punctuation.separator.comma.mermaid
+%%               ^^^^^^^^^^ string.quoted.double.mermaid
+%%                         ^ punctuation.separator.comma.mermaid
+%%                           ^^^^^^^^^^^^ string.quoted.double.mermaid
+%%                                       ^ punctuation.parenthesis.close.mermaid
+```
+
+Agent tip: prefer generating the compact span map and invoking the helper to avoid brittle manual spacing and reduce wasted test iterations.
+
 ### Development Workflow
 
 1.  **Analyze:** Break down the request into discrete grammar changes.
