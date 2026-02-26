@@ -169,7 +169,41 @@
       captures:
         '1':
           name: keyword.control.mermaid
-    - comment: Boundary
+    - comment: Boundary with parameters
+      match: !regex |-
+        ^\s*(Boundary|Enterprise_Boundary|System_Boundary|Container_Boundary)\b
+        (\()?\s*(\w+)?\s*(\))?
+        (,\s*)?
+        ("(?:[^"\\]|\\.)*")?
+        (,\s*)?
+        ("(?:[^"\\]|\\.)*")?
+        (,\s*)?
+        ("(?:[^"\\]|\\.)*")?
+        (\))?
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: punctuation.parenthesis.open.mermaid
+        '3':
+          name: variable
+        '4':
+          name: punctuation.parenthesis.close.mermaid
+        '5':
+          name: punctuation.separator.comma.mermaid
+        '6':
+          name: string.quoted.double.mermaid
+        '7':
+          name: punctuation.separator.comma.mermaid
+        '8':
+          name: string.quoted.double.mermaid
+        '9':
+          name: punctuation.separator.comma.mermaid
+        '10':
+          name: string.quoted.double.mermaid
+        '11':
+          name: punctuation.parenthesis.close.mermaid
+    - comment: Boundary without parameters
       match: !regex |-
         ^\s*(Boundary|Enterprise_Boundary|System_Boundary|Container_Boundary)\b
       captures:

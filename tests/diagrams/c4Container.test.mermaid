@@ -9,8 +9,13 @@ LAYOUT_TOP_DOWN
 %% <--------------- keyword.control.mermaid
 System_Boundary
 %% <----------------- keyword.control.mermaid
-Container_Boundary
-%% <------------------- keyword.control.mermaid
+Container_Boundary(c1, "Container Boundary")
+%% <------------------ keyword.control.mermaid
+%%                ^ punctuation.parenthesis.open.mermaid
+%%                 ^^ variable
+%%                   ^^ punctuation.separator.comma.mermaid
+%%                     ^^^^^^^^^^^^^^^^^^^^ string.quoted.double.mermaid
+%%                                         ^ punctuation.parenthesis.close.mermaid
 Person_Ext
 %% <------------- keyword.control.mermaid
 Person(customer, "Customer", "A customer")
