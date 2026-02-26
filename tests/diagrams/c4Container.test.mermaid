@@ -1,0 +1,76 @@
+%% SYNTAX TEST "source.mermaid" "c4 container diagram test"
+
+C4Container
+%% <------------ keyword.control.mermaid
+title Container diagram for Internet Banking System
+%% <----- keyword.control.mermaid
+%%      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+LAYOUT_TOP_DOWN
+%% <--------------- keyword.control.mermaid
+System_Boundary
+%% <----------------- keyword.control.mermaid
+Person_Ext
+%% <------------- keyword.control.mermaid
+Person(customer, "Customer", "A customer")
+%% <------ keyword.control.mermaid
+%%    ^ punctuation.parenthesis.open.mermaid
+%%     ^^^^^^^^ variable
+%%             ^^ punctuation.separator.comma.mermaid
+%%               ^^^^^^^^^^ string.quoted.double.mermaid
+%%                         ^^ punctuation.separator.comma.mermaid
+%%                           ^^^^^^^^^^^^ string.quoted.double.mermaid
+%%                                       ^ punctuation.parenthesis.close.mermaid
+System(bankingSystem, "Internet Banking", "Java")
+%% <------ keyword.control.mermaid
+%%    ^ punctuation.parenthesis.open.mermaid
+%%     ^^^^^^^^^^^^^ variable
+%%                  ^^ punctuation.separator.comma.mermaid
+%%                    ^^^^^^^^^^^^^^^^^^ string.quoted.double.mermaid
+%%                                      ^^ punctuation.separator.comma.mermaid
+%%                                        ^^^^^^ string.quoted.double.mermaid
+%%                                              ^ punctuation.parenthesis.close.mermaid
+ContainerDb
+%% <----------- keyword.control.mermaid
+Container(spa, "SPA", "JavaScript", "Web interface")
+%% <--------- keyword.control.mermaid
+%%       ^ punctuation.parenthesis.open.mermaid
+%%        ^^^ variable
+%%           ^ punctuation.separator.comma.mermaid
+%%             ^^^^^ string.quoted.double.mermaid
+%%                  ^ punctuation.separator.comma.mermaid
+%%                    ^^^^^^^^^^^^ string.quoted.double.mermaid
+%%                                ^ punctuation.separator.comma.mermaid
+%%                                  ^^^^^^^^^^^^^^^ string.quoted.double.mermaid
+%%                                                 ^ punctuation.parenthesis.close.mermaid
+Component(api, "API", "Java")
+%% <--------- keyword.control.mermaid
+%%       ^ punctuation.parenthesis.open.mermaid
+%%        ^^^ variable
+%%           ^ punctuation.separator.comma.mermaid
+%%             ^^^^^ string.quoted.double.mermaid
+%%                  ^ punctuation.separator.comma.mermaid
+%%                    ^^^^^^ string.quoted.double.mermaid
+%%                          ^^ punctuation.parenthesis.close.mermaid
+Rel
+%% <-- keyword.control.mermaid
+Rel(customer, bankingSystem, "Uses", "HTTP")
+%% <--- keyword.control.mermaid
+%% ^ punctuation.section.group.begin.mermaid
+%%  ^^^^^^^^ variable
+%%          ^^ punctuation.separator.comma.mermaid
+%%            ^^^^^^^^^^^^^ variable
+%%                         ^^ punctuation.separator.comma.mermaid
+%%                           ^^^^^^ string.quoted.double.mermaid
+%%                                 ^^ punctuation.separator.comma.mermaid
+%%                                   ^^^^^^ string.quoted.double.mermaid
+%%                                         ^ punctuation.section.group.end.mermaid
+BiRel(customer, backend, "API calls", "REST")
+%% <----- keyword.control.mermaid
+UpdateElementStyle
+%% <------------------- keyword.control.mermaid
+UpdateRelStyle
+%% <--------------- keyword.control.mermaid
+Deployment_Node
+%% <----------------- keyword.control.mermaid
+Node
+%% <---- keyword.control.mermaid
