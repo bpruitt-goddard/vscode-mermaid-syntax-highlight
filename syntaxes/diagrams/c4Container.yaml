@@ -1,5 +1,5 @@
 - comment: C4 Container Diagram
-  begin: ^\s*(C4Container|C4Context|C4Component|C4Dynamic|C4Deployment)
+  begin: ^\s*(C4Container)
   beginCaptures:
     '1':
       name: keyword.control.mermaid
