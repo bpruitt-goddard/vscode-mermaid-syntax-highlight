@@ -11,13 +11,28 @@ System_Boundary
 %% <----------------- keyword.control.mermaid
 Boundary(b1, "My Boundary")
 %% <-------- keyword.control.mermaid
-Container_Boundary(c1, "Container Boundary")
+%%      ^ punctuation.parenthesis.open.mermaid
+%%       ^^ variable
+%%         ^ punctuation.separator.comma.mermaid
+%%           ^^^^^^^^^^^^^ string.quoted.double.mermaid
+%%                        ^ punctuation.parenthesis.close.mermaid
+Container_Boundary(c1, "Container Boundary", "type", "tags")
 %% <------------------ keyword.control.mermaid
 %%                ^ punctuation.parenthesis.open.mermaid
 %%                 ^^ variable
-%%                   ^^ punctuation.separator.comma.mermaid
+%%                   ^ punctuation.separator.comma.mermaid
 %%                     ^^^^^^^^^^^^^^^^^^^^ string.quoted.double.mermaid
-%%                                         ^ punctuation.parenthesis.close.mermaid
+%%                                         ^ punctuation.separator.comma.mermaid
+%%                                           ^^^^^^ string.quoted.double.mermaid
+%%                                                 ^ punctuation.separator.comma.mermaid
+%%                                                   ^^^^^^ string.quoted.double.mermaid
+%%                                                         ^ punctuation.parenthesis.close.mermaid
+Enterprise_Boundary(eb1, "Enterprise")
+%% <------------------- keyword.control.mermaid
+%%                 ^ punctuation.parenthesis.open.mermaid
+%%                  ^^^ variable
+%%                     ^ punctuation.separator.comma.mermaid
+%%                       ^^^^^^^^^^^^ string.quoted.double.mermaid
 Enterprise_Boundary
 %% <------------------- keyword.control.mermaid
 Person_Ext
