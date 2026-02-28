@@ -36,7 +36,7 @@ Tests verify that the generated grammar correctly scopes the Mermaid code.
 
 ### Formatting
 
-- **Format Code:** `npm run format:write` (uses Prettier on `syntaxes/`)
+- **Format Code:** `npm run format:write` - must run before any commit to ensure consistent formatting.
 
 ## 2. Code Style & Conventions
 
