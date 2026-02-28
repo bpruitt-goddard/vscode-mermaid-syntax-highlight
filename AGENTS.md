@@ -144,6 +144,65 @@ Person(customer, "Customer", "A customer")
 
 Agent tip: prefer generating the compact span map and invoking the helper to avoid brittle manual spacing and reduce wasted test iterations.
 
+### Debugging Grammar (for AI Agents)
+
+**Problem:** When writing or debugging grammar patterns, it's difficult to see what the compiled regex actually produces and whether it matches the expected test assertions.
+
+**Solution:** A debug tool exists at [tests/tools/debug-grammar.js](tests/tools/debug-grammar.js) that runs a single line through the compiled grammar and shows what scopes are matched.
+
+**Usage:**
+
+```bash
+# Create a test file with the line to debug
+echo 'Rel(customer, bankingSystem, "Uses", "HTTP")' > tests/tools/temp.txt
+
+# Run the debug tool
+node tests/tools/debug-grammar.js < tests/tools/temp.txt
+
+# Or pipe directly (if your shell handles quotes)
+node tests/tools/debug-grammar.js < <(echo 'Rel(customer, bankingSystem, "Uses", "HTTP")')
+```
+
+**Example output:**
+
+```
+=== Grammar Debug Tool ===
+Line: "Rel(customer, bankingSystem, "Uses", "HTTP")"
+
+Looking for patterns matching: "rel"
+
+Found 2 patterns:
+
+--- Pattern ---
+Regex: (?i)^\s*(Rel|BiRel|...)
+Comment: Rel with parameters
+MATCHED: "Rel(customer, bankingSystem, "Uses", "HTTP")"
+Captures:
+  1: "Rel" -> keyword.control.mermaid
+  2: "(" -> punctuation.section.group.begin.mermaid
+  3: "customer" -> variable
+  ...
+
+=== Coverage Map ===
+Line: Rel(customer, bankingSystem, "Uses", "HTTP")
+Map:  ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓??✓✓✓✓✓✓??✓✓✓✓✓✓✓
+
+By position:
+  0: 'R' -> keyword.control.mermaid
+  ...
+ 27: ',' -> (unmatched)
+  28: '_' -> (unmatched)
+```
+
+**Key insights:**
+
+- Shows all patterns containing the keyword (e.g., "Rel", "Person")
+- Displays what each pattern captures and at which positions
+- Coverage map shows `✓` for matched positions and `?` for unmatched
+- Helps identify gaps in grammar coverage (e.g., missing comma/space captures)
+
+**Tip:** After modifying a grammar, compile with `npm run convertYaml` before debugging to ensure the latest patterns are tested.
+
 ### Development Workflow
 
 1.  **Analyze:** Break down the request into discrete grammar changes.
