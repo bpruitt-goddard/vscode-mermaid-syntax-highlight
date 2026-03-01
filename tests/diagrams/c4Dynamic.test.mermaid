@@ -1,0 +1,59 @@
+%% SYNTAX TEST "source.mermaid" "c4 dynamic diagram test"
+
+C4Dynamic
+%% <---------- keyword.control.mermaid
+title Dynamic diagram for Internet Banking System
+%% <----- keyword.control.mermaid
+%%      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+LAYOUT_TOP_DOWN
+%% <--------------- keyword.control.mermaid
+System_Boundary
+%% <----------------- keyword.control.mermaid
+Boundary(b1, "My Boundary")
+%% <-------- keyword.control.mermaid
+%%      ^ punctuation.parenthesis.open.mermaid
+%%       ^^ variable
+%%         ^ punctuation.separator.comma.mermaid
+%%           ^^^^^^^^^^^^^ string.quoted.double.mermaid
+%%                        ^ punctuation.parenthesis.close.mermaid
+Enterprise_Boundary(eb1, "Enterprise")
+%% <------------------- keyword.control.mermaid
+%%                 ^ punctuation.parenthesis.open.mermaid
+%%                  ^^^ variable
+%%                     ^ punctuation.separator.comma.mermaid
+%%                       ^^^^^^^^^^^^ string.quoted.double.mermaid
+Enterprise_Boundary
+%% <------------------- keyword.control.mermaid
+Person_Ext
+%% <------------- keyword.control.mermaid
+Person(customer, "Customer", "A customer")
+%% <------ keyword.control.mermaid
+%%    ^ punctuation.parenthesis.open.mermaid
+%%     ^^^^^^^^ variable
+%%             ^^ punctuation.separator.comma.mermaid
+%%               ^^^^^^^^^^ string.quoted.double.mermaid
+%%                         ^^ punctuation.separator.comma.mermaid
+%%                           ^^^^^^^^^^^^ string.quoted.double.mermaid
+%%                                       ^ punctuation.parenthesis.close.mermaid
+System
+%% <------ keyword.control.mermaid
+SystemDb
+%% <-------- keyword.control.mermaid
+SystemQueue
+%% <----------- keyword.control.mermaid
+System_Ext
+%% <---------- keyword.control.mermaid
+SystemDb_Ext
+%% <------------ keyword.control.mermaid
+SystemQueue_Ext
+%% <-------------- keyword.control.mermaid
+RelIndex
+%% <--------- keyword.control.mermaid
+Rel
+%% <--- keyword.control.mermaid
+BiRel
+%% <----- keyword.control.mermaid
+Rel_U
+%% <----- keyword.control.mermaid
+Rel_D
+%% <----- keyword.control.mermaid

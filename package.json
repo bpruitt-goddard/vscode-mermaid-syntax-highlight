@@ -1,90 +1,90 @@
 {
-	"name": "mermaid-markdown-syntax-highlighting",
-	"displayName": "Mermaid Markdown Syntax Highlighting",
-	"description": "Markdown syntax support for the Mermaid charting language",
-	"icon": "images/icon/iconPNG.png",
-	"version": "1.7.6",
-	"publisher": "bpruitt-goddard",
-	"license": "MIT",
-	"type": "module",
-	"engines": {
-		"vscode": "^1.19.0",
-		"node": ">=22.0.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"contributes": {
-		"languages": [
-			{
-				"id": "mermaid",
-				"extensions": [
-					".mmd",
-					".mermaid"
-				],
-				"configuration": "./mermaid-language-configuration.json"
-			}
-		],
-		"grammars": [
-			{
-				"language": "mermaid",
-				"scopeName": "markdown.mermaid.codeblock",
-				"path": "./out/mermaid.tmLanguage-markdown.json"
-			},
-			{
-				"scopeName": "markdown.mermaid.codeblock",
-				"path": "./out/mermaid.tmLanguage-markdown.json",
-				"injectTo": [
-					"text.html.markdown"
-				],
-				"embeddedLanguages": {
-					"meta.embedded.block.mermaid": "mermaid"
-				}
-			},
-			{
-				"scopeName": "mdx.mermaid.codeblock",
-				"path": "./out/mermaid.tmLanguage-mdx.json",
-				"injectTo": [
-					"source.mdx"
-				],
-				"embeddedLanguages": {
-					"mdx.embedded.mermaid": "mermaid"
-				}
-			},
-			{
-				"language": "mermaid",
-				"scopeName": "source.mermaid",
-				"path": "./out/mermaid.tmLanguage.json"
-			}
-		]
-	},
-	"bugs": {
-		"url": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/issues"
-	},
-	"homepage": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/blob/master/README.md",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight.git"
-	},
-	"keywords": [
-		"mermaid"
-	],
-	"scripts": {
-		"convertYaml": "node build/ConvertYaml.mjs",
-		"format:write": "prettier --write syntaxes",
-		"test": "vscode-tmgrammar-test \"tests/**/*.test.{mermaid,md,mdx}\"",
-		"vscode:prepublish": "npm run convertYaml"
-	},
-	"devDependencies": {
-		"fs-extra": "^11.2.0",
-		"js-yaml": "^4.1.1",
-		"prettier": "^3.8.1",
-		"vscode-tmgrammar-test": "^0.1.3",
-		"yaml-import": "^3.0.0"
-	},
-	"__metadata": {
-		"id": "08792992-bb56-41fb-b5dd-8551bbee0cb6",
-		"publisherDisplayName": "Brian Pruitt-Goddard",
-		"publisherId": "79536266-6400-41d0-b043-2af5390d2788"
-	}
+  "name": "mermaid-markdown-syntax-highlighting",
+  "displayName": "Mermaid Markdown Syntax Highlighting",
+  "description": "Markdown syntax support for the Mermaid charting language",
+  "icon": "images/icon/iconPNG.png",
+  "version": "1.8.0",
+  "publisher": "bpruitt-goddard",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "vscode": "^1.19.0",
+    "node": ">=22.0.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "mermaid",
+        "extensions": [
+          ".mmd",
+          ".mermaid"
+        ],
+        "configuration": "./mermaid-language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mermaid",
+        "scopeName": "markdown.mermaid.codeblock",
+        "path": "./out/mermaid.tmLanguage-markdown.json"
+      },
+      {
+        "scopeName": "markdown.mermaid.codeblock",
+        "path": "./out/mermaid.tmLanguage-markdown.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.mermaid": "mermaid"
+        }
+      },
+      {
+        "scopeName": "mdx.mermaid.codeblock",
+        "path": "./out/mermaid.tmLanguage-mdx.json",
+        "injectTo": [
+          "source.mdx"
+        ],
+        "embeddedLanguages": {
+          "mdx.embedded.mermaid": "mermaid"
+        }
+      },
+      {
+        "language": "mermaid",
+        "scopeName": "source.mermaid",
+        "path": "./out/mermaid.tmLanguage.json"
+      }
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/issues"
+  },
+  "homepage": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight.git"
+  },
+  "keywords": [
+    "mermaid"
+  ],
+  "scripts": {
+    "convertYaml": "node build/ConvertYaml.mjs",
+    "format:write": "prettier --write **/*.{js,yaml,md}",
+    "test": "vscode-tmgrammar-test \"tests/**/*.test.{mermaid,md,mdx}\"",
+    "vscode:prepublish": "npm run convertYaml"
+  },
+  "devDependencies": {
+    "fs-extra": "^11.2.0",
+    "js-yaml": "^4.1.1",
+    "prettier": "^3.8.1",
+    "vscode-tmgrammar-test": "^0.1.3",
+    "yaml-import": "^3.0.0"
+  },
+  "__metadata": {
+    "id": "08792992-bb56-41fb-b5dd-8551bbee0cb6",
+    "publisherDisplayName": "Brian Pruitt-Goddard",
+    "publisherId": "79536266-6400-41d0-b043-2af5390d2788"
+  }
 }
