@@ -1,5 +1,9 @@
 # Change Log
 
+## [v1.8.0]
+
+- Add c4 diagram support (component, container, deployment, dynamic)
+
 ## [v1.7.6]
 
 - Add mindmap diagram support
