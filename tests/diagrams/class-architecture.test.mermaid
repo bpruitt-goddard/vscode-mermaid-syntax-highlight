@@ -1,0 +1,71 @@
+%% SYNTAX TEST "source.mermaid" "class diagram architecture excerpt"
+
+classDiagram
+%% <------------ keyword.control.mermaid
+    namespace cli {
+%%  ^^^^^^^^^ keyword.control.mermaid
+%%            ^^^ variable.other.namespace.mermaid
+%%                ^ keyword.control.mermaid
+        class `config.Config` {
+%%      ^^^^^ keyword.control.mermaid
+%%            ^ punctuation.definition.string.begin.mermaid
+%%             ^^^^^^^^^^^^^ entity.name.type.class.mermaid
+%%                          ^ punctuation.definition.string.end.mermaid
+%%                            ^ keyword.control.mermaid
+            +string Version
+%%          ^ keyword.control.mermaid
+%%           ^^^^^^ storage.type.mermaid
+%%                  ^^^^^^^ entity.name.variable.field.mermaid
+            +source.Collection Collection
+%%          ^ keyword.control.mermaid
+%%           ^^^^^^^^^^^^^^^^^ storage.type.mermaid
+%%                             ^^^^^^^^^^ entity.name.variable.field.mermaid
+            map~string,any~
+%%          ^^^ keyword.control.map.mermaid
+%%             ^ punctuation.definition.generic.begin.mermaid
+%%              ^^^^^^ support.type.primitive.mermaid
+%%                    ^ punctuation.separator.comma.mermaid
+%%                     ^^^ support.type.primitive.mermaid
+%%                        ^ punctuation.definition.generic.end.mermaid
+            <<typedef>>
+%%          ^^ punctuation.definition.stereotype.begin.mermaid
+%%            ^^^^^^^ entity.name.tag.stereotype.mermaid
+%%                   ^^ punctuation.definition.stereotype.end.mermaid
+        }
+%%      ^ keyword.control.mermaid
+        class `run.Run` {
+%%      ^^^^^ keyword.control.mermaid
+%%            ^ punctuation.definition.string.begin.mermaid
+%%             ^^^^^^^ entity.name.type.class.mermaid
+%%                    ^ punctuation.definition.string.end.mermaid
+%%                      ^ keyword.control.mermaid
+            -map streams
+%%          ^ keyword.control.mermaid
+%%           ^^^ storage.type.mermaid
+%%               ^^^^^^^^ entity.name.variable.field.mermaid
+            +Flush(ctx) error
+%%          ^ keyword.control.mermaid
+%%           ^^^^^ entity.name.function.mermaid
+%%                ^ punctuation.parenthesis.open.mermaid
+%%                 ^^^ storage.type.mermaid
+%%                    ^ punctuation.parenthesis.closed.mermaid
+%%                      ^^^^^ storage.type.mermaid
+        }
+%%      ^ keyword.control.mermaid
+    }
+%%  ^ keyword.control.mermaid
+    `run.Run` *-- `config.Config` : contains
+%%  ^ punctuation.definition.string.begin.mermaid
+%%   ^^^^^^^ entity.name.type.class.mermaid
+%%          ^ punctuation.definition.string.end.mermaid
+%%            ^^^ keyword.control.mermaid
+%%                ^ punctuation.definition.string.begin.mermaid
+%%                 ^^^^^^^^^^^^^ entity.name.type.class.mermaid
+%%                              ^ punctuation.definition.string.end.mermaid
+%%                                ^ keyword.control.mermaid
+%%                                  ^^^^^^^^ string
+    note for Animal "Core configuration"
+%%  ^^^^ keyword.control.mermaid
+%%       ^^^ keyword.control.mermaid
+%%           ^^^^^^ entity.name.type.class.mermaid
+%%                  ^^^^^^^^^^^^^^^^^^^ string.quoted.double.mermaid

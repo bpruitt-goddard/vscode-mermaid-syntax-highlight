@@ -6,143 +6,368 @@
   patterns:
     - match: \%%.*
       name: comment
+    - comment: 'note for (class) "note text" (single line)'
+      match: !regex |-
+        ^\s*(note)\s+(for)\s+
+        (?:(`)([^`]+)(`)|([\w.-]+))
+        \s+
+        ("[^"]*")
+        \s*$
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: keyword.control.mermaid
+        '3':
+          name: punctuation.definition.string.begin.mermaid
+        '4':
+          name: entity.name.type.class.mermaid
+        '5':
+          name: punctuation.definition.string.end.mermaid
+        '6':
+          name: entity.name.type.class.mermaid
+        '7':
+          name: string.quoted.double.mermaid
+    - comment: namespace block
+      begin: !regex ^\s*(namespace)\s+([\w.-]+)\s*(\{)
+      beginCaptures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: variable.other.namespace.mermaid
+        '3':
+          name: keyword.control.mermaid
+      patterns:
+        - match: \%%.*
+          name: comment
+        - comment: 'class (class name) ~?(generic type)?~? ({)'
+          begin: !regex (class)\s+(?:(`)([^`]+)(`)|([\w.-]+)(~)?([\w.-]+)?(~)?)\s*(\{)
+          beginCaptures:
+            '1':
+              name: keyword.control.mermaid
+            '2':
+              name: punctuation.definition.string.begin.mermaid
+            '3':
+              name: entity.name.type.class.mermaid
+            '4':
+              name: punctuation.definition.string.end.mermaid
+            '5':
+              name: entity.name.type.class.mermaid
+            '6':
+              name: punctuation.definition.typeparameters.begin.mermaid
+            '7':
+              name: storage.type.mermaid
+            '8':
+              name: punctuation.definition.typeparameters.end.mermaid
+            '9':
+              name: keyword.control.mermaid
+          patterns:
+            - match: \%%.*
+              name: comment
+            - comment: '(visibility)?(function)( (function param/generic param)? )(classifier)? (return/generic return)?$'
+              begin: !regex |-
+                \s([\+~#-])? # visibility
+                ([\w.-]+) # function name
+                (\() # (
+              beginCaptures:
+                '1':
+                  name: keyword.control.mermaid
+                '2':
+                  name: entity.name.function.mermaid
+                '3':
+                  name: punctuation.parenthesis.open.mermaid
+              patterns:
+                - comment: (TBD)
+                  match: !regex |-
+                    \s*,?\s*([\w.-]+)? # function param
+                    (~)? # ~
+                    ([\w.-]+)? # generic function param
+                    (~)? # ~
+                    \s?([\w.-]+)? # function name
+                  captures:
+                    '1':
+                      name: storage.type.mermaid
+                    '2':
+                      name: punctuation.definition.typeparameters.begin.mermaid
+                    '3':
+                      name: storage.type.mermaid
+                    '4':
+                      name: punctuation.definition.typeparameters.end.mermaid
+                    '5':
+                      name: entity.name.variable.parameter.mermaid
+              end: !regex |-
+                (\)) # )
+                ([*\$]{0,2}) # classifier
+                \s?([\w.-]+)? # return type
+                (~)? # ~
+                ([\w.-]+)? # generic return type
+                (~)?$ # ~
+              endCaptures:
+                '1':
+                  name: punctuation.parenthesis.closed.mermaid
+                '2':
+                  name: keyword.control.mermaid
+                '3':
+                  name: storage.type.mermaid
+                '4':
+                  name: punctuation.definition.typeparameters.begin.mermaid
+                '5':
+                  name: storage.type.mermaid
+                '6':
+                  name: punctuation.definition.typeparameters.end.mermaid
+            - comment: 'map~a,b~ member line'
+              match: !regex |-
+                ^\s*(map)(~)([^,~]+)(,)([^~]+)(~)\s*$
+              captures:
+                '1':
+                  name: keyword.control.map.mermaid
+                '2':
+                  name: punctuation.definition.generic.begin.mermaid
+                '3':
+                  name: support.type.primitive.mermaid
+                '4':
+                  name: punctuation.separator.comma.mermaid
+                '5':
+                  name: support.type.primitive.mermaid
+                '6':
+                  name: punctuation.definition.generic.end.mermaid
+            - comment: 'Go-style field line'
+              match: !regex |-
+                \s([\+~#-])?\s*
+                ((?:\[\]\*|\[\]|\*|\*?\*?)(?:[\w.]+(?:\.[\w.]+)*)(?:\[\])?)
+                \s+
+                ([\w.]+)
+                \s*$
+              captures:
+                '1':
+                  name: keyword.control.mermaid
+                '2':
+                  name: storage.type.mermaid
+                '3':
+                  name: entity.name.variable.field.mermaid
+            - comment: '(visibility)?(datatype/generic data type) (attribute name)$'
+              match: !regex |-
+                \s([\+~#-])? # visibility
+                ([\w.-]+) # datatype
+                (~)? # ~
+                ([\w.-]+)? # datatype
+                (~)? # ~
+                \s([\w.-]+)?$ # attribute name
+              captures:
+                '1':
+                  name: keyword.control.mermaid
+                '2':
+                  name: storage.type.mermaid
+                '3':
+                  name: punctuation.definition.typeparameters.begin.mermaid
+                '4':
+                  name: storage.type.mermaid
+                '5':
+                  name: punctuation.definition.typeparameters.end.mermaid
+                '6':
+                  name: entity.name.variable.field.mermaid
+            - comment: '<<(Annotation)>> (class name)'
+              match: !regex |-
+                (<<) # <<
+                ([\w-]+) # annotation
+                (>>) # >>
+                \s?([\w.-]+)? # class name
+              captures:
+                '1':
+                  name: punctuation.definition.stereotype.begin.mermaid
+                '2':
+                  name: entity.name.tag.stereotype.mermaid
+                '3':
+                  name: punctuation.definition.stereotype.end.mermaid
+                '4':
+                  name: entity.name.type.class.mermaid
+          end: (})
+          endCaptures:
+            '1':
+              name: keyword.control.mermaid
+      end: !regex ^\s*(\})
+      endCaptures:
+        '1':
+          name: keyword.control.mermaid
     - comment: '(class name) ("multiplicity relationship")? (relationship) ("multiplicity relationship")? (class name) :? (labelText)?'
       match: !regex |-
-        ([\w-]+) # class name
-        \s("(?:\d+|\*|0..\d+|1..\d+|1..\*)")? # multiplicity relationship
-        \s?(--o|--\*|\<--|--\>|<\.\.|\.\.\>|\<\|\.\.|\.\.\|\>|\<\|--|--\|>|--\*|--|\.\.|\*--|o--) # relationship
-        \s("(?:\d+|\*|0..\d+|1..\d+|1..\*)")? # multiplicity relationship
-        \s?([\w-]+) # class name
-        \s?(:)? # :
-        \s(.*)$ # label text
+        (?:(`)([^`]+)(`)|([\w.-]+))
+        \s*
+        ("(?:\d+|\*|0..\d+|1..\d+|1..\*)")?
+        \s*
+        (--o|--\*|\<--|--\>|<\.\.|\.\.\>|\<\|\.\.|\.\.\|\>|\<\|--|--\|>|--\*|--|\.\.|\*--|o--)
+        \s*
+        ("(?:\d+|\*|0..\d+|1..\d+|1..\*)")?
+        \s*
+        (?:(`)([^`]+)(`)|([\w.-]+))
+        \s*
+        (:)?
+        \s*
+        (.*)$
       captures:
         '1':
-          name: entity.name.type.class.mermaid
+          name: punctuation.definition.string.begin.mermaid
         '2':
-          name: keyword.control.mermaid
-        '3':
-          name: keyword.control.mermaid
-        '4':
-          name: keyword.control.mermaid
-        '5':
           name: entity.name.type.class.mermaid
+        '3':
+          name: punctuation.definition.string.end.mermaid
+        '4':
+          name: entity.name.type.class.mermaid
+        '5':
+          name: keyword.control.mermaid
         '6':
           name: keyword.control.mermaid
         '7':
-          name: string
-    - comment: '(class name) : (visibility)?(function)( (function param/generic param)? )(classifier)? (return/generic return)?$'
-      match: !regex |-
-        ([\w-]+) # class name
-        \s?(:) # :
-        \s([\+~#-])? # visibility
-        ([\w-]+) # function name
-        (\() # (
-        ([\w-]+)? # function param
-        (~)? # ~
-        ([\w-]+)? # generic function param
-        (~)? # ~
-        \s?([\w-]+)? # function name
-        (\)) # )
-        ([*\$]{0,2}) # classifier
-        \s?([\w-]+)? # return type
-        (~)? # ~
-        ([\w-]+)? # generic return type
-        (~)?$ # ~
-      captures:
-        '1':
-          name: entity.name.type.class.mermaid
-        '2':
           name: keyword.control.mermaid
-        '3':
-          name: keyword.control.mermaid
-        '4':
-          name: entity.name.function.mermaid
-        '5':
-          name: punctuation.parenthesis.open.mermaid
-        '6':
-          name: storage.type.mermaid
-        '7':
-          name: punctuation.definition.typeparameters.begin.mermaid
         '8':
-          name: storage.type.mermaid
+          name: punctuation.definition.string.begin.mermaid
         '9':
-          name: punctuation.definition.typeparameters.end.mermaid
+          name: entity.name.type.class.mermaid
         '10':
-          name: entity.name.variable.parameter.mermaid
+          name: punctuation.definition.string.end.mermaid
         '11':
-          name: punctuation.parenthesis.closed.mermaid
+          name: entity.name.type.class.mermaid
         '12':
           name: keyword.control.mermaid
         '13':
+          name: string
+    - comment: '(class name) : (visibility)?(function)( (function param/generic param)? )(classifier)? (return/generic return)?$'
+      match: !regex |-
+        (?:(`)([^`]+)(`)|([\w.-]+)) # class name
+        \s?(:) # :
+        \s([\+~#-])? # visibility
+        ([\w.-]+) # function name
+        (\() # (
+        ([\w.-]+)? # function param
+        (~)? # ~
+        ([\w.-]+)? # generic function param
+        (~)? # ~
+        \s?([\w.-]+)? # function name
+        (\)) # )
+        ([*\$]{0,2}) # classifier
+        \s?([\w.-]+)? # return type
+        (~)? # ~
+        ([\w.-]+)? # generic return type
+        (~)?$ # ~
+      captures:
+        '1':
+          name: punctuation.definition.string.begin.mermaid
+        '2':
+          name: entity.name.type.class.mermaid
+        '3':
+          name: punctuation.definition.string.end.mermaid
+        '4':
+          name: entity.name.type.class.mermaid
+        '5':
+          name: keyword.control.mermaid
+        '6':
+          name: keyword.control.mermaid
+        '7':
+          name: entity.name.function.mermaid
+        '8':
+          name: punctuation.parenthesis.open.mermaid
+        '9':
           name: storage.type.mermaid
-        '14':
+        '10':
           name: punctuation.definition.typeparameters.begin.mermaid
-        '15':
+        '11':
           name: storage.type.mermaid
+        '12':
+          name: punctuation.definition.typeparameters.end.mermaid
+        '13':
+          name: entity.name.variable.parameter.mermaid
+        '14':
+          name: punctuation.parenthesis.closed.mermaid
+        '15':
+          name: keyword.control.mermaid
         '16':
+          name: storage.type.mermaid
+        '17':
+          name: punctuation.definition.typeparameters.begin.mermaid
+        '18':
+          name: storage.type.mermaid
+        '19':
           name: punctuation.definition.typeparameters.end.mermaid
     - comment: '(class name) : (visibility)?(datatype/generic data type) (attribute name)$'
       match: !regex |-
-        ([\w-]+) # class name
+        (?:(`)([^`]+)(`)|([\w.-]+)) # class name
         \s?(:) # :
         \s([\+~#-])? # visibility
-        ([\w-]+) # datatype
+        ([\w.-]+) # datatype
         (~)? # ~
-        ([\w-]+)? # datatype
+        ([\w.-]+)? # datatype
         (~)? # ~
-        \s([\w-]+)?$ # attribute name
+        \s([\w.-]+)?$ # attribute name
       captures:
         '1':
-          name: entity.name.type.class.mermaid
+          name: punctuation.definition.string.begin.mermaid
         '2':
-          name: keyword.control.mermaid
+          name: entity.name.type.class.mermaid
         '3':
-          name: keyword.control.mermaid
+          name: punctuation.definition.string.end.mermaid
         '4':
-          name: storage.type.mermaid
+          name: entity.name.type.class.mermaid
         '5':
-          name: punctuation.definition.typeparameters.begin.mermaid
+          name: keyword.control.mermaid
         '6':
-          name: storage.type.mermaid
+          name: keyword.control.mermaid
         '7':
-          name: punctuation.definition.typeparameters.end.mermaid
+          name: storage.type.mermaid
         '8':
+          name: punctuation.definition.typeparameters.begin.mermaid
+        '9':
+          name: storage.type.mermaid
+        '10':
+          name: punctuation.definition.typeparameters.end.mermaid
+        '11':
           name: entity.name.variable.field.mermaid
     - comment: '<<(Annotation)>> (class name)'
       match: !regex |-
         (<<) # <<
         ([\w-]+) # annotation
         (>>) # >>
-        \s?([\w-]+)? # class name
+        \s?(?:(`)([^`]+)(`)|([\w.-]+))? # class name
       captures:
         '1':
-          name: punctuation.definition.typeparameters.begin.mermaid
+          name: punctuation.definition.stereotype.begin.mermaid
         '2':
-          name: storage.type.mermaid
+          name: entity.name.tag.stereotype.mermaid
         '3':
-          name: punctuation.definition.typeparameters.end.mermaid
+          name: punctuation.definition.stereotype.end.mermaid
         '4':
+          name: punctuation.definition.string.begin.mermaid
+        '5':
+          name: entity.name.type.class.mermaid
+        '6':
+          name: punctuation.definition.string.end.mermaid
+        '7':
           name: entity.name.type.class.mermaid
     - comment: 'class (class name) ~?(generic type)?~? ({)'
       begin: !regex |-
         (class)\s+ #class
-        ([\w-]+) # class name
+        (?:(`)([^`]+)(`)|([\w.-]+)) # class name
         (~)? # ~
-        ([\w-]+)? # generic type name
+        ([\w.-]+)? # generic type name
         (~)? # ~
         \s?({) # begin bracket
       beginCaptures:
         '1':
           name: keyword.control.mermaid
         '2':
-          name: entity.name.type.class.mermaid
+          name: punctuation.definition.string.begin.mermaid
         '3':
-          name: punctuation.definition.typeparameters.begin.mermaid
+          name: entity.name.type.class.mermaid
         '4':
-          name: storage.type.mermaid
+          name: punctuation.definition.string.end.mermaid
         '5':
-          name: punctuation.definition.typeparameters.end.mermaid
+          name: entity.name.type.class.mermaid
         '6':
+          name: punctuation.definition.typeparameters.begin.mermaid
+        '7':
+          name: storage.type.mermaid
+        '8':
+          name: punctuation.definition.typeparameters.end.mermaid
+        '9':
           name: keyword.control.mermaid
       patterns:
         - match: \%%.*
@@ -150,7 +375,7 @@
         - comment: '(visibility)?(function)( (function param/generic param)? )(classifier)? (return/generic return)?$'
           begin: !regex |-
             \s([\+~#-])? # visibility
-            ([\w-]+) # function name
+            ([\w.-]+) # function name
             (\() # (
           beginCaptures:
             '1':
@@ -162,11 +387,11 @@
           patterns:
             - comment: (TBD)
               match: !regex |-
-                \s*,?\s*([\w-]+)? # function param
+                \s*,?\s*([\w.-]+)? # function param
                 (~)? # ~
-                ([\w-]+)? # generic function param
+                ([\w.-]+)? # generic function param
                 (~)? # ~
-                \s?([\w-]+)? # function name
+                \s?([\w.-]+)? # function name
               captures:
                 '1':
                   name: storage.type.mermaid
@@ -181,9 +406,9 @@
           end: !regex |-
             (\)) # )
             ([*\$]{0,2}) # classifier
-            \s?([\w-]+)? # return type
+            \s?([\w.-]+)? # return type
             (~)? # ~
-            ([\w-]+)? # generic return type
+            ([\w.-]+)? # generic return type
             (~)?$ # ~
           endCaptures:
             '1':
@@ -198,14 +423,44 @@
               name: storage.type.mermaid
             '6':
               name: punctuation.definition.typeparameters.end.mermaid
+        - comment: 'map~a,b~ member line'
+          match: !regex |-
+            ^\s*(map)(~)([^,~]+)(,)([^~]+)(~)\s*$
+          captures:
+            '1':
+              name: keyword.control.map.mermaid
+            '2':
+              name: punctuation.definition.generic.begin.mermaid
+            '3':
+              name: support.type.primitive.mermaid
+            '4':
+              name: punctuation.separator.comma.mermaid
+            '5':
+              name: support.type.primitive.mermaid
+            '6':
+              name: punctuation.definition.generic.end.mermaid
+        - comment: 'Go-style field line'
+          match: !regex |-
+            \s([\+~#-])?\s*
+            ((?:\[\]\*|\[\]|\*|\*?\*?)(?:[\w.]+(?:\.[\w.]+)*)(?:\[\])?)
+            \s+
+            ([\w.]+)
+            \s*$
+          captures:
+            '1':
+              name: keyword.control.mermaid
+            '2':
+              name: storage.type.mermaid
+            '3':
+              name: entity.name.variable.field.mermaid
         - comment: '(visibility)?(datatype/generic data type) (attribute name)$'
           match: !regex |-
             \s([\+~#-])? # visibility
-            ([\w-]+) # datatype
+            ([\w.-]+) # datatype
             (~)? # ~
-            ([\w-]+)? # datatype
+            ([\w.-]+)? # datatype
             (~)? # ~
-            \s([\w-]+)?$ # attribute name
+            \s([\w.-]+)?$ # attribute name
           captures:
             '1':
               name: keyword.control.mermaid
@@ -224,14 +479,14 @@
             (<<) # <<
             ([\w-]+) # annotation
             (>>) # >>
-            \s?([\w-]+)? # class name
+            \s?([\w.-]+)? # class name
           captures:
             '1':
-              name: punctuation.definition.typeparameters.begin.mermaid
+              name: punctuation.definition.stereotype.begin.mermaid
             '2':
-              name: storage.type.mermaid
+              name: entity.name.tag.stereotype.mermaid
             '3':
-              name: punctuation.definition.typeparameters.end.mermaid
+              name: punctuation.definition.stereotype.end.mermaid
             '4':
               name: entity.name.type.class.mermaid
       end: (})
@@ -241,19 +496,25 @@
     - comment: 'class (class name) ~?(generic type)?~?'
       match: !regex |-
         (class)\s+ #class
-        ([\w-]+) # class name
+        (?:(`)([^`]+)(`)|([\w.-]+)) # class name
         (~)? # ~
-        ([\w-]+)? # generic type name
+        ([\w.-]+)? # generic type name
         (~)? # ~
       captures:
         '1':
           name: keyword.control.mermaid
         '2':
-          name: entity.name.type.class.mermaid
+          name: punctuation.definition.string.begin.mermaid
         '3':
-          name: punctuation.definition.typeparameters.begin.mermaid
+          name: entity.name.type.class.mermaid
         '4':
-          name: storage.type.mermaid
+          name: punctuation.definition.string.end.mermaid
         '5':
+          name: entity.name.type.class.mermaid
+        '6':
+          name: punctuation.definition.typeparameters.begin.mermaid
+        '7':
+          name: storage.type.mermaid
+        '8':
           name: punctuation.definition.typeparameters.end.mermaid
   end: (^|\G)(?=\s*[`:~]{3,}\s*$)
