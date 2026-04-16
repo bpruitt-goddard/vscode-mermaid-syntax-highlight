@@ -1,0 +1,32 @@
+# Dev / CI / editor
+.vscode/**
+.github/**
+.cursor/**
+
+# Grammar sources (runtime uses out/*.json from prepublish)
+syntaxes/**
+
+# Build and test tooling
+build/**
+tests/**
+
+# Local scratch (not part of published extension)
+new-test/**
+
+# Dependencies (vsce excludes by default; explicit for clarity)
+node_modules/**
+
+# Repo hygiene only
+.gitignore
+.gitattributes
+.prettierignore
+.editorconfig
+AGENTS.md
+CONTRIBUTING.md
+
+# Packaged artifact
+*.vsix
+
+# README screenshots point at GitHub raw URLs; ship only the marketplace icon
+images/**
+!images/icon/iconPNG.png
