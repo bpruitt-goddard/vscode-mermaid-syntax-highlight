@@ -1,5 +1,9 @@
 # Change Log
 
+## [v1.8.1]
+
+- Enhance class diagram (namespaced classes, go-style fields, map types, etc)
+
 ## [v1.8.0]
 
 - Add c4 diagram support (component, container, deployment, dynamic)
